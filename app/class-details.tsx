@@ -1276,11 +1276,44 @@ export default function ClassDetailsScreen() {
                       return;
                     }
 
-                    if (bookingId || serverBookingId) {
-                      await vitalFitApi.booking.cancelBooking(
-                        String(bookingId || serverBookingId),
+                    // HU-MOBILE-37: never report a cancellation that did not
+                    // reach the server. Resolve the booking id if it is missing.
+                    let targetBookingId = bookingId || serverBookingId;
+                    if (!targetBookingId && user?.userId) {
+                      const resp = await vitalFitApi.booking.getClientBooking(
+                        String(user.userId),
                         token,
                       );
+                      const list = (
+                        Array.isArray((resp as unknown as { data: ClientBookingResponse[] }).data)
+                          ? (resp as unknown as { data: ClientBookingResponse[] }).data
+                          : resp
+                      ) as ClientBookingResponse[];
+                      const match = list.find((b) => String(b.class_id) === String(classId));
+                      targetBookingId = match?.booking_id ? String(match.booking_id) : null;
+                    }
+
+                    if (!targetBookingId) {
+                      await cancel(id);
+                      setShowCancelModal(false);
+                      showToast(
+                        'error',
+                        t('classDetails.toasts.cancelError.title'),
+                        t('classDetails.toasts.cancelError.generic'),
+                      );
+                      return;
+                    }
+
+                    try {
+                      await vitalFitApi.booking.cancelBooking(String(targetBookingId), token);
+                    } catch (cancelErr: unknown) {
+                      const text = String(
+                        (cancelErr as { messages?: string[] })?.messages?.join(' ') ?? cancelErr,
+                      ).toLowerCase();
+                      // The booking was already cancelled on the server: just sync local state.
+                      if (!text.includes('already cancelled')) {
+                        throw cancelErr;
+                      }
                     }
 
                     await cancel(id);
