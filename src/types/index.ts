@@ -24,3 +24,5 @@ export * from './audit';
 export * from './notifications';
 export * from './routine';
 export * from './LLM';
+export * from './crm';
+export * from './insights';

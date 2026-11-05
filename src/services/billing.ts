@@ -10,6 +10,8 @@ import type {
   DataResponse,
   ExchangeRateResponse,
   FiscalDocument,
+  InvoiceAdjustment,
+  InvoiceAdjustmentRequest,
   InvoiceDetail,
   InvoiceList,
   PaginatedTotal,
@@ -40,6 +42,8 @@ export class BillingService {
     this.updateFiscalDocument = this.updateFiscalDocument.bind(this);
     this.deleteFiscalDocument = this.deleteFiscalDocument.bind(this);
     this.createCheckoutSession = this.createCheckoutSession.bind(this);
+    this.applyInvoiceAdjustment = this.applyInvoiceAdjustment.bind(this);
+    this.getInvoiceAdjustments = this.getInvoiceAdjustments.bind(this);
   }
   async getTaxRateByBranch(jwt: string, branchId: string): Promise<TaxRate> {
     const response = await this.client.get({
@@ -225,5 +229,28 @@ export class BillingService {
       data,
     });
     return response as unknown as CheckoutResponse;
+  }
+
+  /** Post-sale discount with full traceability (capped by GLOBAL_MAX_DISCOUNT). */
+  async applyInvoiceAdjustment(
+    jwt: string,
+    invoiceId: string,
+    data: InvoiceAdjustmentRequest,
+  ): Promise<InvoiceAdjustment> {
+    return this.client.post({
+      url: `/billing/invoices/${invoiceId}/adjustments`,
+      jwt,
+      data: { ...data, discount_value: String(data.discount_value) },
+    });
+  }
+
+  async getInvoiceAdjustments(
+    jwt: string,
+    invoiceId: string,
+  ): Promise<DataResponse<InvoiceAdjustment[]>> {
+    return this.client.get({
+      url: `/billing/invoices/${invoiceId}/adjustments`,
+      jwt,
+    });
   }
 }

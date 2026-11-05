@@ -14,6 +14,33 @@ export type LoginRequest = {
 export type LoginResponse = {
   refresh_token: string;
   token: string;
+  /** Present when the configured password expiration was reached. */
+  password_expired?: boolean;
+  /** Dashboard logins may require a second factor (code sent by email). */
+  two_factor_required?: boolean;
+  challenge_id?: string;
+  email_hint?: string;
+  expires_at?: string;
+};
+
+export type TwoFactorVerifyRequest = {
+  challenge_id: string;
+  code: string;
+};
+
+export type PasswordPolicy = {
+  min_length: number;
+  require_uppercase: boolean;
+  require_lowercase: boolean;
+  require_number: boolean;
+  require_special: boolean;
+  expiration_days: number;
+};
+
+export type SecuritySettings = PasswordPolicy & {
+  two_factor_required: boolean;
+  updated_by?: string | null;
+  updated_at?: string;
 };
 
 export type SignUpRequest = {

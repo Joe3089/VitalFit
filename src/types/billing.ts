@@ -135,3 +135,23 @@ export type CreateCheckoutPayload = {
 export type CheckoutResponse = {
   url: string;
 };
+
+export type InvoiceAdjustmentRequest = {
+  discount_type: 'Percentage' | 'FixedAmount';
+  discount_value: number;
+  reason: string;
+};
+
+export type InvoiceAdjustment = {
+  adjustment_id: string;
+  invoice_id: string;
+  discount_type: 'Percentage' | 'FixedAmount';
+  discount_value: string;
+  amount: string;
+  previous_total: string;
+  new_total: string;
+  reason: string;
+  applied_by: string | null;
+  applied_by_name: string;
+  created_at: string;
+};

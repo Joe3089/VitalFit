@@ -1,5 +1,6 @@
 import type {
   BranchClassInfo,
+  CancelClassResponse,
   CreateClassPayload,
   DataResponse,
   UpdateClassPayload,
@@ -15,6 +16,7 @@ export class ScheduleService {
     this.CreateClass = this.CreateClass.bind(this);
     this.UpdateClass = this.UpdateClass.bind(this);
     this.DeleteClass = this.DeleteClass.bind(this);
+    this.CancelClass = this.CancelClass.bind(this);
     this.GetClassByID = this.GetClassByID.bind(this);
     this.GetClassesByInstructor = this.GetClassesByInstructor.bind(this);
   }
@@ -71,6 +73,19 @@ export class ScheduleService {
       data,
     });
   }
+  /** Cancels a class keeping the reason; booked clients are refunded and notified. */
+  async CancelClass(
+    classID: string,
+    reason: string,
+    jwt: string,
+  ): Promise<CancelClassResponse> {
+    return this.client.patch({
+      url: `/schedule/${classID}/cancel`,
+      jwt,
+      data: { reason },
+    });
+  }
+
   async DeleteClass(classID: string, jwt: string): Promise<void> {
     await this.client.delete({
       url: `/schedule/${classID}`,

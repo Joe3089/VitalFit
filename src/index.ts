@@ -23,6 +23,8 @@ import {
   ExportsService,
   RoutineService,
   LLMService,
+  CRMService,
+  InsightsService,
 } from './services';
 import { MarketingService } from './services/marketing';
 import { ProductsService } from './services/products';
@@ -55,6 +57,8 @@ export class VitalFit {
   exports: ExportsService;
   routine: RoutineService;
   llm: LLMService;
+  crm: CRMService;
+  insights: InsightsService;
 
   constructor(isDevMode: boolean, origin?: string) {
     this.client = new Client(isDevMode, origin);
@@ -83,6 +87,8 @@ export class VitalFit {
     this.exports = new ExportsService(this.client);
     this.routine = new RoutineService(this.client);
     this.llm = new LLMService(this.client);
+    this.crm = new CRMService(this.client);
+    this.insights = new InsightsService(this.client);
   }
 
   static getInstance(isDevMode = false): VitalFit {
@@ -93,7 +99,7 @@ export class VitalFit {
   }
 
   version(): string {
-    return '0.4.6';
+    return '0.5.0';
   }
 }
 

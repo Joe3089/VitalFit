@@ -4,6 +4,9 @@ import type {
   LoginRequest,
   LoginResponse,
   Oauth,
+  PasswordPolicy,
+  SecuritySettings,
+  TwoFactorVerifyRequest,
   SignUpRequest,
   UserSession,
 } from '@/types';
@@ -13,6 +16,11 @@ export class AuthService {
   constructor(client: Client) {
     this.client = client;
     this.login = this.login.bind(this);
+    this.verifyTwoFactor = this.verifyTwoFactor.bind(this);
+    this.resendTwoFactor = this.resendTwoFactor.bind(this);
+    this.getPasswordPolicy = this.getPasswordPolicy.bind(this);
+    this.getSecuritySettings = this.getSecuritySettings.bind(this);
+    this.updateSecuritySettings = this.updateSecuritySettings.bind(this);
     this.signUp = this.signUp.bind(this);
     this.signUpStaff = this.signUpStaff.bind(this);
     this.forgotPassword = this.forgotPassword.bind(this);
@@ -105,6 +113,34 @@ export class AuthService {
       },
     });
     return response as unknown as LoginResponse;
+  }
+
+  /** Completes a login that returned `two_factor_required: true`. */
+  async verifyTwoFactor(data: TwoFactorVerifyRequest): Promise<LoginResponse> {
+    const response = await this.client.post({ url: '/auth/2fa/verify', data });
+    return response as unknown as LoginResponse;
+  }
+
+  async resendTwoFactor(challengeId: string): Promise<void> {
+    await this.client.post({
+      url: '/auth/2fa/resend',
+      data: { challenge_id: challengeId },
+    });
+  }
+
+  async getPasswordPolicy(): Promise<PasswordPolicy> {
+    return this.client.get({ url: '/auth/password-policy' });
+  }
+
+  async getSecuritySettings(jwt: string): Promise<SecuritySettings> {
+    return this.client.get({ url: '/admin/security-settings', jwt });
+  }
+
+  async updateSecuritySettings(
+    jwt: string,
+    data: Omit<SecuritySettings, 'updated_by' | 'updated_at'>,
+  ): Promise<SecuritySettings> {
+    return this.client.put({ url: '/admin/security-settings', jwt, data });
   }
 
   logout(): void {
