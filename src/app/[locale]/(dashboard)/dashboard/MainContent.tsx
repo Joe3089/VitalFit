@@ -4,6 +4,7 @@ import PaymentHistoryTable from "@/components/features/dashboard/PaymentHistoryT
 import BannerOffer from "./BannerOffer";
 import { MembershipSummary } from "./MembershipSummary";
 import UpcomingClasses from "./UpcomingClasses";
+import NpsSurvey from "./NpsSurvey";
 import { useAuth } from "@/context/AuthContext";
 import { useMyInvoices } from "@/hooks/useClientInvoices";
 
@@ -45,6 +46,7 @@ export default function MainContent() {
         <MembershipSummary clientMembership={user.client_membership} />
 
         <UpcomingClasses />
+        {hasActiveMembership && <NpsSurvey />}
         <PaymentHistoryTable
           data={invoices}
           loading={invoicesLoading}

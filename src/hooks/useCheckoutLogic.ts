@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useCallback, useRef, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { api } from "@/lib/sdk-config";
+import { trackFunnel } from "@/lib/tracking";
 import { useCheckout } from "@/hooks/useCheckout";
 import { useAuth } from "@/context/AuthContext";
 import { useTax } from "@/hooks/useTax";
@@ -295,6 +296,7 @@ export const useCheckoutLogic = () => {
 
       const res = await api.billing.createInvoice(payload, token || "");
       actions.setInvoice((res as any).data || res);
+      trackFunnel("checkout");
       toast.success(t("invoiceSuccess"));
       setTimeout(() => actions.next(), 100);
     } catch (error) {

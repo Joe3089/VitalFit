@@ -10,6 +10,7 @@ import { esES, enUS } from "@clerk/localizations";
 
 import "../../styles/globals.css";
 import ToasterProvider from "@/components/ToasterProvider";
+import FunnelTracker from "@/components/FunnelTracker";
 
 export const metadata: Metadata = {
   title: "VITALFIT",
@@ -47,6 +48,7 @@ export default async function RootLayout({ children, params }: Props) {
             signUpFallbackRedirectUrl={`/${locale}/dashboard`}
           >
             <AuthProvider>
+              <FunnelTracker />
               {children}
               <ToasterProvider />
             </AuthProvider>

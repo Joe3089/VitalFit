@@ -41,6 +41,7 @@ import { useInvoiceConfirmation } from "@/hooks/useInvoiceConfirmation";
 import { usePaymentMethodDetail } from "@/hooks/usePaymentMethodDetail";
 import { useTranslations } from "next-intl";
 import { api } from "@/lib/sdk-config";
+import { trackFunnel } from "@/lib/tracking";
 
 interface Props {
   selectedMethod: string;
@@ -141,6 +142,7 @@ export const StepPayment = ({
       };
       const result = await api.billing.createCheckoutSession(payload, token);
       if (result?.url) {
+        trackFunnel("purchase");
         window.location.href = result.url;
       }
     } catch (error) {

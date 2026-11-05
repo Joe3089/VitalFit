@@ -328,7 +328,12 @@
         "email": "Correo electrónico",
         "phone": "Teléfono",
         "whatsapp": "WhatsApp"
-      }
+      },
+      "phoneLabel": "Teléfono",
+      "success": "¡Mensaje enviado! Nuestro equipo te contactará pronto.",
+      "error": "No pudimos enviar tu mensaje. Verifica los datos e inténtalo de nuevo.",
+      "reasonRequired": "Selecciona el motivo de contacto y escribe tu mensaje.",
+      "sending": "Enviando..."
     }
   },
   "RegisterPage": {
@@ -1235,5 +1240,16 @@
       "mismatch": "Las contraseñas no coinciden",
       "required": "Por favor completa todos los campos"
     }
+  },
+  "NpsSurvey": {
+    "question": "¿Qué tan probable es que recomiendes VitalFit a un amigo o familiar?",
+    "unlikely": "Nada probable",
+    "likely": "Muy probable",
+    "commentPlaceholder": "¿Qué podríamos mejorar? (opcional)",
+    "submit": "Enviar",
+    "sending": "Enviando...",
+    "thanks": "¡Gracias por tu opinión!",
+    "error": "No pudimos registrar tu respuesta. Inténtalo de nuevo.",
+    "dismiss": "Cerrar"
   }
 }

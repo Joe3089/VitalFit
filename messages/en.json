@@ -328,7 +328,12 @@
         "email": "Email",
         "phone": "Phone",
         "whatsapp": "WhatsApp"
-      }
+      },
+      "phoneLabel": "Phone",
+      "success": "Message sent! Our team will contact you soon.",
+      "error": "We could not send your message. Check the data and try again.",
+      "reasonRequired": "Select the contact reason and write your message.",
+      "sending": "Sending..."
     }
   },
   "RegisterPage": {
@@ -1203,5 +1208,16 @@
       "mismatch": "Passwords do not match",
       "required": "Please complete all fields"
     }
+  },
+  "NpsSurvey": {
+    "question": "How likely are you to recommend VitalFit to a friend or family member?",
+    "unlikely": "Not at all likely",
+    "likely": "Extremely likely",
+    "commentPlaceholder": "What could we improve? (optional)",
+    "submit": "Send",
+    "sending": "Sending...",
+    "thanks": "Thank you for your feedback!",
+    "error": "We could not save your answer. Please try again.",
+    "dismiss": "Close"
   }
 }

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { api } from "@/lib/sdk-config";
 import { AddPaymentToInvoicePayload } from "@vitalfit/sdk";
+import { trackFunnel } from "@/lib/tracking";
 import { toast } from "sonner";
 import { useTranslations } from "next-intl";
 
@@ -117,6 +118,7 @@ export const useInvoiceConfirmation = ({
       const response = await api.billing.AddPaymentToInvoice(payload, token);
 
       if (response) {
+        trackFunnel("purchase");
         toast.success(t("paymentSuccess"), {
           description: t("paymentSuccessDetail"),
         });

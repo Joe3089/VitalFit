@@ -17,6 +17,7 @@ import { useTranslations } from "next-intl";
 import { Checkbox } from "@/components/ui/Checkbox";
 import { toast } from "sonner";
 import { useUser, useClerk } from "@clerk/nextjs";
+import { trackFunnel } from "@/lib/tracking";
 
 export default function RegisterPage() {
   const t = useTranslations("RegisterPage");
@@ -164,6 +165,7 @@ export default function RegisterPage() {
       loading: t("notifications.loading.submitting"),
       success: (response) => {
         console.warn(response);
+        trackFunnel("signup");
 
         sessionStorage.setItem("temp_email", formData.email);
         sessionStorage.setItem("temp_password", formData.password);
