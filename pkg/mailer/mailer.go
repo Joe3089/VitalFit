@@ -11,6 +11,8 @@ const (
 	InvoiceCreationTemplate = "invoice.tmpl"
 	InvoicePaidTemplate     = "paid_invoice.tmpl"
 	MembershipExpiring      = "membership_expiring.tmpl"
+	TwoFactorCodeTemplate   = "two_factor_code.tmpl"
+	ScheduledReportTemplate = "scheduled_report.tmpl"
 )
 
 //go:embed "templates"

@@ -77,6 +77,9 @@ func (r *AuthHandlers) AuthRoutes(rg *gin.RouterGroup, m *auth.AuthMiddleware) {
 		authGroup.POST("/login", r.LoginHandler)
 		authGroup.POST("/oauth-login", r.OAuthLoginHandler)
 		authGroup.POST("/refresh", r.RenewAccessTokenHandler)
+		authGroup.POST("/2fa/verify", r.VerifyTwoFactorHandler)
+		authGroup.POST("/2fa/resend", r.ResendTwoFactorHandler)
+		authGroup.GET("/password-policy", r.GetPasswordPolicyHandler)
 
 		passwordGroup := authGroup.Group("/password")
 		{
@@ -143,6 +146,9 @@ func (r *AuthHandlers) AdminRoutes(rg *gin.RouterGroup, m *auth.AuthMiddleware) 
 	{
 
 		adminGroup.GET("/permissions", m.RBACPermission("permissions:list"), r.GetPermissionsHandler)
+
+		adminGroup.GET("/security-settings", m.RBACPermission("security:manage"), r.GetSecuritySettingsHandler)
+		adminGroup.PUT("/security-settings", m.RBACPermission("security:manage"), r.UpdateSecuritySettingsHandler)
 
 		roleGroup := adminGroup.Group("/roles")
 		{

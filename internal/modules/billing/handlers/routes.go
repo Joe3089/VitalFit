@@ -101,6 +101,8 @@ func (r *BillingHandlers) BillingRoutes(rg *gin.RouterGroup, m *auth.AuthMiddlew
 	invoicesGroup.GET("/client", r.GetClientInvoices)
 	invoicesGroup.GET("/client/:user_id", r.GetClientInvoices)
 	invoicesGroup.POST("/payment", r.AddPaymentToInvoiceHandler)
+	invoicesGroup.GET("/:invoice_id/adjustments", m.RBACPermission("billing:list", "billing:adjust"), r.ListInvoiceAdjustmentsHandler)
+	invoicesGroup.POST("/:invoice_id/adjustments", m.RBACPermission("billing:adjust"), r.ApplyInvoiceAdjustmentHandler)
 
 	paymentsGroup := billingGroup.Group("/payments")
 	{

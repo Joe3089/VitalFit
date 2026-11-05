@@ -21,6 +21,8 @@ var (
 	ErrPastClass                = errors.New("cannot book a past class")
 	ErrFullClass                = errors.New("class is full")
 	ErrCancellationWindowClosed = errors.New("cannot cancel booking within the restricted time window")
+	ErrBookingNotActive         = errors.New("booking is not active or was already cancelled")
+	ErrClassAlreadyCancelled    = errors.New("class is already cancelled")
 	ErrInvalidSession           = errors.New("invalid session or token reused")
 	ErrTokenReuse               = errors.New("security alert: token reuse detected, session revoked")
 	ErrRefreshTokenMismatch     = errors.New("refresh token mismatch: reuse detection")

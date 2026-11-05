@@ -261,6 +261,9 @@ func (h *AuthHandlers) ActivateStaffHanlder(c *gin.Context) {
 		h.services.LogErrors.BadRequestResponse(c, err)
 		return
 	}
+	if !h.validatePassword(c, payload.Password) {
+		return
+	}
 	if err := h.services.AuthServices.ActivateStaff(ctx, token, payload.Password); err != nil {
 		switch err {
 		case shared_errors.ErrNotFound:
@@ -621,19 +624,24 @@ func (h *AuthHandlers) LoginHandler(c *gin.Context) {
 		return
 	}
 
-	userAgent := c.Request.UserAgent()
-	clientIP := c.ClientIP()
-	token, refreshToken, err := h.services.AuthServices.GenerateToken(ctx, user, userAgent, clientIP, payload.DeviceToken)
-	if err != nil {
-		h.services.LogErrors.InternalServerError(c, err)
+	// HU-ADMIN-03: administrative (dashboard) logins require a second factor
+	// sent by email when the security policy enables it.
+	if payload.Context == "dashboard" && h.passwordPolicy(ctx).TwoFactorRequired {
+		challenge, err := h.services.SecurityServices.StartTwoFactor(ctx, user, payload.DeviceToken)
+		if err != nil {
+			h.services.LogErrors.InternalServerError(c, err)
+			return
+		}
+		c.JSON(http.StatusOK, gin.H{
+			"two_factor_required": true,
+			"challenge_id":        challenge.ChallengeID,
+			"email_hint":          maskEmail(user.Email),
+			"expires_at":          challenge.ExpiresAt,
+		})
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{
-		"token":         token,
-		"refresh_token": refreshToken,
-	})
-
+	h.issueTokens(c, user, payload.DeviceToken)
 }
 
 // @Summary		Login with OAuth provider (Google, etc.)
@@ -829,6 +837,9 @@ func (h *AuthHandlers) ResetPasswordHandler(c *gin.Context) {
 	ctx := c.Request.Context()
 	if err := c.ShouldBindJSON(&payload); err != nil {
 		h.services.LogErrors.BadRequestResponse(c, err)
+		return
+	}
+	if !h.validatePassword(c, payload.Password) {
 		return
 	}
 
@@ -1365,6 +1376,13 @@ func (h *AuthHandlers) ChangePasswordHandler(c *gin.Context) {
 	match, err := user.PasswordHash.Matches(payload.CurrentPassword)
 	if err != nil || !match {
 		h.services.LogErrors.UnauthorizedErrorResponse(c, err)
+		return
+	}
+	if !h.validatePassword(c, payload.NewPassword) {
+		return
+	}
+	if reused, _ := user.PasswordHash.Matches(payload.NewPassword); reused {
+		h.services.LogErrors.BadRequestResponse(c, errors.New("the new password must be different from the current one"))
 		return
 	}
 

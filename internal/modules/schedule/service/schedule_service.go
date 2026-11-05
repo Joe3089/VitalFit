@@ -3,10 +3,12 @@ package scheduleservice
 import (
 	"context"
 	"errors"
+	"strings"
 	"time"
 
 	"github.com/google/uuid"
 	scheduledomain "github.com/vitalfit/api/internal/modules/schedule/domain"
+	shared_errors "github.com/vitalfit/api/internal/shared/errors"
 	"github.com/vitalfit/api/internal/store"
 )
 
@@ -94,6 +96,31 @@ func (s *ScheduleService) UpdateClass(ctx context.Context, class *scheduledomain
 
 func (s *ScheduleService) DeleteClass(ctx context.Context, classID uuid.UUID) error {
 	return s.store.Schedule.DeleteClass(ctx, classID)
+}
+
+// ----------------------------------------
+// CancelClass (HU-CLA-03)
+// ----------------------------------------
+
+func (s *ScheduleService) CancelClass(ctx context.Context, classID uuid.UUID, reason string, cancelledBy uuid.UUID) (*scheduledomain.Class, []uuid.UUID, error) {
+	if strings.TrimSpace(reason) == "" {
+		return nil, nil, errors.New("a cancellation reason is required")
+	}
+	class, err := s.store.Schedule.GetClassByID(ctx, classID)
+	if err != nil {
+		return nil, nil, err
+	}
+	if class.Status == scheduledomain.ClassStatusCancelled {
+		return nil, nil, shared_errors.ErrClassAlreadyCancelled
+	}
+	if class.EndsAt.Before(time.Now()) {
+		return nil, nil, errors.New("cannot cancel a class that already finished")
+	}
+	affected, err := s.store.Schedule.CancelClass(ctx, class, strings.TrimSpace(reason), cancelledBy)
+	if err != nil {
+		return nil, nil, err
+	}
+	return class, affected, nil
 }
 
 // ----------------------------------------

@@ -92,14 +92,15 @@ type ForgotPasswordPayload struct {
 }
 
 type ResetPasswordPayload struct {
-	Password        string `json:"password" binding:"required,min=8,containsany=ABCDEFGHIJKLMNOPQRSTUVWXYZ,containsany=0123456789,containsany=!@#$%^&*"`
+	// Complexity rules come from the configurable password policy (HU-ADMIN-07).
+	Password        string `json:"password" binding:"required,min=6,max=72"`
 	ConfirmPassword string `json:"confirm_password" binding:"required,eqfield=Password"`
 	Token           string `json:"token" binding:"required"`
 }
 
 type UpdatePassswordPayload struct {
-	CurrentPassword string `json:"current_password" binding:"required,min=8"`
-	NewPassword     string `json:"new_password" binding:"required,min=8,containsany=ABCDEFGHIJKLMNOPQRSTUVWXYZ,containsany=0123456789,containsany=!@#$%^&*"`
+	CurrentPassword string `json:"current_password" binding:"required"`
+	NewPassword     string `json:"new_password" binding:"required,min=6,max=72"`
 	ConfirmPassword string `json:"confirm_password" binding:"required,eqfield=NewPassword"`
 }
 
@@ -148,7 +149,7 @@ func (c *PermissionsPayload) toPermission() ([]uuid.UUID, error) {
 }
 
 type UpdateStaffPasswordPayload struct {
-	Password        string `json:"password" binding:"required,min=8,containsany=ABCDEFGHIJKLMNOPQRSTUVWXYZ,containsany=0123456789,containsany=!@#$%^&*"`
+	Password        string `json:"password" binding:"required,min=6,max=72"`
 	ConfirmPassword string `json:"confirm_password" binding:"required,eqfield=Password"`
 }
 

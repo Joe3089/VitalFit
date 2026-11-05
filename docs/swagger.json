@@ -864,6 +864,66 @@
                 }
             }
         },
+        "/admin/security-settings": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Get security settings (password policy and 2FA)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/authdomain.SecuritySettings"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Update security settings (password policy and 2FA)",
+                "parameters": [
+                    {
+                        "description": "Settings",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/authhandlers.SecuritySettingsPayload"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/authdomain.SecuritySettings"
+                        }
+                    }
+                }
+            }
+        },
         "/audit-logs": {
             "get": {
                 "security": [
@@ -1035,6 +1095,89 @@
                     },
                     "500": {
                         "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "error": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/2fa/resend": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Resend the two-factor authentication code",
+                "parameters": [
+                    {
+                        "description": "Challenge",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/authhandlers.TwoFactorResendPayload"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            }
+        },
+        "/auth/2fa/verify": {
+            "post": {
+                "description": "Completes a dashboard login that returned two_factor_required=true.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Verify the two-factor authentication code",
+                "parameters": [
+                    {
+                        "description": "Challenge and 6-digit code",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/authhandlers.TwoFactorVerifyPayload"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "password_expired": {
+                                    "type": "boolean"
+                                },
+                                "refresh_token": {
+                                    "type": "string"
+                                },
+                                "token": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -1309,6 +1452,26 @@
                                     "type": "string"
                                 }
                             }
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/password-policy": {
+            "get": {
+                "description": "Public so login/registration forms can show the password rules.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Get the password policy",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/authdomain.SecuritySettings"
                         }
                     }
                 }
@@ -1679,6 +1842,149 @@
                         "schema": {
                             "type": "object",
                             "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/bi/financial": {
+            "get": {
+                "security": [
+                    {
+                        "BIApiKey": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "BI"
+                ],
+                "summary": "BI: detailed financial rows",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "YYYY-MM-DD",
+                        "name": "start",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "YYYY-MM-DD",
+                        "name": "end",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Branch ID",
+                        "name": "branch_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/reportdomain.FinancialReportRow"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/bi/kpis": {
+            "get": {
+                "security": [
+                    {
+                        "BIApiKey": []
+                    }
+                ],
+                "description": "Revenue, check-ins, new clients, active members, occupancy, NPS and web conversion.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "BI"
+                ],
+                "summary": "BI: consolidated KPIs for a period",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "YYYY-MM-DD",
+                        "name": "start",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "YYYY-MM-DD",
+                        "name": "end",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/bi/sales": {
+            "get": {
+                "security": [
+                    {
+                        "BIApiKey": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "BI"
+                ],
+                "summary": "BI: detailed sales rows",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "YYYY-MM-DD",
+                        "name": "start",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "YYYY-MM-DD",
+                        "name": "end",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Branch ID",
+                        "name": "branch_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/reportdomain.SalesReportRow"
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -2665,6 +2971,113 @@
                     },
                     "500": {
                         "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "error": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/billing/invoices/{invoice_id}/adjustments": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Billing"
+                ],
+                "summary": "List post-sale discounts of an invoice",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Invoice ID",
+                        "name": "invoice_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/billingdomain.InvoiceAdjustment"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Reduces the invoice total keeping full traceability (who, when, why, previous/new total).\nCapped by the GLOBAL_MAX_DISCOUNT commercial policy (accumulated).",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Billing"
+                ],
+                "summary": "Apply a post-sale discount to an invoice",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Invoice ID",
+                        "name": "invoice_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Discount",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/billinghandlers.InvoiceAdjustmentPayload"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/billingdomain.InvoiceAdjustment"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "error": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -6639,6 +7052,543 @@
                 }
             }
         },
+        "/crm/clients/{id}/score": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Score 0-100: frequency (55%), payment punctuality (45%).",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CRM"
+                ],
+                "summary": "Get the score breakdown of a client",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Client ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/crmdomain.ClientScoreBreakdown"
+                        }
+                    }
+                }
+            }
+        },
+        "/crm/clients/{id}/tags": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CRM"
+                ],
+                "summary": "Get the tags of a client",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Client ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/crmdomain.ClientTag"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CRM"
+                ],
+                "summary": "Assign a tag to a client",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Client ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Tag",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/crmhandlers.AssignTagPayload"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            }
+        },
+        "/crm/clients/{id}/tags/{tagId}": {
+            "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "tags": [
+                    "CRM"
+                ],
+                "summary": "Remove a tag from a client",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Client ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Tag ID",
+                        "name": "tagId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            }
+        },
+        "/crm/contact-messages": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CRM"
+                ],
+                "summary": "List contact form messages",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "new | read | answered",
+                        "name": "status",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/crmdomain.ContactMessage"
+                                    }
+                                },
+                                "total": {
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/crm/contact-messages/{id}": {
+            "patch": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CRM"
+                ],
+                "summary": "Update the status of a contact message",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Message ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "new | read | answered",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/crmhandlers.StatusPayload"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            }
+        },
+        "/crm/feedback": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CRM"
+                ],
+                "summary": "List client complaints and suggestions",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "open | in_progress | resolved | closed",
+                        "name": "status",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "complaint | suggestion | compliment",
+                        "name": "type",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Client ID",
+                        "name": "user_id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Branch ID",
+                        "name": "branch_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/crmdomain.FeedbackView"
+                                    }
+                                },
+                                "total": {
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CRM"
+                ],
+                "summary": "Register a complaint or suggestion on behalf of a client",
+                "parameters": [
+                    {
+                        "description": "Feedback (user_id required)",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/crmhandlers.FeedbackPayload"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/crmdomain.ClientFeedback"
+                        }
+                    }
+                }
+            }
+        },
+        "/crm/feedback/{id}": {
+            "patch": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CRM"
+                ],
+                "summary": "Update the status of a complaint or suggestion",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Feedback ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "New status",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/crmhandlers.UpdateFeedbackPayload"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/crmdomain.ClientFeedback"
+                        }
+                    }
+                }
+            }
+        },
+        "/crm/segments": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CRM"
+                ],
+                "summary": "Client count by segment (VIP, Regular, New, AtRisk)",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Branch ID",
+                        "name": "branch_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/crmdomain.SegmentCount"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/crm/segments/recalculate": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CRM"
+                ],
+                "summary": "Recalculate client scores and segments now",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "scored": {
+                                    "type": "integer"
+                                },
+                                "segmented": {
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/crm/tags": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CRM"
+                ],
+                "summary": "List client tags with usage count",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/crmdomain.TagWithCount"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CRM"
+                ],
+                "summary": "Create a client tag",
+                "parameters": [
+                    {
+                        "description": "Tag",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/crmhandlers.TagPayload"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/crmdomain.ClientTag"
+                        }
+                    }
+                }
+            }
+        },
+        "/crm/tags/{id}": {
+            "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "tags": [
+                    "CRM"
+                ],
+                "summary": "Delete a client tag",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Tag ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            }
+        },
         "/equipment-types": {
             "get": {
                 "security": [
@@ -7259,6 +8209,887 @@
                             "type": "object",
                             "additionalProperties": true
                         }
+                    }
+                }
+            }
+        },
+        "/insights/alerts": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Insights"
+                ],
+                "summary": "KPI anomaly alerts",
+                "parameters": [
+                    {
+                        "type": "boolean",
+                        "description": "Only unacknowledged (default true)",
+                        "name": "open",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Branch ID",
+                        "name": "branch_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/insightsdomain.KPIAlert"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/insights/alerts/detect": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Insights"
+                ],
+                "summary": "Run anomaly detection now",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/insightsdomain.KPIAlert"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/insights/alerts/{id}/ack": {
+            "patch": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "tags": [
+                    "Insights"
+                ],
+                "summary": "Acknowledge a KPI alert",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Alert ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            }
+        },
+        "/insights/api-keys": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Insights"
+                ],
+                "summary": "List BI API keys",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/insightsdomain.BIAPIKey"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "The plain key is returned only once. Send it in the X-API-Key header to /v1/bi/*.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Insights"
+                ],
+                "summary": "Create a BI API key",
+                "parameters": [
+                    {
+                        "description": "Key",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/insightshandlers.APIKeyPayload"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "api_key": {
+                                    "type": "string"
+                                },
+                                "key": {
+                                    "$ref": "#/definitions/insightsdomain.BIAPIKey"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/insights/api-keys/{id}": {
+            "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "tags": [
+                    "Insights"
+                ],
+                "summary": "Revoke a BI API key",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Key ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            }
+        },
+        "/insights/benchmark": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Insights"
+                ],
+                "summary": "Automatic benchmarking between branches",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "YYYY-MM-DD",
+                        "name": "start",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "YYYY-MM-DD",
+                        "name": "end",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/insightsdomain.BenchmarkReport"
+                        }
+                    }
+                }
+            }
+        },
+        "/insights/churn-risk": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Insights"
+                ],
+                "summary": "Clients at risk of churn (predictive score)",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Preferred branch",
+                        "name": "branch_id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Minimum risk score 0-100 (default 40)",
+                        "name": "min_score",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/reportdomain.ChurnRiskAnalysis"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/insights/conversion": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Insights"
+                ],
+                "summary": "Web conversion rate",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "YYYY-MM-DD (default: 30 days ago)",
+                        "name": "start",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "YYYY-MM-DD (default: today)",
+                        "name": "end",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/insightsdomain.ConversionStats"
+                        }
+                    }
+                }
+            }
+        },
+        "/insights/nps": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Insights"
+                ],
+                "summary": "Net Promoter Score summary",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "YYYY-MM-DD",
+                        "name": "start",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "YYYY-MM-DD",
+                        "name": "end",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/insightsdomain.NPSSummary"
+                        }
+                    }
+                }
+            }
+        },
+        "/insights/reports/download": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "tags": [
+                    "Insights"
+                ],
+                "summary": "Download a report using a visual template",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "financial | sales | clients | benchmark",
+                        "name": "type",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "csv | excel | pdf",
+                        "name": "format",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Template (default template if empty)",
+                        "name": "template_id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Branch ID",
+                        "name": "branch_id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "YYYY-MM-DD",
+                        "name": "start",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "YYYY-MM-DD",
+                        "name": "end",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/insights/revpas": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Insights"
+                ],
+                "summary": "Revenue per available space (RevPAS)",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "YYYY-MM-DD",
+                        "name": "start",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "YYYY-MM-DD",
+                        "name": "end",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Branch ID",
+                        "name": "branch_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/insightsdomain.RevPASReport"
+                        }
+                    }
+                }
+            }
+        },
+        "/insights/schedules": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Insights"
+                ],
+                "summary": "List scheduled reports",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/insightsdomain.ReportSchedule"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Insights"
+                ],
+                "summary": "Schedule a report to be emailed periodically",
+                "parameters": [
+                    {
+                        "description": "Schedule",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/insightshandlers.SchedulePayload"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/insightsdomain.ReportSchedule"
+                        }
+                    }
+                }
+            }
+        },
+        "/insights/schedules/{id}": {
+            "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Insights"
+                ],
+                "summary": "Update a scheduled report",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Schedule ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Schedule",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/insightshandlers.SchedulePayload"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/insightsdomain.ReportSchedule"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "tags": [
+                    "Insights"
+                ],
+                "summary": "Delete a scheduled report",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Schedule ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            }
+        },
+        "/insights/schedules/{id}/send": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "tags": [
+                    "Insights"
+                ],
+                "summary": "Send a scheduled report immediately",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Schedule ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            }
+        },
+        "/insights/share-links": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Insights"
+                ],
+                "summary": "List active shared report links",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/insightsdomain.ReportShareLink"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "The URL is returned only once; the server stores a hash of the token.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Insights"
+                ],
+                "summary": "Create a temporary URL to share a report with third parties",
+                "parameters": [
+                    {
+                        "description": "Link",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/insightshandlers.ShareLinkPayload"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "link": {
+                                    "$ref": "#/definitions/insightsdomain.ReportShareLink"
+                                },
+                                "url": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/insights/share-links/{id}": {
+            "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "tags": [
+                    "Insights"
+                ],
+                "summary": "Revoke a shared report link",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Link ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            }
+        },
+        "/insights/templates": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Insights"
+                ],
+                "summary": "List report templates",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/insightsdomain.ReportTemplate"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Insights"
+                ],
+                "summary": "Create a report template",
+                "parameters": [
+                    {
+                        "description": "Template",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/insightshandlers.TemplatePayload"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/insightsdomain.ReportTemplate"
+                        }
+                    }
+                }
+            }
+        },
+        "/insights/templates/{id}": {
+            "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Insights"
+                ],
+                "summary": "Update a report template",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Template ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Template",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/insightshandlers.TemplatePayload"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/insightsdomain.ReportTemplate"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "tags": [
+                    "Insights"
+                ],
+                "summary": "Delete a report template (the default one cannot be deleted)",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Template ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
                     }
                 }
             }
@@ -8762,6 +10593,77 @@
                 }
             }
         },
+        "/me/feedback": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CRM"
+                ],
+                "summary": "List my complaints and suggestions",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/crmdomain.FeedbackView"
+                                    }
+                                },
+                                "total": {
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CRM"
+                ],
+                "summary": "Submit my own complaint or suggestion",
+                "parameters": [
+                    {
+                        "description": "Feedback",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/crmhandlers.FeedbackPayload"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/crmdomain.ClientFeedback"
+                        }
+                    }
+                }
+            }
+        },
         "/membership-plans": {
             "get": {
                 "security": [
@@ -9730,6 +11632,38 @@
                 }
             }
         },
+        "/nps": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CRM"
+                ],
+                "summary": "Submit a Net Promoter Score answer",
+                "parameters": [
+                    {
+                        "description": "Score 0-10",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/crmhandlers.NPSPayload"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                }
+            }
+        },
         "/packages": {
             "get": {
                 "security": [
@@ -10374,6 +12308,33 @@
                 }
             }
         },
+        "/public/contact": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CRM"
+                ],
+                "summary": "Send a message from the public contact form",
+                "parameters": [
+                    {
+                        "description": "Contact message",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/crmhandlers.ContactPayload"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                }
+            }
+        },
         "/public/membership-plans": {
             "get": {
                 "description": "Retrieves a paginated list of all public membership types, with prices converted to a specified currency.",
@@ -10541,6 +12502,53 @@
                 }
             }
         },
+        "/public/reports/shared/{token}": {
+            "get": {
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "tags": [
+                    "Insights"
+                ],
+                "summary": "Download a report from a temporary shared URL",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Share token",
+                        "name": "token",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "error": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "410": {
+                        "description": "Gone",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "error": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/public/services": {
             "get": {
                 "description": "Retrieves a paginated list of all public services with optional filtering, sorting, and currency conversion.",
@@ -10640,6 +12648,34 @@
                             "type": "object",
                             "additionalProperties": true
                         }
+                    }
+                }
+            }
+        },
+        "/public/web-events": {
+            "post": {
+                "description": "Anonymous tracking used to compute the web conversion rate.",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Insights"
+                ],
+                "summary": "Track an e-commerce funnel event",
+                "parameters": [
+                    {
+                        "description": "Event",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/insightshandlers.WebEventPayload"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Accepted"
                     }
                 }
             }
@@ -14215,6 +16251,82 @@
                 }
             }
         },
+        "/schedule/{classId}/cancel": {
+            "patch": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Cancels the class keeping the reason for traceability. Confirmed bookings are cancelled,\nconsumed credits are refunded and booked clients are notified.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Schedule"
+                ],
+                "summary": "Cancel a scheduled class",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Class ID",
+                        "name": "classId",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Cancellation reason",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/schedulehandlers.CancelClassPayload"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "affected_bookings": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "error": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "error": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/services": {
             "post": {
                 "security": [
@@ -16469,6 +18581,38 @@
                 }
             }
         },
+        "authdomain.SecuritySettings": {
+            "type": "object",
+            "properties": {
+                "expiration_days": {
+                    "type": "integer"
+                },
+                "min_length": {
+                    "type": "integer"
+                },
+                "require_lowercase": {
+                    "type": "boolean"
+                },
+                "require_number": {
+                    "type": "boolean"
+                },
+                "require_special": {
+                    "type": "boolean"
+                },
+                "require_uppercase": {
+                    "type": "boolean"
+                },
+                "two_factor_required": {
+                    "type": "boolean"
+                },
+                "updated_at": {
+                    "type": "string"
+                },
+                "updated_by": {
+                    "type": "string"
+                }
+            }
+        },
         "authdomain.Session": {
             "type": "object",
             "properties": {
@@ -16886,10 +19030,76 @@
                     "type": "string"
                 },
                 "password": {
+                    "description": "Complexity rules come from the configurable password policy (HU-ADMIN-07).",
                     "type": "string",
-                    "minLength": 8
+                    "maxLength": 72,
+                    "minLength": 6
                 },
                 "token": {
+                    "type": "string"
+                }
+            }
+        },
+        "authhandlers.SecuritySettingsPayload": {
+            "type": "object",
+            "required": [
+                "min_length",
+                "require_lowercase",
+                "require_number",
+                "require_special",
+                "require_uppercase",
+                "two_factor_required"
+            ],
+            "properties": {
+                "expiration_days": {
+                    "type": "integer",
+                    "maximum": 3650,
+                    "minimum": 0
+                },
+                "min_length": {
+                    "type": "integer",
+                    "maximum": 72,
+                    "minimum": 6
+                },
+                "require_lowercase": {
+                    "type": "boolean"
+                },
+                "require_number": {
+                    "type": "boolean"
+                },
+                "require_special": {
+                    "type": "boolean"
+                },
+                "require_uppercase": {
+                    "type": "boolean"
+                },
+                "two_factor_required": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "authhandlers.TwoFactorResendPayload": {
+            "type": "object",
+            "required": [
+                "challenge_id"
+            ],
+            "properties": {
+                "challenge_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "authhandlers.TwoFactorVerifyPayload": {
+            "type": "object",
+            "required": [
+                "challenge_id",
+                "code"
+            ],
+            "properties": {
+                "challenge_id": {
+                    "type": "string"
+                },
+                "code": {
                     "type": "string"
                 }
             }
@@ -16906,12 +19116,12 @@
                     "type": "string"
                 },
                 "current_password": {
-                    "type": "string",
-                    "minLength": 8
+                    "type": "string"
                 },
                 "new_password": {
                     "type": "string",
-                    "minLength": 8
+                    "maxLength": 72,
+                    "minLength": 6
                 }
             }
         },
@@ -16927,7 +19137,8 @@
                 },
                 "password": {
                     "type": "string",
-                    "minLength": 8
+                    "maxLength": 72,
+                    "minLength": 6
                 }
             }
         },
@@ -17057,6 +19268,44 @@
                 "BranchPaymentVisibilityStaff",
                 "BranchPaymentVisibilityAll"
             ]
+        },
+        "billingdomain.InvoiceAdjustment": {
+            "type": "object",
+            "properties": {
+                "adjustment_id": {
+                    "type": "string"
+                },
+                "amount": {
+                    "type": "number"
+                },
+                "applied_by": {
+                    "type": "string"
+                },
+                "applied_by_name": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "discount_type": {
+                    "type": "string"
+                },
+                "discount_value": {
+                    "type": "number"
+                },
+                "invoice_id": {
+                    "type": "string"
+                },
+                "new_total": {
+                    "type": "number"
+                },
+                "previous_total": {
+                    "type": "number"
+                },
+                "reason": {
+                    "type": "string"
+                }
+            }
         },
         "billingdomain.PaymentMethodTypeEnum": {
             "type": "string",
@@ -17326,6 +19575,31 @@
                 },
                 "prefix": {
                     "type": "string"
+                }
+            }
+        },
+        "billinghandlers.InvoiceAdjustmentPayload": {
+            "type": "object",
+            "required": [
+                "discount_type",
+                "discount_value",
+                "reason"
+            ],
+            "properties": {
+                "discount_type": {
+                    "type": "string",
+                    "enum": [
+                        "Percentage",
+                        "FixedAmount"
+                    ]
+                },
+                "discount_value": {
+                    "type": "number"
+                },
+                "reason": {
+                    "type": "string",
+                    "maxLength": 1000,
+                    "minLength": 5
                 }
             }
         },
@@ -18232,6 +20506,1050 @@
                 },
                 "startAt": {
                     "type": "string"
+                }
+            }
+        },
+        "crmdomain.ClientFeedback": {
+            "type": "object",
+            "properties": {
+                "branch_id": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "created_by": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "feedback_id": {
+                    "type": "string"
+                },
+                "resolution_notes": {
+                    "type": "string"
+                },
+                "resolved_at": {
+                    "type": "string"
+                },
+                "resolved_by": {
+                    "type": "string"
+                },
+                "status": {
+                    "$ref": "#/definitions/crmdomain.FeedbackStatus"
+                },
+                "subject": {
+                    "type": "string"
+                },
+                "type": {
+                    "$ref": "#/definitions/crmdomain.FeedbackType"
+                },
+                "updated_at": {
+                    "type": "string"
+                },
+                "user_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "crmdomain.ClientScoreBreakdown": {
+            "type": "object",
+            "properties": {
+                "category": {
+                    "type": "string"
+                },
+                "frequency_score": {
+                    "type": "number"
+                },
+                "invoices_on_time": {
+                    "type": "integer"
+                },
+                "invoices_total": {
+                    "type": "integer"
+                },
+                "punctuality_score": {
+                    "type": "number"
+                },
+                "referral_score": {
+                    "type": "number"
+                },
+                "score": {
+                    "type": "integer"
+                },
+                "scoring_weight_note": {
+                    "type": "string"
+                },
+                "user_id": {
+                    "type": "string"
+                },
+                "visits_90d": {
+                    "type": "integer"
+                }
+            }
+        },
+        "crmdomain.ClientTag": {
+            "type": "object",
+            "properties": {
+                "color": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "tag_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "crmdomain.ContactMessage": {
+            "type": "object",
+            "properties": {
+                "branch_id": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "message_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "subject": {
+                    "type": "string"
+                }
+            }
+        },
+        "crmdomain.FeedbackStatus": {
+            "type": "string",
+            "enum": [
+                "open",
+                "in_progress",
+                "resolved",
+                "closed"
+            ],
+            "x-enum-varnames": [
+                "FeedbackOpen",
+                "FeedbackInProgress",
+                "FeedbackResolved",
+                "FeedbackClosed"
+            ]
+        },
+        "crmdomain.FeedbackType": {
+            "type": "string",
+            "enum": [
+                "complaint",
+                "suggestion",
+                "compliment"
+            ],
+            "x-enum-varnames": [
+                "FeedbackComplaint",
+                "FeedbackSuggestion",
+                "FeedbackCompliment"
+            ]
+        },
+        "crmdomain.FeedbackView": {
+            "type": "object",
+            "properties": {
+                "branch_id": {
+                    "type": "string"
+                },
+                "branch_name": {
+                    "type": "string"
+                },
+                "client_email": {
+                    "type": "string"
+                },
+                "client_name": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "created_by": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "feedback_id": {
+                    "type": "string"
+                },
+                "resolution_notes": {
+                    "type": "string"
+                },
+                "resolved_at": {
+                    "type": "string"
+                },
+                "resolved_by": {
+                    "type": "string"
+                },
+                "status": {
+                    "$ref": "#/definitions/crmdomain.FeedbackStatus"
+                },
+                "subject": {
+                    "type": "string"
+                },
+                "type": {
+                    "$ref": "#/definitions/crmdomain.FeedbackType"
+                },
+                "updated_at": {
+                    "type": "string"
+                },
+                "user_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "crmdomain.SegmentCount": {
+            "type": "object",
+            "properties": {
+                "category": {
+                    "type": "string"
+                },
+                "total": {
+                    "type": "integer"
+                }
+            }
+        },
+        "crmdomain.TagWithCount": {
+            "type": "object",
+            "properties": {
+                "client_count": {
+                    "type": "integer"
+                },
+                "color": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "tag_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "crmhandlers.AssignTagPayload": {
+            "type": "object",
+            "required": [
+                "tag_id"
+            ],
+            "properties": {
+                "tag_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "crmhandlers.ContactPayload": {
+            "type": "object",
+            "required": [
+                "email",
+                "message",
+                "name",
+                "subject"
+            ],
+            "properties": {
+                "branch_id": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string",
+                    "maxLength": 255
+                },
+                "message": {
+                    "type": "string",
+                    "maxLength": 5000
+                },
+                "name": {
+                    "type": "string",
+                    "maxLength": 150
+                },
+                "phone": {
+                    "type": "string",
+                    "maxLength": 50
+                },
+                "subject": {
+                    "type": "string",
+                    "maxLength": 255
+                }
+            }
+        },
+        "crmhandlers.FeedbackPayload": {
+            "type": "object",
+            "required": [
+                "description",
+                "subject",
+                "type"
+            ],
+            "properties": {
+                "branch_id": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string",
+                    "maxLength": 5000
+                },
+                "subject": {
+                    "type": "string",
+                    "maxLength": 255
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "complaint",
+                        "suggestion",
+                        "compliment"
+                    ]
+                },
+                "user_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "crmhandlers.NPSPayload": {
+            "type": "object",
+            "required": [
+                "score"
+            ],
+            "properties": {
+                "branch_id": {
+                    "type": "string"
+                },
+                "channel": {
+                    "type": "string"
+                },
+                "comment": {
+                    "type": "string",
+                    "maxLength": 2000
+                },
+                "score": {
+                    "type": "integer",
+                    "maximum": 10,
+                    "minimum": 0
+                }
+            }
+        },
+        "crmhandlers.StatusPayload": {
+            "type": "object",
+            "required": [
+                "status"
+            ],
+            "properties": {
+                "status": {
+                    "type": "string"
+                }
+            }
+        },
+        "crmhandlers.TagPayload": {
+            "type": "object",
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "color": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string",
+                    "maxLength": 60
+                }
+            }
+        },
+        "crmhandlers.UpdateFeedbackPayload": {
+            "type": "object",
+            "required": [
+                "status"
+            ],
+            "properties": {
+                "resolution_notes": {
+                    "type": "string",
+                    "maxLength": 5000
+                },
+                "status": {
+                    "type": "string",
+                    "enum": [
+                        "open",
+                        "in_progress",
+                        "resolved",
+                        "closed"
+                    ]
+                }
+            }
+        },
+        "insightsdomain.BIAPIKey": {
+            "type": "object",
+            "properties": {
+                "created_at": {
+                    "type": "string"
+                },
+                "created_by": {
+                    "type": "string"
+                },
+                "expires_at": {
+                    "type": "string"
+                },
+                "key_id": {
+                    "type": "string"
+                },
+                "key_prefix": {
+                    "type": "string"
+                },
+                "last_used_at": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "revoked_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "insightsdomain.BenchmarkReport": {
+            "type": "object",
+            "properties": {
+                "branches": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/insightsdomain.BenchmarkRow"
+                    }
+                },
+                "network_average": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "number",
+                        "format": "float64"
+                    }
+                }
+            }
+        },
+        "insightsdomain.BenchmarkRow": {
+            "type": "object",
+            "properties": {
+                "active_members": {
+                    "type": "integer"
+                },
+                "best_in": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "booked": {
+                    "type": "integer"
+                },
+                "branch_id": {
+                    "type": "string"
+                },
+                "branch_name": {
+                    "type": "string"
+                },
+                "capacity": {
+                    "type": "integer"
+                },
+                "check_ins": {
+                    "type": "integer"
+                },
+                "indexes": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "number",
+                        "format": "float64"
+                    }
+                },
+                "new_clients": {
+                    "type": "integer"
+                },
+                "nps": {
+                    "type": "number"
+                },
+                "occupancy_rate": {
+                    "type": "number"
+                },
+                "rank": {
+                    "type": "integer"
+                },
+                "revenue": {
+                    "type": "number"
+                },
+                "score": {
+                    "type": "number"
+                }
+            }
+        },
+        "insightsdomain.ConversionDay": {
+            "type": "object",
+            "properties": {
+                "day": {
+                    "type": "string"
+                },
+                "purchases": {
+                    "type": "integer"
+                },
+                "signups": {
+                    "type": "integer"
+                },
+                "visitors": {
+                    "type": "integer"
+                }
+            }
+        },
+        "insightsdomain.ConversionStats": {
+            "type": "object",
+            "properties": {
+                "checkouts": {
+                    "type": "integer"
+                },
+                "conversion_rate": {
+                    "type": "number"
+                },
+                "daily": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/insightsdomain.ConversionDay"
+                    }
+                },
+                "purchases": {
+                    "type": "integer"
+                },
+                "signup_rate": {
+                    "type": "number"
+                },
+                "signups": {
+                    "type": "integer"
+                },
+                "visitors": {
+                    "type": "integer"
+                }
+            }
+        },
+        "insightsdomain.KPIAlert": {
+            "type": "object",
+            "properties": {
+                "acknowledged_at": {
+                    "type": "string"
+                },
+                "acknowledged_by": {
+                    "type": "string"
+                },
+                "alert_date": {
+                    "type": "string"
+                },
+                "alert_id": {
+                    "type": "string"
+                },
+                "branch_id": {
+                    "type": "string"
+                },
+                "branch_name": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "expected_value": {
+                    "type": "number"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "metric": {
+                    "type": "string"
+                },
+                "observed_value": {
+                    "type": "number"
+                },
+                "severity": {
+                    "type": "string"
+                },
+                "z_score": {
+                    "type": "number"
+                }
+            }
+        },
+        "insightsdomain.NPSBranch": {
+            "type": "object",
+            "properties": {
+                "average_score": {
+                    "type": "number"
+                },
+                "branch_id": {
+                    "type": "string"
+                },
+                "branch_name": {
+                    "type": "string"
+                },
+                "detractors": {
+                    "type": "integer"
+                },
+                "nps": {
+                    "type": "number"
+                },
+                "passives": {
+                    "type": "integer"
+                },
+                "promoters": {
+                    "type": "integer"
+                },
+                "responses": {
+                    "type": "integer"
+                }
+            }
+        },
+        "insightsdomain.NPSComment": {
+            "type": "object",
+            "properties": {
+                "branch_name": {
+                    "type": "string"
+                },
+                "comment": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "score": {
+                    "type": "integer"
+                }
+            }
+        },
+        "insightsdomain.NPSMonthPoint": {
+            "type": "object",
+            "properties": {
+                "detractors": {
+                    "type": "integer"
+                },
+                "month": {
+                    "type": "string"
+                },
+                "nps": {
+                    "type": "number"
+                },
+                "promoters": {
+                    "type": "integer"
+                },
+                "responses": {
+                    "type": "integer"
+                }
+            }
+        },
+        "insightsdomain.NPSSummary": {
+            "type": "object",
+            "properties": {
+                "average_score": {
+                    "type": "number"
+                },
+                "branch_id": {
+                    "type": "string"
+                },
+                "branch_name": {
+                    "type": "string"
+                },
+                "by_branch": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/insightsdomain.NPSBranch"
+                    }
+                },
+                "detractors": {
+                    "type": "integer"
+                },
+                "monthly": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/insightsdomain.NPSMonthPoint"
+                    }
+                },
+                "nps": {
+                    "type": "number"
+                },
+                "passives": {
+                    "type": "integer"
+                },
+                "promoters": {
+                    "type": "integer"
+                },
+                "recent_comments": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/insightsdomain.NPSComment"
+                    }
+                },
+                "responses": {
+                    "type": "integer"
+                }
+            }
+        },
+        "insightsdomain.ReportSchedule": {
+            "type": "object",
+            "properties": {
+                "branch_id": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "created_by": {
+                    "type": "string"
+                },
+                "format": {
+                    "type": "string"
+                },
+                "frequency": {
+                    "type": "string"
+                },
+                "is_active": {
+                    "type": "boolean"
+                },
+                "last_sent_at": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "recipients": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "report_type": {
+                    "type": "string"
+                },
+                "schedule_id": {
+                    "type": "string"
+                },
+                "template_id": {
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "insightsdomain.ReportShareLink": {
+            "type": "object",
+            "properties": {
+                "access_count": {
+                    "type": "integer"
+                },
+                "branch_id": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "created_by": {
+                    "type": "string"
+                },
+                "expires_at": {
+                    "type": "string"
+                },
+                "format": {
+                    "type": "string"
+                },
+                "link_id": {
+                    "type": "string"
+                },
+                "period_end": {
+                    "type": "string"
+                },
+                "period_start": {
+                    "type": "string"
+                },
+                "report_type": {
+                    "type": "string"
+                },
+                "template_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "insightsdomain.ReportTemplate": {
+            "type": "object",
+            "properties": {
+                "created_at": {
+                    "type": "string"
+                },
+                "footer_text": {
+                    "type": "string"
+                },
+                "header_text": {
+                    "type": "string"
+                },
+                "is_default": {
+                    "type": "boolean"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "orientation": {
+                    "type": "string"
+                },
+                "primary_color": {
+                    "type": "string"
+                },
+                "template_id": {
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "insightsdomain.RevPASReport": {
+            "type": "object",
+            "properties": {
+                "available_spaces": {
+                    "type": "integer"
+                },
+                "by_branch": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/insightsdomain.RevPASRow"
+                    }
+                },
+                "by_service": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/insightsdomain.RevPASRow"
+                    }
+                },
+                "revenue": {
+                    "type": "number"
+                },
+                "revpas": {
+                    "type": "number"
+                }
+            }
+        },
+        "insightsdomain.RevPASRow": {
+            "type": "object",
+            "properties": {
+                "available_spaces": {
+                    "type": "integer"
+                },
+                "booked_spaces": {
+                    "type": "integer"
+                },
+                "branch_id": {
+                    "type": "string"
+                },
+                "branch_name": {
+                    "type": "string"
+                },
+                "occupancy_rate": {
+                    "type": "number"
+                },
+                "revenue": {
+                    "type": "number"
+                },
+                "revpas": {
+                    "type": "number"
+                },
+                "service_id": {
+                    "type": "string"
+                },
+                "service_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "insightshandlers.APIKeyPayload": {
+            "type": "object",
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "expires_at": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string",
+                    "maxLength": 120
+                }
+            }
+        },
+        "insightshandlers.SchedulePayload": {
+            "type": "object",
+            "required": [
+                "format",
+                "frequency",
+                "name",
+                "recipients",
+                "report_type"
+            ],
+            "properties": {
+                "branch_id": {
+                    "type": "string"
+                },
+                "format": {
+                    "type": "string",
+                    "enum": [
+                        "csv",
+                        "excel",
+                        "pdf"
+                    ]
+                },
+                "frequency": {
+                    "type": "string",
+                    "enum": [
+                        "daily",
+                        "weekly",
+                        "monthly"
+                    ]
+                },
+                "is_active": {
+                    "type": "boolean"
+                },
+                "name": {
+                    "type": "string",
+                    "maxLength": 120
+                },
+                "recipients": {
+                    "type": "array",
+                    "maxItems": 20,
+                    "minItems": 1,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "report_type": {
+                    "type": "string",
+                    "enum": [
+                        "financial",
+                        "sales",
+                        "clients",
+                        "benchmark"
+                    ]
+                },
+                "template_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "insightshandlers.ShareLinkPayload": {
+            "type": "object",
+            "required": [
+                "expires_in_hours",
+                "format",
+                "report_type"
+            ],
+            "properties": {
+                "branch_id": {
+                    "type": "string"
+                },
+                "end": {
+                    "type": "string"
+                },
+                "expires_in_hours": {
+                    "type": "integer",
+                    "maximum": 720,
+                    "minimum": 1
+                },
+                "format": {
+                    "type": "string",
+                    "enum": [
+                        "csv",
+                        "excel",
+                        "pdf"
+                    ]
+                },
+                "report_type": {
+                    "type": "string",
+                    "enum": [
+                        "financial",
+                        "sales",
+                        "clients",
+                        "benchmark"
+                    ]
+                },
+                "start": {
+                    "type": "string"
+                },
+                "template_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "insightshandlers.TemplatePayload": {
+            "type": "object",
+            "required": [
+                "name",
+                "primary_color"
+            ],
+            "properties": {
+                "footer_text": {
+                    "type": "string",
+                    "maxLength": 255
+                },
+                "header_text": {
+                    "type": "string",
+                    "maxLength": 255
+                },
+                "is_default": {
+                    "type": "boolean"
+                },
+                "name": {
+                    "type": "string",
+                    "maxLength": 120
+                },
+                "orientation": {
+                    "type": "string",
+                    "enum": [
+                        "L",
+                        "P"
+                    ]
+                },
+                "primary_color": {
+                    "type": "string"
+                }
+            }
+        },
+        "insightshandlers.WebEventPayload": {
+            "type": "object",
+            "required": [
+                "event_type",
+                "session_id"
+            ],
+            "properties": {
+                "event_type": {
+                    "type": "string",
+                    "enum": [
+                        "visit",
+                        "signup",
+                        "checkout",
+                        "purchase"
+                    ]
+                },
+                "path": {
+                    "type": "string",
+                    "maxLength": 255
+                },
+                "session_id": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "minLength": 8
                 }
             }
         },
@@ -19996,6 +23314,41 @@
                 }
             }
         },
+        "reportdomain.ChurnRiskAnalysis": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "factors": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "manager_email": {
+                    "type": "string"
+                },
+                "manager_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "preferred_branch_id": {
+                    "type": "string"
+                },
+                "risk_score": {
+                    "type": "integer"
+                },
+                "user_id": {
+                    "type": "string"
+                }
+            }
+        },
         "reportdomain.ClassCapacityStats": {
             "type": "object",
             "properties": {
@@ -20054,6 +23407,32 @@
                     "items": {
                         "type": "number"
                     }
+                }
+            }
+        },
+        "reportdomain.FinancialReportRow": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "number"
+                },
+                "branch_name": {
+                    "type": "string"
+                },
+                "category": {
+                    "type": "string"
+                },
+                "client_name": {
+                    "type": "string"
+                },
+                "concept": {
+                    "type": "string"
+                },
+                "date": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
                 }
             }
         },
@@ -20187,6 +23566,32 @@
                 },
                 "user_name": {
                     "type": "string"
+                }
+            }
+        },
+        "reportdomain.SalesReportRow": {
+            "type": "object",
+            "properties": {
+                "branch_name": {
+                    "type": "string"
+                },
+                "category": {
+                    "type": "string"
+                },
+                "date": {
+                    "type": "string"
+                },
+                "item_name": {
+                    "type": "string"
+                },
+                "payment_method": {
+                    "type": "string"
+                },
+                "quantity": {
+                    "type": "integer"
+                },
+                "total": {
+                    "type": "number"
                 }
             }
         },
@@ -20500,6 +23905,15 @@
                 "branch_id": {
                     "type": "string"
                 },
+                "cancellation_reason": {
+                    "type": "string"
+                },
+                "cancelled_at": {
+                    "type": "string"
+                },
+                "cancelled_by": {
+                    "type": "string"
+                },
                 "class_id": {
                     "type": "string"
                 },
@@ -20525,6 +23939,9 @@
                     "type": "string"
                 },
                 "starts_at": {
+                    "type": "string"
+                },
+                "status": {
                     "type": "string"
                 },
                 "updated_at": {
@@ -20558,6 +23975,19 @@
                 },
                 "user_name": {
                     "type": "string"
+                }
+            }
+        },
+        "schedulehandlers.CancelClassPayload": {
+            "type": "object",
+            "required": [
+                "reason"
+            ],
+            "properties": {
+                "reason": {
+                    "type": "string",
+                    "maxLength": 1000,
+                    "minLength": 3
                 }
             }
         },
@@ -20767,6 +24197,12 @@
         "ApiKeyAuth": {
             "type": "apiKey",
             "name": "Authorization",
+            "in": "header"
+        },
+        "BIApiKey": {
+            "description": "API key for BI integrations, created in /insights/api-keys",
+            "type": "apiKey",
+            "name": "X-API-Key",
             "in": "header"
         }
     }

@@ -46,6 +46,7 @@ func (h *ScheduleHandlers) ScheduleRoutes(rg *gin.RouterGroup, m *auth.AuthMiddl
 		classRoutes.GET("/:classId", h.GetClassByIDHandler)
 		classRoutes.PUT("/:classId", m.RBACPermission("schedule:update"), h.UpdateClassHandler)
 		classRoutes.DELETE("/:classId", m.RBACPermission("schedule:delete"), h.DeleteClassHandler)
+		classRoutes.PATCH("/:classId/cancel", m.RBACPermission("schedule:cancel"), h.CancelClassHandler)
 	}
 
 	// Class-specific routes

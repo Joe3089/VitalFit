@@ -29,6 +29,11 @@ import (
 // @in							header
 // @name						Authorization
 // @description
+//
+// @securityDefinitions.apikey	BIApiKey
+// @in							header
+// @name						X-API-Key
+// @description				API key for BI integrations, created in /insights/api-keys
 func main() {
 	//initialize config
 	config := config.LoadConfig()

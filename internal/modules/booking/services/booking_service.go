@@ -11,6 +11,7 @@ import (
 	shared_errors "github.com/vitalfit/api/internal/shared/errors"
 	"github.com/vitalfit/api/internal/store"
 	"github.com/vitalfit/api/pkg/pagination"
+	"gorm.io/gorm"
 )
 
 type BookingService struct {
@@ -31,6 +32,10 @@ func (s *BookingService) CreateBooking(ctx context.Context, userID uuid.UUID, cl
 	class, err := s.store.Schedule.GetClassByID(ctx, classID)
 	if err != nil {
 		return uuid.Nil, err
+	}
+
+	if class.Status == scheduledomain.ClassStatusCancelled {
+		return uuid.Nil, shared_errors.ErrClassAlreadyCancelled
 	}
 
 	if class.StartsAt.Before(time.Now()) {
@@ -93,7 +98,7 @@ func (s *BookingService) CreateBooking(ctx context.Context, userID uuid.UUID, cl
 // ------------------------------------------------------------
 //
 
-func (s *BookingService) CancelBooking(ctx context.Context, bookingID uuid.UUID) error {
+func (s *BookingService) CancelBooking(ctx context.Context, bookingID uuid.UUID, requesterID *uuid.UUID) error {
 	policy, err := s.store.Policies.GetPolicyByKey(ctx, "CLASS_CANCEL_MIN_HOURS")
 	if err != nil {
 		return err
@@ -105,10 +110,16 @@ func (s *BookingService) CancelBooking(ctx context.Context, bookingID uuid.UUID)
 
 	booking, err := s.store.Booking.GetBookingByID(ctx, bookingID)
 	if err != nil {
-		if errors.Is(err, shared_errors.ErrNotFound) {
+		if errors.Is(err, shared_errors.ErrNotFound) || errors.Is(err, gorm.ErrRecordNotFound) {
 			return shared_errors.ErrNotFound
 		}
 		return err
+	}
+	if requesterID != nil && booking.UserID != *requesterID {
+		return shared_errors.ErrForbidden
+	}
+	if booking.Status != bookingdomain.BookingStatusConfirmed {
+		return shared_errors.ErrBookingNotActive
 	}
 	class, err := s.store.Schedule.GetClassByID(ctx, booking.ClassID)
 	if err != nil {

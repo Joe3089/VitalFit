@@ -31,6 +31,7 @@ func NewManager(store store.Storage, appservices appservices.Services, Mailer ma
 		push:        noti,
 		logger:      logger,
 		Mailer:      Mailer,
+		config:      config,
 	}
 }
 
@@ -77,5 +78,15 @@ func (m *Manager) registerRoutes() {
 	_, err = m.cron.AddFunc("@daily", m.UpdateClientScoresCronjob)
 	if err != nil {
 		m.logger.Errorw("Error on update client scores cronjob", "error", err)
+	}
+
+	_, err = m.cron.AddFunc("0 6 * * *", m.DetectKPIAnomaliesCronjob)
+	if err != nil {
+		m.logger.Errorw("Error on kpi anomalies cronjob", "error", err)
+	}
+
+	_, err = m.cron.AddFunc("@hourly", m.SendScheduledReportsCronjob)
+	if err != nil {
+		m.logger.Errorw("Error on scheduled reports cronjob", "error", err)
 	}
 }

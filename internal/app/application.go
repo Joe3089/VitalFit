@@ -127,6 +127,12 @@ func (app *application) Mount() http.Handler {
 		//llm
 		app.Handlers.LLMHandlers.LLMRoutes(v1, m)
 
+		//crm: feedback, tags, segments, nps, contact
+		app.Handlers.CRMHandlers.CRMRoutes(v1, m)
+
+		//insights: advanced analytics, report automation and BI API
+		app.Handlers.InsightsHandlers.InsightsRoutes(v1, m)
+
 		v1.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	}

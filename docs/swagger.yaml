@@ -169,6 +169,27 @@ definitions:
       updated_at:
         type: string
     type: object
+  authdomain.SecuritySettings:
+    properties:
+      expiration_days:
+        type: integer
+      min_length:
+        type: integer
+      require_lowercase:
+        type: boolean
+      require_number:
+        type: boolean
+      require_special:
+        type: boolean
+      require_uppercase:
+        type: boolean
+      two_factor_required:
+        type: boolean
+      updated_at:
+        type: string
+      updated_by:
+        type: string
+    type: object
   authdomain.Session:
     properties:
       client_ip:
@@ -446,7 +467,9 @@ definitions:
       confirm_password:
         type: string
       password:
-        minLength: 8
+        description: Complexity rules come from the configurable password policy (HU-ADMIN-07).
+        maxLength: 72
+        minLength: 6
         type: string
       token:
         type: string
@@ -455,15 +478,60 @@ definitions:
     - password
     - token
     type: object
+  authhandlers.SecuritySettingsPayload:
+    properties:
+      expiration_days:
+        maximum: 3650
+        minimum: 0
+        type: integer
+      min_length:
+        maximum: 72
+        minimum: 6
+        type: integer
+      require_lowercase:
+        type: boolean
+      require_number:
+        type: boolean
+      require_special:
+        type: boolean
+      require_uppercase:
+        type: boolean
+      two_factor_required:
+        type: boolean
+    required:
+    - min_length
+    - require_lowercase
+    - require_number
+    - require_special
+    - require_uppercase
+    - two_factor_required
+    type: object
+  authhandlers.TwoFactorResendPayload:
+    properties:
+      challenge_id:
+        type: string
+    required:
+    - challenge_id
+    type: object
+  authhandlers.TwoFactorVerifyPayload:
+    properties:
+      challenge_id:
+        type: string
+      code:
+        type: string
+    required:
+    - challenge_id
+    - code
+    type: object
   authhandlers.UpdatePassswordPayload:
     properties:
       confirm_password:
         type: string
       current_password:
-        minLength: 8
         type: string
       new_password:
-        minLength: 8
+        maxLength: 72
+        minLength: 6
         type: string
     required:
     - confirm_password
@@ -475,7 +543,8 @@ definitions:
       confirm_password:
         type: string
       password:
-        minLength: 8
+        maxLength: 72
+        minLength: 6
         type: string
     required:
     - confirm_password
@@ -570,6 +639,31 @@ definitions:
     - BranchPaymentVisibilityClient
     - BranchPaymentVisibilityStaff
     - BranchPaymentVisibilityAll
+  billingdomain.InvoiceAdjustment:
+    properties:
+      adjustment_id:
+        type: string
+      amount:
+        type: number
+      applied_by:
+        type: string
+      applied_by_name:
+        type: string
+      created_at:
+        type: string
+      discount_type:
+        type: string
+      discount_value:
+        type: number
+      invoice_id:
+        type: string
+      new_total:
+        type: number
+      previous_total:
+        type: number
+      reason:
+        type: string
+    type: object
   billingdomain.PaymentMethodTypeEnum:
     enum:
     - Cash
@@ -753,6 +847,24 @@ definitions:
         type: string
       prefix:
         type: string
+    type: object
+  billinghandlers.InvoiceAdjustmentPayload:
+    properties:
+      discount_type:
+        enum:
+        - Percentage
+        - FixedAmount
+        type: string
+      discount_value:
+        type: number
+      reason:
+        maxLength: 1000
+        minLength: 5
+        type: string
+    required:
+    - discount_type
+    - discount_value
+    - reason
     type: object
   billinghandlers.InvoiceItemResponse:
     properties:
@@ -1372,6 +1484,714 @@ definitions:
         type: number
       startAt:
         type: string
+    type: object
+  crmdomain.ClientFeedback:
+    properties:
+      branch_id:
+        type: string
+      created_at:
+        type: string
+      created_by:
+        type: string
+      description:
+        type: string
+      feedback_id:
+        type: string
+      resolution_notes:
+        type: string
+      resolved_at:
+        type: string
+      resolved_by:
+        type: string
+      status:
+        $ref: '#/definitions/crmdomain.FeedbackStatus'
+      subject:
+        type: string
+      type:
+        $ref: '#/definitions/crmdomain.FeedbackType'
+      updated_at:
+        type: string
+      user_id:
+        type: string
+    type: object
+  crmdomain.ClientScoreBreakdown:
+    properties:
+      category:
+        type: string
+      frequency_score:
+        type: number
+      invoices_on_time:
+        type: integer
+      invoices_total:
+        type: integer
+      punctuality_score:
+        type: number
+      referral_score:
+        type: number
+      score:
+        type: integer
+      scoring_weight_note:
+        type: string
+      user_id:
+        type: string
+      visits_90d:
+        type: integer
+    type: object
+  crmdomain.ClientTag:
+    properties:
+      color:
+        type: string
+      created_at:
+        type: string
+      name:
+        type: string
+      tag_id:
+        type: string
+    type: object
+  crmdomain.ContactMessage:
+    properties:
+      branch_id:
+        type: string
+      created_at:
+        type: string
+      email:
+        type: string
+      message:
+        type: string
+      message_id:
+        type: string
+      name:
+        type: string
+      phone:
+        type: string
+      status:
+        type: string
+      subject:
+        type: string
+    type: object
+  crmdomain.FeedbackStatus:
+    enum:
+    - open
+    - in_progress
+    - resolved
+    - closed
+    type: string
+    x-enum-varnames:
+    - FeedbackOpen
+    - FeedbackInProgress
+    - FeedbackResolved
+    - FeedbackClosed
+  crmdomain.FeedbackType:
+    enum:
+    - complaint
+    - suggestion
+    - compliment
+    type: string
+    x-enum-varnames:
+    - FeedbackComplaint
+    - FeedbackSuggestion
+    - FeedbackCompliment
+  crmdomain.FeedbackView:
+    properties:
+      branch_id:
+        type: string
+      branch_name:
+        type: string
+      client_email:
+        type: string
+      client_name:
+        type: string
+      created_at:
+        type: string
+      created_by:
+        type: string
+      description:
+        type: string
+      feedback_id:
+        type: string
+      resolution_notes:
+        type: string
+      resolved_at:
+        type: string
+      resolved_by:
+        type: string
+      status:
+        $ref: '#/definitions/crmdomain.FeedbackStatus'
+      subject:
+        type: string
+      type:
+        $ref: '#/definitions/crmdomain.FeedbackType'
+      updated_at:
+        type: string
+      user_id:
+        type: string
+    type: object
+  crmdomain.SegmentCount:
+    properties:
+      category:
+        type: string
+      total:
+        type: integer
+    type: object
+  crmdomain.TagWithCount:
+    properties:
+      client_count:
+        type: integer
+      color:
+        type: string
+      created_at:
+        type: string
+      name:
+        type: string
+      tag_id:
+        type: string
+    type: object
+  crmhandlers.AssignTagPayload:
+    properties:
+      tag_id:
+        type: string
+    required:
+    - tag_id
+    type: object
+  crmhandlers.ContactPayload:
+    properties:
+      branch_id:
+        type: string
+      email:
+        maxLength: 255
+        type: string
+      message:
+        maxLength: 5000
+        type: string
+      name:
+        maxLength: 150
+        type: string
+      phone:
+        maxLength: 50
+        type: string
+      subject:
+        maxLength: 255
+        type: string
+    required:
+    - email
+    - message
+    - name
+    - subject
+    type: object
+  crmhandlers.FeedbackPayload:
+    properties:
+      branch_id:
+        type: string
+      description:
+        maxLength: 5000
+        type: string
+      subject:
+        maxLength: 255
+        type: string
+      type:
+        enum:
+        - complaint
+        - suggestion
+        - compliment
+        type: string
+      user_id:
+        type: string
+    required:
+    - description
+    - subject
+    - type
+    type: object
+  crmhandlers.NPSPayload:
+    properties:
+      branch_id:
+        type: string
+      channel:
+        type: string
+      comment:
+        maxLength: 2000
+        type: string
+      score:
+        maximum: 10
+        minimum: 0
+        type: integer
+    required:
+    - score
+    type: object
+  crmhandlers.StatusPayload:
+    properties:
+      status:
+        type: string
+    required:
+    - status
+    type: object
+  crmhandlers.TagPayload:
+    properties:
+      color:
+        type: string
+      name:
+        maxLength: 60
+        type: string
+    required:
+    - name
+    type: object
+  crmhandlers.UpdateFeedbackPayload:
+    properties:
+      resolution_notes:
+        maxLength: 5000
+        type: string
+      status:
+        enum:
+        - open
+        - in_progress
+        - resolved
+        - closed
+        type: string
+    required:
+    - status
+    type: object
+  insightsdomain.BIAPIKey:
+    properties:
+      created_at:
+        type: string
+      created_by:
+        type: string
+      expires_at:
+        type: string
+      key_id:
+        type: string
+      key_prefix:
+        type: string
+      last_used_at:
+        type: string
+      name:
+        type: string
+      revoked_at:
+        type: string
+    type: object
+  insightsdomain.BenchmarkReport:
+    properties:
+      branches:
+        items:
+          $ref: '#/definitions/insightsdomain.BenchmarkRow'
+        type: array
+      network_average:
+        additionalProperties:
+          format: float64
+          type: number
+        type: object
+    type: object
+  insightsdomain.BenchmarkRow:
+    properties:
+      active_members:
+        type: integer
+      best_in:
+        items:
+          type: string
+        type: array
+      booked:
+        type: integer
+      branch_id:
+        type: string
+      branch_name:
+        type: string
+      capacity:
+        type: integer
+      check_ins:
+        type: integer
+      indexes:
+        additionalProperties:
+          format: float64
+          type: number
+        type: object
+      new_clients:
+        type: integer
+      nps:
+        type: number
+      occupancy_rate:
+        type: number
+      rank:
+        type: integer
+      revenue:
+        type: number
+      score:
+        type: number
+    type: object
+  insightsdomain.ConversionDay:
+    properties:
+      day:
+        type: string
+      purchases:
+        type: integer
+      signups:
+        type: integer
+      visitors:
+        type: integer
+    type: object
+  insightsdomain.ConversionStats:
+    properties:
+      checkouts:
+        type: integer
+      conversion_rate:
+        type: number
+      daily:
+        items:
+          $ref: '#/definitions/insightsdomain.ConversionDay'
+        type: array
+      purchases:
+        type: integer
+      signup_rate:
+        type: number
+      signups:
+        type: integer
+      visitors:
+        type: integer
+    type: object
+  insightsdomain.KPIAlert:
+    properties:
+      acknowledged_at:
+        type: string
+      acknowledged_by:
+        type: string
+      alert_date:
+        type: string
+      alert_id:
+        type: string
+      branch_id:
+        type: string
+      branch_name:
+        type: string
+      created_at:
+        type: string
+      expected_value:
+        type: number
+      message:
+        type: string
+      metric:
+        type: string
+      observed_value:
+        type: number
+      severity:
+        type: string
+      z_score:
+        type: number
+    type: object
+  insightsdomain.NPSBranch:
+    properties:
+      average_score:
+        type: number
+      branch_id:
+        type: string
+      branch_name:
+        type: string
+      detractors:
+        type: integer
+      nps:
+        type: number
+      passives:
+        type: integer
+      promoters:
+        type: integer
+      responses:
+        type: integer
+    type: object
+  insightsdomain.NPSComment:
+    properties:
+      branch_name:
+        type: string
+      comment:
+        type: string
+      created_at:
+        type: string
+      score:
+        type: integer
+    type: object
+  insightsdomain.NPSMonthPoint:
+    properties:
+      detractors:
+        type: integer
+      month:
+        type: string
+      nps:
+        type: number
+      promoters:
+        type: integer
+      responses:
+        type: integer
+    type: object
+  insightsdomain.NPSSummary:
+    properties:
+      average_score:
+        type: number
+      branch_id:
+        type: string
+      branch_name:
+        type: string
+      by_branch:
+        items:
+          $ref: '#/definitions/insightsdomain.NPSBranch'
+        type: array
+      detractors:
+        type: integer
+      monthly:
+        items:
+          $ref: '#/definitions/insightsdomain.NPSMonthPoint'
+        type: array
+      nps:
+        type: number
+      passives:
+        type: integer
+      promoters:
+        type: integer
+      recent_comments:
+        items:
+          $ref: '#/definitions/insightsdomain.NPSComment'
+        type: array
+      responses:
+        type: integer
+    type: object
+  insightsdomain.ReportSchedule:
+    properties:
+      branch_id:
+        type: string
+      created_at:
+        type: string
+      created_by:
+        type: string
+      format:
+        type: string
+      frequency:
+        type: string
+      is_active:
+        type: boolean
+      last_sent_at:
+        type: string
+      name:
+        type: string
+      recipients:
+        items:
+          type: string
+        type: array
+      report_type:
+        type: string
+      schedule_id:
+        type: string
+      template_id:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  insightsdomain.ReportShareLink:
+    properties:
+      access_count:
+        type: integer
+      branch_id:
+        type: string
+      created_at:
+        type: string
+      created_by:
+        type: string
+      expires_at:
+        type: string
+      format:
+        type: string
+      link_id:
+        type: string
+      period_end:
+        type: string
+      period_start:
+        type: string
+      report_type:
+        type: string
+      template_id:
+        type: string
+    type: object
+  insightsdomain.ReportTemplate:
+    properties:
+      created_at:
+        type: string
+      footer_text:
+        type: string
+      header_text:
+        type: string
+      is_default:
+        type: boolean
+      name:
+        type: string
+      orientation:
+        type: string
+      primary_color:
+        type: string
+      template_id:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  insightsdomain.RevPASReport:
+    properties:
+      available_spaces:
+        type: integer
+      by_branch:
+        items:
+          $ref: '#/definitions/insightsdomain.RevPASRow'
+        type: array
+      by_service:
+        items:
+          $ref: '#/definitions/insightsdomain.RevPASRow'
+        type: array
+      revenue:
+        type: number
+      revpas:
+        type: number
+    type: object
+  insightsdomain.RevPASRow:
+    properties:
+      available_spaces:
+        type: integer
+      booked_spaces:
+        type: integer
+      branch_id:
+        type: string
+      branch_name:
+        type: string
+      occupancy_rate:
+        type: number
+      revenue:
+        type: number
+      revpas:
+        type: number
+      service_id:
+        type: string
+      service_name:
+        type: string
+    type: object
+  insightshandlers.APIKeyPayload:
+    properties:
+      expires_at:
+        type: string
+      name:
+        maxLength: 120
+        type: string
+    required:
+    - name
+    type: object
+  insightshandlers.SchedulePayload:
+    properties:
+      branch_id:
+        type: string
+      format:
+        enum:
+        - csv
+        - excel
+        - pdf
+        type: string
+      frequency:
+        enum:
+        - daily
+        - weekly
+        - monthly
+        type: string
+      is_active:
+        type: boolean
+      name:
+        maxLength: 120
+        type: string
+      recipients:
+        items:
+          type: string
+        maxItems: 20
+        minItems: 1
+        type: array
+      report_type:
+        enum:
+        - financial
+        - sales
+        - clients
+        - benchmark
+        type: string
+      template_id:
+        type: string
+    required:
+    - format
+    - frequency
+    - name
+    - recipients
+    - report_type
+    type: object
+  insightshandlers.ShareLinkPayload:
+    properties:
+      branch_id:
+        type: string
+      end:
+        type: string
+      expires_in_hours:
+        maximum: 720
+        minimum: 1
+        type: integer
+      format:
+        enum:
+        - csv
+        - excel
+        - pdf
+        type: string
+      report_type:
+        enum:
+        - financial
+        - sales
+        - clients
+        - benchmark
+        type: string
+      start:
+        type: string
+      template_id:
+        type: string
+    required:
+    - expires_in_hours
+    - format
+    - report_type
+    type: object
+  insightshandlers.TemplatePayload:
+    properties:
+      footer_text:
+        maxLength: 255
+        type: string
+      header_text:
+        maxLength: 255
+        type: string
+      is_default:
+        type: boolean
+      name:
+        maxLength: 120
+        type: string
+      orientation:
+        enum:
+        - L
+        - P
+        type: string
+      primary_color:
+        type: string
+    required:
+    - name
+    - primary_color
+    type: object
+  insightshandlers.WebEventPayload:
+    properties:
+      event_type:
+        enum:
+        - visit
+        - signup
+        - checkout
+        - purchase
+        type: string
+      path:
+        maxLength: 255
+        type: string
+      session_id:
+        maxLength: 64
+        minLength: 8
+        type: string
+    required:
+    - event_type
+    - session_id
     type: object
   instructordomain.InstructorSummary:
     properties:
@@ -2548,6 +3368,29 @@ definitions:
       value:
         type: number
     type: object
+  reportdomain.ChurnRiskAnalysis:
+    properties:
+      email:
+        type: string
+      factors:
+        items:
+          type: string
+        type: array
+      manager_email:
+        type: string
+      manager_id:
+        type: string
+      name:
+        type: string
+      phone:
+        type: string
+      preferred_branch_id:
+        type: string
+      risk_score:
+        type: integer
+      user_id:
+        type: string
+    type: object
   reportdomain.ClassCapacityStats:
     properties:
       class_name:
@@ -2588,6 +3431,23 @@ definitions:
         items:
           type: number
         type: array
+    type: object
+  reportdomain.FinancialReportRow:
+    properties:
+      amount:
+        type: number
+      branch_name:
+        type: string
+      category:
+        type: string
+      client_name:
+        type: string
+      concept:
+        type: string
+      date:
+        type: string
+      status:
+        type: string
     type: object
   reportdomain.FinancialSummary:
     properties:
@@ -2675,6 +3535,23 @@ definitions:
         type: string
       user_name:
         type: string
+    type: object
+  reportdomain.SalesReportRow:
+    properties:
+      branch_name:
+        type: string
+      category:
+        type: string
+      date:
+        type: string
+      item_name:
+        type: string
+      payment_method:
+        type: string
+      quantity:
+        type: integer
+      total:
+        type: number
     type: object
   reportdomain.StackedChartData:
     properties:
@@ -2887,6 +3764,12 @@ definitions:
     properties:
       branch_id:
         type: string
+      cancellation_reason:
+        type: string
+      cancelled_at:
+        type: string
+      cancelled_by:
+        type: string
       class_id:
         type: string
       created_at:
@@ -2904,6 +3787,8 @@ definitions:
       service_id:
         type: string
       starts_at:
+        type: string
+      status:
         type: string
       updated_at:
         type: string
@@ -2926,6 +3811,15 @@ definitions:
         type: string
       user_name:
         type: string
+    type: object
+  schedulehandlers.CancelClassPayload:
+    properties:
+      reason:
+        maxLength: 1000
+        minLength: 3
+        type: string
+    required:
+    - reason
     type: object
   schedulehandlers.ClassResponse:
     properties:
@@ -3624,6 +4518,42 @@ paths:
       summary: Assign permissions to a role
       tags:
       - RBAC (Admin)
+  /admin/security-settings:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/authdomain.SecuritySettings'
+      security:
+      - ApiKeyAuth: []
+      summary: Get security settings (password policy and 2FA)
+      tags:
+      - Admin
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: Settings
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/authhandlers.SecuritySettingsPayload'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/authdomain.SecuritySettings'
+      security:
+      - ApiKeyAuth: []
+      summary: Update security settings (password policy and 2FA)
+      tags:
+      - Admin
   /audit-logs:
     get:
       description: Retrieves a paginated list of all audit logs.
@@ -3743,6 +4673,59 @@ paths:
       summary: Get user audit logs
       tags:
       - Audit
+  /auth/2fa/resend:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Challenge
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/authhandlers.TwoFactorResendPayload'
+      responses:
+        "204":
+          description: No Content
+      summary: Resend the two-factor authentication code
+      tags:
+      - Auth
+  /auth/2fa/verify:
+    post:
+      consumes:
+      - application/json
+      description: Completes a dashboard login that returned two_factor_required=true.
+      parameters:
+      - description: Challenge and 6-digit code
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/authhandlers.TwoFactorVerifyPayload'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            properties:
+              password_expired:
+                type: boolean
+              refresh_token:
+                type: string
+              token:
+                type: string
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            properties:
+              error:
+                type: string
+            type: object
+      summary: Verify the two-factor authentication code
+      tags:
+      - Auth
   /auth/activate:
     put:
       consumes:
@@ -3925,6 +4908,19 @@ paths:
                 type: string
             type: object
       summary: Login with OAuth provider (Google, etc.)
+      tags:
+      - Auth
+  /auth/password-policy:
+    get:
+      description: Public so login/registration forms can show the password rules.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/authdomain.SecuritySettings'
+      summary: Get the password policy
       tags:
       - Auth
   /auth/password/forgot:
@@ -4182,6 +5178,95 @@ paths:
       summary: Resend Activation Code
       tags:
       - Auth
+  /bi/financial:
+    get:
+      parameters:
+      - description: YYYY-MM-DD
+        in: query
+        name: start
+        type: string
+      - description: YYYY-MM-DD
+        in: query
+        name: end
+        type: string
+      - description: Branch ID
+        in: query
+        name: branch_id
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            properties:
+              data:
+                items:
+                  $ref: '#/definitions/reportdomain.FinancialReportRow'
+                type: array
+            type: object
+      security:
+      - BIApiKey: []
+      summary: 'BI: detailed financial rows'
+      tags:
+      - BI
+  /bi/kpis:
+    get:
+      description: Revenue, check-ins, new clients, active members, occupancy, NPS
+        and web conversion.
+      parameters:
+      - description: YYYY-MM-DD
+        in: query
+        name: start
+        type: string
+      - description: YYYY-MM-DD
+        in: query
+        name: end
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+      security:
+      - BIApiKey: []
+      summary: 'BI: consolidated KPIs for a period'
+      tags:
+      - BI
+  /bi/sales:
+    get:
+      parameters:
+      - description: YYYY-MM-DD
+        in: query
+        name: start
+        type: string
+      - description: YYYY-MM-DD
+        in: query
+        name: end
+        type: string
+      - description: Branch ID
+        in: query
+        name: branch_id
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            properties:
+              data:
+                items:
+                  $ref: '#/definitions/reportdomain.SalesReportRow'
+                type: array
+            type: object
+      security:
+      - BIApiKey: []
+      summary: 'BI: detailed sales rows'
+      tags:
+      - BI
   /billing/checkout:
     post:
       consumes:
@@ -4631,6 +5716,75 @@ paths:
       security:
       - ApiKeyAuth: []
       summary: Get an invoice by ID
+      tags:
+      - Billing
+  /billing/invoices/{invoice_id}/adjustments:
+    get:
+      parameters:
+      - description: Invoice ID
+        in: path
+        name: invoice_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            properties:
+              data:
+                items:
+                  $ref: '#/definitions/billingdomain.InvoiceAdjustment'
+                type: array
+            type: object
+      security:
+      - ApiKeyAuth: []
+      summary: List post-sale discounts of an invoice
+      tags:
+      - Billing
+    post:
+      consumes:
+      - application/json
+      description: |-
+        Reduces the invoice total keeping full traceability (who, when, why, previous/new total).
+        Capped by the GLOBAL_MAX_DISCOUNT commercial policy (accumulated).
+      parameters:
+      - description: Invoice ID
+        in: path
+        name: invoice_id
+        required: true
+        type: string
+      - description: Discount
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/billinghandlers.InvoiceAdjustmentPayload'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/billingdomain.InvoiceAdjustment'
+        "400":
+          description: Bad Request
+          schema:
+            properties:
+              error:
+                type: string
+            type: object
+        "404":
+          description: Not Found
+          schema:
+            properties:
+              error:
+                type: string
+            type: object
+      security:
+      - ApiKeyAuth: []
+      summary: Apply a post-sale discount to an invoice
       tags:
       - Billing
   /billing/invoices/client:
@@ -7399,6 +8553,334 @@ paths:
       summary: Get Client Service Usage
       tags:
       - Access
+  /crm/clients/{id}/score:
+    get:
+      description: 'Score 0-100: frequency (55%), payment punctuality (45%).'
+      parameters:
+      - description: Client ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/crmdomain.ClientScoreBreakdown'
+      security:
+      - ApiKeyAuth: []
+      summary: Get the score breakdown of a client
+      tags:
+      - CRM
+  /crm/clients/{id}/tags:
+    get:
+      parameters:
+      - description: Client ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            properties:
+              data:
+                items:
+                  $ref: '#/definitions/crmdomain.ClientTag'
+                type: array
+            type: object
+      security:
+      - ApiKeyAuth: []
+      summary: Get the tags of a client
+      tags:
+      - CRM
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Client ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Tag
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/crmhandlers.AssignTagPayload'
+      responses:
+        "204":
+          description: No Content
+      security:
+      - ApiKeyAuth: []
+      summary: Assign a tag to a client
+      tags:
+      - CRM
+  /crm/clients/{id}/tags/{tagId}:
+    delete:
+      parameters:
+      - description: Client ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Tag ID
+        in: path
+        name: tagId
+        required: true
+        type: string
+      responses:
+        "204":
+          description: No Content
+      security:
+      - ApiKeyAuth: []
+      summary: Remove a tag from a client
+      tags:
+      - CRM
+  /crm/contact-messages:
+    get:
+      parameters:
+      - description: new | read | answered
+        in: query
+        name: status
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            properties:
+              data:
+                items:
+                  $ref: '#/definitions/crmdomain.ContactMessage'
+                type: array
+              total:
+                type: integer
+            type: object
+      security:
+      - ApiKeyAuth: []
+      summary: List contact form messages
+      tags:
+      - CRM
+  /crm/contact-messages/{id}:
+    patch:
+      consumes:
+      - application/json
+      parameters:
+      - description: Message ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: new | read | answered
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/crmhandlers.StatusPayload'
+      responses:
+        "204":
+          description: No Content
+      security:
+      - ApiKeyAuth: []
+      summary: Update the status of a contact message
+      tags:
+      - CRM
+  /crm/feedback:
+    get:
+      parameters:
+      - description: open | in_progress | resolved | closed
+        in: query
+        name: status
+        type: string
+      - description: complaint | suggestion | compliment
+        in: query
+        name: type
+        type: string
+      - description: Client ID
+        in: query
+        name: user_id
+        type: string
+      - description: Branch ID
+        in: query
+        name: branch_id
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            properties:
+              data:
+                items:
+                  $ref: '#/definitions/crmdomain.FeedbackView'
+                type: array
+              total:
+                type: integer
+            type: object
+      security:
+      - ApiKeyAuth: []
+      summary: List client complaints and suggestions
+      tags:
+      - CRM
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Feedback (user_id required)
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/crmhandlers.FeedbackPayload'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/crmdomain.ClientFeedback'
+      security:
+      - ApiKeyAuth: []
+      summary: Register a complaint or suggestion on behalf of a client
+      tags:
+      - CRM
+  /crm/feedback/{id}:
+    patch:
+      consumes:
+      - application/json
+      parameters:
+      - description: Feedback ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: New status
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/crmhandlers.UpdateFeedbackPayload'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/crmdomain.ClientFeedback'
+      security:
+      - ApiKeyAuth: []
+      summary: Update the status of a complaint or suggestion
+      tags:
+      - CRM
+  /crm/segments:
+    get:
+      parameters:
+      - description: Branch ID
+        in: query
+        name: branch_id
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            properties:
+              data:
+                items:
+                  $ref: '#/definitions/crmdomain.SegmentCount'
+                type: array
+            type: object
+      security:
+      - ApiKeyAuth: []
+      summary: Client count by segment (VIP, Regular, New, AtRisk)
+      tags:
+      - CRM
+  /crm/segments/recalculate:
+    post:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            properties:
+              scored:
+                type: integer
+              segmented:
+                type: integer
+            type: object
+      security:
+      - ApiKeyAuth: []
+      summary: Recalculate client scores and segments now
+      tags:
+      - CRM
+  /crm/tags:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            properties:
+              data:
+                items:
+                  $ref: '#/definitions/crmdomain.TagWithCount'
+                type: array
+            type: object
+      security:
+      - ApiKeyAuth: []
+      summary: List client tags with usage count
+      tags:
+      - CRM
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Tag
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/crmhandlers.TagPayload'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/crmdomain.ClientTag'
+      security:
+      - ApiKeyAuth: []
+      summary: Create a client tag
+      tags:
+      - CRM
+  /crm/tags/{id}:
+    delete:
+      parameters:
+      - description: Tag ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "204":
+          description: No Content
+      security:
+      - ApiKeyAuth: []
+      summary: Delete a client tag
+      tags:
+      - CRM
   /equipment-types:
     get:
       description: Lists all available equipment types in the global catalog with
@@ -7798,6 +9280,544 @@ paths:
       summary: verify service status
       tags:
       - System
+  /insights/alerts:
+    get:
+      parameters:
+      - description: Only unacknowledged (default true)
+        in: query
+        name: open
+        type: boolean
+      - description: Branch ID
+        in: query
+        name: branch_id
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            properties:
+              data:
+                items:
+                  $ref: '#/definitions/insightsdomain.KPIAlert'
+                type: array
+            type: object
+      security:
+      - ApiKeyAuth: []
+      summary: KPI anomaly alerts
+      tags:
+      - Insights
+  /insights/alerts/{id}/ack:
+    patch:
+      parameters:
+      - description: Alert ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "204":
+          description: No Content
+      security:
+      - ApiKeyAuth: []
+      summary: Acknowledge a KPI alert
+      tags:
+      - Insights
+  /insights/alerts/detect:
+    post:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            properties:
+              data:
+                items:
+                  $ref: '#/definitions/insightsdomain.KPIAlert'
+                type: array
+            type: object
+      security:
+      - ApiKeyAuth: []
+      summary: Run anomaly detection now
+      tags:
+      - Insights
+  /insights/api-keys:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            properties:
+              data:
+                items:
+                  $ref: '#/definitions/insightsdomain.BIAPIKey'
+                type: array
+            type: object
+      security:
+      - ApiKeyAuth: []
+      summary: List BI API keys
+      tags:
+      - Insights
+    post:
+      consumes:
+      - application/json
+      description: The plain key is returned only once. Send it in the X-API-Key header
+        to /v1/bi/*.
+      parameters:
+      - description: Key
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/insightshandlers.APIKeyPayload'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            properties:
+              api_key:
+                type: string
+              key:
+                $ref: '#/definitions/insightsdomain.BIAPIKey'
+            type: object
+      security:
+      - ApiKeyAuth: []
+      summary: Create a BI API key
+      tags:
+      - Insights
+  /insights/api-keys/{id}:
+    delete:
+      parameters:
+      - description: Key ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "204":
+          description: No Content
+      security:
+      - ApiKeyAuth: []
+      summary: Revoke a BI API key
+      tags:
+      - Insights
+  /insights/benchmark:
+    get:
+      parameters:
+      - description: YYYY-MM-DD
+        in: query
+        name: start
+        type: string
+      - description: YYYY-MM-DD
+        in: query
+        name: end
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/insightsdomain.BenchmarkReport'
+      security:
+      - ApiKeyAuth: []
+      summary: Automatic benchmarking between branches
+      tags:
+      - Insights
+  /insights/churn-risk:
+    get:
+      parameters:
+      - description: Preferred branch
+        in: query
+        name: branch_id
+        type: string
+      - description: Minimum risk score 0-100 (default 40)
+        in: query
+        name: min_score
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            properties:
+              data:
+                items:
+                  $ref: '#/definitions/reportdomain.ChurnRiskAnalysis'
+                type: array
+            type: object
+      security:
+      - ApiKeyAuth: []
+      summary: Clients at risk of churn (predictive score)
+      tags:
+      - Insights
+  /insights/conversion:
+    get:
+      parameters:
+      - description: 'YYYY-MM-DD (default: 30 days ago)'
+        in: query
+        name: start
+        type: string
+      - description: 'YYYY-MM-DD (default: today)'
+        in: query
+        name: end
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/insightsdomain.ConversionStats'
+      security:
+      - ApiKeyAuth: []
+      summary: Web conversion rate
+      tags:
+      - Insights
+  /insights/nps:
+    get:
+      parameters:
+      - description: YYYY-MM-DD
+        in: query
+        name: start
+        type: string
+      - description: YYYY-MM-DD
+        in: query
+        name: end
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/insightsdomain.NPSSummary'
+      security:
+      - ApiKeyAuth: []
+      summary: Net Promoter Score summary
+      tags:
+      - Insights
+  /insights/reports/download:
+    get:
+      parameters:
+      - description: financial | sales | clients | benchmark
+        in: query
+        name: type
+        required: true
+        type: string
+      - description: csv | excel | pdf
+        in: query
+        name: format
+        required: true
+        type: string
+      - description: Template (default template if empty)
+        in: query
+        name: template_id
+        type: string
+      - description: Branch ID
+        in: query
+        name: branch_id
+        type: string
+      - description: YYYY-MM-DD
+        in: query
+        name: start
+        type: string
+      - description: YYYY-MM-DD
+        in: query
+        name: end
+        type: string
+      produces:
+      - application/octet-stream
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Download a report using a visual template
+      tags:
+      - Insights
+  /insights/revpas:
+    get:
+      parameters:
+      - description: YYYY-MM-DD
+        in: query
+        name: start
+        type: string
+      - description: YYYY-MM-DD
+        in: query
+        name: end
+        type: string
+      - description: Branch ID
+        in: query
+        name: branch_id
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/insightsdomain.RevPASReport'
+      security:
+      - ApiKeyAuth: []
+      summary: Revenue per available space (RevPAS)
+      tags:
+      - Insights
+  /insights/schedules:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            properties:
+              data:
+                items:
+                  $ref: '#/definitions/insightsdomain.ReportSchedule'
+                type: array
+            type: object
+      security:
+      - ApiKeyAuth: []
+      summary: List scheduled reports
+      tags:
+      - Insights
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Schedule
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/insightshandlers.SchedulePayload'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/insightsdomain.ReportSchedule'
+      security:
+      - ApiKeyAuth: []
+      summary: Schedule a report to be emailed periodically
+      tags:
+      - Insights
+  /insights/schedules/{id}:
+    delete:
+      parameters:
+      - description: Schedule ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "204":
+          description: No Content
+      security:
+      - ApiKeyAuth: []
+      summary: Delete a scheduled report
+      tags:
+      - Insights
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: Schedule ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Schedule
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/insightshandlers.SchedulePayload'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/insightsdomain.ReportSchedule'
+      security:
+      - ApiKeyAuth: []
+      summary: Update a scheduled report
+      tags:
+      - Insights
+  /insights/schedules/{id}/send:
+    post:
+      parameters:
+      - description: Schedule ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "204":
+          description: No Content
+      security:
+      - ApiKeyAuth: []
+      summary: Send a scheduled report immediately
+      tags:
+      - Insights
+  /insights/share-links:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            properties:
+              data:
+                items:
+                  $ref: '#/definitions/insightsdomain.ReportShareLink'
+                type: array
+            type: object
+      security:
+      - ApiKeyAuth: []
+      summary: List active shared report links
+      tags:
+      - Insights
+    post:
+      consumes:
+      - application/json
+      description: The URL is returned only once; the server stores a hash of the
+        token.
+      parameters:
+      - description: Link
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/insightshandlers.ShareLinkPayload'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            properties:
+              link:
+                $ref: '#/definitions/insightsdomain.ReportShareLink'
+              url:
+                type: string
+            type: object
+      security:
+      - ApiKeyAuth: []
+      summary: Create a temporary URL to share a report with third parties
+      tags:
+      - Insights
+  /insights/share-links/{id}:
+    delete:
+      parameters:
+      - description: Link ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "204":
+          description: No Content
+      security:
+      - ApiKeyAuth: []
+      summary: Revoke a shared report link
+      tags:
+      - Insights
+  /insights/templates:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            properties:
+              data:
+                items:
+                  $ref: '#/definitions/insightsdomain.ReportTemplate'
+                type: array
+            type: object
+      security:
+      - ApiKeyAuth: []
+      summary: List report templates
+      tags:
+      - Insights
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Template
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/insightshandlers.TemplatePayload'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/insightsdomain.ReportTemplate'
+      security:
+      - ApiKeyAuth: []
+      summary: Create a report template
+      tags:
+      - Insights
+  /insights/templates/{id}:
+    delete:
+      parameters:
+      - description: Template ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "204":
+          description: No Content
+      security:
+      - ApiKeyAuth: []
+      summary: Delete a report template (the default one cannot be deleted)
+      tags:
+      - Insights
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: Template ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Template
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/insightshandlers.TemplatePayload'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/insightsdomain.ReportTemplate'
+      security:
+      - ApiKeyAuth: []
+      summary: Update a report template
+      tags:
+      - Insights
   /instructor:
     get:
       consumes:
@@ -8762,6 +10782,49 @@ paths:
       summary: Update a promotion
       tags:
       - Marketing
+  /me/feedback:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            properties:
+              data:
+                items:
+                  $ref: '#/definitions/crmdomain.FeedbackView'
+                type: array
+              total:
+                type: integer
+            type: object
+      security:
+      - ApiKeyAuth: []
+      summary: List my complaints and suggestions
+      tags:
+      - CRM
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Feedback
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/crmhandlers.FeedbackPayload'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/crmdomain.ClientFeedback'
+      security:
+      - ApiKeyAuth: []
+      summary: Submit my own complaint or suggestion
+      tags:
+      - CRM
   /membership-plans:
     get:
       description: Retrieves a paginated list of all membership types, with optional
@@ -9382,6 +11445,25 @@ paths:
       summary: Get unread notifications count
       tags:
       - Notifications
+  /nps:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Score 0-10
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/crmhandlers.NPSPayload'
+      responses:
+        "201":
+          description: Created
+      security:
+      - ApiKeyAuth: []
+      summary: Submit a Net Promoter Score answer
+      tags:
+      - CRM
   /packages:
     get:
       description: Retrieves a paginated list of all available packages, with optional
@@ -9809,6 +11891,23 @@ paths:
       summary: List all public services for a branch
       tags:
       - Public
+  /public/contact:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Contact message
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/crmhandlers.ContactPayload'
+      responses:
+        "201":
+          description: Created
+      summary: Send a message from the public contact form
+      tags:
+      - CRM
   /public/membership-plans:
     get:
       description: Retrieves a paginated list of all public membership types, with
@@ -9924,6 +12023,36 @@ paths:
       summary: List all public packages
       tags:
       - Public
+  /public/reports/shared/{token}:
+    get:
+      parameters:
+      - description: Share token
+        in: path
+        name: token
+        required: true
+        type: string
+      produces:
+      - application/octet-stream
+      responses:
+        "200":
+          description: OK
+        "404":
+          description: Not Found
+          schema:
+            properties:
+              error:
+                type: string
+            type: object
+        "410":
+          description: Gone
+          schema:
+            properties:
+              error:
+                type: string
+            type: object
+      summary: Download a report from a temporary shared URL
+      tags:
+      - Insights
   /public/services:
     get:
       description: Retrieves a paginated list of all public services with optional
@@ -9995,6 +12124,24 @@ paths:
       summary: List all public services
       tags:
       - Public
+  /public/web-events:
+    post:
+      consumes:
+      - application/json
+      description: Anonymous tracking used to compute the web conversion rate.
+      parameters:
+      - description: Event
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/insightshandlers.WebEventPayload'
+      responses:
+        "202":
+          description: Accepted
+      summary: Track an e-commerce funnel event
+      tags:
+      - Insights
   /reports/analysis/rfm:
     get:
       description: |-
@@ -12170,6 +14317,56 @@ paths:
       summary: Get class bookings count
       tags:
       - Booking
+  /schedule/{classId}/cancel:
+    patch:
+      consumes:
+      - application/json
+      description: |-
+        Cancels the class keeping the reason for traceability. Confirmed bookings are cancelled,
+        consumed credits are refunded and booked clients are notified.
+      parameters:
+      - description: Class ID
+        in: path
+        name: classId
+        required: true
+        type: string
+      - description: Cancellation reason
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/schedulehandlers.CancelClassPayload'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            properties:
+              affected_bookings:
+                type: integer
+              message:
+                type: string
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            properties:
+              error:
+                type: string
+            type: object
+        "404":
+          description: Not Found
+          schema:
+            properties:
+              error:
+                type: string
+            type: object
+      security:
+      - ApiKeyAuth: []
+      summary: Cancel a scheduled class
+      tags:
+      - Schedule
   /schedule/branch/{branchId}/client/{userId}:
     get:
       description: Returns the available classes for a specific client in a specific
@@ -13560,5 +15757,10 @@ securityDefinitions:
   ApiKeyAuth:
     in: header
     name: Authorization
+    type: apiKey
+  BIApiKey:
+    description: API key for BI integrations, created in /insights/api-keys
+    in: header
+    name: X-API-Key
     type: apiKey
 swagger: "2.0"

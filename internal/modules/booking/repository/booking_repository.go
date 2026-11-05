@@ -94,20 +94,24 @@ func (s *BookingStore) CancelBooking(ctx context.Context, bookingID uuid.UUID) e
 
 func (s *BookingStore) CancelBookingAndUpdateBalance(ctx context.Context, booking *bookingdomain.Booking, shouldRefundBalance bool) error {
 	return s.db.WithContext(ctx).Transaction(func(tx *gorm.DB) error {
-		if shouldRefundBalance && booking.Class.ClassID != uuid.Nil {
-			result := tx.Model(&productsdomain.ClientServiceBalance{}).
-				Where("user_id = ? AND service_id = ?", booking.UserID, booking.Class.ServiceID).
-				Update("balance", gorm.Expr("balance + 1"))
-
-			if result.Error != nil {
-				return result.Error
-			}
+		// Only a confirmed booking can be cancelled; the conditional update makes
+		// concurrent/double cancellations unable to refund the balance twice.
+		result := tx.Model(&bookingdomain.Booking{}).
+			Where("booking_id = ? AND status = ?", booking.BookingID, bookingdomain.BookingStatusConfirmed).
+			Update("status", bookingdomain.BookingStatusCancelledByUser)
+		if result.Error != nil {
+			return result.Error
+		}
+		if result.RowsAffected == 0 {
+			return shared_errors.ErrBookingNotActive
 		}
 
-		if err := tx.Model(&bookingdomain.Booking{}).
-			Where("booking_id = ?", booking.BookingID).
-			Update("status", bookingdomain.BookingStatusCancelledByUser).Error; err != nil {
-			return err
+		if shouldRefundBalance && booking.Class.ClassID != uuid.Nil {
+			if err := tx.Model(&productsdomain.ClientServiceBalance{}).
+				Where("user_id = ? AND service_id = ?", booking.UserID, booking.Class.ServiceID).
+				Update("balance", gorm.Expr("balance + 1")).Error; err != nil {
+				return err
+			}
 		}
 		return nil
 	})

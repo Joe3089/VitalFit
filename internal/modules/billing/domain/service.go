@@ -46,6 +46,9 @@ type BillingServiceInterface interface {
 	UpdatePaymentStatus(ctx context.Context, payment *Payment) error
 	UpdateInvoiceStatus(ctx context.Context, invoice *Invoice) error
 	ActivateInvoiceItems(ctx context.Context, invoice *Invoice) error
+	// Post-sale discounts (HU-MEM-04)
+	ApplyPostSaleDiscount(ctx context.Context, adj *InvoiceAdjustment) (*InvoiceAdjustment, error)
+	ListInvoiceAdjustments(ctx context.Context, invoiceID uuid.UUID) ([]InvoiceAdjustment, error)
 	GetClientIvoices(ctx context.Context, userID uuid.UUID, fq pagination.PaginatedFeedQuery) ([]*Invoice, int64, error)
 	GetTaxRateByBranchID(ctx context.Context, branchID uuid.UUID) (decimal.Decimal, error)
 

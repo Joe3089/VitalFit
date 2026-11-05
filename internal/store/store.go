@@ -17,8 +17,12 @@ import (
 	clientsrepository "github.com/vitalfit/api/internal/modules/clients/repository"
 	combosdomain "github.com/vitalfit/api/internal/modules/combos/domain"
 	combosrepository "github.com/vitalfit/api/internal/modules/combos/repository"
+	crmdomain "github.com/vitalfit/api/internal/modules/crm/domain"
+	crmrepository "github.com/vitalfit/api/internal/modules/crm/repository"
 	faceauthdomain "github.com/vitalfit/api/internal/modules/faceauth/domain"
 	faceauthrepository "github.com/vitalfit/api/internal/modules/faceauth/repository"
+	insightsdomain "github.com/vitalfit/api/internal/modules/insights/domain"
+	insightsrepository "github.com/vitalfit/api/internal/modules/insights/repository"
 	instructordomain "github.com/vitalfit/api/internal/modules/instructor/domain"
 	instructorrepository "github.com/vitalfit/api/internal/modules/instructor/repository"
 	inventorydomain "github.com/vitalfit/api/internal/modules/inventory/domain"
@@ -50,65 +54,73 @@ import (
 )
 
 type Storage struct {
-	Users           authdomain.UserRepository
-	Roles           authdomain.RolesRepository
-	Branches        branchdomain.BranchesRepository
-	Locations       branchdomain.LocationRepository
-	PaymentMethods  billingdomain.PaymentMethodsRepository
-	Equipment       inventorydomain.EquipmentRepository
-	BranchInventory inventorydomain.BranchInventoryRepository
-	Instructor      instructordomain.InstructorRepository
-	Products        productsdomain.ProductsRepository
-	Marketing       marketingdomain.MarketingRepository
-	Membership      membershipsdomain.MembershipsRepository
-	Billing         billingdomain.BillingRepository
-	Schedule        scheduledomain.ScheduleRepository
-	Combos          combosdomain.CombosRepository
-	FiscalDocuments billingdomain.FiscalDocumentRepository
-	Booking         bookingdomain.BookingRepository
-	Access          accessdomain.AccessRepository
-	Reports         reportdomain.ReportRepository
-	Staff           staffdomain.StaffRepository
-	Policies        policiesdomain.PoliciesRepository
-	Wishlist        wishlistdomain.WishlistRepository
-	Audit           auditdomain.AuditRepository
-	Session         authdomain.SessionRepository
-	Client          clientsdomain.ClientRepository
-	Notification    notidomain.NotificationRepository
-	FaceAuth        faceauthdomain.FaceAuthRepository
-	Routine         routinedomain.RoutineRepository
-	LLM             llmdomain.LLMRepository
+	Users              authdomain.UserRepository
+	Roles              authdomain.RolesRepository
+	Branches           branchdomain.BranchesRepository
+	Locations          branchdomain.LocationRepository
+	PaymentMethods     billingdomain.PaymentMethodsRepository
+	Equipment          inventorydomain.EquipmentRepository
+	BranchInventory    inventorydomain.BranchInventoryRepository
+	Instructor         instructordomain.InstructorRepository
+	Products           productsdomain.ProductsRepository
+	Marketing          marketingdomain.MarketingRepository
+	Membership         membershipsdomain.MembershipsRepository
+	Billing            billingdomain.BillingRepository
+	Schedule           scheduledomain.ScheduleRepository
+	Combos             combosdomain.CombosRepository
+	FiscalDocuments    billingdomain.FiscalDocumentRepository
+	Booking            bookingdomain.BookingRepository
+	Access             accessdomain.AccessRepository
+	Reports            reportdomain.ReportRepository
+	Staff              staffdomain.StaffRepository
+	Policies           policiesdomain.PoliciesRepository
+	Wishlist           wishlistdomain.WishlistRepository
+	Audit              auditdomain.AuditRepository
+	Session            authdomain.SessionRepository
+	Client             clientsdomain.ClientRepository
+	Notification       notidomain.NotificationRepository
+	FaceAuth           faceauthdomain.FaceAuthRepository
+	Routine            routinedomain.RoutineRepository
+	LLM                llmdomain.LLMRepository
+	CRM                crmdomain.CRMRepository
+	Security           authdomain.SecurityRepository
+	InvoiceAdjustments billingdomain.InvoiceAdjustmentRepository
+	Insights           insightsdomain.InsightsRepository
 }
 
 func NewStorage(db *gorm.DB) Storage {
 	return Storage{
-		Users:           authrepository.NewUserStore(db),
-		Roles:           authrepository.NewRoleStore(db),
-		Branches:        branchrepository.NewBranchesStore(db),
-		Locations:       branchrepository.NewLocationsStore(db),
-		PaymentMethods:  billingrepository.NewPaymentMethodsStore(db),
-		Equipment:       inventoryrepository.NewEquipmentStore(db),
-		BranchInventory: inventoryrepository.NewBranchInventoryStore(db),
-		Instructor:      instructorrepository.NewInstructorStore(db),
-		Products:        productsrepository.NewProductsStore(db),
-		Marketing:       marketingrepository.NewMarketingStore(db),
-		Membership:      membershipsrepository.NewMembershipStore(db),
-		Billing:         billingrepository.NewBillingStore(db),
-		Schedule:        schedulerepository.NewScheduleStore(db),
-		Combos:          combosrepository.NewCombosStore(db),
-		FiscalDocuments: billingrepository.NewFiscalDocumentStore(db),
-		Booking:         bookingrepository.NewBookingStore(db),
-		Access:          accessrepository.NewAccessStore(db),
-		Reports:         reportrepository.NewReportStore(db),
-		Staff:           staffrepository.NewStaffStore(db),
-		Policies:        policiesrepository.NewPoliciesStore(db),
-		Wishlist:        wishlistrepository.NewWishlistStore(db),
-		Audit:           auditrepository.NewAuditStore(db),
-		Session:         authrepository.NewSessionStore(db),
-		Client:          clientsrepository.NewClientStore(db),
-		Notification:    notirepository.NewNotificationStore(db),
-		FaceAuth:        faceauthrepository.NewFaceAuthStore(db),
-		Routine:         routinerepository.NewRoutineStore(db),
-		LLM:             llmrepository.NewLLMStore(db),
+		Users:              authrepository.NewUserStore(db),
+		Roles:              authrepository.NewRoleStore(db),
+		Branches:           branchrepository.NewBranchesStore(db),
+		Locations:          branchrepository.NewLocationsStore(db),
+		PaymentMethods:     billingrepository.NewPaymentMethodsStore(db),
+		Equipment:          inventoryrepository.NewEquipmentStore(db),
+		BranchInventory:    inventoryrepository.NewBranchInventoryStore(db),
+		Instructor:         instructorrepository.NewInstructorStore(db),
+		Products:           productsrepository.NewProductsStore(db),
+		Marketing:          marketingrepository.NewMarketingStore(db),
+		Membership:         membershipsrepository.NewMembershipStore(db),
+		Billing:            billingrepository.NewBillingStore(db),
+		Schedule:           schedulerepository.NewScheduleStore(db),
+		Combos:             combosrepository.NewCombosStore(db),
+		FiscalDocuments:    billingrepository.NewFiscalDocumentStore(db),
+		Booking:            bookingrepository.NewBookingStore(db),
+		Access:             accessrepository.NewAccessStore(db),
+		Reports:            reportrepository.NewReportStore(db),
+		Staff:              staffrepository.NewStaffStore(db),
+		Policies:           policiesrepository.NewPoliciesStore(db),
+		Wishlist:           wishlistrepository.NewWishlistStore(db),
+		Audit:              auditrepository.NewAuditStore(db),
+		Session:            authrepository.NewSessionStore(db),
+		Client:             clientsrepository.NewClientStore(db),
+		Notification:       notirepository.NewNotificationStore(db),
+		FaceAuth:           faceauthrepository.NewFaceAuthStore(db),
+		Routine:            routinerepository.NewRoutineStore(db),
+		LLM:                llmrepository.NewLLMStore(db),
+		CRM:                crmrepository.NewCRMStore(db),
+		Security:           authrepository.NewSecurityStore(db),
+		InvoiceAdjustments: billingrepository.NewAdjustmentStore(db),
+		Insights:           insightsrepository.NewInsightsStore(db),
 	}
 }

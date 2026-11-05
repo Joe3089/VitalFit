@@ -195,6 +195,71 @@ func (s *ReportService) GetSalesByDemographics(ctx context.Context, branchID *uu
 	return s.store.Reports.GetSalesByDemographics(ctx, branchID, start, end, dimension)
 }
 
+// CalculateChurnRisk scores a client 0-100 from absence, attendance trend and
+// upcoming membership expiration. >= 70 is considered high risk.
+func CalculateChurnRisk(m reportdomain.ClientChurnMetrics) (int, []string) {
+	riskScore := 0
+	var factors []string
+
+	daysSinceCheckIn := 30.0 // Default high if never checked in
+	if m.LastCheckIn != nil {
+		daysSinceCheckIn = time.Since(*m.LastCheckIn).Hours() / 24
+	}
+
+	if daysSinceCheckIn > 14 {
+		riskScore += 40
+		factors = append(factors, "Absent > 14 days")
+	}
+
+	// B. Trend Factor: Visits this month vs last month
+	if m.LastMonthVisits > 0 {
+		if float64(m.CurrentMonthVisits) < float64(m.LastMonthVisits)*0.5 {
+			riskScore += 30
+			factors = append(factors, "Attendance drop > 50%")
+		}
+	}
+
+	// C. Expiration Factor: Membership expiring soon
+	if m.MembershipEndDate != nil {
+		daysUntilExpiration := time.Until(*m.MembershipEndDate).Hours() / 24
+		if daysUntilExpiration > 0 && daysUntilExpiration < 5 {
+			riskScore += 30
+			factors = append(factors, "Membership expires < 5 days")
+		}
+	}
+	return riskScore, factors
+}
+
+// ListChurnRisk returns clients whose churn risk score is >= minScore, highest
+// risk first, optionally restricted to a preferred branch (HU-ANALYTICS-20).
+func (s *ReportService) ListChurnRisk(ctx context.Context, branchID *uuid.UUID, minScore int) ([]reportdomain.ChurnRiskAnalysis, error) {
+	metrics, err := s.store.Reports.GetClientsChurnMetrics(ctx)
+	if err != nil {
+		return nil, err
+	}
+	result := make([]reportdomain.ChurnRiskAnalysis, 0)
+	for _, m := range metrics {
+		if branchID != nil && (m.PreferredBranchID == nil || *m.PreferredBranchID != *branchID) {
+			continue
+		}
+		score, factors := CalculateChurnRisk(m)
+		if score < minScore {
+			continue
+		}
+		result = append(result, reportdomain.ChurnRiskAnalysis{
+			UserID:            m.UserID,
+			Name:              m.FirstName + " " + m.LastName,
+			Email:             m.Email,
+			Phone:             m.Phone,
+			RiskScore:         score,
+			Factors:           factors,
+			PreferredBranchID: m.PreferredBranchID,
+		})
+	}
+	sort.SliceStable(result, func(i, j int) bool { return result[i].RiskScore > result[j].RiskScore })
+	return result, nil
+}
+
 func (s *ReportService) DetectAndFlagChurnRisk(ctx context.Context) ([]reportdomain.ChurnRiskAnalysis, []reportdomain.ChurnRiskAnalysis, error) {
 	// 1. Get historical data for all active clients
 	metrics, err := s.store.Reports.GetClientsChurnMetrics(ctx)
@@ -211,41 +276,8 @@ func (s *ReportService) DetectAndFlagChurnRisk(ctx context.Context) ([]reportdom
 	var newlyDetected []reportdomain.ChurnRiskAnalysis
 	var allAtRisk []reportdomain.ChurnRiskAnalysis
 
-	calculateRisk := func(m reportdomain.ClientChurnMetrics) (int, []string) {
-		riskScore := 0
-		var factors []string
-
-		daysSinceCheckIn := 30.0 // Default high if never checked in
-		if m.LastCheckIn != nil {
-			daysSinceCheckIn = time.Since(*m.LastCheckIn).Hours() / 24
-		}
-
-		if daysSinceCheckIn > 14 {
-			riskScore += 40
-			factors = append(factors, "Absent > 14 days")
-		}
-
-		// B. Trend Factor: Visits this month vs last month
-		if m.LastMonthVisits > 0 {
-			if float64(m.CurrentMonthVisits) < float64(m.LastMonthVisits)*0.5 {
-				riskScore += 30
-				factors = append(factors, "Attendance drop > 50%")
-			}
-		}
-
-		// C. Expiration Factor: Membership expiring soon
-		if m.MembershipEndDate != nil {
-			daysUntilExpiration := time.Until(*m.MembershipEndDate).Hours() / 24
-			if daysUntilExpiration > 0 && daysUntilExpiration < 5 {
-				riskScore += 30
-				factors = append(factors, "Membership expires < 5 days")
-			}
-		}
-		return riskScore, factors
-	}
-
 	for _, m := range metrics {
-		riskScore, factors := calculateRisk(m)
+		riskScore, factors := CalculateChurnRisk(m)
 
 		// Action 1: Flag High Risk Users
 		if riskScore >= 70 {

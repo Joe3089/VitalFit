@@ -161,7 +161,7 @@ func (h *BookingHandlers) CreateBookingHandler(c *gin.Context) {
 			h.services.LogErrors.PaymentRequiredResponse(c)
 		case errors.Is(err, shared_errors.ErrPastClass):
 			h.services.LogErrors.BadRequestResponse(c, err)
-		case errors.Is(err, shared_errors.ErrFullClass):
+		case errors.Is(err, shared_errors.ErrFullClass), errors.Is(err, shared_errors.ErrClassAlreadyCancelled):
 			h.services.LogErrors.BadRequestResponse(c, err)
 		case errors.Is(err, shared_errors.ErrNotFound):
 			h.services.LogErrors.NotFoundResponse(c)
@@ -198,7 +198,10 @@ func (h *BookingHandlers) CancelBookingHandler(c *gin.Context) {
 	}
 
 	user := h.services.UserServices.GetUserFromContext(c)
-	if user.Role.Name != "client" {
+	var requesterID *uuid.UUID
+	if user.Role.Name == "client" {
+		requesterID = &user.UserID
+	} else {
 		permission := "booking:cancel"
 		if user.Role.Name != "super_admin" {
 			ok, err := h.services.UserServices.RoleHasPermission(ctx, user.RoleID, permission)
@@ -212,9 +215,16 @@ func (h *BookingHandlers) CancelBookingHandler(c *gin.Context) {
 			}
 		}
 	}
-	if err := h.services.BookingServices.CancelBooking(ctx, bookingID); err != nil {
-		if errors.Is(err, shared_errors.ErrCancellationWindowClosed) {
+	if err := h.services.BookingServices.CancelBooking(ctx, bookingID, requesterID); err != nil {
+		switch {
+		case errors.Is(err, shared_errors.ErrCancellationWindowClosed), errors.Is(err, shared_errors.ErrBookingNotActive):
 			h.services.LogErrors.BadRequestResponse(c, err)
+			return
+		case errors.Is(err, shared_errors.ErrNotFound):
+			h.services.LogErrors.NotFoundResponse(c)
+			return
+		case errors.Is(err, shared_errors.ErrForbidden):
+			h.services.LogErrors.ForbiddenResponse(c)
 			return
 		}
 		h.services.LogErrors.InternalServerError(c, err)

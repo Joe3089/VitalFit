@@ -13,6 +13,7 @@ import (
 	"github.com/sashabaranov/go-openai"
 	"github.com/sashabaranov/go-openai/jsonschema"
 	bookingdomain "github.com/vitalfit/api/internal/modules/booking/domain"
+	bookingservice "github.com/vitalfit/api/internal/modules/booking/services"
 	routinedomain "github.com/vitalfit/api/internal/modules/routines/domain"
 	shared_errors "github.com/vitalfit/api/internal/shared/errors"
 	"github.com/vitalfit/api/pkg/pagination"
@@ -359,7 +360,9 @@ func (s *LLMService) callFunction(ctx context.Context, userID uuid.UUID, name st
 			return fmt.Sprintf("Error: '%s' is not a valid UUID. You sent the list number instead of the UUID. Please retrieve the UUID corresponding to the booking from the list and try again.", args.BookingID), nil
 		}
 
-		if err := s.store.Booking.CancelBooking(ctx, bookingID); err != nil {
+		// Reuse the booking service so ownership, cancellation window and
+		// balance refunds follow the same rules as the REST endpoint.
+		if err := bookingservice.NewBookingService(s.store).CancelBooking(ctx, bookingID, &userID); err != nil {
 			return fmt.Sprintf("No se pudo cancelar la reserva. Error: %v", err), nil
 		}
 		return "Reserva cancelada correctamente.", nil

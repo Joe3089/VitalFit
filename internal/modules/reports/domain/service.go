@@ -52,6 +52,7 @@ type ReportServiceInterface interface {
 	GetSalesByDemographics(ctx context.Context, branchID *uuid.UUID, start, end time.Time, dimension string) ([]ChartData, error)
 	DetectAndFlagChurnRisk(ctx context.Context) ([]ChurnRiskAnalysis, []ChurnRiskAnalysis, error)
 	GetChurnRateKPI(ctx context.Context, branchID *uuid.UUID) (*KPICard, error)
+	ListChurnRisk(ctx context.Context, branchID *uuid.UUID, minScore int) ([]ChurnRiskAnalysis, error)
 	GetFinancialReportData(ctx context.Context, branchID *uuid.UUID, start, end time.Time) ([]FinancialReportRow, error)
 	GetClientReportData(ctx context.Context) ([]ClientChurnMetrics, error)
 	GetSalesReportData(ctx context.Context, branchID *uuid.UUID, start, end time.Time) ([]SalesReportRow, error)

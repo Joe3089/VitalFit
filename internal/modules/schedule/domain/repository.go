@@ -35,4 +35,8 @@ type ScheduleRepository interface {
 
 	// GetClassesByInstructor obtiene las clases programadas para un instructor específico (por UserID).
 	GetClassesByInstructor(ctx context.Context, userID uuid.UUID, branchID *uuid.UUID, startDate, endDate *time.Time) ([]Class, error)
+
+	// CancelClass marks the class as cancelled, cancels its confirmed bookings,
+	// refunds consumed service credits and returns the affected client IDs.
+	CancelClass(ctx context.Context, class *Class, reason string, cancelledBy uuid.UUID) ([]uuid.UUID, error)
 }

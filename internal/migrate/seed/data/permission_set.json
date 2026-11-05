@@ -52,7 +52,13 @@
     "branch_management",
     "medical_info:create",
     "medical_info:read",
-    "medical_info:update"
+    "medical_info:update",
+    "crm:feedback_manage",
+    "crm:tags_manage",
+    "crm:contact_view",
+    "insights:view",
+    "billing:adjust",
+    "schedule:cancel"
   ],
   "recepcionist": [
     "users:create",
@@ -78,7 +84,9 @@
     "access:check_in",
     "access:view_client_history",
     "instructors:list",
-    "view"
+    "view",
+    "crm:feedback_manage",
+    "crm:contact_view"
   ],
   "instructor": [
     "schedule:list",
@@ -111,7 +119,9 @@
     "branches:get",
     "services:list",
     "memberships:list",
-    "packages:list"
+    "packages:list",
+    "insights:view",
+    "billing:adjust"
   ],
   "data_analyst": [
     "reports:view_financial",
@@ -126,6 +136,7 @@
     "marketing:list",
     "equipments:list",
     "memberships:list",
-    "packages:list"
+    "packages:list",
+    "insights:view"
   ]
 }

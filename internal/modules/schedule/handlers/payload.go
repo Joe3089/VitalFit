@@ -120,6 +120,10 @@ type ClassResponse struct {
 	MaxCapacity int       `json:"max_capacity"`
 	IsVisible   bool      `json:"is_visible"`
 	Notes       string    `json:"notes"`
+
+	Status             string     `json:"status"`
+	CancellationReason string     `json:"cancellation_reason,omitempty"`
+	CancelledAt        *time.Time `json:"cancelled_at,omitempty"`
 }
 
 type AttendanceHistoryResponse struct {

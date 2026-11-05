@@ -289,15 +289,18 @@ func (h *ScheduleHandlers) GetClassesByBranchHandler(c *gin.Context) {
 	resp := make([]ClassResponse, 0, len(classes))
 	for _, class := range classes {
 		resp = append(resp, ClassResponse{
-			ClassID:      class.ClassID,
-			BranchID:     class.BranchID,
-			ServiceID:    class.ServiceID,
-			InstructorID: class.InstructorID,
-			StartsAt:     class.StartsAt,
-			EndsAt:       class.EndsAt,
-			MaxCapacity:  class.MaxCapacity,
-			IsVisible:    class.IsVisible,
-			Notes:        class.Notes,
+			ClassID:            class.ClassID,
+			BranchID:           class.BranchID,
+			ServiceID:          class.ServiceID,
+			InstructorID:       class.InstructorID,
+			StartsAt:           class.StartsAt,
+			EndsAt:             class.EndsAt,
+			MaxCapacity:        class.MaxCapacity,
+			IsVisible:          class.IsVisible,
+			Notes:              class.Notes,
+			Status:             class.Status,
+			CancellationReason: class.CancellationReason,
+			CancelledAt:        class.CancelledAt,
 		})
 	}
 
@@ -387,15 +390,18 @@ func (h *ScheduleHandlers) GetClassesByInstructorHandler(c *gin.Context) {
 	resp := make([]ClassResponse, 0, len(classes))
 	for _, class := range classes {
 		resp = append(resp, ClassResponse{
-			ClassID:      class.ClassID,
-			BranchID:     class.BranchID,
-			ServiceID:    class.ServiceID,
-			InstructorID: class.InstructorID,
-			StartsAt:     class.StartsAt,
-			EndsAt:       class.EndsAt,
-			MaxCapacity:  class.MaxCapacity,
-			IsVisible:    class.IsVisible,
-			Notes:        class.Notes,
+			ClassID:            class.ClassID,
+			BranchID:           class.BranchID,
+			ServiceID:          class.ServiceID,
+			InstructorID:       class.InstructorID,
+			StartsAt:           class.StartsAt,
+			EndsAt:             class.EndsAt,
+			MaxCapacity:        class.MaxCapacity,
+			IsVisible:          class.IsVisible,
+			Notes:              class.Notes,
+			Status:             class.Status,
+			CancellationReason: class.CancellationReason,
+			CancelledAt:        class.CancelledAt,
 		})
 	}
 
@@ -454,15 +460,18 @@ func (h *ScheduleHandlers) GetClassByIDHandler(c *gin.Context) {
 	}
 
 	resp := ClassResponse{
-		ClassID:      class.ClassID,
-		BranchID:     class.BranchID,
-		ServiceID:    class.ServiceID,
-		InstructorID: class.InstructorID,
-		StartsAt:     class.StartsAt,
-		EndsAt:       class.EndsAt,
-		MaxCapacity:  class.MaxCapacity,
-		IsVisible:    class.IsVisible,
-		Notes:        class.Notes,
+		ClassID:            class.ClassID,
+		BranchID:           class.BranchID,
+		ServiceID:          class.ServiceID,
+		InstructorID:       class.InstructorID,
+		StartsAt:           class.StartsAt,
+		EndsAt:             class.EndsAt,
+		MaxCapacity:        class.MaxCapacity,
+		IsVisible:          class.IsVisible,
+		Notes:              class.Notes,
+		Status:             class.Status,
+		CancellationReason: class.CancellationReason,
+		CancelledAt:        class.CancelledAt,
 	}
 
 	c.JSON(http.StatusOK, gin.H{"data": resp})

@@ -358,5 +358,37 @@
   {
     "name": "routines:read",
     "description": "Allows reading routines and exercises"
+  },
+  {
+    "name": "crm:feedback_manage",
+    "description": "Allows registering and managing client complaints and suggestions"
+  },
+  {
+    "name": "crm:tags_manage",
+    "description": "Allows creating client tags and assigning them to clients"
+  },
+  {
+    "name": "crm:contact_view",
+    "description": "Allows reading messages sent from the public contact form"
+  },
+  {
+    "name": "insights:view",
+    "description": "Allows viewing advanced analytics (conversion, NPS, RevPAS, benchmarking, churn, alerts)"
+  },
+  {
+    "name": "insights:manage",
+    "description": "Allows managing scheduled reports, shared links, templates and BI API keys"
+  },
+  {
+    "name": "security:manage",
+    "description": "Allows configuring password policies and two-factor authentication"
+  },
+  {
+    "name": "billing:adjust",
+    "description": "Allows applying post-sale discounts to invoices"
+  },
+  {
+    "name": "schedule:cancel",
+    "description": "Allows cancelling a scheduled class with a reason"
   }
 ]

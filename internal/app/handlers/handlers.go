@@ -10,7 +10,9 @@ import (
 	branchhandlers "github.com/vitalfit/api/internal/modules/branches/handlers"
 	clientshandler "github.com/vitalfit/api/internal/modules/clients/handler"
 	comboshandler "github.com/vitalfit/api/internal/modules/combos/handler"
+	crmhandlers "github.com/vitalfit/api/internal/modules/crm/handlers"
 	faceauthhandlers "github.com/vitalfit/api/internal/modules/faceauth/handlers"
+	insightshandlers "github.com/vitalfit/api/internal/modules/insights/handlers"
 	instructorhandler "github.com/vitalfit/api/internal/modules/instructor/handler"
 	inventoryhandlers "github.com/vitalfit/api/internal/modules/inventory/handlers"
 	llmhandlers "github.com/vitalfit/api/internal/modules/llm/handlers"
@@ -49,6 +51,8 @@ type Handlers struct {
 	FaceAuthHandlers     faceauthhandlers.FaceAuthHandlerInterface
 	RoutineHandlers      routinehandlers.RoutineHandlersInterface
 	LLMHandlers          llmhandlers.LLMHandlersInterface
+	CRMHandlers          crmhandlers.CRMHandlersInterface
+	InsightsHandlers     insightshandlers.InsightsHandlersInterface
 }
 
 func NewAppHandlers(services appservices.Services) Handlers {
@@ -75,5 +79,7 @@ func NewAppHandlers(services appservices.Services) Handlers {
 		FaceAuthHandlers:     faceauthhandlers.NewFaceAuthHandler(services),
 		RoutineHandlers:      routinehandlers.NewRoutineHandlers(services),
 		LLMHandlers:          llmhandlers.NewLLMHandlers(services),
+		CRMHandlers:          crmhandlers.NewCRMHandlers(services),
+		InsightsHandlers:     insightshandlers.NewInsightsHandlers(services),
 	}
 }
