@@ -31,7 +31,10 @@ export class Client {
   private onTokenUpdate?: (access: string, refresh: string) => void;
   private onLogout?: () => void;
 
-  constructor(isDevMode: boolean, origin?: string) {
+  /**
+   * @param baseURL overrides the API URL (e.g. https://my-api.onrender.com/v1).
+   */
+  constructor(isDevMode: boolean, origin?: string, baseURL?: string) {
     let headers: Record<string, string> = {
       'Content-Type': 'application/json',
     };
@@ -39,7 +42,7 @@ export class Client {
       headers['Origin'] = origin;
     }
     this.client = axios.create({
-      baseURL: isDevMode ? DEV_URL : BASE_URL,
+      baseURL: baseURL || (isDevMode ? DEV_URL : BASE_URL),
       headers,
     });
 

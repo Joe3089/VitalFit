@@ -60,8 +60,8 @@ export class VitalFit {
   crm: CRMService;
   insights: InsightsService;
 
-  constructor(isDevMode: boolean, origin?: string) {
-    this.client = new Client(isDevMode, origin);
+  constructor(isDevMode: boolean, origin?: string, baseURL?: string) {
+    this.client = new Client(isDevMode, origin, baseURL);
     this.auth = new AuthService(this.client);
     this.user = new UserService(this.client);
     this.branch = new BranchService(this.client);
@@ -91,9 +91,16 @@ export class VitalFit {
     this.insights = new InsightsService(this.client);
   }
 
-  static getInstance(isDevMode = false): VitalFit {
+  /**
+   * @param baseURL API URL including /v1; when empty the built-in URL is used.
+   */
+  static getInstance(isDevMode = false, baseURL?: string): VitalFit {
     if (!VitalFit.instance) {
-      VitalFit.instance = new VitalFit(isDevMode);
+      VitalFit.instance = new VitalFit(
+        isDevMode,
+        undefined,
+        baseURL || undefined,
+      );
     }
     return VitalFit.instance;
   }
