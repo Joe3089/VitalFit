@@ -1,0 +1,63 @@
+# Render Blueprint: https://render.com/docs/blueprint-spec
+# Deploys the API as a Docker web service. The database lives in Neon
+# (set DB_ADDR to the Neon connection string with sslmode=require).
+services:
+  - type: web
+    name: vitalfit-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./dockerfile
+    dockerContext: .
+    # Apply pending migrations on every deploy, then start the server.
+    dockerCommand: sh -c './migrate -path ./migrations -database "$DB_ADDR" up && ./main'
+    healthCheckPath: /v1/health
+    autoDeploy: true
+    envVars:
+      - key: ENV
+        value: production
+      - key: ADDRS
+        value: ":8080"
+      - key: PORT
+        value: "8080"
+      - key: DB_ADDR
+        sync: false # Neon: postgresql://user:pass@host/db?sslmode=require
+      - key: API_URL
+        sync: false # public URL of this service, e.g. https://vitalfit-api.onrender.com
+      - key: WHITE_LIST
+        sync: false # comma separated Vercel URLs of dashboard and ecommerce
+      - key: FRONT_URL
+        sync: false # dashboard URL (used in staff emails)
+      - key: FRONT_URL_E
+        sync: false # ecommerce URL (used in client emails)
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_ISS
+        value: vitalfit
+      - key: JWT_AUD
+        value: vitalfit
+      - key: ENCRYPTION_KEY
+        sync: false # exactly 32 characters; keep the same value forever (medical data)
+      - key: RESEND_API_KEY
+        sync: false # required for 2FA codes, activation and reset emails
+      - key: FROM_RESEND_EMAIL
+        sync: false
+      - key: CLERK_JWKS_URL
+        sync: false
+      - key: OPEN_EXCHANGE_APP_ID
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: FIREBASE_CREDENTIALS_BASE64
+        sync: false # optional; without it push notifications are disabled
+      - key: OPENAI_API_KEY
+        sync: false # optional (chatbot)
+      - key: AWS_ACCESS_KEY_ID
+        sync: false # optional (face recognition)
+      - key: AWS_SECRET_ACCESS_KEY
+        sync: false
+      - key: AWS_REGIONR
+        sync: false
+      - key: REDIS_ENABLED
+        value: "false"

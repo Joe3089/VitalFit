@@ -56,25 +56,38 @@ func NewSeedStruct() *SeedStruct {
 
 func (s *SeedStruct) Seed(store store.Storage, db *gorm.DB, services appservices.Services) {
 	ctx := context.Background()
-	// s.CreateSuperAdmin(store, db, ctx)
-	s.SeedPermissions(store, db, ctx)
-	s.SeedRolePermissions(store, db, ctx)
-	// s.SeedUsers(store, db, ctx)
-	// s.SeedPolicies(store, db, ctx)
-	s.SeedExercises(store, db, ctx)
-	// s.SeedServiceCategories(store, db, ctx)
-	// s.SeedBanners(store, db, ctx)
-	// s.SeedServices(store, db, ctx)
-	// s.SeedInstructors(store, db, ctx)
-	// s.SeedBranches(store, db, ctx)
-	// s.SeedEquipment(store, db, ctx)
-	// s.SeedMemberships(store, db, ctx)
-	// s.SeedPackages(store, db, ctx)
-	// s.SeedBranchRelations(store, db, ctx)
-	// s.SeedClasses(store, db, ctx)
-	// s.SeedInvoicesAndPayments(store, db, ctx, services)
-	s.SeedBookingsAndAttendance(store, db, ctx)
-	// s.SeedStaffAssignment(store, db, ctx, services)
+
+	// Essential data, safe to run on a fresh database (production included):
+	// super admin (ADMIN_EMAIL / ADMIN_PASSWORD), permissions, role permissions,
+	// commercial policies, service categories and exercises.
+	if env.GetBool("SEED_ESSENTIAL", true) {
+		if env.GetString("ADMIN_EMAIL", "") != "" {
+			s.CreateSuperAdmin(store, db, ctx)
+		}
+		s.SeedPermissions(store, db, ctx)
+		s.SeedRolePermissions(store, db, ctx)
+		s.SeedPolicies(store, db, ctx)
+		s.SeedServiceCategories(store, db, ctx)
+		s.SeedExercises(store, db, ctx)
+	}
+
+	// Demo data (users, branches, services, classes, invoices, bookings...).
+	// Enable with SEED_DEMO=true; meant for local/testing environments.
+	if env.GetBool("SEED_DEMO", false) {
+		s.SeedUsers(store, db, ctx)
+		s.SeedBanners(store, db, ctx)
+		s.SeedServices(store, db, ctx)
+		s.SeedInstructors(store, db, ctx)
+		s.SeedBranches(store, db, ctx)
+		s.SeedEquipment(store, db, ctx)
+		s.SeedMemberships(store, db, ctx)
+		s.SeedPackages(store, db, ctx)
+		s.SeedBranchRelations(store, db, ctx)
+		s.SeedClasses(store, db, ctx)
+		s.SeedInvoicesAndPayments(store, db, ctx, services)
+		s.SeedBookingsAndAttendance(store, db, ctx)
+		s.SeedStaffAssignment(store, db, ctx, services)
+	}
 }
 
 func (s *SeedStruct) CreateSuperAdmin(store store.Storage, db *gorm.DB, ctx context.Context) {

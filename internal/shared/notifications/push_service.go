@@ -58,6 +58,9 @@ func NewPushService() (*PushService, error) {
 }
 
 func (s *PushService) SendPush(ctx context.Context, deviceToken string, title string, body string, data map[string]string) error {
+	if s == nil || s.client == nil {
+		return nil // push disabled (no Firebase credentials)
+	}
 	message := &messaging.Message{
 		Notification: &messaging.Notification{
 			Title: title,

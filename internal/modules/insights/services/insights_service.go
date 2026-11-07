@@ -128,6 +128,9 @@ func (s *InsightsService) GetBenchmark(ctx context.Context, r insightsdomain.Dat
 	if err != nil {
 		return nil, err
 	}
+	if rows == nil {
+		rows = []insightsdomain.BenchmarkRow{}
+	}
 	metrics := map[string]func(b insightsdomain.BenchmarkRow) (float64, bool){
 		"revenue":        func(b insightsdomain.BenchmarkRow) (float64, bool) { return b.Revenue, true },
 		"new_clients":    func(b insightsdomain.BenchmarkRow) (float64, bool) { return float64(b.NewClients), true },

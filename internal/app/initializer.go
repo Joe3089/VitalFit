@@ -11,6 +11,7 @@ import (
 	authservices "github.com/vitalfit/api/internal/modules/auth/services"
 	"github.com/vitalfit/api/internal/modules/cronjobs"
 	"github.com/vitalfit/api/internal/shared/notifications"
+	noti "github.com/vitalfit/api/internal/shared/notifications"
 	"github.com/vitalfit/api/internal/store/cache"
 
 	"github.com/vitalfit/api/internal/store"
@@ -37,7 +38,10 @@ func BuildApplication(cfg *config.Config, db *gorm.DB, rdb *redis.Client) *appli
 	rateLimiter := rate_mw.NewFixedWindowLimiter(cfg.RateLimiter.RequestsPerTimeFrame, cfg.RateLimiter.TimeFrame)
 	notifications, err := notifications.NewPushService()
 	if err != nil {
-		logger.Errorw("error creating push service", "error", err.Error())
+		// Push is optional: without Firebase credentials the API keeps running
+		// and notifications are only stored in-app.
+		logger.Warnw("push notifications disabled", "error", err.Error())
+		notifications = noti.NewMockPushService()
 	}
 	store := store.NewStorage(db)
 
