@@ -3,7 +3,6 @@ import { Alert } from 'react-native';
 
 const API_URL: string | undefined =
 	Constants.expoConfig?.extra?.EXPO_PUBLIC_API_URL ||
-	Constants.manifest?.extra?.EXPO_PUBLIC_API_URL ||
 	process.env.EXPO_PUBLIC_API_URL;
 
 if (!API_URL) {

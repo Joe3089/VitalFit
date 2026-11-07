@@ -113,17 +113,12 @@ export default function MembershipPaymentScreen() {
 
             // Try SDK first
             try {
-              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-              // @ts-ignore
-              const sdkResponse = await vitalFitApi.client.post({
-                url: '/billing/checkout',
-                jwt: token,
-                body: {
-                  invoice_id: params.invoiceId
-                }
-              });
+              const sdkResponse = await vitalFitApi.billing.createCheckoutSession(
+                { invoice_id: String(params.invoiceId) },
+                token,
+              );
 
-              checkoutUrl = sdkResponse?.url || sdkResponse?.data?.url || sdkResponse?.checkout_url;
+              checkoutUrl = sdkResponse?.url ?? null;
             } catch {
               // SDK failed, fallback to fetch
               console.log('[Stripe Checkout] SDK failed, using fetch fallback');

@@ -25,23 +25,12 @@ export {
 	Exercise,
 };
 
-const isDevMode =
-	Constants.expoConfig?.extra?.EXPO_PUBLIC_API_URL === 'http://localhost:3000/v1' ||
-	process.env.EXPO_PUBLIC_API_URL === 'http://localhost:3000/v1';
+// EXPO_PUBLIC_API_URL must include the /v1 prefix and is embedded at build time
+// (app.config.js -> extra). The SDK falls back to its built-in URL when empty.
+const API_URL: string | undefined =
+	Constants.expoConfig?.extra?.EXPO_PUBLIC_API_URL || process.env.EXPO_PUBLIC_API_URL;
 
 // SDK instance with built-in automatic token refresh
-const vitalFitApi = VitalFit.getInstance(isDevMode);
-
-// Override the hardcoded baseURL with environment variable
-const API_URL = Constants.expoConfig?.extra?.EXPO_PUBLIC_API_URL || process.env.EXPO_PUBLIC_API_URL;
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-if (API_URL && (vitalFitApi.client as any).client?.defaults) {
-	/* eslint-disable @typescript-eslint/no-explicit-any */
-	(vitalFitApi.client as any).client.defaults.baseURL = API_URL;
-	/* eslint-enable @typescript-eslint/no-explicit-any */
-	console.log('VitalFit SDK baseURL configured to:', API_URL);
-}
-
+const vitalFitApi = VitalFit.getInstance(false, API_URL);
 
 export default vitalFitApi;
