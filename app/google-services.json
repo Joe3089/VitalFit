@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "797852705802",
+    "project_id": "vitalfitdcyt-36426",
+    "storage_bucket": "vitalfitdcyt-36426.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:797852705802:android:5f3aef8984921be2dfabf3",
+        "android_client_info": {
+          "package_name": "com.mrwisz.VitalFit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaGpgfxz514-oWg0KWCQS0aNxvMH6gd_g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:797852705802:android:ab06183cbcec214edfabf3",
+        "android_client_info": {
+          "package_name": "vitalfit.notifications"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaGpgfxz514-oWg0KWCQS0aNxvMH6gd_g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

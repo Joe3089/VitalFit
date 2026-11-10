@@ -1,0 +1,34 @@
+# Dependencies
+node_modules
+
+# Build outputs
+dist
+build
+.expo
+.next
+out
+
+# Test outputs
+coverage
+playwright-report
+test-results
+
+# Config files that may have formatting issues
+*.config.js
+*.config.ts
+*.config.mjs
+
+# Generated files
+.expo-shared
+.print-config.json
+
+# Lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Logs
+*.log
+
+# Expo Router - ignore constants in app directory
+app/constants

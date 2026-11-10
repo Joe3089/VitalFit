@@ -1,0 +1,1473 @@
+{
+	"translation": {
+		"languageLabel": "Langue",
+		"save": "Enregistrer",
+		"signIn": "Se connecter",
+		"signUp": "S'inscrire",
+		"slide1": "Défiez vos limites,\nconquérez vos objectifs",
+		"slide2": "La discipline est le\nchemin du succès",
+		"slide3": "Soyez constant,\nsoyez inarrêtable",
+		"nav": {
+			"dashboard": "Accueil",
+			"schedule": "Planning",
+			"training": "Entraînement",
+			"community": "Communauté",
+			"profile": "Profil",
+			"back": "Retour",
+			"membership": "Abonnement",
+			"classDetails": "Détails du cours",
+			"qr": "QR"
+		},
+		"qr": {
+			"title": "Votre Code d'Accès",
+			"instruction": "Présentez ce code à la réception pour entrer",
+			"errorGenerating": "Erreur lors de la génération du code",
+			"loadFailed": "Impossible de charger le QR",
+			"refresh": "Actualiser le code",
+			"expiresIn": "Expire dans {{time}}"
+		},
+		"checkIn": {
+			"error": {
+				"title": "Erreur de Check-in",
+				"selectBranch": "Veuillez sélectionner une succursale avant de scanner.",
+				"default": "L'accès n'a pas pu être traité.",
+				"paymentPending": "L'utilisateur a des paiements en attente.",
+				"accessDenied": "L'utilisateur n'a pas la permission d'entrer dans cette zone ou succursale.",
+				"qrExpired": "Le code QR a expiré. Demandez à l'utilisateur d'en générer un nouveau.",
+				"unauthorized": "Accès non autorisé. Veuillez vérifier les identifiants."
+			},
+			"title": "Check-in Client",
+			"successMessage": "Check-in traité avec succès",
+			"cameraPreviewUnavailable": "Fonction caméra non disponible en aperçu",
+			"scan": {
+				"successTitle": "QR Scanné",
+				"confirmMessage": "Voulez-vous traiter ce check-in ?"
+			},
+			"clientList": {
+				"title": "Liste des Clients Enregistrés",
+				"searchPlaceholder": "Rechercher un client par nom"
+			},
+			"mock": {
+				"client": "Client",
+				"level": "Niveau"
+			},
+			"console": {
+				"clientSelected": "Client sélectionné :"
+			}
+		},
+		"common": {
+			"attention": "Attention",
+			"instructor": "Instructeur",
+			"with": "Avec",
+			"capacity": "Capacité",
+			"error": {
+				"connection": "Erreur de connexion avec le serveur.",
+				"unexpected": "Une erreur inattendue est survenue.",
+				"unknown": "Erreur inconnue"
+			},
+			"selectBranch": "Sélectionner une succursale",
+			"selectYourBranch": "Sélectionnez votre succursale",
+			"accept": "Accepter",
+			"process": "Traiter",
+			"success": "Succès",
+			"selected": "Sélectionné : ",
+			"cancel": "Annuler",
+			"confirm": "Confirmer",
+			"delete": "Supprimer",
+			"back": "Retour",
+			"ok": "OK",
+			"filter": "Filtrer",
+			"viewAllRegistered": "Voir tous les enregistrés",
+			"available": "Disponible",
+			"full": "Complet",
+			"viewDetails": "Voir les détails",
+			"years": "Ans",
+			"classes": "Cours",
+			"clients": "Clients",
+			"dateUndefined": "Date non définie",
+			"of": "de",
+			"welcome": "BIENVENUE",
+			"accessDenied": "ACCÈS REFUSÉ",
+			"accessGranted": "Accès Autorisé",
+			"status": {
+				"title": "Statut",
+				"assisted": "Présent",
+				"absent": "Absent",
+				"cancelled": "Annulé",
+				"active": "Actif",
+				"cancelled_generic": "Annulé"
+			},
+			"client": "Client",
+			"loading": "Chargement...",
+			"today": "Aujourd'hui",
+			"category": "Catégorie",
+			"reserved": "Réservé",
+			"viewMore": "Voir plus",
+			"availability": "Disponibilité",
+			"unknown": "Inconnu",
+			"notes": "Notes",
+			"noClientsFound": "Aucun client trouvé",
+			"weekdaysShort": [
+				"LUN",
+				"MAR",
+				"MER",
+				"JEU",
+				"VEN",
+				"SAM",
+				"DIM"
+			]
+		},
+		"enrollClient": {
+			"title": "Inscrire Client",
+			"defaultClassName": "Cours",
+			"placeholders": {
+				"date": "Date",
+				"time": "Heure"
+			},
+			"form": {
+				"emailPlaceholder": "exemple@email.com",
+				"clientId": "ID Client",
+				"clientIdPlaceholder": "Entrez l'ID",
+				"clientName": "Nom",
+				"clientNamePlaceholder": "Entrez le nom"
+			},
+			"button": "Inscrire",
+			"error": {
+				"emailRequired": "L'e-mail est requis",
+				"userNotFound": "Utilisateur introuvable",
+				"searchFailed": "Erreur recherche utilisateur",
+				"enrollFailed": "Erreur inscription utilisateur",
+				"completeFields": "Remplissez tous les champs",
+				"classFull": "Le cours n'a plus de place",
+				"alreadyEnrolled": "L'utilisateur est déjà inscrit à ce cours"
+			},
+			"warning": {
+				"classPast": "Ce cours est déjà terminé ou a commencé",
+				"classStartingSoon": "Le cours commence dans moins de 30 min"
+			},
+			"success": {
+				"title": "Inscription Réussie !",
+				"message": "Client inscrit avec succès à :"
+			}
+		},
+		"login": {
+			"title": "Se connecter",
+			"subtitle": "Entrez vos identifiants pour vous connecter",
+			"emailLabel": "E-mail",
+			"emailPlaceholder": "Entrez votre e-mail",
+			"passwordLabel": "Mot de passe",
+			"passwordPlaceholder": "Entrez votre mot de passe",
+			"rememberMe": "Rester connecté",
+			"forgotPassword": "Mot de passe oublié ?",
+			"recover": "Récupérer",
+			"signInButton": "Se connecter",
+			"signingInButton": "Connexion en cours...",
+			"googleSignIn": "Se connecter avec Google",
+			"noAccount": "Vous n'avez pas encore de compte ?",
+			"signUpLink": "S'inscrire",
+			"toast": {
+				"errorTitle": "Erreur",
+				"loginErrorTitle": "Erreur de connexion",
+				"verifyData": "Veuillez vérifier vos données.",
+				"incorrectCredentials": "Nom d'utilisateur ou mot de passe incorrect.",
+				"emptyFields": "Veuillez entrer votre e-mail et votre mot de passe.",
+				"invalidEmail": "Veuillez entrer une adresse e-mail valide.",
+				"unexpectedError": "Une erreur inattendue est survenue. Veuillez réessayer.",
+				"welcomeTitle": "Bienvenue !",
+				"googleLoginSuccess": "Vous vous êtes connecté avec Google avec succès",
+				"sessionSaveError": "Impossible d'enregistrer la session",
+				"accountNotRegistered": "Compte non enregistré",
+				"completeRegistration": "Complétons votre inscription avec Google",
+				"authError": "Erreur d'authentification",
+				"googleLoginError": "Impossible de se connecter avec Google",
+				"clerkTokenError": "Impossible d'obtenir le jeton Clerk",
+				"alreadySignedIn": "Déjà connecté",
+				"redirectingDashboard": "Redirection vers le tableau de bord..."
+			},
+			"authenticatingGoogle": "Authentification avec Google..."
+		},
+		"register": {
+			"step1Title": "QUEL EST VOTRE GENRE ?",
+			"step2Title": "CRÉEZ VOTRE COMPTE",
+			"step2Subtitle": "Entrez vos identifiants pour vous inscrire",
+			"step3Subtitle": "Complétez vos coordonnées pour créer votre compte",
+			"alreadyHaveAccount": "Vous avez déjà un compte ?",
+			"signInLink": " Se connecter",
+			"continueButton": "Continuer",
+			"genderSelector": {
+				"female": "Femme",
+				"male": "Homme",
+				"preferNotToSay": "Préfère ne pas dire"
+			},
+			"toast": {
+				"successTitle": "Vérifiez vos e-mails",
+				"successMessage": "Code envoyé avec succès",
+				"errorTitle": "Erreur d'inscription",
+				"unexpectedError": "Une erreur inattendue est survenue. Veuillez réessayer."
+			}
+		},
+		"step2Credentials": {
+			"emailLabel": "E-mail",
+			"emailPlaceholder": "Entrez votre e-mail",
+			"passwordLabel": "Mot de passe",
+			"passwordPlaceholder": "Entrez votre mot de passe",
+			"confirmPasswordLabel": "Confirmer le mot de passe",
+			"confirmPasswordPlaceholder": "Confirmez votre mot de passe",
+			"continueButton": "Continuer",
+			"googleSignInButton": "Se connecter avec Google",
+			"emailRequired": "L'e-mail est requis.",
+			"passwordRequired": "Le mot de passe est requis.",
+			"confirmPasswordRequired": "Vous devez confirmer votre mot de passe."
+		},
+		"step3PersonalDetails": {
+			"nameLabel": "Prénom",
+			"namePlaceholder": "Entrez votre prénom",
+			"nameRequired": "Le prénom est requis.",
+			"lastNameLabel": "Nom",
+			"lastNamePlaceholder": "Entrez votre nom",
+			"lastNameRequired": "Le nom est requis.",
+			"documentIdLabel": "Document d'identité",
+			"documentIdPlaceholder": "Entrez votre document d'identité",
+			"documentIdRequired": "Le numéro d'identité est requis.",
+			"birthDateLabel": "Date de naissance",
+			"birthDateRequired": "La date de naissance est requise.",
+			"phoneLabel": "Téléphone",
+			"phonePlaceholder": "Numéro de téléphone",
+			"acceptTerms": "J'accepte les ",
+			"termsAndConditions": "termes et conditions",
+			"createAccountButton": "Créer un compte"
+		},
+		"forgotPassword": {
+			"titles": {
+				"step1": "RÉCUPÉRER VOTRE MOT DE PASSE",
+				"step2": "VÉRIFIER LE CODE",
+				"step3": "NOUVEAU MOT DE PASSE"
+			},
+			"stepLabels": {
+				"email": "E-mail",
+				"code": "Code",
+				"reset": "Réinitialiser"
+			},
+			"subtitles": {
+				"step1": "Entrez l'e-mail associé au compte pour récupérer votre mot de passe",
+				"step2": "Nous avons envoyé un code à votre e-mail",
+				"step3": "Entrez votre nouveau mot de passe"
+			},
+			"step1": {
+				"emailLabel": "E-mail",
+				"emailPlaceholder": "votre_email@email.com",
+				"sendCodeButton": "Envoyer le code",
+				"sendingCodeButton": "Envoi en cours...",
+				"cancelButton": "Annuler",
+				"toast": {
+					"errorTitle": "Erreur",
+					"successTitle": "Succès",
+					"successMessage": "Si l'e-mail existe, un code de récupération a été envoyé."
+				}
+			},
+			"step2": {
+				"cancelButton": "Annuler",
+				"toast": {
+					"errorTitle": "Erreur",
+					"errorMessage": "Une erreur inattendue est survenue. Veuillez réessayer."
+				}
+			},
+			"step3": {
+				"passwordLabel": "Nouveau mot de passe",
+				"passwordPlaceholder": "Entrez votre nouveau mot de passe",
+				"confirmPasswordLabel": "Confirmer le mot de passe",
+				"confirmPasswordPlaceholder": "Confirmez votre nouveau mot de passe",
+				"saveButton": "Enregistrer",
+				"savingButton": "Enregistrement...",
+				"cancelButton": "Annuler",
+				"toast": {
+					"successTitle": "Succès !",
+					"successMessage": "Votre mot de passe a été réinitialisé avec succès.",
+					"errorTitle": "Erreur",
+					"errorMessage": "Une erreur inattendue est survenue. Veuillez réessayer."
+				}
+			},
+			"notifications": {
+				"success": "Succès !",
+				"error": "Erreur",
+				"checkEmail": "Vérifiez vos e-mails",
+				"invalidCode": "Code invalide",
+				"passwordChanged": "Mot de passe modifié avec succès"
+			}
+		},
+		"confirmEmail": {
+			"title": "VÉRIFIER VOTRE COMPTE",
+			"subtitle": "Entrez le code de vérification que nous avons envoyé à votre e-mail.",
+			"verifyButton": "Vérifier le compte",
+			"verifyingButton": "Vérification...",
+			"resendText": "Vous n'avez pas reçu le code ?",
+			"resendLink": "Renvoyer",
+			"toast": {
+				"successTitle": "Compte Vérifié",
+				"successMessage": "Bienvenue chez VitalFit.",
+				"resendTitle": "Code Envoyé",
+				"resendMessage": "Vérifiez votre boîte de réception.",
+				"errorTitle": "Erreur",
+				"errorMessage": "Code invalide ou erreur de connexion.",
+				"enterCode": "Veuillez entrer le code.",
+				"tempPasswordNotFound": "Mot de passe temporaire introuvable."
+			},
+			"modal": {
+				"title": "Vérification Réussie !",
+				"message": "Connexion en cours..."
+			}
+		},
+		"dashboard": {
+			"recepcionistDefault": "Réceptionniste",
+			"defaultUser": "Utilisateur",
+			"member": {
+				"activeMembership": "Abonnement Actif",
+				"noActivePlan": "Aucun plan actif",
+				"completedChallenges": "Défis Complétés",
+				"weeklyTraining": "Entraînement Hebdomadaire",
+				"progress": "Progrès",
+				"packages": "Forfaits"
+			},
+			"hello": "Bonjour, ",
+			"notifications": {
+				"title": "Notifications",
+				"empty": "Aucune nouvelle notification",
+				"mock": {
+					"classStarting": "Votre cours commence dans 10 minutes",
+					"paymentReceived": "Paiement de l'abonnement reçu"
+				}
+			},
+			"stats": {
+				"monthlyTrend": "Tendance Mensuelle",
+				"classesToday": "Cours d'Aujourd'hui",
+				"dailyCheckIns": "Check-in Aujourd'hui"
+			},
+			"validateCheckIn": {
+				"title": "Valider le Check-in",
+				"searchPlaceholder": "Chercher par email",
+				"scanQr": "Scanner QR",
+				"scanFace": "Scanner Visage",
+				"checkInByEmail": "Check-in par Email",
+				"searching": "Recherche...",
+				"emailRequired": "L'email est requis",
+				"invalidEmail": "Format d'email invalide",
+				"userNotFound": "Utilisateur non trouvé avec cet email"
+			},
+			"capacity": {
+				"title": "Capacité de la Salle",
+				"subtitle": "Capacité actuelle en temps réel",
+				"occupancy": "Occupation",
+				"occupied": "% Occupé",
+				"available": "places disponibles"
+			},
+			"todayClasses": {
+				"title": "Cours d'Aujourd'hui",
+				"subtitle": "Planning et présence",
+				"registered": "INSCRITS",
+				"noClasses": "Plus de cours pour aujourd'hui"
+			},
+			"classStatus": {
+				"inProgress": "EN COURS",
+				"powerlifting": "Powerlifting",
+				"advanced": "Avancé"
+			},
+			"challenges": {
+				"completed": "Défis Complétés",
+				"weekly": "Entraînement Hebdomadaire",
+				"progress": "Progrès"
+			},
+			"mock": {
+				"classTitle": "Cours",
+				"routineDay": "JOUR 01",
+				"routineSubtitle": "Commencer le jogging",
+				"routineDuration": "10 km, 4 semaines"
+			},
+			"sections": {
+				"packages": "Forfaits"
+			},
+			"banners": {
+				"crossfit4": "CrossFit - 4 séances",
+				"weeklyChallenge": "Défi Hebdomadaire",
+				"plankWithHipTwist": "Planche avec rotation de hanche"
+			},
+			"membershipCard": {
+				"welcomeTo": "Bienvenue chez",
+				"daysRemaining": "jours restants",
+				"noActiveMembership": "Aucun abonnement actif",
+				"checkIn": "S'enregistrer",
+				"purchase": "Acheter"
+			},
+			"upcomingClasses": {
+				"title": "Prochains Cours",
+				"time": "Heure",
+				"burn": "Brûlure",
+				"bookNow": "Réservez votre prochain cours"
+			},
+			"upcomingRoutines": {
+				"title": "Prochaines Routines",
+				"services": "Services",
+				"start": "Démarrer",
+				"purchase": "Acheter"
+			},
+			"findBranches": "Trouver des Succursales"
+		},
+		"personalInfo": {
+			"editButton": "Modifier les Informations",
+			"sections": {
+				"personal": "Informations Personnelles",
+				"contact": "Informations de Contact"
+			},
+			"fields": {
+				"firstName": "Prénom",
+				"lastName": "Nom",
+				"id": "Document d'identité",
+				"birthDate": "Date de naissance",
+				"email": "E-mail",
+				"phone": "Téléphone"
+			},
+			"success": {
+				"message": "Changements enregistrés avec succès"
+			}
+		},
+		"schedule": {
+			"week": "Semaine",
+			"month": "Mois",
+			"calendar": "CALENDRIER",
+			"reservations": "Réservations",
+			"spotsOccupied": "places occupées",
+			"myBookings": "Mes Réservations",
+			"noBookings": "Vous n'avez pas encore de réservations.",
+			"noClassesBranch": "Aucun cours prévu pour cette succursale.",
+			"noClassesForDate": "Aucun cours disponible pour la date sélectionnée",
+			"errorLoadingClasses": "Impossible de charger les cours. Veuillez réessayer.",
+			"errorLoadingBookings": "Impossible de charger vos réservations. Veuillez réessayer.",
+			"tabs": {
+				"classes": "Cours",
+				"reservations": "Réservations",
+				"explore": "Explorer"
+			},
+			"upcomingClasses": "Prochains Cours",
+			"filter": "Filtrer",
+			"myReservations": "Mes Réservations",
+			"noReservations": "Aucune réservation pour le moment.",
+			"categories": {
+				"yoga": "Yoga",
+				"hiit": "HIIT",
+				"kickBoxing": "Kick Boxing",
+				"pilates": "Pilates"
+			}
+		},
+		"scanner": {
+			"permission": {
+				"message": "Nous avons besoin de l'accès à la caméra pour valider les abonnements.",
+				"button": "Accorder la Permission"
+			},
+			"validating": "Validation de l'abonnement...",
+			"instruction": "Scanner le QR du client",
+			"error": {
+				"cameraAccess": "Impossible d'accéder à la caméra"
+			}
+		},
+		"classDetails": {
+			"defaultName": "NOM DU COURS",
+			"defaultInstructor": "Nom de l'instructeur",
+			"duration": "(1 heure)",
+			"descriptionTitle": "Description du Cours :",
+			"classFull": "Cours Complet",
+			"enrollClient": "Inscrire un Client",
+			"clientList": "Liste des clients",
+			"searchPlaceholder": "Rechercher un client...",
+			"noClientsFound": "Aucun client trouvé",
+			"viewAllRegistered": "Voir tous les inscrits",
+			"showLess": "Voir moins"
+		},
+		"classes": {
+			"description": {
+				"yoga": "Cours axé sur la respiration, les étirements et les postures qui améliorent la souplesse, réduisent le stress et renforcent le corps progressivement.",
+				"zumba": "Cours de fitness dansé sur des rythmes latins pour améliorer l'endurance et la coordination. Idéal pour tous les niveaux et axé sur le plaisir tout en brûlant des calories.",
+				"spinning": "Entraînement cardiovasculaire sur vélo stationnaire, idéal pour brûler des calories, améliorer l'endurance et renforcer les jambes et les fessiers au rythme de la musique.",
+				"crossfit": "Entraînement fonctionnel de haute intensité combinant force, endurance et puissance avec des mouvements variés au poids du corps et matériel.",
+				"pilates": "Séance axée sur le renforcement du tronc, la posture et la mobilité, avec des exercices contrôlés qui protègent les articulations.",
+				"default": "Cet entraînement se concentre sur le développement musculaire et l'endurance. Comprend des exercices avec poids, bandes de résistance et poids du corps. Idéal pour tous les niveaux."
+			}
+		},
+		"profile": {
+			"staffViralFit": "Personnel VitalFit",
+			"aboutMe": "À propos de moi",
+			"aboutMeDescription": "Réceptionniste dédiée avec de l'expérience dans la gestion des plannings, le service client et la coordination des cours. Axée sur une expérience fluide et organisée pour tous les membres.",
+			"settings": "Paramètres",
+			"personalInfo": "Informations personnelles",
+			"security": "Sécurité",
+			"language": "Langue",
+			"helpSupport": "Aide et support",
+			"helpSupportDev": "Fonction d'aide en cours de développement",
+			"logout": "Déconnexion",
+			"logoutConfirmTitle": "Déconnexion ?",
+			"logoutConfirmMessage": "Votre session actuelle sera fermée et vous devrez vous reconnecter.",
+			"qrModalTitle": "Scanner Code QR",
+			"qrModalDescription": "Scannez le code QR du client pour enregistrer son entrée",
+			"startScan": "Démarrer le scan",
+			"error": {
+				"logoutToken": "Erreur lors de la suppression du jeton à la déconnexion"
+			}
+		},
+		"community": {
+			"joinChallenges": "REJOINDRE LES DÉFIS"
+		},
+		"training": {
+			"viewHistory": "VOIR L'HISTORIQUE",
+			"active": "Actif",
+			"today": "Aujourd'hui",
+			"loadingRoutines": "Chargement des routines...",
+			"errorLoadingRoutines": "Erreur lors du chargement des routines",
+			"retry": "Réessayer",
+			"noRoutines": "Aucune routine assignée",
+			"noRoutinesDescription": "Votre instructeur vous assignera des routines à suivre.",
+			"viewAiRoutines": "Voir les Routines Assignées par IA",
+			"routines": {
+				"yoga": "Yoga",
+				"hiit": "HIIT",
+				"kickBoxing": "Kick Boxing",
+				"pilates": "Pilates"
+			},
+			"mock": {
+				"routineTitle": "Force Totale – Semaine 3",
+				"routineSubtitle": "Corps Complet - Moyen"
+			}
+		},
+		"routine": {
+			"error": "Erreur",
+			"success": "Succès",
+			"loadingDetails": "Chargement des détails de la routine...",
+			"errorLoadingDetails": "Impossible de charger les détails de la routine",
+			"exerciseList": "LISTE DES EXERCICES",
+			"sets": "Séries",
+			"reps": "Répétitions",
+			"rest": "Repos",
+			"noExercises": "Aucun exercice dans cette routine",
+			"markAsComplete": "Marquer comme terminée",
+			"markComplete": "Marquer comme terminée",
+			"markCompleteConfirm": "Êtes-vous sûr de vouloir marquer cette routine comme terminée?",
+			"markedComplete": "Routine marquée comme terminée!",
+			"errorMarkingComplete": "Impossible de marquer la routine comme terminée"
+		},
+		"clientProfile": {
+			"member": "Membre",
+			"activeMembership": "Abonnement Actif",
+			"myQr": "Mon Code QR",
+			"membership": "Abonnement",
+			"description": "Depuis votre profil, vous pouvez gérer vos informations personnelles, consulter votre abonnement et configurer vos notifications et préférences de compte.",
+			"defaultName": "Client",
+			"error": {
+				"fetchUser": "Une erreur inattendue est survenue lors de la récupération des données utilisateur."
+			}
+		},
+		"insignias": {
+			"title": "Mes Badges",
+			"currentLevel": "VOTRE NIVEAU ACTUEL",
+			"progressToLevel": "Progression vers le niveau {{level}}",
+			"loading": "Chargement des badges...",
+			"error": "Impossible de charger les données",
+			"backButton": "Retour",
+			"stats": {
+				"points": "Points",
+				"badges": "Badges",
+				"attendance": "Présence"
+			},
+			"badgesObtained": "Badges Obtenus",
+			"progress": "Progrès",
+			"rarity": {
+				"common": "Commun",
+				"rare": "Rare",
+				"epic": "Épique",
+				"legendary": "Légendaire"
+			},
+			"badgeNames": {
+				"firstClass": "Premier Cours",
+				"beginner": "Débutant",
+				"dedicated": "Dévoué",
+				"ironWarrior": "Guerrier de Fer",
+				"athlete": "Athlète",
+				"disciplined": "Discipliné",
+				"champion": "Champion",
+				"master": "Maître",
+				"fitnessGod": "Dieu du Fitness"
+			},
+			"requirements": {
+				"firstClass": "Commencez votre voyage",
+				"beginner": "Atteignez 100 points",
+				"dedicated": "Atteignez 250 points",
+				"ironWarrior": "Atteignez 600 points",
+				"athlete": "Atteignez 1000 points",
+				"disciplined": "Atteignez 1500 points",
+				"champion": "Atteignez 2100 points",
+				"master": "Atteignez 3000 points",
+				"fitnessGod": "Atteignez 6000 points"
+			}
+		},
+		"profileSettings": {
+			"title": "Sécurité",
+			"options": "Options",
+			"changePassword": "Changer le mot de passe"
+		},
+		"changePassword": {
+			"title": "Changer le Mot de Passe",
+			"accountSecurity": "Sécurité du Compte",
+			"updatePassword": "Mettez à jour votre mot de passe d'accès",
+			"currentPasswordLabel": "Mot de passe actuel",
+			"currentPasswordPlaceholder": "Entrez votre mot de passe actuel",
+			"newPasswordLabel": "Nouveau mot de passe",
+			"newPasswordPlaceholder": "Entrez votre nouveau mot de passe",
+			"confirmPasswordLabel": "Confirmer le mot de passe",
+			"confirmPasswordPlaceholder": "Répétez votre nouveau mot de passe",
+			"saveButton": "Enregistrer les changements",
+			"savingButton": "Enregistrement...",
+			"errors": {
+				"currentPasswordRequired": "Entrez votre mot de passe actuel.",
+				"newPasswordMin": "Le mot de passe doit faire au moins 8 caractères.",
+				"uppercase": "Doit contenir au moins une lettre majuscule.",
+				"lowercase": "Doit contenir au moins une lettre minuscule.",
+				"number": "Doit contenir au moins un chiffre.",
+				"special": "Doit contenir au moins un caractère spécial.",
+				"passwordMismatch": "Les mots de passe ne correspondent pas.",
+				"samePassword": "Le nouveau mot de passe ne peut pas être identique à l'actuel.",
+				"noSession": "Aucune session active trouvée",
+				"generic": "Une erreur est survenue lors du changement de mot de passe.",
+				"incorrectPassword": "Le mot de passe actuel est incorrect.",
+				"verifyPassword": "Veuillez vérifier votre mot de passe actuel et réessayer."
+			},
+			"toast": {
+				"successTitle": "Mot de passe mis à jour",
+				"successMessage": "Le mot de passe a été enregistré avec succès",
+				"errorTitle": "Erreur"
+			}
+		},
+		"myProfile": {
+			"title": "Profil",
+			"personalAccount": "Compte Personnel",
+			"firstName": "Prénom",
+			"lastName": "Nom",
+			"email": "E-mail",
+			"identityDoc": "Document d'identité",
+			"birthDate": "Date de naissance",
+			"phone": "Téléphone",
+			"gender": "Genre",
+			"edit": "Modifier",
+			"saveChanges": "Enregistrer les changements",
+			"cancel": "Annuler",
+			"level": "Niveau",
+			"premium": "Premium",
+			"personalInfo": "Informations Personnelles",
+			"contactInfo": "Informations de Contact",
+			"male": "Homme",
+			"female": "Femme",
+			"placeholders": {
+				"name": "Prénom",
+				"lastName": "Nom",
+				"identityDoc": "Document d'identité",
+				"birthDate": "aaaa-mm-jj",
+				"email": "E-mail",
+				"phone": "Téléphone",
+				"gender": "Genre"
+			},
+			"errors": {
+				"nameRequired": "Le prénom est requis.",
+				"nameLetters": "Le prénom ne peut contenir que des lettres.",
+				"lastNameRequired": "Le nom est requis.",
+				"lastNameLetters": "Le nom ne peut contenir que des lettres.",
+				"documentRequired": "Le document est requis.",
+				"documentMin": "Le document doit faire au moins 6 chiffres.",
+				"documentNumeric": "Le document ne peut contenir que des chiffres.",
+				"birthDateRequired": "La date de naissance est requise.",
+				"adult": "Vous devez avoir plus de 18 ans.",
+				"phoneLength": "Le numéro de téléphone doit faire entre 10 et 15 chiffres.",
+				"genderRequired": "Le genre est requis.",
+				"noToken": "Jeton d'authentification non trouvé",
+				"noUserId": "ID utilisateur non trouvé",
+				"uploadImageError": "Impossible de télécharger la photo de profil",
+				"updateError": "Une erreur inattendue est survenue lors de la mise à jour du profil."
+			},
+			"permissions": {
+				"title": "Permissions Requises",
+				"message": "Nous avons besoin d'accéder à votre galerie pour changer la photo de profil."
+			},
+			"galleryError": "Impossible d'ouvrir la galerie.",
+			"toast": {
+				"successTitle": "Profil Mis à Jour !",
+				"successMessage": "Vos changements ont été enregistrés avec succès",
+				"errorTitle": "Erreur"
+			}
+		},
+		"notifications": {
+			"title": "Notifications",
+			"configure": "Paramètres",
+			"timeLabels": {
+				"today": "Aujourd'hui",
+				"yesterday": "Hier"
+			},
+			"badges": {
+				"gym": "Salle"
+			},
+			"messages": {
+				"classReminder": {
+					"title": "Rappel de Cours",
+					"body": "Vous avez un cours de Force Fonctionnelle aujourd'hui à 18h00."
+				},
+				"membershipRenewal": {
+					"title": "Renouvelez votre abonnement",
+					"body": "Votre abonnement expire dans 3 jours. Renouvelez-le maintenant et obtenez 10% de réduction."
+				},
+				"challengeComplete": {
+					"title": "Défi complété !",
+					"body": "Félicitations, vous avez terminé le défi hebdomadaire. Vous avez gagné 150 points."
+				}
+			}
+		},
+		"myMembership": {
+			"title": "Mon Abonnement",
+			"currentPlan": "Plan Actuel",
+			"currentSubscription": "ABONNEMENT ACTUEL",
+			"active": "Actif",
+			"expirationDate": "Date d'expiration",
+			"viewDetails": "Voir Détails",
+			"allPlans": "Tous les Plans",
+			"update": "Mettre à jour",
+			"mockDate": "11 Décembre 2025",
+			"noActivePlan": "Aucun plan actif",
+			"noOtherPlans": "Il n'y a pas d'autres plans disponibles pour le moment."
+		},
+		"language": {
+			"title": "Langue",
+			"changeLanguage": "Changer la langue",
+			"selectOption": "Sélectionnez une option dans les paramètres de configuration"
+		},
+		"paymentHistory": {
+			"title": "Historique des Paiements",
+			"invoice": "Facture",
+			"searchPlaceholder": "Rechercher...",
+			"filter": "Filtrer",
+			"filters": {
+				"all": "Tous",
+				"paid": "Payé",
+				"pending": "En attente",
+				"processing": "En traitement",
+				"refunded": "Remboursé"
+			},
+			"emptyState": "Aucun paiement trouvé",
+			"status": {
+				"paid": "Payé",
+				"pending": "En attente",
+				"processing": "En traitement",
+				"refunded": "Remboursé"
+			},
+			"details": {
+				"branch": "Succursale",
+				"issuedAt": "Émis le",
+				"itemsDetail": "Détails des articles",
+				"reportedPayments": "Paiements signalés",
+				"quantity": "Qté",
+				"membershipType": "Type d'Abonnement",
+				"paymentMethod": "Moyen de Paiement",
+				"subtotal": "Sous-total",
+				"tax": "Tva",
+				"total": "Total",
+				"loadError": "Impossible de charger les détails.",
+				"items": {
+					"billing": "Article de facturation",
+					"subscription": "Abonnement Premium",
+					"package": "Forfait de Cours",
+					"service": "Service Général"
+				}
+			}
+		},
+		"notificationsSettings": {
+			"title": "Paramètres",
+			"notifications": "Notifications",
+			"description": "Gérez la façon dont vous souhaitez recevoir les notifications",
+			"classReminders": {
+				"title": "Rappels de Cours",
+				"description": "Recevez des notifications avant vos cours"
+			},
+			"routineUpdates": {
+				"title": "Mises à jour des Routines",
+				"description": "Lorsque vos progrès ou routines changent"
+			}
+		},
+		"membershipEntry": {
+			"title": "Qu'aimeriez-vous\nacheter aujourd'hui ?",
+			"buyMembership": "ACHETER UN ABONNEMENT",
+			"buyService": "ACHETER UN SERVICE/FORFAIT",
+			"membershipDesc": "Accès à toutes les installations et services de la salle.",
+			"serviceDesc": "Achetez des forfaits de cours ou des services spécifiques.",
+			"membershipBullets": {
+				"access": "Accès illimité",
+				"benefits": "Avantages exclusifs",
+				"discounts": "Réductions sur services"
+			},
+			"serviceBullets": {
+				"classes": "Forfaits de cours",
+				"personalTraining": "Entraînement personnel",
+				"individualServices": "Services individuels"
+			},
+			"backHome": "Retour à l'Accueil"
+		},
+		"memberships": {
+			"titlePrefix": "NOS",
+			"titleSuffix": "ABONNEMENTS",
+			"subtitle": "Choisissez le plan qui correspond le mieux à vos besoins et objectifs.",
+			"free": "Gratuit",
+			"acquire": "Acquérir",
+			"acquirePlan": "Acquérir {{name}}",
+			"periodDays": "/{{days}} jours",
+			"error": {
+				"loadPlans": "Impossible de charger les plans d'abonnement."
+			},
+			"plans": {
+				"TRIMESTRAL FIT": {
+					"name": "FIT TRIMESTRIEL",
+					"description": "Engagement de 3 mois avec accès complet aux installations et cours collectifs."
+				},
+				"ANUAL BLACK VIP": {
+					"name": "VIP BLACK ANNUEL",
+					"description": "Abonnement annuel tout compris avec avantages exclusifs et services illimités."
+				},
+				"MENSUAL BÁSICO": {
+					"name": "BASIQUE MENSUEL",
+					"description": "Accès illimité à la zone de musculation, cardio et installations de base."
+				}
+			}
+		},
+		"checkout": {
+			"title": "ACHETER ABONNEMENT",
+			"steps": {
+				"options": "Options",
+				"extras": "Extras",
+				"confirmation": "Confirmation"
+			},
+			"summary": {
+				"selectedPlan": "Plan Sélectionné",
+				"subtitle": "Plus d'avantages pour votre vie fitness"
+			},
+			"startDate": "Date de Début",
+			"benefits": {
+				"free-trial": [
+					"Accès salle limité",
+					"7 jours d'accès gratuit"
+				],
+				"advanced": [
+					"Accès salle illimité",
+					"7 séances avec consultant fitness",
+					"Suivi nutritionnel",
+					"5 suppléments offerts",
+					"Carte de membre",
+					"Coach personnel"
+				],
+				"athlete": [
+					"Accès complet salle",
+					"Plan d'entraînement personnalisé",
+					"Suivi des progrès mensuel"
+				],
+				"premium": [
+					"Tous les avantages du plan Avancé",
+					"Séances illimitées avec consultant fitness",
+					"Plan nutritionnel avancé"
+				]
+			},
+			"error": {
+				"missingData": "Données manquantes pour le plan sélectionné.",
+				"userNotFound": "Impossible d'identifier l'utilisateur.",
+				"branchNotFound": "Aucune succursale disponible trouvée pour assigner la facture."
+			}
+		},
+		"extras": {
+			"title": "EXTRAS",
+			"additionalPackages": "Forfaits Additionnels",
+			"subtitle": "Sélectionnez des cours supplémentaires ou des services complémentaires pour votre abonnement.",
+			"added": "AJOUTÉ",
+			"clickToAdd": "Cliquer pour ajouter",
+			"continueWithExtras": "Continuer ({{count}} extras)",
+			"skipExtras": "Passer et continuer sans extras",
+			"noPackagesAvailable": "Aucun forfait additionnel disponible pour le moment.",
+			"error": {
+				"loadPackages": "Impossible de charger les forfaits additionnels."
+			},
+			"packages": {
+				"PACK INICIO RÁPIDO": {
+					"name": "Pack Départ Rapide",
+					"description": "La combinaison parfaite de services pour commencer votre transformation fitness."
+				},
+				"PACK SALUD INTEGRAL": {
+					"name": "Pack Santé Globale",
+					"description": "Une approche holistique combinant entraînement, nutrition et bien-être."
+				},
+				"PACK INTENSIVO PRO": {
+					"name": "Pack Intensif Pro",
+					"description": "Une sélection d'entraînements avancés pour athlètes expérimentés."
+				}
+			}
+		},
+		"confirm": {
+			"title": "RÉSUMÉ DE LA COMMANDE",
+			"paymentConfig": "Configuration du Paiement",
+			"branch": "SUCCURSALE",
+			"currency": "DEVISE DE PAIEMENT",
+			"selectCurrency": "Sélectionner la Devise",
+			"selectBranch": "Sélectionner une succursale",
+			"detailUSD": "DÉTAIL (USD)",
+			"tax": "Tva",
+			"totalUSD": "Total USD",
+			"totalToPay": "Total à Payer",
+			"approxRate": "Taux approx :",
+			"generatingOrder": "Génération de la commande...",
+			"confirmWithPay": "Confirmer et Payer",
+			"alert": {
+				"selectBranch": "Veuillez sélectionner une succursale."
+			},
+			"error": {
+				"invalidSession": "Session invalide",
+				"invoiceIdMissing": "Référence ID de facture non reçue"
+			}
+		},
+		"methods": {
+			"title": "MOYEN DE PAIEMENT",
+			"selectPaymentMethod": "Sélectionner le moyen de paiement",
+			"subtitle": "Choisissez comment vous souhaitez effectuer votre transaction",
+			"noMethodsAvailable": "Aucun moyen de paiement disponible pour cette succursale."
+		},
+		"payment": {
+			"method": {
+				"title": "MOYEN DE PAIEMENT",
+				"subtitle": "Sélectionnez comment vous souhaitez payer votre commande"
+			},
+			"options": {
+				"title": "Options Disponibles",
+				"noMethods": "Aucun moyen de paiement disponible pour cette succursale."
+			},
+			"totalToPay": "TOTAL À PAYER",
+			"concept": "Concept :",
+			"selectMethod": "Sélectionner une méthode",
+			"continue": "Continuer",
+			"reportPayment": "Signaler Paiement",
+			"confirmPayment": "Confirmer Paiement",
+			"mobile": {
+				"title": "PAIEMENT MOBILE",
+				"bankDetailsTitle": "DÉTAILS DU PAIEMENT",
+				"bankLabels": {
+					"bank": "Banque :",
+					"phone": "Téléphone :",
+					"rif": "ID :",
+					"holder": "Titulaire :"
+				}
+			},
+			"transfer": {
+				"title": "VIREMENT",
+				"subtitle": "Signalez les détails de votre transaction",
+				"destinationAccount": "COMPTE DE DESTINATION",
+				"total": "TOTAL À VIRER",
+				"order": "Commande",
+				"senderName": "Nom du titulaire du compte",
+				"senderNamePlaceholder": "Qui a effectué le virement",
+				"reference": "Numéro de référence / Confirmation",
+				"labels": {
+					"email": "E-mail :",
+					"holder": "Titulaire :",
+					"bank": "Banque :",
+					"account": "Compte :",
+					"rif": "ID :"
+				},
+				"holderPrefix": "Titulaire : ",
+				"referencePlaceholder": "Ex : 12345678"
+			},
+			"form": {
+				"originPhone": "Téléphone d'origine",
+				"document": "ID Titulaire / Document",
+				"reference": "Numéro de référence (4 derniers chiffres)"
+			},
+			"warning": {
+				"verificationTitle": "Vérification",
+				"verificationMessage": "Votre paiement sera validé manuellement par l'administration. Conservez votre reçu numérique.",
+				"manualConfirmation": "Confirmation Manuelle",
+				"manualMessage": "Notre équipe administrative vérifiera la transaction avant d'activer votre plan."
+			},
+			"toast": {
+				"selectMethod": "Veuillez sélectionner un moyen de paiement.",
+				"orderCreated": "Commande Créée",
+				"goToReception": "Veuillez vous rendre à la réception pour finaliser le paiement.",
+				"errorProcessing": "Erreur lors du traitement du paiement direct",
+				"errorRegistering": "Impossible d'enregistrer l'intention de paiement.",
+				"incompleteFields": "Veuillez remplir tous les champs.",
+				"invalidReference": "Entrez au moins les 4 derniers chiffres.",
+				"paymentReported": "Paiement Signalé",
+				"sentToVerification": "Votre paiement a été envoyé pour vérification.",
+				"errorPayment": "Erreur de Paiement"
+			},
+			"defaultTitle": "Abonnement VitalFit",
+			"defaultReceiptHelper": "Paiement signalé",
+			"cashReceiptHelper": "Paiement sur place/caisse",
+			"labels": {
+				"bank_name": "Banque",
+				"account_number": "N° de Compte",
+				"email": "E-mail Zelle",
+				"phone": "Téléphone",
+				"phone_number": "Téléphone",
+				"rif": "ID/Doc",
+				"beneficiary_name": "Bénéficiaire",
+				"holder": "Titulaire",
+				"number": "Numéro"
+			},
+			"confirmOrder": "Confirmer la commande",
+			"instructions": {
+				"cash": "Effectuez le paiement à la caisse et signalez-le ici."
+			}
+		},
+		"instructor": {
+			"profile": {
+				"defaultName": "Instructeur",
+				"specialty": "Force Fonctionnelle",
+				"error": {
+					"fetchUser": "Une erreur inattendue est survenue lors de la récupération des données utilisateur."
+				},
+				"aboutMe": "À propos de moi",
+				"aboutMeDescription": "La Dre Carly Angel est spécialiste du renforcement et de la condition physique. Elle aide les clients à construire une base solide et à améliorer leurs performances avec des programmes personnalisés.",
+				"scanQR": "Scanner QR",
+				"stats": {
+					"experience": "Expérience",
+					"completed": "Complété",
+					"activeClients": "Clients Actifs"
+				},
+				"settings": "Paramètres",
+				"personalInfo": "Informations Personnelles",
+				"security": "Sécurité",
+				"language": "Langue",
+				"notifications": "Notifications",
+				"myRoutines": "Mes Routines",
+				"helpSupport": "Aide et Support",
+				"termsConditions": "Termes et Conditions",
+				"logout": "Déconnexion",
+				"logoutConfirm": {
+					"title": "Déconnexion ?",
+					"message": "Votre session actuelle sera fermée et vous devrez vous reconnecter.",
+					"cancel": "Annuler"
+				}
+			},
+			"dashboard": {
+				"defaultName": "Instructeur",
+				"error": {
+					"fetchUser": "Une erreur inattendue est survenue lors de la récupération des données utilisateur."
+				},
+				"todayClasses": "Cours d'Aujourd'hui",
+				"clientMessages": "Messages Clients"
+			},
+			"classes": {
+				"title": "Calendrier des Cours",
+				"calendar": "CALENDRIER",
+				"week": "Semaine",
+				"month": "Mois",
+				"classesOfDay": "COURS DU JOUR",
+				"noClasses": "Aucun cours prévu pour cette date."
+			},
+			"clients": {
+				"title": "Mes Clients",
+				"assignRoutine": "Assigner Nouvelle Routine",
+				"viewProgress": "Voir Progrès"
+			},
+			"assignRoutine": {
+				"client": "Client",
+				"loading": "Chargement des routines...",
+				"error": "Erreur",
+				"errorLoadingData": "Impossible de charger les routines",
+				"selectRoutineFirst": "Veuillez d'abord sélectionner une routine",
+				"confirmTitle": "Assigner une Routine",
+				"confirmMessage": "Êtes-vous sûr de vouloir assigner cette routine ?",
+				"success": "Succès",
+				"routineAssigned": "Routine assignée avec succès !",
+				"errorAssigning": "Impossible d'assigner la routine",
+				"currentRoutines": "Routines Actuelles",
+				"completions": "Complétions",
+				"createNew": "Créer une Nouvelle Routine",
+				"noRoutines": "Aucune routine disponible. Créez-en une d'abord.",
+				"exercisesLabel": "exercices"
+			},
+			"createRoutine": {
+				"title": "Créer une Routine",
+				"assigningTo": "Assignation à",
+				"routineName": "Nom de la Routine",
+				"routineNamePlaceholder": "Entrez le nom de la routine",
+				"routineDescription": "Description",
+				"routineDescriptionPlaceholder": "Entrez la description de la routine",
+				"routineLevel": "Niveau",
+				"levels": {
+					"beginner": "Débutant",
+					"intermediate": "Intermédiaire",
+					"advanced": "Avancé"
+				},
+				"exercises": "Exercices",
+				"addExercise": "Ajouter un Exercice",
+				"closeExerciseList": "Fermer",
+				"selectExercise": "Sélectionner un Exercice",
+				"noExercisesYet": "Aucun exercice ajouté pour le moment",
+				"notesPlaceholder": "Notes (optionnel)",
+				"createRoutine": "Créer une Routine",
+				"createAndAssign": "Créer et Assigner une Routine",
+				"loading": "Chargement des exercices...",
+				"loadMore": "Charger Plus d'Exercices",
+				"allExercisesLoaded": "Tous les exercices sont chargés",
+				"error": "Erreur",
+				"errorLoadingExercises": "Impossible de charger les exercices",
+				"nameRequired": "Veuillez entrer un nom de routine",
+				"exercisesRequired": "Veuillez ajouter au moins un exercice",
+				"success": "Succès",
+				"routineCreated": "Routine créée avec succès !",
+				"routineCreatedAndAssigned": "Routine créée et assignée avec succès !",
+				"errorCreating": "Impossible de créer la routine"
+			},
+			"myRoutines": {
+				"title": "Mes Routines",
+				"loading": "Chargement de vos routines...",
+				"createNew": "Créer une Nouvelle Routine",
+				"yourRoutines": "Vos Routines",
+				"exercisesLabel": "exercices",
+				"edit": "Modifier",
+				"noRoutines": "Vous n'avez pas encore créé de routines.",
+				"createFirst": "Créez votre première routine pour commencer !",
+				"error": "Erreur",
+				"errorLoadingRoutines": "Impossible de charger vos routines",
+				"deleteTitle": "Supprimer la Routine",
+				"deleteMessage": "Êtes-vous sûr de vouloir supprimer cette routine ?",
+				"deleteSuccess": "Succès",
+				"routineDeleted": "Routine supprimée avec succès !",
+				"errorDeleting": "Impossible de supprimer la routine"
+			},
+			"editRoutine": {
+				"title": "Modifier la Routine",
+				"routineName": "Nom de la Routine",
+				"routineNamePlaceholder": "Entrez le nom de la routine",
+				"routineDescription": "Description",
+				"routineDescriptionPlaceholder": "Entrez la description de la routine",
+				"routineLevel": "Niveau",
+				"levels": {
+					"beginner": "Débutant",
+					"intermediate": "Intermédiaire",
+					"advanced": "Avancé"
+				},
+				"exercises": "Exercices",
+				"addExercise": "Ajouter un Exercice",
+				"closeExerciseList": "Fermer",
+				"selectExercise": "Sélectionner un Exercice",
+				"noExercisesYet": "Aucun exercice ajouté pour le moment",
+				"notesPlaceholder": "Notes (optionnel)",
+				"updateRoutine": "Mettre à Jour la Routine",
+				"loading": "Chargement de la routine...",
+				"loadMore": "Charger Plus d'Exercices",
+				"allExercisesLoaded": "Tous les exercices ont été chargés",
+				"error": "Erreur",
+				"errorLoadingRoutine": "Impossible de charger la routine",
+				"errorLoadingExercises": "Impossible de charger les exercices",
+				"nameRequired": "Veuillez entrer un nom pour la routine",
+				"exercisesRequired": "Veuillez ajouter au moins un exercice",
+				"success": "Succès",
+				"routineUpdated": "Routine mise à jour avec succès !",
+				"errorUpdating": "Impossible de mettre à jour la routine"
+			}
+		},
+		"client": {
+			"profile": {
+				"defaultUser": "Client",
+				"personalTrainer": "Coach Personnel",
+				"level": "Niveau",
+				"premium": "Premium",
+				"aboutMe": "À propos de moi",
+				"aboutMeDescription": "Depuis votre profil, vous pouvez gérer vos informations personnelles, consulter votre abonnement et configurer vos notifications et préférences de compte.",
+				"stats": {
+					"workouts": "Séances",
+					"badges": "Badges",
+					"points": "Points"
+				},
+				"checkIn": "S'enregistrer",
+				"referralCode": "Code de parrainage",
+				"settings": "Paramètres",
+				"personalInfo": "Informations personnelles",
+				"security": "Sécurité",
+				"myMembership": "Mon abonnement",
+				"badges": "Badges",
+				"language": "Langue",
+				"notifications": "Notifications",
+				"helpSupport": "Aide et support",
+				"termsConditions": "Termes et conditions",
+				"paymentHistory": "Historique des paiements",
+				"logout": "Déconnexion",
+				"logoutConfirm": {
+					"title": "Déconnexion ?",
+					"message": "Votre session actuelle sera fermée et vous devrez vous reconnecter.",
+					"cancel": "Annuler"
+				}
+			},
+			"aiRoutines": {
+				"title": "Routines Assignées par IA",
+				"loading": "Chargement de vos routines assignées par IA...",
+				"yourRoutines": "Vos Routines IA",
+				"noRoutines": "Aucune routine assignée par IA pour le moment.",
+				"startChat": "Discutez avec notre IA pour obtenir des routines personnalisées !",
+				"error": "Erreur",
+				"errorLoadingRoutines": "Impossible de charger vos routines assignées par IA",
+				"deleteTitle": "Supprimer la Routine IA",
+				"deleteMessage": "Êtes-vous sûr de vouloir supprimer cette routine assignée par IA ?",
+				"deleteSuccess": "Succès",
+				"routineDeleted": "Routine supprimée avec succès !",
+				"errorDeleting": "Impossible de supprimer la routine"
+			}
+		},
+		"validations": {
+			"genderRequired": "Veuillez sélectionner un genre.",
+			"password": {
+				"min": "Le mot de passe doit faire au moins {{min}} caractères.",
+				"uppercase": "Doit contenir au moins une lettre majuscule.",
+				"lowercase": "Doit contenir au moins une lettre minuscule.",
+				"number": "Doit contenir au moins un chiffre.",
+				"special": "Doit contenir au moins un caractère spécial.",
+				"mismatch": "Les mots de passe ne correspondent pas."
+			},
+			"name": {
+				"letters": "Le prénom ne peut contenir que des lettres."
+			},
+			"lastName": {
+				"letters": "Le nom ne peut contenir que des lettres."
+			},
+			"documentId": {
+				"min": "L'ID du document doit faire au moins {{min}} chiffres.",
+				"numeric": "L'ID du document doit contenir uniquement des chiffres."
+			},
+			"birthDate": {
+				"adult": "Vous devez avoir plus de 18 ans."
+			},
+			"phoneRequired": "Le numéro de téléphone est requis.",
+			"phone": {
+				"length": "Le numéro de téléphone doit faire entre 10 et 15 chiffres."
+			},
+			"acceptTerms": "Vous devez accepter les termes et conditions."
+		},
+		"receptionist": {
+			"changePassword": {
+				"title": "Changer le mot de passe",
+				"sectionTitle": "Sécurité du compte",
+				"sectionSubtitle": "Mettez à jour votre mot de passe d'accès",
+				"currentPassword": "Mot de passe actuel",
+				"currentPasswordPlaceholder": "Entrez votre mot de passe actuel",
+				"newPassword": "Nouveau mot de passe",
+				"newPasswordPlaceholder": "Entrez votre nouveau mot de passe",
+				"confirmPassword": "Confirmer le mot de passe",
+				"confirmPasswordPlaceholder": "Répétez votre nouveau mot de passe",
+				"saving": "Enregistrement...",
+				"save": "Enregistrer les modifications",
+				"toast": {
+					"successTitle": "Mot de passe mis à jour",
+					"successMessage": "Votre mot de passe a été mis à jour avec succès",
+					"errorTitle": "Erreur"
+				},
+				"errors": {
+					"currentRequired": "Entrez votre mot de passe actuel.",
+					"minLength": "Le mot de passe doit contenir au moins 8 caractères.",
+					"uppercase": "Doit contenir au moins une lettre majuscule.",
+					"lowercase": "Doit contenir au moins une lettre minuscule.",
+					"number": "Doit contenir au moins un chiffre.",
+					"special": "Doit contenir au moins un caractère spécial.",
+					"passwordMismatch": "Les mots de passe ne correspondent pas.",
+					"sameAsCurrent": "Le nouveau mot de passe ne peut pas être le même que l'actuel.",
+					"noSession": "Aucune session active trouvée.",
+					"generic": "Une erreur est survenue lors du changement de mot de passe.",
+					"incorrectCurrent": "Le mot de passe actuel est incorrect.",
+					"tryAgain": "Vérifiez votre mot de passe actuel et réessayez."
+				}
+			},
+			"security": {
+				"title": "Sécurité",
+				"options": "Options",
+				"changePassword": "Changer le mot de passe"
+			},
+			"personalInfo": {
+				"title": "Profil Réceptionniste",
+				"defaultRole": "Réceptionniste",
+				"defaultSpecialty": "Service Client",
+				"editButton": "Modifier",
+				"saveButton": "Enregistrer les modifications",
+				"cancelButton": "Annuler",
+				"personalInformationSection": "Informations Personnelles",
+				"contactInformationSection": "Coordonnées",
+				"firstName": "Prénom",
+				"firstNamePlaceholder": "Prénom",
+				"lastName": "Nom",
+				"lastNamePlaceholder": "Nom",
+				"documentId": "Numéro d'identité",
+				"documentIdPlaceholder": "Numéro de document",
+				"birthDate": "Date de naissance",
+				"birthDatePlaceholder": "aaaa-mm-jj",
+				"gender": "Genre",
+				"genderPlaceholder": "Genre",
+				"male": "Homme",
+				"female": "Femme",
+				"email": "E-mail",
+				"emailPlaceholder": "E-mail",
+				"phone": "Téléphone",
+				"phonePlaceholder": "Numéro de téléphone",
+				"permissions": {
+					"title": "Autorisations requises",
+					"galleryAccess": "Nous avons besoin d'accéder à votre galerie pour changer votre photo de profil."
+				},
+				"errors": {
+					"noToken": "Jeton d'authentification non trouvé",
+					"noUserId": "ID utilisateur non trouvé",
+					"uploadFailed": "Échec du téléchargement de la photo de profil",
+					"galleryError": "Impossible d'ouvrir la galerie."
+				},
+				"toast": {
+					"successTitle": "Profil mis à jour !",
+					"successMessage": "Vos modifications ont été enregistrées avec succès",
+					"errorTitle": "Erreur",
+					"defaultError": "Une erreur inattendue est survenue lors de la mise à jour du profil."
+				}
+			}
+		},
+		"instructorProfile": {
+			"title": "Profil de l'Instructeur",
+			"specialty": "Spécialité",
+			"defaultSpecialty": "Entraîneur Personnel",
+			"role": "Instructeur"
+		},
+		"instructorNotifications": {
+			"mock": {
+				"classReminder": "Rappel de Cours",
+				"classReminderBody": "Vous avez un cours de Force Fonctionnelle aujourd'hui à 18h00.",
+				"clientProgress": "Nouveau Progrès Client",
+				"clientProgressBody": "Votre client Juan Pérez a mis à jour ses progrès de routine.",
+				"hiitClassBody": "Vous avez un cours de HIIT prévu pour demain."
+			}
+		},
+		"services": {
+			"title": "Services",
+			"headerTitle": "SERVICES",
+			"subtitle": "Sélectionnez une succursale et choisissez votre service.",
+			"serviceFallback": "Service VitalFit",
+			"duration": "Durée : {{minutes}} min",
+			"memberPrice": "Membre",
+			"generalPrice": "Général",
+			"oneTimePayment": "Paiement unique"
+		},
+		"errors": {
+			"missingBranch": "Succursale non identifiée.",
+			"loadPaymentMethods": "Impossible de charger les méthodes de paiement.",
+			"sessionExpired": "Session expirée"
+		},
+		"membershipDetails": {
+			"title": "Membership Details",
+			"currentPlan": "Plan Actuel",
+			"price": "Prix",
+			"duration": "Durée",
+			"startDate": "Date de début",
+			"expirationDate": "Date d'expiration",
+			"cancelButton": "Cancel Membership",
+			"keepSubscription": "Keep Subscription",
+			"feature1": "Unlimited gym access",
+			"feature2": "Access to group classes",
+			"feature3": "Personalized tracking",
+			"days": "days",
+			"unknownName": "Unknown Plan",
+			"unknownDescription": "No description available",
+			"activeStatus": "Actif",
+			"cancelledStatus": "Annulé",
+			"startedOn": "Started on",
+			"expiresOn": "Expires on",
+			"benefit1": "Unlimited Access to all areas",
+			"benefit2": "Free Group Classes included",
+			"benefit3": "Personalized Routine via App",
+			"benefit4": "Body Composition Analysis",
+			"cancellationParams": "Cancellation details (No refund)",
+			"toastAccessDenied": "Access denied"
+		},
+		"membershipCancellation": {
+			"modalTitle": "Cancel Membership",
+			"modalDescription": "Are you sure you want to cancel your membership? This action cannot be undone.",
+			"confirmButton": "Yes, cancel",
+			"cancelButton": "No, keep",
+			"successTitle": "Membership Cancelled",
+			"successMessage": "Your membership has been cancelled successfully.",
+			"errorTitle": "Cancellation Error",
+			"errorMessage": "An error occurred while cancelling the membership.",
+			"alreadyCancelled": "This membership is already cancelled."
+		},
+		"chatbot": {
+			"title": "Assistant VitalFit",
+			"online": "En ligne",
+			"inputPlaceholder": "Écrivez votre message...",
+			"welcomeMessage": "Bonjour ! Je suis votre assistant virtuel VitalFit. Comment puis-je vous aider aujourd'hui ?",
+			"staticResponse": "Merci pour votre message. Ceci est une réponse statique. Nous connecterons bientôt le chatbot à un véritable agent.",
+			"quickActions": {
+				"classSchedules": "Horaires des cours",
+				"myMembership": "Mon abonnement",
+				"bookClass": "Réserver un cours",
+				"contactSupport": "Contacter le support"
+			}
+		},
+		"branchesMap": {
+			"title": "Nos Succursales",
+			"loading": "Chargement des succursales...",
+			"noToken": "Aucune session active trouvée.",
+			"fetchError": "Erreur lors du chargement des succursales.",
+			"connectionError": "Erreur de connexion.",
+			"goBack": "Retour",
+			"searchPlaceholder": "Rechercher une succursale...",
+			"noBranchesFound": "Aucune succursale trouvée."
+		},
+		"faceEnrollment": {
+			"setupButton": "Configurer Face ID",
+			"modal": {
+				"title": "Configuration de la reconnaissance faciale",
+				"instruction": "Positionnez votre visage dans le cadre",
+				"capturing": "Capture en cours...",
+				"uploading": "Configuration de Face ID...",
+				"confirm": "Confirmer",
+				"retake": "Reprendre",
+				"capture": "Prendre une photo"
+			},
+			"permission": {
+				"message": "L'acces a la camera est requis pour configurer Face ID.",
+				"button": "Accorder l'autorisation"
+			},
+			"toast": {
+				"successTitle": "Face ID configure!",
+				"successMessage": "Vous pouvez maintenant utiliser la reconnaissance faciale pour le check-in.",
+				"errorTitle": "Echec de la configuration",
+				"errorMessage": "Impossible de configurer Face ID. Veuillez reessayer."
+			},
+			"errors": {
+				"cameraAccess": "Impossible d'acceder a la camera",
+				"captureFailed": "Echec de la capture de la photo",
+				"uploadFailed": "Echec du telechargement de la photo"
+			}
+		},
+		"faceCheckIn": {
+			"modal": {
+				"instruction": "Positionnez le visage du client dans le cadre",
+				"processing": "Traitement du check-in...",
+				"confirm": "Confirmer",
+				"retake": "Reprendre"
+			},
+			"permission": {
+				"message": "L'acces a la camera est requis pour le check-in facial.",
+				"button": "Accorder l'autorisation"
+			},
+			"errors": {
+				"cameraAccess": "Impossible d'acceder a la camera",
+				"captureFailed": "Echec de la capture de la photo",
+				"checkInFailed": "Check-in facial echoue. Veuillez reessayer."
+			}
+		},
+		"classesScreen": {
+			"title": "Calendrier des Cours",
+			"calendar": "CALENDRIER",
+			"week": "Semaine",
+			"month": "Mois",
+			"classesOfDay": "COURS DU JOUR",
+			"noClasses": "Aucun cours prévu pour cette date."
+		}
+	}
+}

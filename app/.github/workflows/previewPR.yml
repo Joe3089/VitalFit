@@ -1,0 +1,58 @@
+name: 🏗 EAS Production Build
+
+on:
+    workflow_dispatch:
+        inputs:
+            platform:
+                description: 'Platform to build for'
+                required: true
+                default: 'all'
+                type: choice
+                options:
+                    - all
+                    - android
+                    - ios
+            profile:
+                description: 'EAS profile to use'
+                required: true
+                default: 'production'
+                type: string
+
+jobs:
+    build:
+        name: 🚀 Start EAS Build
+        runs-on: ubuntu-latest
+        steps:
+            - name: 🏗 Set up project
+              uses: actions/checkout@v4
+
+            - name: 🏗 Set up Node.js
+              # ✅ CORRECCIÓN: Se actualizó a la versión v4 para compatibilidad y evitar advertencias.
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '18.x'
+                  cache: 'npm'
+
+            - name: 🏗 Set up Expo and EAS
+              if: ${{ secrets.EXPO_TOKEN != '' }}
+              uses: expo/expo-github-action@v8
+              with:
+                  eas-version: latest
+                  expo-version: latest
+                  token: ${{ secrets.EXPO_TOKEN }}
+
+            - name: 📦 Install dependencies
+              run: npm install
+
+            - name: ✅ Run tests
+              run: npm test
+
+            - name: ℹ️ Skip Expo/EAS build when no token
+              if: ${{ secrets.EXPO_TOKEN == '' }}
+              run: |
+                  echo "EXPO_TOKEN no definido. Se omitirá la configuración y el build de Expo/EAS."
+                  echo "Si quieres builds en CI, añade EXPO_TOKEN en Settings → Secrets del repositorio."
+
+            - name: 🚀 Start build
+              if: ${{ secrets.EXPO_TOKEN != '' }}
+              run: eas build --platform ${{ inputs.platform }} --profile ${{ inputs.profile }} --non-interactive

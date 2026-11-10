@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-body: 'Montserrat-ExtraBold', sans-serif;
+  --font-heading: 'BebasNeue-Regular', sans-serif;
+}
+
+body {
+  font-family: var(--font-body), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading), sans-serif;
+  text-transform: uppercase;
+  font-style: italic;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  font-weight: 900;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  letter-spacing: -0.04em;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 5vw, 2.4rem);
+  margin-bottom: 0.75rem;
+}
+
+h4 {
+  font-size: 1.75rem;
+  letter-spacing: normal;
+}
+
+h5 {
+  font-size: 1.25rem;
+  font-style: normal;
+  letter-spacing: 0.05em;
+}
+
+h6 {
+  font-size: 0.875rem;
+  font-family: var(--font-body);
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}

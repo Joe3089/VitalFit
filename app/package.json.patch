@@ -1,0 +1,10 @@
+Add these scripts to your package.json:
+
+"scripts": {
+  ...existing scripts...
+  "test:notification": "node scripts/send-test-notification.js",
+  "test:expo-tool": "open https://expo.dev/notifications"
+}
+
+Then you can use:
+  npm run test:notification YOUR_TOKEN

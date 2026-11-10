@@ -1,0 +1,10 @@
+{
+	"editor.codeActionsOnSave": {
+		"source.fixAll": "explicit",
+		"source.organizeImports": "explicit",
+		"source.sortMembers": "explicit"
+	},
+	"typescript.tsserver.enableProjectDiagnostics": false,
+	"typescript.tsserver.experimental.enableProjectDiagnostics": false,
+	"typescript.disableAutomaticTypeAcquisition": true
+}

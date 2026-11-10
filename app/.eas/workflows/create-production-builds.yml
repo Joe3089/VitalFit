@@ -1,0 +1,16 @@
+name: Create Production Builds
+
+jobs:
+    build_android:
+        type: build # This job type creates a production build for Android
+        env:
+            EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+        params:
+            platform: android
+
+    build_ios:
+        type: build # This job type creates a production build for iOS
+        env:
+            EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+        params:
+            platform: ios

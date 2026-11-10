@@ -1,0 +1,72 @@
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# dependencies
+node_modules/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# Native
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+*.log
+
+# macOS
+.DS_Store
+*.pem
+
+# local env files
+.env
+.env*.local
+
+# typescript
+*.tsbuildinfo
+
+app-example
+
+# generated native folders
+/ios
+/android
+
+# Temporary files
+*.tmp
+*.temp
+*~
+*.swp
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+
+# Local executables
+assets/images/BraveBrowserSetup-BRV010.exe
+
+/.claude
+TESTING_NOTIFICATIONS.md
+TEST_LINK.md
+QUICK_START_TESTING.md
+PUSH_NOTIFICATIONS_SETUP.md
+FIX_EXPO_NOTIFICATIONS.md
+FIREBASE_SETUP_REQUEST.md
+NOTIFICATION_STATUS.md
+FRONTEND_PUSH_DEBUG.md
+NOTIFICATION_DEBUG_GUIDE.md
