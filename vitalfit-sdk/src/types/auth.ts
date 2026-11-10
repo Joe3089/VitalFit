@@ -23,6 +23,12 @@ export type LoginResponse = {
   expires_at?: string;
 };
 
+export type StaffInvitationResponse = {
+  message: string;
+  email_sent: boolean;
+  activation_url: string;
+};
+
 export type TwoFactorVerifyRequest = {
   challenge_id: string;
   code: string;

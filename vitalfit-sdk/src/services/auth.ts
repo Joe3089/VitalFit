@@ -8,6 +8,7 @@ import type {
   SecuritySettings,
   TwoFactorVerifyRequest,
   SignUpRequest,
+  StaffInvitationResponse,
   UserSession,
 } from '@/types';
 
@@ -167,12 +168,20 @@ export class AuthService {
     });
   }
 
-  async signUpStaff(signUpData: SignUpRequest, jwt: string): Promise<void> {
+  /**
+   * Creates a staff user and sends the activation email. When the email
+   * cannot be delivered, `email_sent` is false and `activation_url` can be
+   * shared with the user manually.
+   */
+  async signUpStaff(
+    signUpData: SignUpRequest,
+    jwt: string,
+  ): Promise<StaffInvitationResponse> {
     const birthDateRegex = /^\d{4}-\d{2}-\d{2}$/;
     if (!birthDateRegex.test(signUpData.birth_date)) {
       throw new Error('Birth date must be in the format YYYY-MM-DD');
     }
-    await this.client.post({
+    return this.client.post({
       url: '/auth/register-staff',
       jwt,
       data: signUpData,

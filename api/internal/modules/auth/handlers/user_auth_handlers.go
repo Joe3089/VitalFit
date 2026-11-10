@@ -128,22 +128,29 @@ func (h *AuthHandlers) RegisterUserStaffHandler(c *gin.Context) {
 		return
 	}
 
+	activationURL := fmt.Sprintf("%s/en/activate/%s", h.config.FrontURL, plainToken)
+
 	//send mail
 	status, err := h.services.AuthServices.MailSenderStaff(ctx, user, plainToken, mailer.UserStaffActivate)
 	if err != nil {
-		h.services.Logger.Errorw("error sending activation url to email", "error", err)
-		if err := h.services.AuthServices.DeleteResetToken(ctx, user.UserID); err != nil {
-			h.services.Logger.Errorw("error deleting user activation token ", "error", err)
-			return
-		}
-		h.services.LogErrors.InternalServerError(c, err)
+		// Keep the invitation: without a verified email domain the provider only
+		// delivers to the account owner, so the admin can share the link manually.
+		h.services.Logger.Warnw("activation email not sent, returning link to the admin", "error", err, "user_id", user.UserID)
+		c.JSON(http.StatusCreated, gin.H{
+			"message":        "user created, activation email could not be sent",
+			"email_sent":     false,
+			"activation_url": activationURL,
+			"code":           plainToken,
+		})
 		return
 	}
 
 	c.JSON(http.StatusCreated, gin.H{
-		"message": "user created",
-		"status":  status,
-		"code":    plainToken,
+		"message":        "user created",
+		"status":         status,
+		"email_sent":     true,
+		"activation_url": activationURL,
+		"code":           plainToken,
 	})
 }
 
