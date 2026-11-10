@@ -1,0 +1,1223 @@
+{
+  "logo": {
+    "slogan": "Empowering your wellness"
+  },
+  "slogan": "Transform your life. Reach your full potential.",
+  "Navbar": {
+    "navItems": {
+      "home": "Home",
+      "services": "Services",
+      "branches": "Branches",
+      "memberships": "Memberships",
+      "contact": "Contact",
+      "Cart": "Cart"
+    },
+    "loginButton": "Login",
+    "registerButton": "Join",
+    "logoutButton": "Logout",
+    "logoSlogan": "Empowering your wellness"
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, en {🇺🇸 English} es {🇪🇸 Spanish} other {Language}}"
+  },
+  "HomePage": {
+    "banner": {
+      "title": "Transform your <highlight>body</highlight>, transform your <highlight>life</highlight>",
+      "subtitle": "Discover the power of smart, personalized fitness.",
+      "startBtn": "Get Started",
+      "branchesBtn": "View Branches"
+    },
+    "aboutUs": {
+      "mainTitle": "ADN VITALFIT",
+      "mission": {
+        "title": "Mission",
+        "content": "<p>Provide a comprehensive physical and mental wellness service that combines technology, quality, and personalized attention, allowing users to access all VitalFit branches quickly and consistently, enhancing their experience through innovative digital tools.</p>",
+        "imageAlt": "Mission"
+      },
+      "vision": {
+        "title": "Vision",
+        "content": "<p>To become the most intelligent and integrated fitness ecosystem in the country, leading in technological innovation, customer retention, and sustainable franchise growth.</p>",
+        "imageAlt": "Vision"
+      },
+      "values": {
+        "title": "Values",
+        "content": "<p>Our operation is based on four fundamental values: Operational Coherence, which ensures standardization in every interaction; Data Integrity, as the foundation for strategic decision-making; Customer Orientation, focused on building long-term relationships; and Technological Agility, enabling us to continuously adapt to market demands.</p>",
+        "imageAlt": "Values"
+      },
+      "objectives": {
+        "title": "Objectives",
+        "content": "<p>Transform lives through fitness by creating a community where everyone finds the motivation, equipment, and perfect environment to achieve their physical and mental goals. We are committed to being your ally on this journey of personal growth.</p>",
+        "imageAlt": "Objectives"
+      }
+    }
+  },
+  "ServicesPage": {
+    "title": "Our <highlight>Services</highlight>",
+    "subtitle": "Explore everything we offer for your well-being.",
+    "recentlyViewed": "Recently viewed",
+    "filters": {
+      "categoryLabel": "Category",
+      "categoryDefault": "All categories",
+      "categories": {
+        "sgt": "Small Group Training (SGT)",
+        "nutrition": "Nutrition & Dietetics",
+        "crossfit": "CrossFit / Performance Training",
+        "yoga": "Yoga",
+        "pilates": "Pilates (Reformer & Mat)",
+        "boxing": "Boxing & Kickboxing",
+        "dance": "Dance Fitness (Zumba, Cardio Dance)",
+        "aquatics": "Aquatics (Swimming Lessons, AquaFit)",
+        "assessments": "Fitness Assessments",
+        "martialArts": "Martial Arts (BJJ, Karate, MMA)",
+        "mindfulness": "Mindfulness & Meditation",
+        "physiotherapy": "Physiotherapy & Rehabilitation",
+        "spa": "Spa Services (Sauna, Massage)",
+        "kids": "Kids & Youth Programs",
+        "wellness": "Wellness & Recovery",
+        "functional": "Functional Training",
+        "personalTraining": "Personal Training",
+        "hiit": "HIIT & Circuit Training"
+      },
+      "label": "Filters",
+      "searchPlaceholder": "Search services...",
+      "maxPrice": "Max price",
+      "maxPriceLabel": "Max Price",
+      "ratingLabel": "Minimum Rating",
+      "sortLabel": "Sort by",
+      "sortDesc": "Highest price",
+      "sortAsc": "Lowest price",
+      "currencyLabel": "Currency",
+      "clear": "Clear filters"
+    },
+    "empty": {
+      "noResults": "No services found",
+      "adjustFilters": "Try adjusting your filters to find what you're looking for.",
+      "showAll": "Show all"
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next",
+      "pageOf": "Page {page} / {totalPages}"
+    }
+  },
+  "BranchesPage": {
+    "title": "<highlight>OUR</highlight> <highlight-dark>LOCATIONS</highlight-dark>",
+    "subtitle": "Your fitness space, closer than you imagine. Our VITALFIT branches are strategically located to make training accessible, fast, and to ensure you never pause your well-being.",
+    "viewButton": "View locations",
+    "footerQuote": "Your best version starts here. Visit our branches and feel the energy that transforms. Every VITALFIT space is designed to inspire, challenge, and accompany you on every step of your evolution."
+  },
+  "FindBranchPage": {
+    "title": "FIND YOUR BRANCH",
+    "description": "Use the map or search bar to locate our branches.",
+    "search_placeholder": "Search branch...",
+    "find_nearest_button": "Find the nearest one",
+    "loading_branches": "Loading branches...",
+    "loading_map": "Loading map...",
+    "error_loading_branches": "We couldn’t load the map locations. Please try again later.",
+    "no_valid_branches_found": "No branches with valid coordinates were found.",
+    "branch_hours": {
+      "default": "Monday - Friday: 6:00 am - 9:00 pm",
+      "spain": "Monday - Friday: 6:00 am - 9:00 pm",
+      "venezuela": "Monday - Friday: 6:00 am - 8:00 pm",
+      "chile": "Monday - Friday: 6:00 am - 9:00 pm"
+    }
+  },
+  "LoginPage": {
+    "title": "LOGIN",
+    "googleLogin": "Sign in with Google",
+    "credentialsPrompt": "Enter your credentials to log in",
+    "email": {
+      "label": "Email address",
+      "placeholder": "Email address"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Enter your password"
+    },
+    "rememberMe": "Remember me",
+    "forgotPassword": {
+      "text": "Forgot your password?",
+      "link": "Recover"
+    },
+    "submitButton": {
+      "default": "Sign In",
+      "loading": "Signing in..."
+    },
+    "messages": {
+      "success": "Welcome back!"
+    },
+    "noAccount": {
+      "text": "Don't have an account?",
+      "link": "Sign up"
+    },
+    "errors": {
+      "incorrectCredentials": "Invalid credentials",
+      "loginError": "Error logging in",
+      "connectionError": "Could not connect to the server"
+    },
+    "validation": {
+      "email": {
+        "required": "Email is required",
+        "invalid": "Must be a valid email address"
+      },
+      "password": {
+        "required": "Password is required",
+        "min": "Must be at least 8 characters",
+        "max": "Cannot exceed 20 characters"
+      }
+    },
+    "activateAccount": {
+      "text": "Inactive account?",
+      "link": "Activate"
+    }
+  },
+  "dashboard": {
+    "navbar": {
+      "logo_alt": "VitalFit Logo",
+      "title": "Dashboard",
+      "welcome": "Welcome to your Dashboard"
+    },
+    "notifications": "Notifications"
+  },
+  "user": {
+    "name": "Name",
+    "email": "Email"
+  },
+  "Footer": {
+    "tagline": "Transform your life. Reach your maximum potential.",
+    "quickLinks": {
+      "title": "Quick Links",
+      "links": {
+        "services": "Services",
+        "membership": "Membership",
+        "branches": "Branches",
+        "contact": "Contact"
+      }
+    },
+    "services": {
+      "title": "Our Services",
+      "list": {
+        "yoga": "Yoga",
+        "crossfit": "CrossFit",
+        "spinning": "Spinning",
+        "pilates": "Pilates"
+      }
+    },
+    "contact": {
+      "title": "Contact",
+      "phone": "+58 4245912150",
+      "email": "info@vitalfit.com",
+      "address": "123 Main Avenue, Downtown"
+    },
+    "social": {
+      "instagram": "Instagram",
+      "twitter": "Twitter",
+      "facebook": "Facebook"
+    },
+    "copyright": "© {year} VitalFit — All rights reserved."
+  },
+  "MembershipsPage": {
+    "hero": {
+      "titlePart1": "PLANS AND",
+      "titlePart2": "MEMBERSHIPS",
+      "subtitle": "Choose the plan that best suits your fitness needs and goals"
+    },
+    "plans": {
+      "advanced": {
+        "title": "Advanced Subscription",
+        "description": "More benefits for your fitness life",
+        "billingPeriod": "month",
+        "services": {
+          "s1": "Unlimited gym access",
+          "s2": "7 sessions with a fitness consultant",
+          "s3": "Nutritional tracking",
+          "s4": "5 free supplements",
+          "s5": "Gym credential",
+          "s6": "Personal trainer"
+        }
+      },
+      "standard": {
+        "title": "Standard Plan",
+        "description": "Maximum savings and benefits",
+        "billingPeriod": "year",
+        "services": {
+          "s1": "Unlimited facility use",
+          "s2": "Consultations with an expert trainer",
+          "s3": "Dietary control",
+          "s4": "Receive 3 free supplements",
+          "s5": "Train 5 days a week",
+          "s6": "Personal trainer"
+        }
+      },
+      "athlete": {
+        "title": "Athlete Package",
+        "description": "The best value for money",
+        "billingPeriod": "3 months",
+        "services": {
+          "s1": "Unlimited gym access",
+          "s2": "Includes complimentary apparel",
+          "s3": "Train Without Limits",
+          "s4": "Free fitness consultant",
+          "s5": "Gym credential"
+        }
+      },
+      "basic": {
+        "title": "Basic Package",
+        "description": "Ideal for starting in the fit world",
+        "billingPeriod": "month",
+        "services": {
+          "s1": "Save with the annual plan",
+          "s2": "2 sessions with a fitness consultant",
+          "s3": "Dietary control",
+          "s4": "1 free supplement",
+          "s5": "Personal trainer"
+        }
+      }
+    },
+    "includes": {
+      "title": "ALL PLANS INCLUDE",
+      "item1": {
+        "title": "All Locations",
+        "content": "Access to all our branches"
+      },
+      "item2": {
+        "title": "Trainer",
+        "content": "Free floor trainer"
+      },
+      "item3": {
+        "title": "Group Classes",
+        "content": "Various classes across all locations"
+      },
+      "item4": {
+        "title": "Mobile App",
+        "content": "Book classes and track your progress"
+      }
+    },
+    "cta": {
+      "heading": "Not sure which plan to choose?",
+      "subheading": "Our team is here to help you find the perfect plan for your needs",
+      "advisorButton": "Talk to an advisor",
+      "faqButton": "View Frequently Asked Questions"
+    }
+  },
+  "ContactPage": {
+    "hero": {
+      "title": "CONTACT US",
+      "subtitle": "Fill out the form details"
+    },
+    "form": {
+      "nameLabel": "First Name",
+      "namePlaceholder": "First Name",
+      "lastNameLabel": "Last Name",
+      "lastNamePlaceholder": "Last Name",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "email@example.com",
+      "reasonPlaceholder": "Reason for contact",
+      "preferencePlaceholder": "Contact preference",
+      "messagePlaceholder": "Message",
+      "submitButton": "Submit",
+      "reasons": {
+        "general": "General inquiry",
+        "memberships": "Membership information",
+        "services": "Services information",
+        "complaint": "Complaint",
+        "suggestion": "Suggestion"
+      },
+      "preferences": {
+        "email": "Email",
+        "phone": "Phone",
+        "whatsapp": "WhatsApp"
+      },
+      "phoneLabel": "Phone",
+      "success": "Message sent! Our team will contact you soon.",
+      "error": "We could not send your message. Check the data and try again.",
+      "reasonRequired": "Select the contact reason and write your message.",
+      "sending": "Sending..."
+    }
+  },
+  "RegisterPage": {
+    "title": "CREATE YOUR ACCOUNT",
+    "form": {
+      "firstNameLabel": "First Name",
+      "firstNamePlaceholder": "First Name",
+      "lastNameLabel": "Last Name",
+      "lastNamePlaceholder": "Last Name",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "email@example.com",
+      "phoneLabel": "Phone Number",
+      "documentLabel": "Identity Document",
+      "documentPlaceholder": "Document",
+      "birthDateLabel": "Date of Birth",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "confirmPasswordLabel": "Confirm Password",
+      "confirmPasswordPlaceholder": "Confirm password",
+      "termsText": "I accept the terms, service conditions, and security policies",
+      "submitButton": "Create Account",
+      "googleLoginText": "Sign up with Google",
+      "gender": {
+        "label": "Gender",
+        "male": "Male",
+        "maleValue": "masculino",
+        "female": "Female",
+        "femaleValue": "femenino",
+        "preferNotToSay": "Prefer not to specify",
+        "preferNotToSayValue": "preferiero no especificarlo"
+      }
+    },
+    "validation": {
+      "termsRequired": "You must accept the terms and conditions",
+      "firstName": {
+        "required": "First name is required",
+        "min": "First name must be at least 2 characters",
+        "max": "First name cannot exceed 50 characters"
+      },
+      "lastName": {
+        "required": "Last name is required",
+        "min": "Last name must be at least 2 characters",
+        "max": "Last name cannot exceed 50 characters"
+      },
+      "email": {
+        "required": "Email is required",
+        "invalid": "Must be a valid email address"
+      },
+      "phone": {
+        "required": "Phone number is required",
+        "invalid": "Invalid phone format. Use a valid number with or without international prefix (e.g. +1 1234567890)",
+        "minDigits": "Phone number must have at least 7 digits"
+      },
+      "document": {
+        "required": "Identity document is required",
+        "min": "Document must be at least 3 characters"
+      },
+      "gender": {
+        "required": "Select a valid gender"
+      },
+      "birthDate": {
+        "required": "Birth date is required",
+        "minAge": "You must be over 12 years old"
+      },
+      "password": {
+        "required": "Password is required",
+        "min": "Password must be at least 8 characters",
+        "uppercase": "Password must contain at least one uppercase letter",
+        "lowercase": "Password must contain at least one lowercase letter",
+        "number": "Password must contain at least one number",
+        "special": "Password must contain at least one special character (e.g. ! @ # $ % & *)",
+        "noDot": "Password cannot contain a dot symbol"
+      },
+      "confirmPassword": {
+        "required": "Confirm password is required",
+        "mismatch": "Passwords do not match"
+      }
+    },
+    "notifications": {
+      "success": {
+        "title": "Check your email",
+        "description": "Thank you for registering with VITALFIT! To complete your registration, please verify your email address.",
+        "toast": "Registration successful!"
+      },
+      "error": {
+        "title": "Error",
+        "incompleteForm": "Incomplete form",
+        "incompleteFormDescription": "You have {count} {count, plural, one {field that requires} other {fields that require}} your attention.",
+        "duplicateUser": "This user is already registered. Please check your email or document.",
+        "unexpected": "An unexpected error occurred"
+      },
+      "loading": {
+        "submitting": "Creating your account..."
+      },
+      "google": {
+        "success": "Data loaded from Google",
+        "description": "You can edit the information if necessary."
+      },
+      "connectionError": {
+        "title": "Connection Error",
+        "description": "Could not connect to the server. Please try again later."
+      }
+    },
+    "footer": {
+      "loginPrompt": "Already have an Account?",
+      "loginLink": "Log In"
+    }
+  },
+  "header": {
+    "logo": "VITALFIT",
+    "nav": {
+      "home": "Home",
+      "services": "Services",
+      "subscriptions": "Subscriptions",
+      "memberships": "Memberships",
+      "contact": "Contact"
+    }
+  },
+  "sidebar": {
+    "membership": "Premium membership",
+    "membershipMember": "Member from:",
+    "qrCode": "View QR Code",
+    "qrModal": {
+      "title": "QR Code",
+      "description": "Display the QR code at the gym entrance"
+    },
+    "stats": {
+      "memberId": "Member ID",
+      "classesThisMonth": "Classes this month",
+      "totalVisits": "Total visits"
+    },
+    "menu": {
+      "profile": "Profile",
+      "security": "Security",
+      "membership": "My membership",
+      "paymentHistory": "Payment History",
+      "wishlist": "My Wishlist",
+      "logout": "Logout"
+    },
+    "wishlistSection": {
+      "title": "WISHLIST",
+      "description": "Services saved for later",
+      "pilatesClass": "Pilates Class",
+      "price": "Price"
+    }
+  },
+  "BannerOffer": {
+    "title": "BIRTHDAY OFFER!",
+    "description": "50% discount on gym products",
+    "validity": "valid for 7 days",
+    "button": "Get now"
+  },
+  "membership": {
+    "title": "My Membership",
+    "noMembership": "You do not have an active membership at this time.",
+    "active": "Active",
+    "expired": "Expired",
+    "cancelled": "Cancelled",
+    "pending": "Pending",
+    "nextLabel": "Time Remaining",
+    "expiredLabel": "Plan Ended",
+    "daysRemaining": "days remaining",
+    "startLabel": "Start Date",
+    "expiryLabel": "Expires on",
+    "renewButton": "Renew Plan",
+    "reactivateButton": "Reactivate Membership",
+    "cancelMembership": "Cancel Subscription",
+    "noMembershipTitle": "No Active Membership",
+    "noMembershipDescription": "Purchase a membership to start your training today.",
+    "acquireMembershipButton": "View Available Plans"
+  },
+  "classes": {
+    "title": "UPCOMING CLASSES",
+    "viewAll": "View all my classes",
+    "loading": "Loading your classes...",
+    "noClasses": "No upcoming classes",
+    "reservePrompt": "Book a class in our services section",
+    "error": "Error loading reserved classes",
+    "availability": {
+      "available": "Disponible",
+      "limited": "Cupos limitados",
+      "full": "Completo"
+    },
+    "category": {
+      "pilates": "Pilates",
+      "yoga": "Yoga",
+      "cardio": "Cardio"
+    }
+  },
+  "paymentHistory": {
+    "title": "Payment History",
+    "columns": {
+      "transactionId": "Transaction ID",
+      "date": "Date",
+      "totalPrice": "Total Amount",
+      "status": "Status",
+      "paymentMethod": "Payment Method"
+    },
+    "status": {
+      "paid": "Paid",
+      "unpaid": "Unpaid",
+      "void": "Void",
+      "overdue": "Overdue"
+    },
+    "actions": {
+      "viewDetails": "View details",
+      "downloadReceipt": "Download receipt"
+    },
+    "filters": {
+      "payname": "Search by invoice...",
+      "status": "Status",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "clear": "Clear Filters"
+    },
+    "loading": "Loading history..."
+  },
+  "Profile": {
+    "ptitle": "MY PROFILE",
+    "pbutton": "Edit",
+    "personalInfo": "Personal Information",
+    "contactInfo": "Contact Information",
+    "name": "Name",
+    "namePlaceholder": "Enter your name",
+    "lastName": "Last Name",
+    "lastNamePlaceholder": "Enter your last name",
+    "birthDate": "Date of birth",
+    "gender": "Gender",
+    "genderPlaceholder": "Select your gender",
+    "genders": {
+      "male": "Male",
+      "female": "Female",
+      "other": "Other"
+    },
+    "address": "Address",
+    "addressPlaceholder": "Enter your address",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "phone": "Phone Number",
+    "phonePlaceholder": "Enter your phone number",
+    "documentType": "Document Type",
+    "documentTypePlaceholder": "Select type",
+    "documentTypes": {
+      "dni": "DNI",
+      "passport": "Passport",
+      "idCard": "ID Card",
+      "driversLicense": "Driver's License"
+    },
+    "documentNumber": "Document Number",
+    "documentNumberPlaceholder": "Document number",
+    "editbutton": "Save",
+    "canceleditbutton": "Cancel",
+    "uploadPhoto": "Upload Photo",
+    "changePhoto": "Change Photo",
+    "removePhoto": "Remove Photo",
+    "messages": {
+      "updateSuccess": "Profile updated successfully!"
+    },
+    "errors": {
+      "updateError": "There was an error updating your profile"
+    }
+  },
+  "MembershipHistory": {
+    "title": "MEMBERSHIP HISTORY",
+    "plans": {
+      "monthly": "Monthly"
+    },
+    "status": {
+      "active": "Active",
+      "cancelled": "Cancelled",
+      "expired": "Expired"
+    },
+    "columns": {
+      "planName": "Plan Name",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "totalPrice": "Total Price",
+      "status": "Status"
+    },
+    "filters": {
+      "planName": "Search by plan name",
+      "status": "Status",
+      "startDate": "From",
+      "endDate": "To",
+      "clear": "Clear filters"
+    },
+    "actions": {
+      "label": "Actions",
+      "viewDetails": "View Details",
+      "downloadReceipt": "Download Receipt"
+    }
+  },
+  "Checkout": {
+    "Page": {
+      "initialLoading": "Synchronizing system...",
+      "title": "Complete purchase",
+      "StepPlan": {
+        "title": "Select Plan"
+      },
+      "StepPayment": {
+        "title": "Payment"
+      },
+      "StepSuccess": {
+        "title": "Confirmation"
+      }
+    },
+    "Stepper": {
+      "step1": "Options",
+      "step2": "Payment",
+      "step3": "Confirmation"
+    },
+    "StepPlan": {
+      "branchLabel": "Training Location",
+      "branchPlaceholder": "Which branch will you attend?",
+      "confirmed": "Branch Confirmed",
+      "basePlanLabel": "Selected base plan",
+      "baseServiceLabel": "Selected service",
+      "extraServicesTitle": "Want to complement your plan?",
+      "extraServicesTitleLocked": "Complementary services",
+      "extraServicesDesc": "Add extra services and boost your training.",
+      "extraServicesDescLocked": "Selected services have already been confirmed.",
+      "explorePlaceholder": "Explore extra services",
+      "onlyBasePlan": "Base plan only",
+      "viewExtraServices": "View extra services ({count})",
+      "membershipTitle": "Would you like a Base Plan?",
+      "membershipSubtitle": "Get better prices on additional services",
+      "onlyServices": "Services only",
+      "addMembershipBack": "Add membership to cart",
+      "selectedPlanLabel": "Selected Monthly Plan",
+      "hidePackages": "Hide Packages",
+      "showPackages": "View Packages ({count})",
+      "additionalServicesLabel": "Additional Services",
+      "additionalServicesDesc": "Special pricing for active members.",
+      "hideServices": "Hide services",
+      "showServices": "Show All ({count})",
+      "saveWithMembership": "Save with membership",
+      "free": "FREE",
+      "loading": "Loading...",
+      "loadMoreServices": "Show more services",
+      "searchPlaceholder": "Search specific services...",
+      "costNet": "Net Cost",
+      "ready": "Ready",
+      "upgradeAvailable": "Upgrade Available",
+      "aLaCarte": "A La Carte",
+      "planPriceBadge": "Plan Price"
+    },
+    "BranchSelector": {
+      "label": "Select your Branch",
+      "placeholder": "Where will you train today?",
+      "requiredNote": "* Required to calculate taxes and activate your access",
+      "confirmed": "Branch Confirmed"
+    },
+    "PackageCarousel": {
+      "title": "Additional services",
+      "subtitle": "Select one or more to complement your plan",
+      "accessDays": "{days} days of access",
+      "investmentLabel": "Service investment"
+    },
+    "MembershipSummary": {
+      "defaultDescription": "Selected membership plan.",
+      "defaultServiceDescription": "Selected service.",
+      "totalPrice": "Plan Price",
+      "totalServicePrice": "Service Price",
+      "duration": "Duration",
+      "days": "days"
+    },
+    "StepPayment": {
+      "cardTitle": "Payment Registration",
+      "stepMethod": "1. Payment method",
+      "methodPlaceholder": "Select method",
+      "stepAmount": "2. Currency and Amount to Report",
+      "calculatedTotal": "Calculated total",
+      "referenceLabel": "Bank Reference",
+      "referencePlaceholder": "Confirmation number...",
+      "receiptLabel": "Receipt",
+      "attachReceipt": "Attach Receipt",
+      "uploading": "Uploading...",
+      "submitBtn": "Report Payment Now",
+      "methodLabel": "Payment Method",
+      "currencyLabel": "Currency",
+      "amountLabel": "Amount to Report",
+      "equivalenceLabel": "Equivalence",
+      "receiptAttached": "Receipt Uploaded",
+      "payWithCard": "Pay with Card",
+      "confirmSelection": "Confirm Selection",
+      "confirmMethod": "Confirm Method",
+      "verifyingMethod": "Verifying method..."
+    },
+    "OrderSummary": {
+      "title": "Summary",
+      "baseMembership": "Base membership",
+      "baseService": "Base service",
+      "subtotal": "Subtotal",
+      "taxLabel": "Taxes ({percent}%)",
+      "totalLabel": "Total",
+      "equivalent": "Equivalent to",
+      "requiredBranchTitle": "Branch required",
+      "requiredBranchDesc": "Please select a branch to continue.",
+      "btnSelectBranch": "Select a branch",
+      "btnConfirmOrder": "Confirm order",
+      "btnMakePayment": "Make payment",
+      "free": "GRATIS"
+    },
+    "Success": {
+      "errorTitle": "Could not load receipt",
+      "errorSubtitle": "Your payment was processed, but there is a display error.",
+      "backToDashboard": "Go to Dashboard",
+      "pendingTitle": "PURCHASE REGISTERED!",
+      "confirmedTitle": "PAYMENT CONFIRMED!",
+      "pendingDescription": "Your purchase has been registered and is under review by our team.",
+      "confirmedDescription": "Your subscription is now active and ready to use.",
+      "orderSummary": "Order Details",
+      "quantity": "QTY",
+      "totalAmount": "Total Amount",
+      "membership": "VitalFit Membership",
+      "additionalService": "Additional Service",
+      "paymentInfo": "Reported Payment",
+      "amountPaid": "Amount Paid",
+      "reference": "Reference",
+      "appliedRate": "Applied rate",
+      "pendingBannerTitle": "Payment Under Verification",
+      "pendingBannerText": "We have received your receipt. Our administrative team will validate the transaction in the next few hours (2-24 business hours).",
+      "goHome": "GO TO HOME",
+      "viewReceipt": "VIEW SUBMITTED RECEIPT",
+      "helpCenter": "Help center"
+    },
+    "NoMembership": {
+      "title": "Empty Cart",
+      "description": "We haven't detected a selected membership. Return to the catalog to choose the plan that best suits you.",
+      "backButton": "Back to Plans"
+    },
+    "Notifications": {
+      "uploadSuccess": "File ready",
+      "uploadSuccessDetail": "The receipt has been successfully linked.",
+      "paymentSuccess": "Report submitted",
+      "paymentSuccessDetail": "Your payment has been registered for administrative review.",
+      "validationAmount": "Amount must be greater than 0.",
+      "validationReference": "Reference is required.",
+      "validationReceipt": "You must attach a receipt.",
+      "validationMethod": "Please select a payment method.",
+      "fileTooLarge": "File is too large (max 5MB)",
+      "missingSelection": "Incomplete selection",
+      "missingSelectionDetail": "Please select a branch and a plan to continue.",
+      "invoiceError": "Billing error",
+      "invoiceErrorDetail": "We couldn't generate your invoice. Please try again.",
+      "invoiceSuccess": "Invoice generated",
+      "invoiceSuccessDetail": "Processing payment options...",
+      "methodsError": "Connection error",
+      "methodsErrorDetail": "We couldn't load the payment methods for this branch."
+    },
+    "PaymentMethodDetails": {
+      "loading": "Loading instructions...",
+      "transferTitle": "Transfer details",
+      "transferSubtitle": "Use these details to complete your payment securely.",
+      "copied": "Copied",
+      "footerTitle": "Have you already made the payment?",
+      "footerDesc": "Take a clear screenshot and upload it in the Receipt section to validate your activation.",
+      "labels": {
+        "bank_id": "Bank",
+        "tax_id": "Tax ID / National ID",
+        "phone": "Phone Number",
+        "email": "Email",
+        "account_number": "Account Number",
+        "account_holder": "Account Holder"
+      }
+    }
+  },
+  "MembershipDetails": {
+    "title": "Membership Details",
+    "subtitle": "Check your membership status and details.",
+    "planDetails": "Plan Details",
+    "planName": "Plan Name",
+    "statusLabel": "Status",
+    "startDate": "Start Date",
+    "paymentType": "Payment Type",
+    "billingId": "Associated Billing",
+    "dueDate": "Due Date",
+    "cancellationDate": "Cancellation Date",
+    "includedServices": "Included Services",
+    "selectCancelDefaultValue": "Select an option",
+    "descriptionCancelPlaceholder": "Briefly describe why you wish to cancel your membership…",
+    "viewexpired": "You don't have an active membership yet.",
+    "status": {
+      "activa": "Active",
+      "cancelada": "Cancelled",
+      "vencida": "Expired"
+    },
+    "fields": {
+      "paymentName": "Plan name",
+      "paymentType": "Payment Type",
+      "billingId": "Associated Billing",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "services": "Included Services"
+    },
+    "actions": {
+      "renew": "Renew",
+      "update": "Update Plan",
+      "cancel": "Cancel Membership"
+    }
+  },
+  "MembershipCancel": {
+    "title": "Cancel Membership",
+    "subtitle": "Cancellation Confirmation",
+    "message": "We're sorry to see you go. Please confirm the reason for canceling your membership.",
+    "fields": {
+      "planName": "Membership Name",
+      "status": "Status",
+      "reason": "Cancellation Reason",
+      "description": "Description",
+      "additionalNotes": "Additional notes (Optional)"
+    },
+    "status": {
+      "active": "Active"
+    },
+    "placeholders": {
+      "reason": "Choose an option",
+      "description": "Briefly describe why you wish to cancel your membership..."
+    },
+    "reasons": {
+      "price": "High price",
+      "time": "Lack of time",
+      "service": "Service issues",
+      "other": "Other"
+    },
+    "actions": {
+      "cancel": "Cancel",
+      "confirm": "Confirm Cancellation",
+      "cancelling": "Cancelling..."
+    },
+    "notifications": {
+      "loadError": "Error fetching cancellation reasons",
+      "selectReason": "Please select a reason",
+      "provideDescription": "Please provide a description",
+      "success": "Membership cancelled successfully",
+      "cancelError": "Error cancelling membership"
+    }
+  },
+  "security": {
+    "changePassword": {
+      "ptitle": "Change Password",
+      "pdescription": "Update your password to keep your account secure",
+      "currentPasswordLabel": "Current Password",
+      "currentPasswordPlaceholder": "Enter your current password",
+      "newPasswordLabel": "New Password",
+      "newPasswordPlaceholder": "Enter your new password",
+      "confirmPasswordLabel": "Confirm Password",
+      "confirmPasswordPlaceholder": "Confirm your new password",
+      "forgotPasswordLabel": "Forgot your password?",
+      "forgotPasswordLink": "Recover",
+      "saveNewPasswordButton": "Save New Password",
+      "success": "Password updated successfully",
+      "error": "Error changing password",
+      "validation": {
+        "currentPasswordRequired": "Current password is required",
+        "currentPasswordIncorrect": "Current password is incorrect",
+        "mismatch": "Passwords do not match"
+      }
+    },
+    "forgotPassword": {
+      "newPasswordTitle": "New Password",
+      "subtitle": "Create a secure password that you haven't used before.",
+      "newPasswordLabel": "New Password",
+      "confirmPasswordLabel": "Confirm Password",
+      "resetButton": "Update Password",
+      "success": "Password updated successfully!",
+      "footer": {
+        "text": "Remembered your password?",
+        "linkText": "Log In"
+      },
+      "placeholders": {
+        "newPassword": "Enter your new password",
+        "confirmPassword": "Repeat your new password"
+      },
+      "errors": {
+        "tokenNotFound": "Code not found",
+        "tokenDescription": "No valid verification code found. Please request a new one.",
+        "resetError": "Update failed",
+        "default": "An unexpected error occurred while changing your password."
+      }
+    },
+    "RecoverPassword": {
+      "title": "RECOVER PASSWORD",
+      "subtitle": "Enter your email address to receive a verification code",
+      "form": {
+        "emailLabel": "Email address",
+        "emailPlaceholder": "Enter your email",
+        "submitButton": "Send Code",
+        "processing": "Processing..."
+      },
+      "validation": {
+        "usuario": {
+          "required": "Email address is required",
+          "invalid": "Please enter a valid email address"
+        }
+      },
+      "successNotification": {
+        "title": "Code sent",
+        "description": "If the email exists in our system, you will receive a code shortly."
+      },
+      "footer": {
+        "text": "Already remembered your password?",
+        "linkText": "Sign in"
+      }
+    }
+  },
+  "UserNav": {
+    "home": "Home",
+    "profile": "Profile",
+    "logout": "Sign out"
+  },
+  "ServiceModal": {
+    "memberBadge": "MEMBER",
+    "nonMember": "Non-Member",
+    "inStudio": "In-Studio",
+    "description": "Description",
+    "bookNow": "Book Now",
+    "loginRequired": "Please log in to continue"
+  },
+  "ServiceCard": {
+    "member": "Member",
+    "nonMember": "Non-member",
+    "minutes": "minutes",
+    "learnMore": "Learn more",
+    "categoryDefault": "General",
+    "wishListSuccess": "Added to favorites!",
+    "wishListError": "Error processing favorites",
+    "loginRequired": "You must log in to manage favorites",
+    "wishlistRemove": "Remove from favorites",
+    "wishlistRemoveSuccess": "Removed from favorites",
+    "refPrice": "Ref",
+    "promoBadge": "PROMO",
+    "noTitle": "Untitled Service",
+    "noDescription": "No description available."
+  },
+  "invoiceDetails": {
+    "paymentDetails": {
+      "title": "Payment Details",
+      "transactionId": "Transaction ID",
+      "amountPaid": "Amount Paid",
+      "exchangeRate": "Exchange Rate",
+      "receipt": "Receipt",
+      "view": "View Document",
+      "statusNotes": {
+        "completed": "Payment successfully processed.",
+        "pending": "Your payment is being verified.",
+        "failed": "The payment was rejected. Please try again.",
+        "refunded": "This payment has been refunded to your account."
+      }
+    },
+    "backToHistory": "Back to history",
+    "title": "Transaction Details",
+    "status": {
+      "paid": "Paid",
+      "confirmed": "Confirmed",
+      "pending": "Pending",
+      "overdue": "Overdue",
+      "void": "Void",
+      "unknown": "Unknown",
+      "unpaid": "Unpaid"
+    },
+    "summary": {
+      "title": "Summary",
+      "issueDate": "Issue Date",
+      "statusLabel": "Status",
+      "paymentMethod": "Payment Method",
+      "branch": "Branch",
+      "loading": "Loading...",
+      "unspecified": "Unspecified",
+      "mainBranch": "Main Branch",
+      "unknownBranch": "Unknown Branch"
+    },
+    "actions": {
+      "title": "Actions",
+      "download": "Download Receipt",
+      "email": "Send via Email",
+      "electronic": "Electronic Invoice"
+    },
+    "planValidity": {
+      "from": "Valid From",
+      "to": "Valid Until"
+    },
+    "conceptsTitle": "Billed Concepts",
+    "totals": {
+      "subtotal": "Subtotal",
+      "tax": "Tax",
+      "total": "Total Paid"
+    },
+    "itemsTable": {
+      "type": "TYPE",
+      "itemName": "ITEM NAME",
+      "quantity": "QTY",
+      "unitPrice": "UNIT PRICE",
+      "discount": "DISCOUNT",
+      "subtotal": "SUBTOTAL",
+      "membership": "Membership",
+      "package": "Package",
+      "service": "Service",
+      "item": "Item",
+      "defaultItemName": "Billing item",
+      "premiumSubscription": "Premium Subscription",
+      "classPackage": "Class Package",
+      "generalService": "General Service"
+    },
+    "errors": {
+      "notFound": "Invoice not found",
+      "loadError": "Error loading",
+      "checkConnection": "Check your connection or the ID."
+    }
+  },
+  "ConfirmEmail": {
+    "title": "CONFIRM YOUR EMAIL",
+    "description": "Enter the code sent to your email to confirm it",
+    "verifyButton": "Verify Email",
+    "verifying": "Verifying...",
+    "resendCode": "Resend Code",
+    "success": {
+      "register": "Registration successful!",
+      "recover": "Code verified successfully"
+    },
+    "errors": {
+      "incompleteCode": "Please enter the full 6-character code",
+      "invalidCode": "Incorrect or expired code",
+      "noEmail": "No email found to resend"
+    },
+    "notifications": {
+      "resendSuccess": "Confirmation Code Resent",
+      "resendError": "Could not resend the code"
+    }
+  },
+  "BranchServices": {
+    "exclusiveOffer": "Exclusive Offer: {name}",
+    "title": "Available <span>/</span> Services",
+    "loadingMore": "Loading more power...",
+    "endOfCatalog": "End of catalog"
+  },
+  "ServiceBranchCard": {
+    "brandPlaceholder": "VitalFit Training",
+    "duration": "{minutes} MIN",
+    "membershipLabel": "VitalFit Member"
+  },
+  "ActivateAccount": {
+    "title": "ACTIVATE ACCOUNT",
+    "description": "Enter your email to receive the activation code.",
+    "email": {
+      "label": "Email Address",
+      "placeholder": "Email Address"
+    },
+    "submitButton": {
+      "default": "Next",
+      "loading": "Processing..."
+    },
+    "footer": {
+      "text": "Remember your password?",
+      "link": "Log in"
+    },
+    "validation": {
+      "email": {
+        "required": "Email is required",
+        "invalid": "Must be a valid email address"
+      }
+    },
+    "notifications": {
+      "success": "Code sent successfully",
+      "error": "Could not send the code. Please check your email."
+    }
+  },
+  "Wishlist": {
+    "loading": "Loading your favorites...",
+    "title": "My Wishlist",
+    "description": "Manage your favorite services and book when you're ready.",
+    "filterPlaceholder": "Filter services...",
+    "clearFilters": "Clear filters",
+    "noResults": "No results found",
+    "empty": "You don't have any services in your wishlist yet",
+    "searchSuggestion": "Try other search terms.",
+    "emptySuggestion": "Explore our catalog and save the services you like the most.",
+    "viewServices": "View Services",
+    "featured": "Featured",
+    "available": "Available",
+    "notAvailable": "Not available",
+    "viewDetail": "View Detail",
+    "remove": "Remove",
+    "reserve": "Book Now"
+  },
+  "MedicalInfo": {
+    "title": "Medical Information",
+    "editTitle": "Edit Medical Information",
+    "addTitle": "Add Medical Information",
+    "noInfo": "No medical information found.",
+    "addBtn": "Add Medical Information",
+    "editBtn": "Edit",
+    "saveBtn": "Save Changes",
+    "savingBtn": "Saving...",
+    "cancelBtn": "Cancel",
+    "criticalAlerts": "Critical Alerts",
+    "allergies": {
+      "label": "Allergies",
+      "placeholder": "Describe known allergies...",
+      "noRegistered": "No allergies registered",
+      "hint": "Include drug, food, or other allergies"
+    },
+    "trainingWarnings": {
+      "label": "Training Warnings",
+      "placeholder": "Describe training precautions...",
+      "noRegistered": "No warnings registered",
+      "hint": "Previous injuries, physical limitations or special precautions"
+    },
+    "medicalRisks": {
+      "label": "Medical Risks",
+      "placeholder": "Describe relevant medical risks...",
+      "noRegistered": "No risks registered",
+      "hint": "Important medical risk factors for training"
+    },
+    "athleteProfile": "Athlete Clinical Profile",
+    "bloodType": {
+      "label": "Blood Type",
+      "placeholder": "Select blood type",
+      "notSpecified": "Not specified"
+    },
+    "emergencyContact": {
+      "label": "Emergency Contact",
+      "name": "Full name",
+      "relation": "Relation (e.g., Mother, Father, Spouse)",
+      "phone": "+1 123-456-7890"
+    },
+    "medicalConditions": {
+      "label": "Medical Conditions",
+      "placeholder": "Describe chronic or relevant medical conditions...",
+      "noRegistered": "No medical conditions registered",
+      "hint": "Chronic diseases, pre-existing conditions, etc."
+    },
+    "currentMedication": {
+      "label": "Current Medication",
+      "placeholder": "List current medications with dosage and frequency...",
+      "noRegistered": "No medications registered",
+      "hint": "Include name, dose, and frequency of each medication"
+    },
+    "messages": {
+      "success": "Medical information updated successfully",
+      "error": "Error updating medical information"
+    }
+  },
+  "ForgotPasswordPage": {
+    "title": "Password Recovery",
+    "description": "We have sent a verification code to your email to reset your password. Enter it here.",
+    "emailSent": "We have sent a 6-digit code to {email} ...",
+    "resendCode": "Resend Code",
+    "verifyButton": "Continue",
+    "verifying": "Verifying...",
+    "resetTitle": "Update your password",
+    "resetSubtitle": "Update your password to protect your account security",
+    "newPasswordLabel": "New Password",
+    "newPasswordPlaceholder": "New password",
+    "confirmPasswordLabel": "Confirm password",
+    "confirmPasswordPlaceholder": "Confirm password",
+    "submitButton": "Reset Password",
+    "submitting": "Saving...",
+    "success": {
+      "codeValid": "Valid code",
+      "passwordUpdated": "Password updated",
+      "codeDescription": "Code verified. You can now create a new password.",
+      "passwordDescription": "Your password has been successfully updated.",
+      "resentTitle": "Code resent",
+      "resentDescription": "A new code has been sent to your email."
+    },
+    "errors": {
+      "incompleteCode": "Please enter the full 6-character code",
+      "invalidCode": "Invalid or expired code",
+      "connectionTitle": "Connection Error",
+      "connectionDescription": "Could not connect to the server. Please try again later.",
+      "mismatch": "Passwords do not match",
+      "required": "Please complete all fields"
+    }
+  },
+  "NpsSurvey": {
+    "question": "How likely are you to recommend VitalFit to a friend or family member?",
+    "unlikely": "Not at all likely",
+    "likely": "Extremely likely",
+    "commentPlaceholder": "What could we improve? (optional)",
+    "submit": "Send",
+    "sending": "Sending...",
+    "thanks": "Thank you for your feedback!",
+    "error": "We could not save your answer. Please try again.",
+    "dismiss": "Close"
+  }
+}
