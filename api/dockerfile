@@ -34,6 +34,7 @@ RUN go install github.com/swaggo/swag/cmd/swag@v1.16.6
 RUN swag init -g ./api/main.go -d cmd,internal && swag fmt
 
 RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o /app/main ./cmd/api
+RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o /app/seed ./internal/migrate/seed
 
 RUN go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@v4.18.3
 
@@ -54,6 +55,10 @@ COPY ./internal/migrate/migrations ./migrations
 COPY --from=builder /app/docs ./docs
 
 COPY ./scripts/start.sh ./start.sh
+
+# One-off data seed (enabled with SEED_ON_START=true, see start.sh)
+COPY --from=builder /app/seed .
+COPY ./internal/migrate/seed/data ./internal/migrate/seed/data
 
 EXPOSE 8080
 

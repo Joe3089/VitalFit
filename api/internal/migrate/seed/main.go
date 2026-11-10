@@ -57,6 +57,16 @@ func NewSeedStruct() *SeedStruct {
 func (s *SeedStruct) Seed(store store.Storage, db *gorm.DB, services appservices.Services) {
 	ctx := context.Background()
 
+	// The essential seed only runs on an empty database so it can be enabled at
+	// container start without duplicating data on restarts.
+	// Commercial policies are only created by this seed (migrations add some
+	// permissions, so those cannot be used as the marker).
+	var policyCount int64
+	if err := db.Table("commercial_policies").Count(&policyCount).Error; err == nil && policyCount > 0 && !env.GetBool("SEED_FORCE", false) {
+		log.Printf("Database already seeded (%d commercial policies). Skipping seed; set SEED_FORCE=true to run it anyway.", policyCount)
+		return
+	}
+
 	// Essential data, safe to run on a fresh database (production included):
 	// super admin (ADMIN_EMAIL / ADMIN_PASSWORD), permissions, role permissions,
 	// commercial policies, service categories and exercises.
