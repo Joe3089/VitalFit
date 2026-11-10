@@ -2,12 +2,12 @@
 
 | Componente | Dónde | Repo |
 |---|---|---|
-| API (Go) | Render (Docker) | `Joe3089/api` |
+| API (Go) | Render (Docker) | `Joe3089/VitalFit` → carpeta `api/` |
 | Base de datos | Neon (PostgreSQL) | — |
-| Dashboard | Vercel | `Joe3089/dashboard` |
-| Ecommerce | Vercel | `Joe3089/ecommerce` |
-| App Android | APK (build local con Gradle) | `Joe3089/app` |
-| SDK | Se instala desde GitHub (`github:Joe3089/vitalfit-sdk#v0.5.0`) | `Joe3089/vitalfit-sdk` |
+| Dashboard | Vercel | `Joe3089/VitalFit` → carpeta `dashboard/` |
+| Ecommerce | Vercel | `Joe3089/VitalFit` → carpeta `ecommerce/` |
+| App Android | APK (build local con Gradle) | `Joe3089/VitalFit` → carpeta `app/` |
+| SDK | Se instala desde GitHub (`github:Joe3089/vitalfit-sdk#v0.5.0`) | `Joe3089/vitalfit-sdk` (fuente también en `vitalfit-sdk/`) |
 
 Orden obligatorio: **Neon → Render → Vercel → APK**, porque cada paso necesita la URL del anterior.
 
@@ -20,7 +20,7 @@ Orden obligatorio: **Neon → Render → Vercel → APK**, porque cada paso nece
 3. Carga los datos base desde tu PC (crea el Super Admin, permisos, roles y políticas comerciales):
 
 ```powershell
-cd api
+cd api   # dentro del monorepo VitalFit
 $env:DB_ADDR = "postgresql://...?sslmode=require"
 $env:ADMIN_EMAIL = "tu-correo@dominio.com"
 $env:ADMIN_PASSWORD = "UnaClaveSegura#2026"
@@ -34,7 +34,7 @@ go run internal/migrate/seed/main.go
 
 ## 2. API en Render
 
-1. https://dashboard.render.com → **New → Blueprint** → conecta `Joe3089/api` (rama `feat/backlog-completo` o `main` tras el merge).
+1. https://dashboard.render.com → **New → Blueprint** → conecta `Joe3089/VitalFit` (rama `main`). El `render.yaml` está en la raíz y apunta a la carpeta `api/`.
 2. Render lee `render.yaml` y pide las variables marcadas `sync: false`:
 
 | Variable | Valor |
@@ -62,9 +62,9 @@ go run internal/migrate/seed/main.go
 
 ## 3. Dashboard y ecommerce en Vercel
 
-Para cada repo (`Joe3089/dashboard` y `Joe3089/ecommerce`):
+Crea **dos proyectos** en Vercel desde el mismo repo `Joe3089/VitalFit`:
 
-1. https://vercel.com/new → importa el repo. Framework: **Next.js** (se detecta solo). No cambies build ni install commands.
+1. https://vercel.com/new → importa `Joe3089/VitalFit`. En **Root Directory** elige `dashboard` (y en el segundo proyecto, `ecommerce`). Framework: **Next.js** (se detecta solo). No cambies build ni install commands.
 2. **Environment Variables → Import .env**: pega el contenido de tu archivo local `dashboard/env` y cambia:
    - `NEXT_PUBLIC_API_URL=https://TU-API.onrender.com/v1` (con `/v1` al final)
    - `NEXT_PUBLIC_DEV_MODE=false`

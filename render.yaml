@@ -1,13 +1,17 @@
 # Render Blueprint: https://render.com/docs/blueprint-spec
-# Deploys the API as a Docker web service. The database lives in Neon
+# Monorepo: the API lives in ./api. Deploys it as a Docker web service. The database lives in Neon
 # (set DB_ADDR to the Neon connection string with sslmode=require).
 services:
   - type: web
     name: vitalfit-api
     runtime: docker
     plan: free
-    dockerfilePath: ./dockerfile
-    dockerContext: .
+    dockerfilePath: ./api/dockerfile
+    dockerContext: ./api
+    # Only redeploy when the API changes (paths relative to the repo root)
+    buildFilter:
+      paths:
+        - api/**
     # Apply pending migrations on every deploy, then start the server.
     dockerCommand: sh -c './migrate -path ./migrations -database "$DB_ADDR" up && ./main'
     healthCheckPath: /v1/health

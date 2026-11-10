@@ -1,0 +1,12 @@
+# Credenciales locales: nunca subir
+DB_ADDR.txt
+*.secret.txt
+.env
+.env.*
+!.env.example
+
+# SO / editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
