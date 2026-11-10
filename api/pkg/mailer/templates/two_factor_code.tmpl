@@ -60,6 +60,7 @@
         text-align: center;
         padding-top: 20px;
       }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -72,8 +73,8 @@
         <p>Hola <strong>{{.UserName}}</strong>,</p>
         <p>Se ha iniciado sesión en el panel administrativo de <strong>VITAL FIT</strong>. Para completar el acceso ingresa el siguiente código de verificación:</p>
 
-        <div class="code-box">
-          <h1>{{.Code}}</h1>
+        <div class="code-box" style="text-align:center;margin:20px 0;padding:15px 0;background-color:#f58a24;border-radius:5px;">
+          <h1 style="color:#ffffff;font-size:32px;margin:0;letter-spacing:5px;">{{.Code}}</h1>
         </div>
 
         <p>El código vence en {{.Minutes}} minutos y solo puede usarse una vez.</p>
