@@ -1,0 +1,6 @@
+# Forzar LF en todos los archivos de código
+* text=auto
+*.js text
+*.ts text
+*.css text
+*.html text

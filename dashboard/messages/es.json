@@ -1,0 +1,3725 @@
+{
+  "banners": {
+    "stats": {
+      "total": "Total",
+      "active": "Activos",
+      "unit": "banners"
+    },
+    "list": {
+      "title": "Banners",
+      "subtitle": "Gestiona los banners publicitarios"
+    },
+    "actions": {
+      "add": "Agregar Banner",
+      "remove": "Quitar",
+      "edit": "Editar",
+      "cancel": "Cancelar",
+      "creating": "Creando...",
+      "save": "Guardar",
+      "saving": "Guardando...",
+      "change": "Cambiar",
+      "view": "Ver",
+      "modify": "Modificar",
+      "delete": "Eliminar"
+    },
+    "errors": {
+      "imgUploadFailed": "No se pudo subir la imagen",
+      "imgUploadUnknown": "Error desconocido al subir imagen",
+      "nameRequired": "El nombre es obligatorio",
+      "urlRequired": "La URL es obligatoria",
+      "notAuthenticated": "No autenticado",
+      "fixForm": "Por favor corrige los errores del formulario",
+      "noImage": "La imagen es obligatoria",
+      "createUnknown": "Error desconocido al crear el banner",
+      "updateUnknown": "Error desconocido al actualizar el banner",
+      "uploadDefault": "Error al subir el banner. Se usará una imagen por defecto.",
+      "cropProcessing": "Error al procesar el recorte de la imagen.",
+      "load": "Error cargando banners"
+    },
+    "create": {
+      "title": "Crear Banner",
+      "subtitle": "Agrega un nuevo banner"
+    },
+    "edit": {
+      "title": "Editar Banner"
+    },
+    "labels": {
+      "name": "Nombre",
+      "linkUrl": "URL del enlace",
+      "status": "Estado Activo",
+      "uploadUrl": "Imagen del Banner"
+    },
+    "placeholders": {
+      "name": "Nombre del banner",
+      "linkUrl": "https://ejemplo.com"
+    },
+    "upload": {
+      "loading": "Cargando...",
+      "uploading": "Subiendo...",
+      "callToAction": "Subir Imagen",
+      "format": "PNG, JPG hasta 5MB"
+    },
+    "notifications": {
+      "created": "Banner creado exitosamente",
+      "updated": "Banner actualizado exitosamente",
+      "errorTitle": "Error",
+      "successTitle": "Éxito",
+      "activateSuccess": "Banner activado exitosamente",
+      "deactivateSuccess": "Banner desactivado exitosamente",
+      "updateStatusError": "Error al actualizar el estado del banner",
+      "deleteSuccess": "Banner borrado exitosamente",
+      "deleteError": "Error al borrar el banner"
+    },
+    "crop": {
+      "title": "Recortar Imagen",
+      "zoom": "Zoom",
+      "rotation": "Rotación",
+      "rotateLeft": "Girar Izquierda",
+      "rotateRight": "Girar Derecha",
+      "adjustText": "Ajusta el área de recorte",
+      "zoomValue": "Zoom: {value}x",
+      "rotationValue": "Rotación: {value}°",
+      "apply": "Aplicar Recorte",
+      "edit": "Editar Recorte"
+    },
+    "loadingData": "Cargando datos...",
+    "notFound": "Banner no encontrado",
+    "table": {
+      "headers": {
+        "image": "Imagen",
+        "name": "Nombre",
+        "link": "Enlace",
+        "status": "Estado"
+      },
+      "searchPlaceholder": "Buscar",
+      "download": "Descargar",
+      "downloading": "Descargando...",
+      "loading": "Cargando banners...",
+      "actions": {
+        "view": "Ver",
+        "modify": "Modificar",
+        "delete": "Eliminar"
+      },
+      "deleteDialog": {
+        "title": "Confirmar eliminación",
+        "description": "¿Estás seguro de que deseas eliminar este banner? Esta acción no se puede deshacer.",
+        "action": "Eliminar",
+        "cancel": "Cancelar"
+      }
+    }
+  },
+  "LoginPage": {
+    "title": "Acceso Administrativo",
+    "subtitle": "Solo personal autorizado. Ingrese sus credenciales.",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "administrador@vitalfit.com",
+    "passwordLabel": "Contraseña",
+    "passwordPlaceholder": "Ingrese su contraseña",
+    "forgotPasswordLink": "¿Olvidaste tu contraseña?",
+    "accessButton": "Acceder al Dashboard",
+    "errorCredentials": "Credenciales no válidas. Por favor, verifícalas.",
+    "errorUnexpected": "Ocurrió un error inesperado. Inténtalo de nuevo.",
+    "errorGeneric": "Fallo en el inicio de sesión.",
+    "twoFactor": {
+      "title": "Verificación en dos pasos",
+      "description": "Enviamos un código de 6 dígitos a {email}. Ingrésalo para continuar.",
+      "codeLabel": "Código de verificación",
+      "verifyButton": "Verificar y acceder",
+      "back": "Volver",
+      "resend": "Reenviar código",
+      "resent": "Código reenviado",
+      "invalidCode": "Código inválido o vencido. Inténtalo de nuevo.",
+      "expired": "La verificación expiró. Inicia sesión nuevamente."
+    }
+  },
+  "ForgotPasswordPage": {
+    "title": "RECUPERAR CONTRASEÑA",
+    "instruction": "Ingresa el correo electrónico asociado a la cuenta para recuperar tu contraseña",
+    "emailLabel": "Correo Electrónico",
+    "emailPlaceholder": "Ingresa tu correo electrónico",
+    "submitButtonProcessing": "Procesando...",
+    "submitButtonDefault": "Enviar Código",
+    "footerText": "¿Recuerdas tu contraseña?",
+    "footerLink": "Iniciar Sesión",
+    "notificationTitle": "Correo registrado",
+    "notificationDescription": "Si tu correo coincide con una cuenta registrada, recibirás un código de verificación.",
+    "emailInvalid": "Correo inválido"
+  },
+  "ConfirmEmailPage": {
+    "title": "CONFIRMA TU CORREO ELECTRÓNICO",
+    "instruction": "Introduce el código enviado a tu correo para confirmarlo",
+    "errorTitle": "Error de Código",
+    "submitButtonProcessing": "Verificando...",
+    "submitButtonDefault": "Verificar Correo",
+    "resendButton": "Reenviar Código",
+    "successTitleValid": "Email confirmado",
+    "successTitleRegister": "Registro exitoso",
+    "successDescValid": "Email confirmado correctamente",
+    "successDescRegister": "¡Te has registrado exitosamente!",
+    "resendSuccessTitle": "Código de Confirmación Reenviado",
+    "resendSuccessDesc": "Se ha enviado un nuevo código a tu correo electrónico",
+    "loadingFallback": "Cargando...",
+    "codeLengthError": "El código debe tener 6 caracteres"
+  },
+  "ChangePasswordPage": {
+    "title": "CAMBIA TU CONTRASEÑA",
+    "instruction": "Ingrese su nueva contraseña.",
+    "newPasswordLabel": "Nueva Contraseña",
+    "newPasswordPlaceholder": "Nueva contraseña",
+    "confirmPasswordLabel": "Confirmar Contraseña",
+    "confirmPasswordPlaceholder": "Confirmar contraseña",
+    "submitButtonProcessing": "Procesando...",
+    "submitButtonDefault": "Continuar",
+    "footerText": "¿Recuerdas tu Contraseña?",
+    "footerLink": "Iniciar Sesión",
+    "successDescription": "¡Contraseña restablecida exitosamente!",
+    "connectionErrorTitle": "Error de Conexión",
+    "connectionErrorDescription": "No se pudo conectar con el servidor. Por favor, inténtalo de nuevo más tarde.",
+    "serverErrorTitle": "Error al Restablecer Contraseña",
+    "tokenError": "Error en obtener el código de confirmación. Por favor, solicita nuevamente el restablecimiento de contraseña.",
+    "genericError": "Error al cambiar contraseña. Por favor, intenta nuevamente.",
+    "passwordRequired": "La contraseña es obligatoria",
+    "passwordMinLength": "La contraseña debe tener al menos 8 caracteres",
+    "passwordUppercase": "La contraseña debe contener al menos una mayúscula",
+    "passwordLowercase": "La contraseña debe contener al menos una minúscula",
+    "passwordNumber": "La contraseña debe contener al menos un número",
+    "confirmPasswordRequired": "Confirmar contraseña es obligatorio",
+    "passwordsMustMatch": "Las contraseñas no coinciden"
+  },
+  "DashboardHome": {
+    "loading": "Cargando panel...",
+    "welcomeTitle": "Bienvenido, {firstName}",
+    "roleInfo": "Tu rol actual es: {roleLabel}",
+    "financialPanelTitle": "Panel Financiero",
+    "viewReportsButton": "Ver reportes financieros",
+    "unassignedRoleMessage": "No tienes un panel de control asignado para tu rol. Contacta al Administrador."
+  },
+  "Menu": {
+    "General": "General",
+    "Administracion": "Administración",
+    "Operacion": "Operación",
+    "Finanzas": "Finanzas",
+    "Marketing": "Marketing",
+    "Configuracion": "Configuración",
+    "Instructor": "Instructor",
+    "Analytics": "Analytics",
+    "Recepcion": "Recepción",
+    "Dashboard": "Dashboard",
+    "Sucursales": "Sucursales",
+    "UsuariosRoles": "Usuarios y Roles",
+    "UsuariosSistema": "Usuarios del Sistema",
+    "RolesPermisos": "Roles y Permisos",
+    "AuditoriaAccesos": "Auditoría de Accesos",
+    "CatalogoSistema": "Catálogo de Sistema",
+    "TiposMembresia": "Tipos de Membresía",
+    "Servicios": "Servicios",
+    "Instructores": "Instructores",
+    "InventarioEquipamiento": "Inventario de Equipamiento",
+    "Promociones": "Promociones y Descuentos",
+    "ClientesSocios": "Clientes y Socios",
+    "RegistroConsulta": "Registro y Consulta",
+    "SegmentacionScoring": "Segmentación y Scoring",
+    "QuejasSugerencias": "Quejas y Sugerencias",
+    "CalendarioAsistencia": "Calendario y Asistencia",
+    "CalendarioClases": "Calendario de Clases",
+    "GestionReservas": "Gestión de Reservas",
+    "TrackingAsistencia": "Tracking de Asistencia",
+    "FacturacionElectronica": "Facturación Electrónica",
+    "MembresiasControl": "Membresías y Control",
+    "GestionMembresias": "Gestión de Membresías",
+    "AlertasVencimiento": "Alertas de Vencimiento",
+    "ReportesFinancieros": "Reportes Financieros",
+    "GestionBanners": "Gestión de Banners",
+    "MerchandisingCrosssell": "Merchandising (Cross-sell)",
+    "AjustesSistema": "Ajustes del Sistema",
+    "DocumentosFiscales": "Documentos Fiscales",
+    "MetodosPagoGlobal": "Métodos de Pago Global",
+    "CausalesCancelacion": "Causales de Cancelación",
+    "PoliticasContrasena": "Políticas de Contraseña",
+    "DashboardOperativo": "Dashboard Operativo",
+    "ConfiguracionLocal": "Configuración Local",
+    "InformacionHorarios": "Información y Horarios",
+    "CapacidadAforo": "Capacidad y Aforo",
+    "AgendaCalendario": "Agenda y Calendario",
+    "ReservasActivas": "Reservas Activas",
+    "RegistroAsistencia": "Registro de Asistencia",
+    "RegistroPagos": "Registro de Pagos",
+    "MembresiasVencer": "Membresías por Vencer",
+    "ReporteVentasLocal": "Reporte de Ventas Local",
+    "MiCalendario": "Mi Calendario",
+    "MisReportes": "Mis Reportes",
+    "ReportesDetallados": "Reportes Detallados",
+    "TendenciasCohortes": "Tendencias y Cohortes",
+    "ReporteClientes": "Reporte de Clientes",
+    "ReporteFinanciero": "Reporte Financiero",
+    "CheckinCheckout": "Check-in/Check-out",
+    "ReporteVentas": "Reporte de Ventas",
+    "CombosPaquetes": "Combos/Paquetes",
+    "GestionMarketing": "Gestión Marketing",
+    "branches_label": "Sedes de {name}",
+    "select_branch": "Seleccionar Sede",
+    "available_branches": "Sedes disponibles",
+    "no_branches": "No hay sedes asignadas",
+    "system_footer": "Sistema Vitalfit",
+    "PoliticasComerciales": "Políticas Comerciales",
+    "MisClientes": "Mis clientes",
+    "AnaliticaAvanzada": "Analítica Avanzada",
+    "AutomatizacionReportes": "Automatización de Reportes"
+  },
+  "LocaleSwitcher": {
+    "label": "Cambiar idioma",
+    "locale": "{locale, select, es {Español} en {English} other {{locale}}}"
+  },
+  "Navbar": {
+    "notifications": "Notificaciones",
+    "details": "Detalles #{id}",
+    "searchPlaceholder": "Buscar en VitalFit...",
+    "searchMobile": "Buscar...",
+    "noResults": "No se encontraron resultados.",
+    "appearance": "Apariencia",
+    "toggleMenu": "Alternar Menú"
+  },
+  "UserNav": {
+    "account": "Cuenta",
+    "billing": "Facturación",
+    "notifications": "Notificaciones",
+    "logout": "Cerrar sesión",
+    "language": "Idioma"
+  },
+  "analytics": {
+    "common": {
+      "no_data": "No hay datos disponibles para el periodo seleccionado",
+      "loading": "Cargando datos...",
+      "error": "Ha ocurrido un error al cargar la información"
+    },
+    "finance": {
+      "formats": {
+        "csv": "CSV (Texto plano)",
+        "excel": "Excel (.xlsx)",
+        "pdf": "PDF (Documento)"
+      },
+      "title": "Reporte de Finanzas Detallado",
+      "subtitle": "Análisis de flujo de caja, solvencia y proyecciones financieras",
+      "export": "Exportar CSV",
+      "exporting": "Exportando...",
+      "export_sales": "Exportar Ventas",
+      "export_filename": "reporte_financiero",
+      "errors": {
+        "select_dates": "Por favor selecciona un rango de fechas"
+      },
+      "stats": {
+        "weekly_revenue": "Ingresos Semanales",
+        "mrr": "MRR (Ingreso Recurrente)",
+        "accounts_receivable": "Cuentas por Cobrar",
+        "active_branches": "Sucursales Activas",
+        "average_ticket": "Ticket Promedio",
+        "clv": "Valor de Vida del Cliente (CLV)"
+      },
+      "financial_summary": {
+        "title": "Resumen de Caja",
+        "description": "Ingresos brutos por categoría",
+        "total_net": "Total Neto"
+      },
+      "filters": {
+        "all_branches": "Todas las sucursales",
+        "loading": "Cargando...",
+        "start_date": "Fecha inicio",
+        "end_date": "Fecha fin",
+        "clear": "Limpiar campos",
+        "placeholder_range": "Seleccionar rango",
+        "ranges": {
+          "this_month": "Este mes",
+          "last_month": "Mes pasado",
+          "last_3_months": "Últimos 3 meses",
+          "custom": "Personalizado"
+        }
+      },
+      "charts": {
+        "cash_flow": {
+          "title": "Flujo de Caja Proyectado",
+          "description": "Ingresos realizados por mes (Año actual)",
+          "series_label": "Ingresos"
+        },
+        "monthly_revenue": {
+          "title": "Evolución de Ingresos",
+          "description": "Comparativa de facturación total mensual",
+          "series_label": "Facturación"
+        }
+      },
+      "billing_matrix": {
+        "title": "Matriz de Facturación",
+        "description": "Desglose comparativo de conceptos por cada sede activa",
+        "no_data": "No hay datos de facturación para el periodo seleccionado.",
+        "column_concept": "Concepto",
+        "column_total": "Total Concepto",
+        "footer_totals": "TOTALES POR SEDE",
+        "error": "Error al cargar la matriz financiera"
+      }
+    },
+    "Sales": {
+      "formats": {
+        "csv": "CSV (Plain text)",
+        "excel": "Excel (.xlsx)",
+        "pdf": "PDF (Document)"
+      },
+      "title": "Reporte de Ventas",
+      "subtitle": "Rendimiento comercial, métodos de pago y productividad de sucursales",
+      "export": "Exportar CSV",
+      "exporting": "Exportando...",
+      "export_filename": "reporte_ventas",
+      "stats": {
+        "total_sales": "Ventas Totales Históricas",
+        "average_ticket": "KPI Ticket Promedio (Mensual)",
+        "total_transactions": "Estadísticas de Volumen de Transacciones",
+        "global_sales": "Desempeño de Ventas Global",
+        "comparison": "vs. mes anterior",
+        "monthly_sales": "Ventas del Mes"
+      },
+      "filters": {
+        "all_branches": "Todas las sucursales",
+        "required_title": "Selección requerida",
+        "required_description": "Por favor, seleccione un rango de fechas para visualizar la distribución de ventas.",
+        "ranges": {
+          "this_month": "Este mes",
+          "last_month": "Mes pasado",
+          "last_3_months": "Últimos 3 meses",
+          "custom": "Personalizado"
+        }
+      },
+      "charts": {
+        "by_hour": {
+          "title": "Ventas por Hora",
+          "description": "Picos de actividad comercial durante el día",
+          "series_label": "Volumen"
+        },
+        "top_branches": {
+          "title": "Rendimiento por Franquicia",
+          "description": "Top {count} sedes por volumen de ventas",
+          "sales_label": "Ventas totales",
+          "empty_state": "No hay datos de sedes disponibles"
+        },
+        "payment_method": {
+          "title": "Métodos de Pago",
+          "description": "Distribución de recaudación por canal",
+          "amount": "Monto",
+          "footer_total": "Recaudación Total: {amount}",
+          "footer_text": "Se detectaron {count} métodos de pago",
+          "filters_required_title": "Filtros requeridos",
+          "filters_required_description": "Selecciona un rango de fechas para visualizar los métodos de pago."
+        },
+        "category_sales": {
+          "title": "Ventas por Servicio",
+          "description": "Distribución por categorías de productos y servicios",
+          "footer_total": "Total servicios: {total}",
+          "value_label": "Ventas"
+        },
+        "sales_trend": {
+          "title": "Tendencia de Ventas",
+          "description": "Ingresos generados en los últimos 7 días",
+          "series_label": "Ventas"
+        },
+        "demography": {
+          "age": "Edad",
+          "gender": "Género",
+          "values": {
+            "male": "Masculino",
+            "female": "Femenino",
+            "prefer-not-to-say": "No especificado",
+            "other": "Otro"
+          },
+          "ui": {
+            "title_age": "Ventas por Edad",
+            "title_gender": "Ventas por Género",
+            "description": "Distribución demográfica de ingresos",
+            "loading": "Cargando datos...",
+            "no_data": "No hay datos disponibles",
+            "tooltip_sales": "Ventas"
+          }
+        }
+      }
+    },
+    "clients": {
+      "formats": {
+        "csv": "CSV (Plain text)",
+        "excel": "Excel (.xlsx)",
+        "pdf": "PDF (Document)"
+      },
+      "header": {
+        "title": "Reporte de Clientes",
+        "subtitle": "Análisis detallado de fidelización, retención y staff",
+        "export": "Export CSV",
+        "exporting": "Exporting...",
+        "export_filename": "reporte_clientes"
+      },
+      "stats": {
+        "total_clients": "Total de clientes",
+        "active_members": "Miembros de sucursal activos",
+        "new_clients": "Nuevos clientes",
+        "retention_rate": "Tasa de retención",
+        "churn_rate": "Tasa de Deserción Mensual"
+      },
+      "filters": {
+        "all_branches": "Todas las sucursales",
+        "ranges": {
+          "this_month": "Este mes",
+          "last_month": "Mes pasado",
+          "last_3_months": "Últimos 3 meses",
+          "custom": "Personalizado"
+        }
+      },
+      "cohort": {
+        "title": "Retención de Cohortes",
+        "description": "Seguimiento mensual del comportamiento de nuevos clientes.",
+        "table": {
+          "month": "Cohorte",
+          "size": "Base",
+          "retention_month": "Mes {n}"
+        },
+        "messages": {
+          "error": "Error al cargar los datos de retención",
+          "no_data": "No hay datos suficientes para generar el análisis"
+        }
+      },
+      "services": {
+        "title": "Servicios más utilizados",
+        "description": "Frecuencia de uso por tipo de clase o servicio",
+        "label_usage": "Cantidad de usos"
+      },
+      "instructors": {
+        "title": "Top 5 Instructores",
+        "description": "Por asistencias totales en el periodo",
+        "label_usage": "asistencias",
+        "messages": {
+          "select_dates": "Selecciona un rango de fechas para ver el ranking",
+          "no_data": "No se encontraron datos de instructores"
+        }
+      },
+      "growth": {
+        "title": "Nuevos vs Recurrentes",
+        "description": "Comparativa mensual de captación y fidelización",
+        "label_new": "Nuevos",
+        "label_recurring": "Recurrentes"
+      },
+      "rfm": {
+        "title": "Segmentación de Clientes",
+        "description": "Análisis basado en Recencia, Frecuencia y Valor Monetario (RFM)",
+        "noDataTitle": "No hay suficientes datos",
+        "noDataDescription": "Se requiere historial de compras y asistencias para generar la segmentación RFM.",
+        "footer": "Muestreo basado en {count} clientes activos. Los segmentos se actualizan automáticamente."
+      }
+    },
+    "branch": {
+      "Occupancy": {
+        "stats": {
+          "current_occupancy": "Ocupación Actual",
+          "checkins_today": "Check-ins Hoy",
+          "real_time": "En tiempo real",
+          "average_occupancy": "Ocupación Promedio"
+        },
+        "heatmap": {
+          "title": "Mapa de calor de actividad",
+          "description": "Horarios de mayor afluencia en la sede",
+          "days": [
+            "L",
+            "M",
+            "M",
+            "J",
+            "V",
+            "S",
+            "D"
+          ],
+          "legend_low": "Menos flujo",
+          "legend_high": "Más flujo",
+          "tooltip": "Ocupación: {val}%"
+        },
+        "class_analytics": {
+          "title": "Ocupación por Disciplina",
+          "description": "Porcentaje de llenado promedio por tipo de clase",
+          "series_label": "Porcentaje de Ocupación"
+        }
+      },
+      "ClassCapacity": {
+        "title": "Cupos en Tiempo Real",
+        "description": "Monitoreo de asistencia por sesión",
+        "placeholder_loading": "Cargando clases...",
+        "placeholder_select": "Seleccionar clase de hoy",
+        "empty_state": "Selecciona una clase para ver el aforo",
+        "ratio_label": "Ratio de Entrada",
+        "occupied": "{percentage}% Ocupado",
+        "free_slots": "{count, plural, =0 {Sin cupos disponibles} =1 {# cupo libre} other {# cupos libres}}",
+        "max_capacity": "Capacidad máxima permitida: <bold>{max} personas</bold>",
+        "status": {
+          "available": "Disponible",
+          "almost_full": "Casi lleno",
+          "sold_out": "Agotado"
+        }
+      },
+      "RecentCheckIns": {
+        "title": "Check-ins Recientes",
+        "description": "{count, plural, =0 {Sin ingresos registrados hoy} =1 {1 ingreso registrado hoy} other {# ingresos registrados hoy}}",
+        "empty_state": "No hay ingresos recientes"
+      },
+      "UpcomingClasses": {
+        "title": "Clases de Hoy",
+        "description": "{count, plural, =0 {Sin sesiones programadas} =1 {1 sesión programada} other {# sesiones programadas}}",
+        "empty_state": "No hay más clases para hoy",
+        "capacity": "Cap. {max}",
+        "status": {
+          "ongoing": "En curso",
+          "starting_soon": "Inicia pronto",
+          "scheduled": "Programada"
+        }
+      }
+    }
+  },
+  "dashboards": {
+    "no_dashboard": "No tienes un dashboard asignado para tu rol.",
+    "SuperAdminDashboard": {
+      "header": {
+        "title": "Dashboard",
+        "subtitle": "Bienvenido al resumen ejecutivo de tu red de franquicias.",
+        "download_report": "Descargar Reporte"
+      }
+    },
+    "InstructorDashboard": {
+      "header": {
+        "morning": "¡Buenos días!",
+        "afternoon": "¡Buenas tardes!",
+        "night": "¡Buenas noches!",
+        "active_branch": "Sede actual:",
+        "no_branch": "Sin sede asignada"
+      },
+      "stats": {
+        "next_class": "Siguiente clase",
+        "students_today_count": "Alumnos hoy",
+        "students_today_desc": "Total confirmados para hoy",
+        "attendance_rate": "Tasa de Asistencia",
+        "attendance_desc": "Efectividad de asistencia",
+        "monthly_classes": "Clases del mes",
+        "meta": "Meta"
+      },
+      "classes_list": {
+        "title": "Mis clases de hoy",
+        "description": "Gestión de clases en",
+        "empty": "No hay sesiones programadas para hoy.",
+        "starts": "Horario de inicio",
+        "ends": "Fin",
+        "capacity": "Capacidad",
+        "start_button": "Iniciar clase",
+        "loading": "Cargando..."
+      },
+      "messages": {
+        "updating": "Actualizando dashboard...",
+        "updated": "Datos actualizados",
+        "error_loading": "Error al cargar los reportes"
+      }
+    },
+    "ReceptionDashboard": {
+      "title": "Recepción: {branch}",
+      "welcome": "¡Bienvenido, {name}!",
+      "status_ready": "Control de acceso y aforo listo para operar.",
+      "global": "Global",
+      "tabs": {
+        "control_panel": "Panel de Control",
+        "history": "Historial del Día"
+      },
+      "manualCheckInModal": {
+        "title": "Registro Manual",
+        "console": "Consola de Recepción",
+        "description": "Verifique la identidad del socio antes de permitir el ingreso.",
+        "search": {
+          "label": "Identificación del Socio (Email)",
+          "placeholder": "socio@vitalfit.com",
+          "button": "Buscar Socio"
+        },
+        "policies": {
+          "title": "Políticas de Acceso",
+          "timeRuleDescription": "El ingreso solo se permite **15 minutos antes** del inicio de la clase.",
+          "verificationAdvice": "Valide la identidad del socio con su documento y fotografía digitalizada."
+        },
+        "results": {
+          "title": "Validación de Identidad",
+          "verified": "Identidad Verificada",
+          "waiting": "Esperando Identificación",
+          "waitingDescription": "Ingrese el email del socio para validar el estado de su membresía.",
+          "footerNote": "Asistencia sincronizada en tiempo real"
+        },
+        "actions": {
+          "confirm": "Registrar Check-In",
+          "loading": "Procesando..."
+        }
+      }
+    },
+    "BranchDashboard": {
+      "title": "Panel: {branch}",
+      "welcome": "¡Hola, {name}!",
+      "subtitle": "Aquí tienes el resumen de lo que sucede en tu sede hoy.",
+      "global": "Global"
+    },
+    "DataAnalystDashboard": {
+      "title": "Análisis de Datos: {branch}",
+      "welcome": "Bienvenido, {name}!",
+      "status_ready": "Explora tendencias y métricas de rendimiento.",
+      "global": "Red Global"
+    },
+    "AccountantDashboard": {
+      "title": "Gestión Contable: {branch}",
+      "welcome": "Hola, {name}",
+      "subtitle": "revisa el estado financiero y la conciliación de pagos.",
+      "global": "Consolidado Global"
+    }
+  },
+  "catalog": {
+    "services": {
+      "title": "SERVICIOS",
+      "add_button": "Agregar Servicio",
+      "id_prefix": "Servicio ID",
+      "export": "Exportar CSV",
+      "exporting": "Exportando...",
+      "export_filename": "reporte_servicios",
+      "stats": {
+        "total": "Total",
+        "actives": "Activos",
+        "featured": "Destacados",
+        "unit": "SERVICIOS"
+      },
+      "table": {
+        "placeholder": "Filtrar por nombre",
+        "allCategories": "Todas las categorías",
+        "download": "Descargar",
+        "downloading": "Descargando...",
+        "noCategory": "Sin categoría",
+        "columns": {
+          "name": "Nombre",
+          "category": "Categoría",
+          "duration": "Duración",
+          "featured": "Destacado"
+        },
+        "actions": {
+          "view": "Ver",
+          "edit": "Modificar",
+          "delete": "Eliminar"
+        },
+        "deleteDialog": {
+          "title": "Confirmar eliminación",
+          "description": "¿Estás seguro de que deseas eliminar este servicio? Esta acción no se puede deshacer.",
+          "confirm": "Eliminar",
+          "cancel": "Cancelar"
+        }
+      },
+      "notifications": {
+        "missingImages": "Faltan imágenes",
+        "missingImagesDesc": "El servicio requiere al menos una imagen.",
+        "uploadingImages": "Subiendo imágenes...",
+        "processError": "Error al procesar el servicio",
+        "tryAgain": "Inténtalo de nuevo más tarde",
+        "imageTooHeavy": "La imagen es muy pesada (Máx 5MB)",
+        "loadError": "Error al cargar los servicios",
+        "deleteSuccess": "Servicio borrado exitosamente",
+        "deleteError": "Error al borrar el servicio",
+        "errorTitle": "Error",
+        "successTitle": "Éxito"
+      },
+      "CreateService": {
+        "title": "CREAR NUEVO SERVICIO",
+        "title_edit": "EDITAR SERVICIO",
+        "subtitle": "Complete la información",
+        "subtitle_edit": "Modifica los campos necesarios",
+        "loadingData": "Cargando información del catálogo...",
+        "tabs": {
+          "general": "Información General",
+          "images": "Imágenes y Banner"
+        },
+        "fields": {
+          "name": "Nombre del Servicio",
+          "namePlaceholder": "Ej: Entrenamiento Personalizado",
+          "category": "Categoría",
+          "categoryPlaceholder": "Seleccionar categoría",
+          "description": "Descripción detallada",
+          "descriptionPlaceholder": "Escribe una descripción aquí...",
+          "duration": "Duración (Minutos)",
+          "priority": "Prioridad",
+          "featured": "Destacado",
+          "banner": "Banner Promocional",
+          "bannerPlaceholder": "Seleccionar banner",
+          "imagesTitle": "Galería de Imágenes",
+          "imagesHelper": "La primera imagen seleccionada será establecida como principal."
+        },
+        "buttons": {
+          "cancel": "Cancelar",
+          "create": "Guardar Servicio",
+          "uploading": "Subiendo fotos...",
+          "saving": "Guardando cambios..."
+        },
+        "ImageUploader": {
+          "dropzone": "Arrastra y suelta las fotos para el servicio o búscalas",
+          "dropToReorder": "Suelta para reordenar las imágenes",
+          "movingImage": "Moviendo imagen #{index}",
+          "dragging": "Arrastrando...",
+          "primary": "Principal",
+          "descriptionPlaceholder": "Agrega una descripción para esta imagen",
+          "status": {
+            "pending": "Pendiente",
+            "cropped": "Recortada",
+            "uploading": "Subiendo...",
+            "uploaded": "✓ Subida",
+            "error": "Error"
+          },
+          "actions": {
+            "view": "Ver imagen",
+            "crop": "Recortar imagen",
+            "revert": "Revertir recorte",
+            "remove": "Quitar imagen",
+            "setPrimary": "Marcar como principal"
+          },
+          "previewModal": {
+            "title": "Vista previa de imagen",
+            "helper": "Haz clic fuera de la imagen o presiona ESC para cerrar",
+            "close": "Cerrar"
+          },
+          "cropModal": {
+            "title": "Recortar imagen",
+            "helper": "Arrastra para ajustar el recorte • Usa la rueda del mouse para hacer zoom",
+            "zoom": "Zoom",
+            "rotation": "Rotación",
+            "rotateLeft": "Girar izquierda",
+            "rotateRight": "Girar derecha",
+            "cancel": "Cancelar",
+            "apply": "Aplicar recorte"
+          }
+        }
+      }
+    },
+    "payment_methods": {
+      "title": "Métodos de Pago",
+      "add_button": "Nuevo Método",
+      "export": "Exportar CSV",
+      "exporting": "Exportando...",
+      "export_filename": "metodos_de_pago",
+      "stats": {
+        "total": "Total Métodos",
+        "cash": "Efectivo",
+        "gateway": "Pasarelas",
+        "digital": "Transferencias/Zelle",
+        "unit": "métodos"
+      },
+      "table": {
+        "columns": {
+          "name": "Nombre",
+          "type": "Tipo",
+          "status": "Estado",
+          "actions": "Acciones"
+        },
+        "types": {
+          "cash": "Efectivo",
+          "card": "Tarjeta",
+          "transfer": "Transferencia / Pago Móvil",
+          "other": "Zelle / Otros"
+        },
+        "status": {
+          "active": "Activo",
+          "inactive": "Inactivo"
+        },
+        "actions": {
+          "view": "Ver detalle",
+          "edit": "Editar",
+          "delete": "Eliminar"
+        },
+        "filter_placeholder": "Buscar por nombre...",
+        "all_types": "Todos los tipos",
+        "update_button": "Actualizar",
+        "delete_dialog": {
+          "title": "¿Estás completamente seguro?",
+          "description": "Esta acción no se puede deshacer. Se eliminará permanentemente el método de pago: {name}",
+          "action_delete": "Sí, eliminar"
+        }
+      },
+      "new": {
+        "title": "Crear Método de Pago",
+        "create_button": "Crear Método",
+        "creating": "Guardando..."
+      },
+      "edit": {
+        "title": "Editar Método de Pago",
+        "save_button": "Guardar Cambios",
+        "saving": "Actualizando...",
+        "cancel_button": "Cancelar"
+      },
+      "view": {
+        "title": "Detalle del Método",
+        "loading": "Cargando información..."
+      },
+      "form": {
+        "labels": {
+          "name": "Nombre Interno",
+          "display_name": "Nombre Público (Cliente)",
+          "type": "Tipo de Método",
+          "processing": "Procesamiento",
+          "visibility": "Visibilidad",
+          "surcharge_fixed": "Recargo Fijo (Monto)",
+          "surcharge_percentage": "Recargo Porcentual (%)",
+          "description": "Instrucciones para el Cliente"
+        },
+        "placeholders": {
+          "name_example": "Ej: Pago Movil Banco de Albani",
+          "display_name": "Nombre visible para el cliente",
+          "type": "Seleccione el tipo",
+          "description": "Ej: Favor enviar comprobante por WhatsApp al terminar la transacción..."
+        },
+        "sections": {
+          "config_details": "Detalles de Configuración"
+        },
+        "config": {
+          "phone": "Teléfono",
+          "bank_id": "ID Banco (Código)",
+          "tax_id": "Cédula / RIF",
+          "bank_name": "Nombre del Banco",
+          "account_number": "Número de Cuenta",
+          "email": "Correo Electrónico (Zelle)"
+        },
+        "messages": {
+          "no_config_required": "No se requieren datos adicionales para este método.",
+          "back": "Volver"
+        },
+        "actions": {
+          "back": "Volver",
+          "cancel": "Cancelar",
+          "edit": "Modificar"
+        }
+      },
+      "notifications": {
+        "create_success_title": "¡Método creado!",
+        "create_success_description": "El método '{name}' se ha registrado exitosamente.",
+        "update_success_title": "Cambios guardados",
+        "update_success_description": "El método '{name}' ha sido actualizado.",
+        "delete_success": "Método de pago eliminado correctamente.",
+        "delete_error": "No se pudo eliminar el método de pago.",
+        "error_title": "Error",
+        "load_error": "No se pudo cargar la información.",
+        "validation_error_title": "Error de validación",
+        "conflict_error_title": "Nombre duplicado",
+        "conflict_error_description": "Ya existe un método con ese nombre."
+      },
+      "errors": {
+        "invalid_name_format": "El nombre debe incluir 'Pago Movil', 'Zelle' o 'Bank Transfer'"
+      },
+      "validations": {
+        "name_required": "El nombre es obligatorio",
+        "name_max": "El nombre no puede exceder los 100 caracteres",
+        "name_format": "El nombre solo puede contener letras, números y guiones",
+        "type_required": "El tipo de método es obligatorio",
+        "processing_type_required": "El tipo de procesamiento es obligatorio",
+        "description_max": "La descripción no puede exceder los 500 caracteres"
+      }
+    },
+    "equipment": {
+      "title": "EQUIPAMIENTO",
+      "addButton": "Agregar Equipamiento",
+      "export": "Exportar CSV",
+      "exporting": "Exportando...",
+      "export_filename": "catalogo_equipamiento",
+      "loading": "Cargando equipamiento...",
+      "create": {
+        "title": "AGREGAR EQUIPAMIENTO",
+        "subtitle": "Complete la información para registrar el nuevo equipo",
+        "button": "Guardar Equipo",
+        "loading": "Guardando...",
+        "success": "¡Equipo registrado exitosamente!",
+        "error_create": "No se pudo crear el equipo. Intenta nuevamente."
+      },
+      "details": {
+        "title": "DETALLES DEL EQUIPO",
+        "subtitle": "Información detallada de: {name}",
+        "loading": "Cargando información del equipo...",
+        "not_found": "Equipo no encontrado",
+        "back": "Volver",
+        "edit": "Modificar"
+      },
+      "categories": {
+        "Cardio": "Cardio",
+        "Strength": "Fuerza",
+        "FreeWeight": "Peso Libre",
+        "Functional": "Funcional",
+        "Accessory": "Accesorio"
+      },
+      "table": {
+        "filter_placeholder": "Filtrar por nombre",
+        "category_placeholder": "Categoría",
+        "all_categories": "Todas las Categorías",
+        "download": "Descarga",
+        "columns": {
+          "name": "Equipamiento",
+          "category": "Categoría",
+          "model": "Modelo",
+          "brand": "Marca"
+        },
+        "actions": {
+          "delete": "Eliminar",
+          "view": "Ver detalle",
+          "edit": "Editar"
+        },
+        "delete_dialog": {
+          "title": "Confirmar eliminación",
+          "description": "¿Estás seguro de que deseas eliminar este equipo? Esta acción no se puede deshacer.",
+          "confirm": "Eliminar",
+          "cancel": "Cancelar"
+        }
+      },
+      "notifications": {
+        "delete_success": "Equipo eliminado exitosamente",
+        "delete_error": "Error al eliminar el equipo."
+      },
+      "form": {
+        "labels": {
+          "name": "Nombre del Equipo*",
+          "category": "Categoría*",
+          "brand": "Marca",
+          "model": "Modelo",
+          "description": "Descripción",
+          "serial_number": "Número de Serie",
+          "purchase_date": "Fecha de Compra",
+          "status": "Estado"
+        },
+        "placeholders": {
+          "name": "Ej: Caminadora X1",
+          "category": "Selecciona una categoría",
+          "brand": "Ej: LifeFitness",
+          "model": "Ej: Serie 500",
+          "description": "Describe el estado del equipo o especificaciones..."
+        },
+        "errors": {
+          "name_required": "El nombre del equipo es obligatorio",
+          "description_required": "La descripción es obligatoria",
+          "model_required": "El modelo es obligatorio",
+          "brand_required": "La marca es obligatoria"
+        }
+      },
+      "edit": {
+        "title": "EDITAR EQUIPO",
+        "subtitle": "Modifica los datos del equipo: {name}",
+        "loading_data": "Cargando datos del equipo...",
+        "save": "Guardar cambios",
+        "saving": "Guardando...",
+        "cancel": "Cancelar",
+        "messages": {
+          "success": "¡Equipo actualizado exitosamente!",
+          "error_fetch": "No se pudo cargar el equipo.",
+          "error_update": "Error al actualizar el equipo"
+        }
+      }
+    },
+    "memberships": {
+      "title": "MEMBRESÍAS",
+      "add_button": "Agregar una membresía",
+      "loading": "Cargando Membresías...",
+      "export": "Exportar CSV",
+      "exporting": "Exportando...",
+      "export_filename": "lista_membresias",
+      "table": {
+        "placeholder": "Buscar membresía por nombre",
+        "download": "Descargar",
+        "columns": {
+          "name": "Nombre",
+          "description": "Descripción",
+          "duration": "Duración (días)",
+          "price": "Precio",
+          "status": "Estado"
+        },
+        "status": {
+          "active": "Activa",
+          "inactive": "Inactiva"
+        },
+        "actions": {
+          "view": "Ver Detalles",
+          "edit": "Modificar",
+          "delete": "Eliminar"
+        },
+        "delete_dialog": {
+          "title": "Confirmar eliminación",
+          "description": "¿Estás seguro de que deseas eliminar la membresía \"{name}\"? Esta acción no se puede deshacer.",
+          "confirm": "Eliminar",
+          "cancel": "Cancelar"
+        }
+      },
+      "form": {
+        "labels": {
+          "name": "Nombre*",
+          "description": "Descripción*",
+          "duration_days": "Duración (Días)*",
+          "price": "Precio ($)*",
+          "status": "Estado"
+        },
+        "placeholders": {
+          "name": "Ej: Membresía Premium",
+          "description": "Ej: Acceso ilimitado a todas las instalaciones",
+          "duration_days": "Ej: 30",
+          "price": "Ej: 99.99"
+        }
+      },
+      "create": {
+        "title": "CREAR MEMBRESÍA",
+        "subtitle": "Agrega la información de la membresía",
+        "button_create": "Crear",
+        "button_saving": "Guardando...",
+        "success": "¡Membresía creada exitosamente!",
+        "error_connection": "Error de conexión",
+        "error_connection_description": "No se pudo conectar con el servidor. Intenta más tarde.",
+        "error_create": "Error al crear membresía",
+        "error_auth": "Token de autenticación no encontrado."
+      },
+      "edit": {
+        "title": "MODIFICAR MEMBRESÍA",
+        "subtitle": "Modifica la información de la membresía {name}",
+        "button_cancel": "Cancelar",
+        "button_save": "Guardar Cambios",
+        "button_saving": "Guardando...",
+        "success": "¡Membresía actualizada exitosamente!",
+        "error_connection": "Error de conexión",
+        "error_connection_description": "No se pudo conectar con el servidor. Intenta más tarde.",
+        "error_update": "Error al actualizar membresía",
+        "error_load": "No se pudo cargar la información de la membresía.",
+        "error_auth": "Token de autenticación no encontrado."
+      },
+      "view": {
+        "title": "DETALLES DE MEMBRESÍA",
+        "button_edit": "Modificar",
+        "loading": "Cargando Membresía...",
+        "error_load": "No se pudo cargar la información de la membresía.",
+        "error_auth": "Sesión expirada o no autorizada. Intenta ingresar de nuevo.",
+        "not_found": "Membresía no encontrada o no disponible."
+      },
+      "notifications": {
+        "delete_success": "Membresía eliminada correctamente",
+        "delete_error": "Error al eliminar la membresía. Intenta nuevamente.",
+        "delete_auth_error": "No estás autenticado para realizar esta acción."
+      },
+      "validations": {
+        "name_required": "El nombre es requerido",
+        "name_max": "El nombre no puede tener más de 100 caracteres",
+        "description_required": "La descripción es requerida",
+        "description_max": "La descripción no puede tener más de 500 caracteres",
+        "duration_int": "La duración debe ser un número entero",
+        "duration_min": "La duración no puede ser cero (0) o negativa",
+        "duration_max": "La duración máxima es 3650 días (10 años)",
+        "price_min": "El precio no puede ser cero (0) o negativo",
+        "price_max": "El precio máximo es 999,999.99",
+        "validation_error": "Error de validación inesperado"
+      }
+    },
+    "packages": {
+      "title": "PAQUETES DE SERVICIOS",
+      "add_button": "Agregar un paquete",
+      "loading": "Cargando paquetes...",
+      "error_loading": "Error al cargar los paquetes",
+      "export": "Exportar CSV",
+      "exporting": "Exportando...",
+      "export_filename": "lista_paquetes",
+      "table": {
+        "placeholder": "Buscar paquete por nombre",
+        "columns": {
+          "name": "Nombre",
+          "description": "Descripción",
+          "duration": "Duración (días)",
+          "price": "Precio",
+          "status": "Estado"
+        },
+        "status": {
+          "active": "Activa",
+          "inactive": "Inactiva"
+        },
+        "actions": {
+          "view": "Ver Detalles",
+          "edit": "Modificar",
+          "delete": "Eliminar"
+        },
+        "delete_dialog": {
+          "title": "Confirmar eliminación",
+          "description": "¿Estás seguro de que deseas eliminar el paquete \"{name}\"? Esta acción no se puede deshacer.",
+          "confirm": "Eliminar",
+          "cancel": "Cancelar"
+        }
+      },
+      "form": {
+        "labels": {
+          "name": "Nombre del Paquete",
+          "price": "Precio",
+          "description": "Descripción",
+          "start_at": "Fecha de Inicio",
+          "end_at": "Fecha de Fin",
+          "services_included": "Servicios Incluidos",
+          "sessions_count": "Sesiones",
+          "status": "Estado",
+          "remove": "Quitar",
+          "add_service": "Agregar Servicio"
+        },
+        "placeholders": {
+          "select_service": "-- Seleccione un servicio --"
+        },
+        "buttons": {
+          "cancel": "Cancelar",
+          "save": "Guardar Paquete"
+        },
+        "messages": {
+          "validation_error": "Por favor, complete los campos obligatorios correctamente"
+        },
+        "errors": {
+          "name_required": "El nombre del paquete es obligatorio",
+          "description_required": "La descripción es obligatoria",
+          "price_min": "El precio debe ser mayor a 0",
+          "start_date_required": "La fecha de inicio es obligatoria",
+          "end_date_required": "La fecha de fin es obligatoria",
+          "at_least_one_service": "Debes agregar al menos un servicio al paquete",
+          "sessions_min": "Las sesiones deben ser al menos 1",
+          "invalid_date_range": "La fecha de fin debe ser posterior a la de inicio"
+        }
+      },
+      "create": {
+        "title": "Crear Paquete",
+        "subtitle": "Define los servicios y precios para el nuevo paquete",
+        "loading_services": "Cargando servicios disponibles...",
+        "loading_create": "Creando paquete...",
+        "button_create": "Crear Paquete",
+        "button_creating": "Guardando...",
+        "success": "Paquete creado con éxito",
+        "error_create": "Error al crear el paquete"
+      },
+      "edit": {
+        "title": "EDITAR PAQUETE",
+        "subtitle": "Modifica los datos del paquete: {name}",
+        "button_save": "Guardar cambios",
+        "button_cancel": "Cancelar",
+        "button_saving": "Guardando...",
+        "success": "¡Paquete actualizado exitosamente!",
+        "error_update": "Error al actualizar el paquete",
+        "error_load": "No se pudo cargar el paquete."
+      },
+      "view": {
+        "title": "DETALLES DEL PAQUETE",
+        "button_edit": "Modificar",
+        "loading": "Cargando Paquetes...",
+        "error_load": "No se pudo cargar la información del paquete."
+      },
+      "notifications": {
+        "delete_success": "Paquete eliminado correctamente",
+        "delete_error": "Error al eliminar el paquete. Intenta nuevamente.",
+        "auth_error": "No estás autenticado para realizar esta acción.",
+        "invalid_id": "ID de paquete no válido",
+        "services_load_error": "No se pudieron cargar los servicios.",
+        "success_title": "Éxito",
+        "error_title": "Error"
+      }
+    },
+    "cancellationReason": {
+      "title": "MOTIVOS DE CANCELACIÓN",
+      "addButton": "Agregar Motivo",
+      "loading": "Cargando motivos...",
+      "error": "Ocurrió un error al cargar los datos.",
+      "retry": "Reintentar",
+      "CausesTable": {
+        "searchPlaceholder": "Filtrar por descripción...",
+        "download": "Descargar",
+        "columns": {
+          "description": "Descripción",
+          "status": "Estado",
+          "descriptionPlaceholder": "Ej: Cambio de domicilio, motivos financieros..."
+        },
+        "status": {
+          "active": "Activo",
+          "inactive": "Inactivo"
+        },
+        "createModeHelp": "* Los nuevos motivos de cancelación se crean como activos por defecto.",
+        "descriptionHelp": "Describa claramente la razón por la cual el cliente cancela su suscripción.",
+        "actions": {
+          "view": "Ver",
+          "edit": "Editar",
+          "delete": "Eliminar",
+          "save": "Guardar",
+          "cancel": "Cancelar"
+        },
+        "deleteModal": {
+          "title": "Confirmar eliminación",
+          "description": "¿Estás seguro de que deseas eliminar este motivo? Esta acción no se puede deshacer.",
+          "confirm": "Eliminar",
+          "cancel": "Cancelar",
+          "success": "Motivo eliminado exitosamente",
+          "error": "No se pudo eliminar el motivo"
+        }
+      }
+    },
+    "Promotions": {
+      "title": "PROMOCIONES Y DESCUENTOS",
+      "add_button": "Agregar Promoción",
+      "error_loading": "Error al cargar promociones",
+      "stats": {
+        "total": "Total",
+        "active": "Activas",
+        "inactive": "Inactivas",
+        "unit": "Promos"
+      },
+      "table": {
+        "columns": {
+          "promotion": "Promoción",
+          "benefit": "Beneficio",
+          "validity": "Vigencia",
+          "status": "Estatus"
+        },
+        "status": {
+          "active": "Activa",
+          "inactive": "Inactiva",
+          "expired": "Expirada"
+        },
+        "filters": {
+          "search_placeholder": "Buscar por nombre o código...",
+          "clear": "Limpiar"
+        },
+        "export": "Exportar",
+        "delete_dialog": {
+          "title": "¿Eliminar promoción?",
+          "description": "Esta acción no se puede deshacer. Se eliminará permanentemente la promoción \"{name}\".",
+          "confirm": "Eliminar",
+          "cancel": "Cancelar"
+        }
+      },
+      "actions": {
+        "view": "Ver detalles",
+        "edit": "Editar",
+        "delete": "Eliminar",
+        "delete_loading": "Eliminando promoción...",
+        "delete_success": "Promoción eliminada correctamente",
+        "delete_error": "Error al eliminar"
+      },
+      "form": {
+        "labels": {
+          "name": "Nombre de la Promoción",
+          "code": "Código (Cupón)",
+          "type": "Tipo de Descuento",
+          "value": "Valor del Descuento",
+          "start_date": "Fecha de Inicio",
+          "end_date": "Fecha de Finalización",
+          "is_active": "Promoción activa y visible"
+        },
+        "placeholders": {
+          "name": "Ej: Verano Fitness",
+          "code": "VERANO2025",
+          "type": "Seleccionar tipo",
+          "percentage": "Porcentaje (%)",
+          "fixed": "Monto Fijo ($)"
+        }
+      },
+      "create": {
+        "title": "NUEVA PROMOCIÓN",
+        "subtitle": "Configure los detalles del cupón para sus socios.",
+        "button_cancel": "Cancelar",
+        "button_submit": "Crear Promoción",
+        "button_loading": "Guardando...",
+        "success_title": "¡Promoción creada!",
+        "success_description": "El código {code} ha sido registrado exitosamente.",
+        "error_title": "Error al guardar",
+        "error_default": "Ocurrió un problema con los datos enviados."
+      },
+      "edit": {
+        "title": "EDITAR PROMOCIÓN",
+        "subtitle": "Modifica los parámetros de la promoción seleccionada para actualizar sus beneficios.",
+        "loading": "Cargando datos de la promoción...",
+        "error_fetch": "No se pudo cargar la promoción",
+        "not_found": "Promoción no encontrada",
+        "success_update": "Promoción actualizada correctamente",
+        "error_update": "Error al actualizar",
+        "button_cancel": "Cancelar",
+        "button_submit": "Actualizar Promoción",
+        "button_loading": "Guardando cambios...",
+        "error_update_description": "No se detectaron cambios para guardar."
+      },
+      "details": {
+        "title": "DETALLES DE LA PROMOCIÓN",
+        "subtitle": "Información detallada sobre el cupón, vigencia y beneficios configurados.",
+        "not_found": "Promoción no encontrada",
+        "loading": "Cargando detalles...",
+        "error_fetch": "No se pudo cargar la información de la promoción",
+        "button_back": "Volver",
+        "button_edit": "Modificar",
+        "button_list": "Volver al listado"
+      }
+    },
+    "instructor": {
+      "title": "Instructores",
+      "add_button": "Agregar Instructor",
+      "export": "Exportar CSV",
+      "exporting": "Exportando...",
+      "export_filename": "lista_instructores",
+      "stats": {
+        "total": "Total Instructores",
+        "active": "Activos",
+        "blocked": "Bloqueados"
+      },
+      "table": {
+        "search_placeholder": "Buscar por nombre, apellido o email...",
+        "download_csv": "Descargar CSV",
+        "columns": {
+          "name": "Nombre",
+          "email": "Email",
+          "document": "Documento",
+          "phone": "Teléfono"
+        },
+        "actions": {
+          "view": "Ver Detalles",
+          "edit": "Modificar",
+          "delete": "Eliminar"
+        },
+        "messages": {
+          "deleting": "Eliminando instructor...",
+          "deleted_success": "Instructor eliminado",
+          "delete_error": "Error al borrar el registro",
+          "export_start": "Exportación iniciada..."
+        },
+        "delete_dialog": {
+          "title": "¿Estás seguro?",
+          "description": "Se eliminará permanentemente al instructor {name}.",
+          "action": "Eliminar"
+        }
+      },
+      "create": {
+        "title": "Crear Instructor",
+        "subtitle": "Complete la información del nuevo instructor"
+      },
+      "detail": {
+        "title": "Detalles del Instructor",
+        "edit_button": "Modificar",
+        "loading": "Cargando información del instructor...",
+        "errors": {
+          "fetch_error": "No se pudo cargar la información del instructor.",
+          "not_found": "Instructor no encontrado."
+        }
+      },
+      "edit": {
+        "title": "Editar Instructor",
+        "subtitle": "Modifica los datos del Instructor: {name}",
+        "cancel": "Cancelar",
+        "save": "Guardar cambios",
+        "saving": "Guardando...",
+        "loading": "Cargando Instructor...",
+        "messages": {
+          "success": "¡Instructor actualizado exitosamente!",
+          "error_fetch": "No se pudo cargar el instructor.",
+          "error_update": "Error al actualizar instructor",
+          "conflict_error": "Ya existe un instructor registrado con estas credenciales."
+        }
+      },
+      "form": {
+        "loading": "Cargando Instructor...",
+        "edit_title": "Editar Instructor",
+        "edit_subtitle": "Modificando los datos de",
+        "labels": {
+          "first_name": "Nombre*",
+          "last_name": "Apellido*",
+          "identity_document": "Documento de identidad*",
+          "specialties": "Especialidad",
+          "biography": "Biografía",
+          "email": "Correo Electrónico*",
+          "phone": "Número de teléfono*",
+          "birth_date": "Fecha de Nacimiento*",
+          "gender": "Género*"
+        },
+        "placeholders": {
+          "first_name": "Nombre",
+          "last_name": "Apellido",
+          "identity_document": "Documento",
+          "email": "correo@ejemplo.com",
+          "select_specialty": "-- Seleccionar --"
+        },
+        "gender_options": {
+          "male": "Masculino",
+          "female": "Femenino",
+          "other": "Prefiero no decirlo"
+        },
+        "errors": {
+          "check_fields": "Por favor, revisa los campos del formulario",
+          "auth_required": "No estás autenticado. Por favor, inicia sesión nuevamente.",
+          "conflict": "Ya existe un instructor registrado con estas credenciales.",
+          "server_error": "Error desconocido al crear instructor",
+          "first_name_required": "El nombre es requerido",
+          "first_name_max": "El nombre no puede tener más de 50 caracteres",
+          "first_name_invalid": "El nombre solo puede contener letras y espacios",
+          "last_name_required": "El apellido es requerido",
+          "last_name_max": "El apellido no puede tener más de 50 caracteres",
+          "last_name_invalid": "El apellido solo puede contener letras y espacios",
+          "email_required": "El email es requerido",
+          "email_invalid": "El formato del email es inválido",
+          "email_max": "El email no puede tener más de 100 caracteres",
+          "document_required": "El documento de identidad es requerido",
+          "document_max": "El documento no puede tener más de 20 caracteres",
+          "phone_required": "El teléfono es requerido",
+          "phone_max": "El teléfono no puede tener más de 20 caracteres",
+          "birth_date_required": "La fecha de nacimiento es requerida",
+          "birth_date_age": "El instructor debe ser mayor de 18 años",
+          "birth_date_future": "La fecha de nacimiento no puede ser futura",
+          "gender_required": "El género es requerido",
+          "gender_invalid": "Selección de género inválida",
+          "biography_max": "La biografía no puede tener más de 500 caracteres",
+          "url_invalid": "La URL de la foto debe ser válida"
+        },
+        "create": {
+          "title": "Crear Instructor",
+          "subtitle": "Complete la información del nuevo instructor",
+          "success": "¡Instructor creado exitosamente!",
+          "success_update": "¡Instructor actualizado exitosamente!",
+          "loading": "Creando..."
+        },
+        "buttons": {
+          "create": "Crear",
+          "cancel": "Cancelar",
+          "save_changes": "Guardar cambios",
+          "creating": "Guardando..."
+        },
+        "messages": {
+          "validation_error": "Por favor, revise los errores en el formulario",
+          "success": "Instructor creado exitosamente",
+          "generic_error": "Ha ocurrido un error inesperado",
+          "conflict_error": "El correo o documento ya está registrado",
+          "auth_error": "Sesión expirada, por favor inicie sesión de nuevo"
+        }
+      }
+    },
+    "fiscal_documents": {
+      "title": "DOCUMENTOS FISCALES",
+      "subtitle": "Listado del catálogo de documentos Fiscales",
+      "add_button": "Agregar Documento",
+      "create": {
+        "title": "NUEVO DOCUMENTO FISCAL"
+      },
+      "edit": {
+        "title": "EDITAR DOCUMENTO FISCAL"
+      },
+      "view": {
+        "title": "DETALLES DEL DOCUMENTO"
+      },
+      "table": {
+        "search_placeholder": "Buscar documento...",
+        "download": "Descargar",
+        "downloading": "Generando descarga...",
+        "columns": {
+          "name": "Nombre del Documento",
+          "prefix": "Prefijo o Serie",
+          "created_at": "Fecha de Creación"
+        },
+        "actions": {
+          "view": "Ver",
+          "edit": "Modificar",
+          "delete": "Eliminar"
+        },
+        "delete_dialog": {
+          "title": "Confirmar eliminación",
+          "description": "¿Estás seguro de que deseas eliminar el documento \"{name}\"? Esta acción no se puede deshacer.",
+          "confirm": "Eliminar",
+          "cancel": "Cancelar"
+        },
+        "notifications": {
+          "deleting": "Eliminando documento...",
+          "delete_success": "Documento eliminado correctamente",
+          "delete_error": "Error al eliminar el documento"
+        }
+      },
+      "form": {
+        "description_helper": "Ingrese los datos básicos para la identificación de la serie fiscal.",
+        "labels": {
+          "name": "Nombre del Documento*",
+          "prefix": "Prefijo o Serie*"
+        },
+        "placeholders": {
+          "name": "Ej: Factura de Venta",
+          "prefix": "Ej: F001"
+        },
+        "buttons": {
+          "save": "Guardar",
+          "saving": "Procesando...",
+          "cancel": "Cancelar"
+        },
+        "notifications": {
+          "create_success": "Documento creado exitosamente",
+          "update_success": "Documento actualizado exitosamente",
+          "error": "Ha ocurrido un error al procesar la solicitud"
+        }
+      },
+      "errors": {
+        "name_min": "El nombre debe tener al menos 3 caracteres",
+        "name_max": "El nombre es demasiado largo",
+        "prefix_required": "El prefijo es obligatorio",
+        "prefix_max": "El prefijo no debe exceder los 10 caracteres",
+        "prefix_invalid": "Solo se permiten letras, números y guiones"
+      }
+    }
+  },
+  "common": {
+    "loading": "Cargando...",
+    "retry": "Reintentar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "Validations": {
+      "required": "Este campo es requerido",
+      "minChars": "Debe tener al menos {min} caracteres",
+      "maxChars": "No puede exceder los {max} caracteres",
+      "invalidFormat": "Caracteres no permitidos",
+      "invalidUuid": "Seleccion no válido",
+      "positiveNumber": "Debe ser un número positivo",
+      "invalidSelection": "Selección no válida"
+    },
+    "notifications": {
+      "export_success": "Reporte generado con éxito",
+      "export_error": "Hubo un problema al generar el reporte"
+    },
+    "ui": {
+      "view_mode": "Modo Lectura"
+    }
+  },
+  "roles": {
+    "title": "ROLES Y PERMISOS",
+    "add_button": "Agregar un rol",
+    "table": {
+      "filter_placeholder": "Filtrar por nombre",
+      "download": "Descargar",
+      "columns": {
+        "name": "Nombre",
+        "description": "Descripción",
+        "permissions": "Permisos"
+      },
+      "permissions_count": "{count} {count, plural, one {permiso} other {permisos}}",
+      "loading": "Cargando roles...",
+      "actions": {
+        "view": "Ver Detalles",
+        "edit": "Modificar",
+        "delete": "Eliminar"
+      },
+      "delete_dialog": {
+        "title": "Eliminar rol",
+        "description": "¿Seguro que deseas eliminar este rol? Esta acción no se puede deshacer.",
+        "action_delete": "Eliminar",
+        "action_deleting": "Eliminando..."
+      }
+    },
+    "form": {
+      "fields": {
+        "name": "Nombre*",
+        "name_placeholder": "Nombre del rol",
+        "description": "Descripción*",
+        "description_placeholder": "Descripción del rol y sus permisos",
+        "permissions": "Permisos*",
+        "loading_permissions": "Cargando permisos...",
+        "no_permissions": "No hay permisos disponibles",
+        "permissions_selected": "{selected} de {total} permisos seleccionados"
+      },
+      "errors": {
+        "no_token": "No hay token de autenticación disponible",
+        "load_permissions_failed": "No se pudieron cargar los permisos",
+        "server_error": "Error al cargar los permisos desde el servidor"
+      },
+      "validations": {
+        "name_required": "El nombre del rol es requerido",
+        "name_max": "El nombre no puede tener más de 50 caracteres",
+        "description_required": "La descripción es requerida",
+        "description_max": "La descripción no puede tener más de 200 caracteres",
+        "permissions_min": "Debe seleccionar al menos un permiso",
+        "permissions_max": "No puede seleccionar más de 20 permisos"
+      }
+    },
+    "create": {
+      "title": "CREAR NUEVO ROL",
+      "subtitle": "Complete la información del nuevo rol",
+      "button": "Crear Rol",
+      "loading": "Creando...",
+      "success": "¡Rol creado exitosamente!",
+      "error": "Error al crear rol",
+      "auth_error": "No estás autenticado. Por favor, inicia sesión nuevamente.",
+      "conflict_error": "Ya existe un rol con este nombre. Verifica los datos ingresados.",
+      "cancel": "Cancelar"
+    },
+    "edit": {
+      "title": "EDITAR ROL",
+      "subtitle": "Modifica la información y permisos del rol: {name}",
+      "button": "Guardar",
+      "loading": "Guardando...",
+      "success": "¡Rol actualizado exitosamente!",
+      "error": "Error al actualizar rol",
+      "load_error": "No se pudo cargar la información del rol.",
+      "cancel": "Cancelar"
+    },
+    "common": {
+      "cancel": "Cancelar",
+      "delete_success": "El rol ha sido eliminado correctamente",
+      "delete_id_error": "No se puede eliminar: ID de rol no válido",
+      "unknown_error": "Error desconocido al eliminar el rol"
+    },
+    "view": {
+      "title": "Ver Rol",
+      "subtitle": "Información completa del rol y sus permisos: {name}",
+      "button_edit": "Modificar",
+      "back_button": "Volver a la lista",
+      "error_not_found": "No se encontró el rol solicitado"
+    }
+  },
+  "clients": {
+    "title": "CLIENTES",
+    "description": "Visualiza, filtra y administra el acceso de los usuarios registrados en la plataforma.",
+    "add_button": "Nuevo Cliente",
+    "export_button": "Exportar Lista",
+    "exporting": "Exportando...",
+    "export_filename": "listado_clientes",
+    "create": {
+      "title": "Registrar Nuevo Cliente",
+      "subtitle": "Complete los datos para dar de alta a un nuevo miembro en el sistema.",
+      "cancel_button": "Cancelar",
+      "create_button": "Crear Cliente",
+      "creating": "Creando...",
+      "success": "Cliente creado exitosamente",
+      "error": "Ocurrió un error al crear el cliente",
+      "validation_error": "Por favor corrija los siguientes errores: {errors}",
+      "auth_error": "Error de autenticación. Inicie sesión de nuevo.",
+      "invalid_data": "Los datos proporcionados son inválidos.",
+      "email_in_use": "Este correo electrónico ya está registrado."
+    },
+    "stats": {
+      "total": "TOTAL",
+      "active": "ACTIVOS",
+      "inactive": "INACTIVOS/BLOQUEADOS",
+      "unit": "CLIENTES"
+    },
+    "balances": {
+      "walletTitle": "Billetera de Servicios",
+      "searchPlaceholder": "Buscar servicio o paquete...",
+      "syncing": "Sincronizando billetera...",
+      "noResults": "No hay saldos que coincidan con la búsqueda",
+      "emptyWallet": "El cliente no tiene paquetes de servicios activos",
+      "updateButton": "Actualizar saldos",
+      "backButton": "Volver al Perfil del Cliente",
+      "walletSubtitle": "Gestión de créditos y consumo de servicios",
+      "status": {
+        "available": "Saldo Disponible",
+        "critical": "¡Saldo Crítico!",
+        "empty": "Sin Saldo",
+        "lastUpdate": "Act:",
+        "credits": "Créditos",
+        "duration": "Duración",
+        "fitnessService": "Servicio Fitness",
+        "defaultServiceName": "Paquete Especial"
+      }
+    },
+    "table": {
+      "filter_placeholder": "Filtrar por nombre o apellido",
+      "filter_role": "Filtrar por Rol",
+      "all_roles": "Todos los Roles",
+      "all_categories": "Todas las categorías",
+      "category": "Categoría",
+      "categories": {
+        "vip": "VIP",
+        "premium": "Premium",
+        "regular": "Regular",
+        "new": "Nuevo"
+      },
+      "download": "Descargar",
+      "loading": "Cargando Clientes...",
+      "columns": {
+        "name": "Cliente",
+        "email": "Email",
+        "role": "Rol",
+        "status": "Cuenta",
+        "validation": "Email"
+      },
+      "status": {
+        "active": "Activo",
+        "blocked": "Inactivo",
+        "verified": "Verificado",
+        "pending": "Pendiente"
+      },
+      "actions": {
+        "view": "Ver Detalles",
+        "edit": "Modificar",
+        "delete": "Eliminar"
+      },
+      "delete_dialog": {
+        "title": "Confirmar eliminación",
+        "description": "¿Estás seguro de que deseas eliminar este cliente? Esta acción no se puede deshacer.",
+        "action_delete": "Eliminar",
+        "action_cancel": "Cancelar",
+        "action_deleting": "Eliminando..."
+      }
+    },
+    "form": {
+      "sections": {
+        "basic": "Información Básica",
+        "identity": "Documentación y Contacto"
+      },
+      "labels": {
+        "profile_picture": "Foto de Perfil",
+        "optional": "(Opcional)",
+        "first_name": "Nombres",
+        "last_name": "Apellidos",
+        "email": "Correo Electrónico",
+        "birth_date": "Fecha de Nacimiento",
+        "gender": "Género",
+        "identity_document": "Documento de Identidad",
+        "phone": "Teléfono Móvil"
+      },
+      "gender": {
+        "female": "Femenino",
+        "male": "Masculino",
+        "prefer-not-to-say": "Prefiero no especificarlo"
+      },
+      "placeholders": {
+        "first_name": "Ej. Juan Alberto",
+        "last_name": "Ej. Pérez García",
+        "select_date": "Seleccionar fecha",
+        "month": "Mes",
+        "year": "Año"
+      },
+      "validations": {
+        "first_name_required": "El nombre es requerido",
+        "last_name_required": "El apellido es requerido",
+        "email_required": "El correo electrónico es requerido",
+        "email_invalid": "El correo electrónico no es válido",
+        "identity_document_required": "El documento de identidad es requerido",
+        "birth_date_required": "La fecha de nacimiento es requerida",
+        "birth_date_future": "La fecha de nacimiento no puede ser futura",
+        "gender_required": "El género es requerido",
+        "min_2": "Mínimo 2 caracteres",
+        "min_10": "Mínimo 10 dígitos",
+        "invalid_url": "URL inválida"
+      },
+      "notifications": {
+        "invalid_image": "El archivo no es una imagen válida",
+        "image_success": "Foto cargada correctamente",
+        "image_error": "Error al subir la imagen"
+      }
+    },
+    "view": {
+      "title": "DETALLES DEL CLIENTE",
+      "subtitle": "Visualiza y gestiona la información de {name}",
+      "editing_title": "EDITANDO PERFIL",
+      "editing_subtitle": "Modifica la información personal y de contacto del cliente.",
+      "loading": "Cargando...",
+      "loading_subtitle": "Obteniendo datos del servidor",
+      "loading_message": "Estamos preparando la información",
+      "form_actions": {
+        "save": "Guardar Cambios",
+        "cancel": "Cancelar"
+      },
+      "tabs": {
+        "general": "Información General",
+        "balances": "Billetera de Servicios",
+        "medical": "Ficha Médica"
+      },
+      "sections": {
+        "actions": "Acciones de Gestión",
+        "membership": "Información de Membresía"
+      },
+      "fields": {
+        "first_name": "Nombre",
+        "last_name": "Apellido",
+        "email": "Correo electrónico",
+        "phone": "Teléfono",
+        "identity": "Documento de Identidad",
+        "birth_date": "Fecha de Nacimiento",
+        "gender": "Género",
+        "image_hint": "Haz clic en la foto para cambiarla",
+        "image_url": "URL de Imagen",
+        "role": "Rol de Usuario",
+        "default_role": "Cliente",
+        "status": "Estado del Cliente",
+        "category": "Categoría",
+        "membership_status": "Estado de Membresía",
+        "validation_status": "Estado de Perfil",
+        "user_id": "ID de Usuario"
+      },
+      "status": {
+        "active": "Activa",
+        "expired": "Expirada",
+        "pending": "Pendiente",
+        "canceled": "Cancelada",
+        "validated": "Validado / Activo",
+        "blocked": "No Validado / Bloqueado",
+        "active_member": "Miembro Activo",
+        "inactive": "Inactivo",
+        "verified": "Email Verificado"
+      },
+      "actions": {
+        "edit": "Editar Perfil",
+        "membership_history": "Historial de Membresías",
+        "attendance_history": "Registro de Asistencia",
+        "service_usage": "Uso de Servicios",
+        "complaints": "Quejas y Reclamos",
+        "rfm": "Análisis de Cliente (RFM)",
+        "block": "Bloquear Cliente",
+        "no_permissions": "No tienes acciones permitidas para este perfil.",
+        "view_wallet": "Consultar Billetera",
+        "unblock": "Desbloquear Cliente",
+        "delete": "Eliminar Cliente"
+      },
+      "gender_options": {
+        "male": "Masculino",
+        "female": "Femenino",
+        "other": "Otro",
+        "prefer-not-to-say": "Prefiero no decirlo"
+      },
+      "block_dialog": {
+        "title": "Bloquear Cliente",
+        "description": "¿Estás seguro de que deseas bloquear a",
+        "label": "Justificación del bloqueo",
+        "placeholder": "Escribe el motivo (ej. Falta de pago, conducta inapropiada...)",
+        "error_required": "Debes indicar un motivo para el bloqueo",
+        "confirm": "Bloquear Usuario",
+        "cancel": "Cancelar"
+      },
+      "errors": {
+        "not_found": "Cliente no encontrado",
+        "connection": "Error de conexión",
+        "description": "No pudimos obtener la información del perfil. Verifica tu conexión o intenta nuevamente.",
+        "retry": "Reintentar cargar"
+      },
+      "validation": {
+        "min_2": "Mínimo 2 caracteres",
+        "min_10": "Mínimo 10 dígitos",
+        "invalid_email": "Email inválido",
+        "invalid_id": "Documento inválido",
+        "invalid_url": "URL inválida",
+        "required": "Este campo es requerido"
+      },
+      "notifications": {
+        "update_success": "Cliente actualizado correctamente",
+        "update_error": "Error al actualizar la información",
+        "invalid_image": "Por favor selecciona una imagen válida",
+        "image_success": "Imagen cargada correctamente",
+        "image_error": "Error al subir la imagen",
+        "block_success": "Cliente bloqueado correctamente",
+        "block_error": "No se pudo bloquear al cliente",
+        "unblock_success": "Cliente desbloqueado con éxito.",
+        "unblock_error": "No se pudo desbloquear al cliente. Intenta de nuevo."
+      }
+    },
+    "medical": {
+      "title": "Ficha Médica Digital",
+      "loading": "Sincronizando Ficha Médica...",
+      "no_data": "No se han registrado datos",
+      "actions": {
+        "update": "Actualizar Ficha",
+        "create": "Crear Ficha"
+      },
+      "form_actions": {
+        "cancel": "Descartar",
+        "save": "Guardar Ficha Médica"
+      },
+      "sections": {
+        "alerts": "Alertas Críticas",
+        "profile": "Perfil Clínico del Atleta"
+      },
+      "fields": {
+        "allergies": "Alergias Críticas",
+        "warnings": "Advertencias de Entrenamiento",
+        "blood_type": "Grupo Sanguíneo",
+        "emergency_contact": "Contacto de Emergencia",
+        "conditions": "Condiciones Médicas",
+        "medications": "Medicamentación Actual"
+      },
+      "placeholders": {
+        "blood_type": "Ej: O+, A-",
+        "emergency_contact": "Nombre - Teléfono",
+        "allergies": "Describa alergias alimentarias o medicamentosas...",
+        "conditions": "Diabetes, Hipertensión, etc.",
+        "medications": "Indique dosis y frecuencia...",
+        "warnings": "Ej: Evitar saltos, problemas en rodilla..."
+      },
+      "notifications": {
+        "create_success": "Ficha médica creada correctamente",
+        "update_success": "Ficha médica actualizada correctamente",
+        "save_error": "Error al guardar la información médica"
+      }
+    },
+    "payments": {
+      "title": "HISTORIAL DE PAGOS",
+      "subtitle": "Consulta el estado de facturación y transacciones de este cliente",
+      "back": "Volver",
+      "table": {
+        "reference": "Referencia",
+        "date": "Fecha",
+        "amount": "Monto",
+        "status": "Estado",
+        "search_placeholder": "Buscar por referencia...",
+        "actions": {
+          "view": "Ver detalles"
+        }
+      },
+      "status": {
+        "paid": "Pagado",
+        "unpaid": "Pendiente",
+        "pending": "Pendiente",
+        "error": "Error"
+      }
+    },
+    "notifications": {
+      "update_success": "Cliente actualizado correctamente",
+      "update_error": "Error al actualizar la información",
+      "create_success": "Cliente creado exitosamente",
+      "create_error": "Error al crear el cliente",
+      "delete_success": "Cliente eliminado correctamente",
+      "delete_error": "Error al eliminar el cliente",
+      "image_success": "Imagen cargada correctamente",
+      "image_error": "Error al subir la imagen",
+      "email_in_use": "El correo electrónico ya está en uso",
+      "session_expired": "Sesión expirada. Por favor inicia sesión nuevamente"
+    },
+    "AttendanceHistory": {
+      "title": "Historial de Asistencias",
+      "subtitle": "Visualiza y filtra los registros de acceso y clases del cliente.",
+      "back": "Volver",
+      "filters": {
+        "from": "Desde",
+        "until": "Hasta",
+        "placeholder": "Seleccionar fecha",
+        "clear": "Limpiar"
+      },
+      "states": {
+        "loading": "Actualizando datos...",
+        "errorTitle": "Error de conexión",
+        "errorSubtitle": "No pudimos obtener el historial en este momento.",
+        "retry": "Reintentar"
+      },
+      "AttendanceTable": {
+        "columns": {
+          "classService": "Clase / Servicio",
+          "classTime": "Horario Clase",
+          "checkIn": "Check-in",
+          "status": "Estado"
+        },
+        "placeholders": {
+          "facilityUse": "Uso de Instalaciones",
+          "generalService": "Servicio General",
+          "notApplicable": "No aplica"
+        },
+        "status": {
+          "Attended": "Asistió",
+          "NoShow": "No asistió",
+          "Late": "Tarde"
+        }
+      }
+    },
+    "ServiceUsage": {
+      "title": "Uso de Servicios",
+      "subtitle": "Análisis de servicios consumidos por el cliente en todas las sucursales.",
+      "back": "Volver",
+      "total_records": "Total de registros",
+      "Table": {
+        "columns": {
+          "service": "Servicio",
+          "branch": "Sucursal",
+          "date": "Fecha y Hora",
+          "status": "Estado"
+        },
+        "placeholders": {
+          "unknownBranch": "Sucursal Principal"
+        },
+        "status": {
+          "Attended": "Asistió",
+          "NoShow": "No asistió",
+          "Late": "Tarde"
+        }
+      },
+      "filters": {
+        "from": "Desde",
+        "until": "Hasta",
+        "placeholder": "Seleccionar fecha",
+        "clear": "Limpiar Filtros"
+      },
+      "states": {
+        "loading": "Actualizando datos...",
+        "errorTitle": "Error de Carga",
+        "errorSubtitle": "No pudimos obtener el historial de uso. Intenta de nuevo.",
+        "retry": "Reintentar"
+      }
+    }
+  },
+  "branches": {
+    "title": "SUCURSALES",
+    "add_button": "Crear Sucursal",
+    "stats": {
+      "total": "Total",
+      "active": "Activas",
+      "inactive": "Inactivas",
+      "maintenance": "Mantenimiento",
+      "unit": "SUCURSALES"
+    },
+    "table": {
+      "placeholder": "Buscar por nombre o RIF",
+      "filter_status": "Estatus",
+      "clear_filters": "Limpiar filtros",
+      "download": "Download CSV",
+      "columns": {
+        "name": "Nombre",
+        "tax_id": "taxId",
+        "manager": "Administrador",
+        "country": "País",
+        "status": "Estado"
+      },
+      "status": {
+        "active": "Activa",
+        "inactive": "Inactiva",
+        "maintenance": "En mantenimiento",
+        "unknown": "Desconocido"
+      },
+      "actions": {
+        "view": "Ver",
+        "edit": "Modificar",
+        "delete": "Eliminar"
+      },
+      "delete_dialog": {
+        "title": "Confirmar Eliminación",
+        "description": "¿Estás seguro de que deseas eliminar este servicio? Esta acción no se puede deshacer.",
+        "confirm": "Eliminar",
+        "cancel": "Cancelar",
+        "success": "Sucursal eliminada: {name}",
+        "error": "Error al eliminar la sucursal. Intenta nuevamente.",
+        "success_title": "Eliminación exitosa",
+        "error_title": "Error"
+      },
+      "employee": "Empleado",
+      "email": "Correo Electrónico",
+      "role": "Rol",
+      "phone": "Teléfono",
+      "id": "ID Sistema",
+      "status_pending": "Pendiente"
+    },
+    "create": {
+      "title": "CREAR NUEVA SUCURSAL",
+      "subtitle": "Complete los siguientes pasos para crear una nueva sucursal",
+      "steps": {
+        "basic": {
+          "name": "Información Básica",
+          "description": "Datos"
+        },
+        "location": {
+          "name": "Ubicación",
+          "description": "Dirección"
+        },
+        "admin": {
+          "name": "Administración",
+          "description": "Gestión"
+        },
+        "confirm": {
+          "name": "Confirmación",
+          "description": "Revisión"
+        }
+      },
+      "form": {
+        "basic_info": {
+          "title": "Información Básica de la Sucursal",
+          "subtitle": "Comience ingresando los datos fundamentales de la nueva sucursal.",
+          "name": "Razón Social *",
+          "name_placeholder": "Ej: FitnesPlaza",
+          "tax_id": "RIF *",
+          "tax_id_placeholder": "J-402456696-3",
+          "phone": "Teléfono",
+          "phone_placeholder": "Teléfono",
+          "status": "Estado de Sucursal *",
+          "status_placeholder": "Activa",
+          "next_steps": {
+            "title": "Próximos pasos",
+            "description": "En los siguientes pasos configuraremos la ubicación, contacto, horarios y empleados de la nueva sucursal."
+          }
+        },
+        "location": {
+          "title": "Ubicación y Contacto",
+          "subtitle": "Seleccione la ubicación exacta en el mapa o ingrese coordenadas",
+          "address": "Dirección Completa*",
+          "address_placeholder": "Ingrese la dirección manualmente o seleccione en el mapa",
+          "state": "Estado",
+          "country": "País",
+          "gps_coords": "Coordenadas GPS",
+          "latitude": "Latitud",
+          "longitude": "Longitud"
+        },
+        "admin": {
+          "title": "Administración",
+          "subtitle": "Asigne el gerente responsable, defina la capacidad y configure los horarios de operación para cada día de la semana",
+          "manager": "Gerente Responsable *",
+          "manager_placeholder": "Seleccione un Gerente",
+          "capacity": "Capacidad de Miembros *",
+          "capacity_placeholder": "Ejemplo: 400",
+          "table": {
+            "day": "Día",
+            "opening": "Apertura",
+            "closing": "Cierre",
+            "closed": "Cerrado"
+          },
+          "days": {
+            "monday": "Lunes",
+            "tuesday": "Martes",
+            "wednesday": "Miércoles",
+            "thursday": "Jueves",
+            "friday": "Viernes",
+            "saturday": "Sábado",
+            "sunday": "Domingo"
+          }
+        },
+        "confirm": {
+          "title": "Políticas Comerciales",
+          "subtitle": "Seleccionas las políticas comerciales correspondientes para la sucursal",
+          "checkbox_label": "Selecciona dándole al check las políticas",
+          "footer_hint": "Estas políticas serán visibles para los miembros de esta sucursal",
+          "next_steps": {
+            "title": "Listo para crear",
+            "description": "Revise la información antes de confirmar. Una vez creada la sucursal, podrá modificar estos datos desde la gestión de sucursales."
+          },
+          "policies": {
+            "p1": "Inscripción totalmente gratuita por tiempo limitado.",
+            "p2": "Membresía flexible con un periodo mínimo de cancelación de solo 1 mes.",
+            "p3": "Acceso a entrenador personal de planta sin costo adicional en cada horario.",
+            "p4": "Clases especializadas para adultos +50 años.",
+            "p5": "Beneficio 'Trae un amigo': 15 días de acceso gratuito para un acompañante.",
+            "p6": "Diversidad de clases grupales incluidas: Baile, Boxeo, Yoga y más.",
+            "p7": "Estacionamiento exclusivo/gratuito para miembros.",
+            "p8": "Compromiso con la seguridad: Instalaciones seguras y monitoreadas para una experiencia libre de preocupaciones."
+          }
+        },
+        "buttons": {
+          "back": "Anterior",
+          "next": "Siguiente",
+          "create": "Crear Sucursal",
+          "save": "Guardar cambios",
+          "saving": "Guardando..."
+        }
+      }
+    },
+    "details": {
+      "title": "Detalles de sucursal",
+      "edit_title": "Modificar Sucursal",
+      "info_of": "Información de {name}",
+      "loading": "Cargando sucursal...",
+      "not_found": "No se encontró la sucursal.",
+      "error_loading": "No se pudo cargar la información de la sucursal.",
+      "header": {
+        "config": "Configuración de Sede",
+        "view": "Detalles de Sede"
+      },
+      "tabs": {
+        "basic": "Información Básica",
+        "payment": "Pagos",
+        "services": "Servicios",
+        "instructors": "Instructores",
+        "equipment": "Equipamiento",
+        "staff": "Personal Administrativo"
+      },
+      "basic": {
+        "title": "Información básica",
+        "subtitle": "Datos legales y generales de la sucursal",
+        "name": "Razón social",
+        "tax_id": "RIF",
+        "phone": "Teléfono",
+        "capacity": "Capacidad máxima",
+        "status": "Estado de la sucursal",
+        "status_placeholder": "Selecciona un estado",
+        "hint": "Estos datos deben corresponder con la documentación legal de la sucursal.",
+        "location_title": "Ubicación",
+        "location_subtitle": "Visualizando la ubicación de la sucursal",
+        "map_title": "Posición en el mapa",
+        "schedule_title": "Horarios de operación",
+        "success_update": "Sucursal actualizada correctamente",
+        "error_update": "Error actualizando sucursal"
+      },
+      "payment_methods": {
+        "title": "Métodos de pago aceptados",
+        "subtitle": "Selecciona los métodos de pago que estarán disponibles en esta sucursal.",
+        "placeholder": "Selecciona un método...",
+        "add": "Agregar",
+        "empty": "No hay métodos de pago seleccionados.",
+        "type": "Tipo: {type}",
+        "remove": "Eliminar",
+        "success_load": "Métodos de pago de la sucursal cargados correctamente",
+        "error_load": "No se pudieron cargar los métodos de pago",
+        "error_branch_load": "No se pudieron cargar los métodos de pago de la sucursal",
+        "success_add": "Método de pago \"{name}\" agregado",
+        "success_remove": "Método de pago eliminado correctamente",
+        "error_remove": "No se pudo eliminar el método de pago",
+        "saving": "Guardando métodos de pago...",
+        "success_save": "Métodos de pago guardados correctamente",
+        "error_save": "No se pudieron guardar los métodos de pago",
+        "add_card_title": "Vincular Nuevo Método",
+        "selector_placeholder": "Selecciona un método de pago...",
+        "no_methods_available": "No hay métodos disponibles",
+        "btn_add": "Agregar a cola",
+        "btn_sync": "Sincronizar Cambios",
+        "btn_saving": "Guardando...",
+        "btn_discard": "Descartar",
+        "badge_pending": "CAMBIOS PENDIENTES",
+        "total_label": "Métodos Habilitados {count}",
+        "loading": "Cargando métodos...",
+        "dialog_remove_title": "¿Quitar método de pago?",
+        "dialog_remove_description": "Esta acción se aplicará en el servidor cuando sincronices los cambios.",
+        "dialog_remove_action": "Quitar",
+        "toast_error_load": "Error al cargar los métodos de pago",
+        "toast_added_local": "Método añadido a la cola local",
+        "toast_removed_local": "Método eliminado de la cola",
+        "toast_marked_for_deletion": "Método marcado para eliminar (pendiente de sincronizar)",
+        "toast_sync_success": "Sincronización exitosa",
+        "toast_sync_error": "Error al guardar los cambios",
+        "toast_discarded": "Cambios locales descartados"
+      },
+      "equipment": {
+        "inventory_subtitle": "Gestiona las máquinas y herramientas disponibles en esta sede.",
+        "add_card_title": "Registrar Nuevo Equipo",
+        "dialog_remove_title": "¿Retirar equipo del inventario?",
+        "dialog_remove_description": "El elemento seleccionado se marcará para su retiro. Este cambio se aplicará de forma permanente al sincronizar.",
+        "dialog_remove_action": "Retirar Equipo",
+        "toast_removed_local": "Equipo eliminado de la cola",
+        "toast_marked_for_deletion": "Equipo marcado para retiro (pendiente de sincronizar)",
+        "error_loading_catalog": "Error cargando catálogo de equipos",
+        "error_loading_inventory": "Error cargando inventario",
+        "select_before_adding": "Debes seleccionar un equipo antes de agregarlo",
+        "error_adding": "Error al agregar equipo: {errors}",
+        "success_added_pending": "Equipo \"{name}\" agregado al inventario pendiente",
+        "success_removed_pending": "Equipo \"{name}\" eliminado del inventario pendiente",
+        "success_removed": "Equipo \"{name}\" eliminado del inventario",
+        "error_invalid_token": "Token inválido",
+        "success_save": "Cambios guardados correctamente",
+        "error_save": "Error guardando cambios",
+        "error_invalid_update": "Equipo inválido para actualizar",
+        "error_update": "Error al actualizar equipo: {errors}",
+        "success_update": "Equipo \"{name}\" actualizado correctamente",
+        "error_updating": "Error actualizando equipamiento",
+        "export": "Exportar Inventario",
+        "exporting": "Exportando...",
+        "export_filename": "inventario_sucursal",
+        "btn_discard": "Descartar",
+        "badge_pending": "CAMBIOS PENDIENTES",
+        "table": {
+          "name": "Nombre",
+          "serial": "Serial",
+          "status": "Estado",
+          "acquisition": "Adquisición",
+          "last_maintenance": "Último mantenimiento"
+        },
+        "actions": {
+          "view": "Ver equipamiento",
+          "edit": "Editar equipamiento",
+          "delete": "Eliminar equipamiento"
+        },
+        "add": {
+          "title": "Agregar nuevo equipamiento",
+          "search_label": "Buscar equipo",
+          "search_placeholder": "Ej: Monster Power Rack",
+          "select_placeholder": "Seleccionar un equipo (Ej: Monster Power Rack)",
+          "serial_label": "Número de serie",
+          "serial_placeholder": "Ej: SN-ROG-123",
+          "notes_label": "Notas",
+          "notes_placeholder": "Ej: Equipo listo para usar",
+          "button": "Agregar",
+          "model_label": "Modelo"
+        },
+        "inventory_title": "Inventario de la sucursal",
+        "empty": "No hay equipamiento asignado a esta sucursal.",
+        "modal": {
+          "edit": "Editar equipamiento",
+          "view": "Ver equipamiento",
+          "loading": "Cargando...",
+          "last_maintenance": "Último mantenimiento",
+          "notes": "Notas",
+          "status": "Estado",
+          "status_placeholder": "Seleccionar estado",
+          "save": "Guardar"
+        }
+      },
+      "instructors": {
+        "title": "Gestión de Instructores",
+        "subtitle": "Administra los instructores asignados a esta sede.",
+        "add_card_title": "Vincular Nuevo Instructor",
+        "selector_placeholder": "Buscar instructor en el catálogo...",
+        "btn_add": "Agregar a la lista",
+        "btn_sync": "Sincronizar Cambios",
+        "btn_saving": "Guardando...",
+        "btn_discard": "Descartar",
+        "badge_pending": "CAMBIOS PENDIENTES",
+        "total_label": "Instructores Asignados {count}",
+        "show_label": "Mostrar",
+        "dialog_remove_title": "¿Desvincular instructor?",
+        "dialog_remove_description": "El instructor será quitado de esta sede. Este cambio se aplicará permanentemente al sincronizar.",
+        "dialog_remove_action": "Desvincular",
+        "toast_error_load": "Error al cargar los instructores de la sede",
+        "toast_already_exists": "Este instructor ya está en la lista",
+        "toast_added_local": "Instructor agregado a la cola local",
+        "toast_removed_local": "Instructor quitado de la lista",
+        "toast_marked_for_deletion": "Instructor marcado para desvincular",
+        "toast_sync_success": "Instructores actualizados correctamente",
+        "toast_sync_error": "Error al guardar los cambios",
+        "toast_discarded": "Cambios locales descartados",
+        "already_assigned": "El instructor ya está asignado",
+        "success_added_pending": "Instructor agregado (pendiente de guardar)",
+        "success_removed_local": "Instructor eliminado localmente",
+        "success_removed": "Instructor eliminado correctamente",
+        "error_removing": "No se pudo eliminar el instructor",
+        "no_changes": "No hay cambios para guardar",
+        "success_save": "Cambios guardados correctamente",
+        "error_save": "No se pudieron guardar los cambios",
+        "add_label": "Agregar instructor",
+        "select_placeholder": "Selecciona un instructor",
+        "add_button": "Agregar",
+        "loading": "Cargando instructores...",
+        "empty": "No hay instructores asignados.",
+        "remove": "Eliminar",
+        "info_scroll": "Hay muchos instructores, usa el scroll para ver más."
+      },
+      "services": {
+        "dialog_remove_title": "¿Desvincular servicio de la sede?",
+        "dialog_remove_description": "El servicio seleccionado se quitará de esta sede. Este cambio se aplicará de forma permanente al sincronizar.",
+        "dialog_remove_action": "Desvincular",
+        "btn_sync": "Sincronizar Cambios",
+        "btn_discard": "Descartar",
+        "badge_pending": "CAMBIOS PENDIENTES",
+        "toast_added_local": "Servicio añadido a la cola local",
+        "toast_removed_local": "Servicio eliminado de la cola",
+        "toast_marked_for_deletion": "Servicio marcado para desvincular (pendiente de sincronizar)",
+        "toast_discarded": "Cambios locales descartados",
+        "save_success": "Servicios sincronizados correctamente",
+        "save_error": "Error al sincronizar los servicios",
+        "success_load_catalog": "Servicios de la sucursal cargados correctamente",
+        "error_load_catalog": "No se pudieron cargar los servicios disponibles",
+        "error_load_branch": "No se pudieron cargar los servicios de la sucursal",
+        "success_added": "Servicio \"{name}\" agregado",
+        "success_removed": "Servicio \"{name}\" eliminado",
+        "error_removing": "No se pudo eliminar el servicio",
+        "no_new_services": "No hay servicios nuevos para guardar",
+        "success_save": "Servicios guardados correctamente",
+        "error_save": "Error al guardar los servicios",
+        "success_update": "Servicio \"{name}\" actualizado",
+        "error_update": "Error al actualizar el servicio",
+        "title": "Servicios de la sucursal",
+        "subtitle": "Administra los servicios disponibles y sus precios.",
+        "export": "Exportar Servicios",
+        "exporting": "Exportando...",
+        "export_filename": "servicios_sucursal_precios",
+        "add": {
+          "title": "Agregar nuevo servicio",
+          "select_placeholder": "Selecciona un servicio",
+          "capacity": "Aforo",
+          "member_price": "Precio miembros",
+          "non_member_price": "Precio no miembros",
+          "visible": "Visible",
+          "button": "Agregar"
+        },
+        "assigned_title": "Servicios asignados",
+        "loading": "Cargando servicios...",
+        "empty": "No hay servicios asignados.",
+        "description": "Aforo: {capacity} | Miembros: ${memberPrice} | No miembros: ${nonMemberPrice} | Visible: {visible}",
+        "yes": "Sí",
+        "no": "No",
+        "modal": {
+          "view": "Ver servicio",
+          "edit": "Editar servicio",
+          "loading": "Cargando...",
+          "capacity": "Aforo máximo",
+          "member_price": "Precio para miembros",
+          "non_member_price": "Precio para no miembros",
+          "visible": "Visible",
+          "save": "Guardar"
+        }
+      },
+      "staff": {
+        "title": "Gestión de Personal",
+        "subtitle": "Administra el personal administrativo y contable de la sede.",
+        "add_card_title": "Vincular Nuevo Personal",
+        "search_label": "Búsqueda Directa",
+        "search_placeholder": "Nombre o email...",
+        "role_filter_label": "Filtrar por Rol",
+        "role_all": "Cualquier especialidad",
+        "roles_loading": "Cargando roles...",
+        "profile_label": "Perfil Seleccionado",
+        "profile_placeholder": "Elige un perfil de la lista",
+        "catalog_loading": "Sincronizando perfiles...",
+        "btn_add_queue": "Agregar a cola",
+        "btn_sync": "Sincronizar Cambios",
+        "btn_saving": "Guardando...",
+        "btn_discard": "Descartar",
+        "badge_pending": "CAMBIOS PENDIENTES",
+        "total_staff_label": "Personal en Sede {count}",
+        "dialog_remove_title": "¿Quitar empleado de la sede?",
+        "dialog_remove_description": "Esta acción se aplicará en el servidor cuando sincronices los cambios.",
+        "dialog_remove_action": "Quitar",
+        "toast_added_local": "Empleado añadido a la cola local",
+        "toast_removed_local": "Empleado quitado de la cola",
+        "toast_pending_sync": "Cambio pendiente de sincronizar",
+        "toast_marked_for_deletion": "Empleado marcado para eliminar",
+        "toast_sync_success": "Sincronización exitosa",
+        "toast_sync_error": "Error al sincronizar los cambios",
+        "toast_discarded": "Cambios locales descartados"
+      }
+    },
+    "notifications": {
+      "success_title": "¡Sucursal Creada!",
+      "success_description": "La nueva sucursal ha sido registrada exitosamente en el sistema.",
+      "action_text": "Entendido",
+      "error_required": "Por favor completa los campos obligatorios: Nombre, Tax ID, País y Estado."
+    },
+    "validations": {
+      "name_required": "La Razón Social es obligatoria.",
+      "tax_id_required": "El ID Fiscal es obligatorio.",
+      "status_required": "El estado de sucursal es obligatorio.",
+      "address_required": "La Dirección Completa es obligatoria.",
+      "location_required": "Debe seleccionar la ubicación en el mapa.",
+      "country_required": "El País es obligatorio.",
+      "state_required": "El Estado es obligatorio.",
+      "manager_required": "Debe asignar un Gerente Responsable.",
+      "capacity_required": "La capacidad debe ser un número válido (> 0).",
+      "opening_required": "La hora de apertura es obligatoria",
+      "closing_required": "La hora de cierre es obligatoria",
+      "payment_method_required": "Debe seleccionar al menos un método de pago"
+    },
+    "pagination": {
+      "show": "Mostrando {start} - {end} de {total} "
+    }
+  },
+  "finance": {
+    "MembershipManagement": {
+      "title": "GESTIÓN DE MEMBRESÍAS",
+      "noResults": "No se encontraron resultados para los filtros aplicados.",
+      "searchPlaceholder": "Buscar cliente o membresía...",
+      "statusPlaceholder": "Estado",
+      "clearFilters": "Limpiar filtros",
+      "exportCsv": "Exportar CSV",
+      "viewDetails": "Ver detalles",
+      "table": {
+        "client": "Cliente",
+        "plan": "Plan",
+        "price": "Precio",
+        "start": "Inicio",
+        "expiry": "Vencimiento",
+        "status": "Estado"
+      },
+      "statuses": {
+        "all": "Todos los estados",
+        "active": "Activas",
+        "expired": "Expiradas",
+        "cancelled": "Canceladas"
+      },
+      "detail": {
+        "title": "DETALLE DE MEMBRESÍA",
+        "loading": "Obteniendo detalles...",
+        "notFound": "No se encontró información.",
+        "actions": {
+          "cancel": "Cancelar Membresía",
+          "activate": "Activar Membresía",
+          "refresh": "Actualizar"
+        },
+        "error": {
+          "title": "Error de conexión",
+          "retry": "Reintentar"
+        }
+      },
+      "form": {
+        "header": {
+          "instruction": "Verifica y gestiona los parámetros del registro"
+        },
+        "statusLabels": {
+          "active": "Activa",
+          "expired": "Vencida",
+          "cancelled": "Cancelada"
+        },
+        "clientInfo": {
+          "sectionTitle": "Información del Cliente",
+          "fullName": "Nombre Completo",
+          "email": "Email",
+          "systemId": "System User ID"
+        },
+        "subscription": {
+          "sectionTitle": "Detalles de Suscripción",
+          "membershipType": "Membresía Adquirida",
+          "price": "Monto de Pago",
+          "duration": "Duración (Días)",
+          "invoiceId": "ID de Factura",
+          "description": "Descripción del Plan",
+          "defaultDescription": "Este plan permite el acceso según los términos vigentes."
+        },
+        "timeline": {
+          "sectionTitle": "Línea de Tiempo",
+          "startDate": "Fecha Inicio",
+          "endDate": "Fecha Fin"
+        },
+        "audit": {
+          "sectionTitle": "Auditoría de Baja",
+          "reason": "Motivo de Cancelación",
+          "notes": "Notas del Administrador",
+          "defaultReason": "Baja Administrativa",
+          "noNotes": "Sin observaciones adicionales."
+        }
+      },
+      "cancelDialog": {
+        "title": "Cancelar Membresía",
+        "description": "Indica el motivo de la baja. Esta acción cambiará el estado a \"Cancelled\".",
+        "reasonLabel": "Motivo de cancelación",
+        "reasonPlaceholder": "Selecciona un motivo",
+        "noReasons": "No hay motivos disponibles",
+        "notesLabel": "Notas adicionales",
+        "notesPlaceholder": "Detalles opcionales...",
+        "cancelButton": "Cancelar",
+        "confirmButton": "Confirmar Baja",
+        "processing": "Procesando..."
+      },
+      "messages": {
+        "errorFetching": "Error al obtener la lista de membresías.",
+        "errorDetail": "Error al cargar el detalle de la membresía.",
+        "notFound": "No se encontraron datos para esta membresía.",
+        "successUpdate": "Membresía actualizada correctamente.",
+        "errorUpdate": "No se pudo actualizar la membresía.",
+        "missingParams": "Falta el token de autenticación o el ID de registro.",
+        "requestInProgress": "Ya hay una actualización en curso. Por favor, espera."
+      }
+    },
+    "Billing": {
+      "title": "Facturas y Pagos",
+      "subtitle": "Administra tus facturas y métodos de pago aquí.",
+      "managing": "Gestionando: {branchName}",
+      "newInvoiceTitle": "Nueva Factura",
+      "searchPlaceholder": "Buscar por cliente o número...",
+      "branchPlaceholder": "Sucursal",
+      "allBranches": "Todas las sucursales",
+      "statusPlaceholder": "Estado",
+      "status": {
+        "all": "Todos los estados",
+        "paid": "Pagado",
+        "unpaid": "Pendiente",
+        "overdue": "Vencido",
+        "void": "Anulado",
+        "partial": "Parcial"
+      },
+      "table": {
+        "invoiceNumber": "Nro. Factura",
+        "client": "Cliente",
+        "date": "Fecha",
+        "total": "Total ({currency})",
+        "status": "Estado",
+        "actions": {
+          "view": "Ver detalle"
+        }
+      },
+      "newInvoice": {
+        "title": "Nueva Venta",
+        "subtitle": "Gestión simplificada de cobros para staff.",
+        "messages": {
+          "selectUserError": "Debe seleccionar un usuario válido primero",
+          "success": "Venta completada en {currency}",
+          "partialError": "Factura creada, pero el pago falló",
+          "error": "Error al generar la factura"
+        }
+      },
+      "form": {
+        "branch": "Sucursal",
+        "service": "Servicio de Sede",
+        "memberPrice": "Tarifa Socio",
+        "selectBranch": "Seleccionar sucursal",
+        "client": "Cliente",
+        "emailPlaceholder": "Email del cliente...",
+        "waitingClient": "Esperando cliente",
+        "concepts": "Conceptos",
+        "addItem": "AÑADIR ITEM",
+        "membership": "Membresía",
+        "package": "Paquete",
+        "selectProduct": "Seleccionar producto...",
+        "currency": "Moneda",
+        "paymentMethod": "Método Pago",
+        "choose": "Elegir...",
+        "exchangeRate": "Tasa Actual: 1 USD = {rate} {currency}",
+        "subtotal": "Subtotal",
+        "taxes": "Impuestos",
+        "totalCharge": "Total Cobro (USD)",
+        "equivalentTo": "Equivale a",
+        "cancel": "Cancelar",
+        "finishSale": "Finalizar Venta"
+      },
+      "addPayment": {
+        "trigger": "Registrar Pago",
+        "title": "Cerrar Factura",
+        "invoiceId": "ID Factura: {id}",
+        "currencyLabel": "Moneda de Pago",
+        "totalUSD": "Total USD",
+        "exchangeRate": "Tasa: {rate}",
+        "toReceive": "A recibir en {currency}",
+        "methodLabel": "Método",
+        "choose": "Elegir...",
+        "bankReference": "Referencia Banco",
+        "referencePlaceholder": "Nro Confirmación",
+        "cancel": "Cancelar",
+        "confirm": "Confirmar Pago",
+        "messages": {
+          "selectMethodError": "Selecciona un método de pago",
+          "success": "Pago registrado con éxito",
+          "error": "Error al procesar el pago"
+        }
+      },
+      "detail": {
+        "conceptsTitle": "Detalle de Conceptos",
+        "conceptsSubtitle": "Desglose de productos y servicios adquiridos",
+        "itemsCount": "{count, plural, =1 {# ítem} other {# ítems}}",
+        "paymentsTitle": "Registro de Pagos",
+        "paymentsSubtitle": "Historial completo de abonos y transacciones",
+        "statusLabel": "Estado de Cobro",
+        "status": {
+          "paid": "CONCILIADO",
+          "pending": "PENDIENTE"
+        },
+        "summary": {
+          "subtotal": "Subtotal",
+          "taxes": "Impuestos",
+          "currentDebt": "Deuda Actual",
+          "fullyPaid": "Factura totalmente solvente"
+        },
+        "accountInfo": {
+          "title": "Información de Cuenta",
+          "loading": "Cargando...",
+          "idLabel": "ID",
+          "branchLabel": "Sede Emisión",
+          "principal": "Principal",
+          "uuidLabel": "UUID de Factura",
+          "uuidInfo": "INFO",
+          "uuidTooltip": "Identificador único de sistema",
+          "phoneLabel": "Teléfono",
+          "birthLabel": "Cumpleaños"
+        }
+      },
+      "alerts": {
+        "failed": "PAGO RECHAZADO: EL CLIENTE AÚN DEBE EL TOTAL.",
+        "refunded": "PAGO REEMBOLSADO: SE REQUIERE NUEVO COBRO MANUAL."
+      },
+      "detailPage": {
+        "title": "Factura {number}",
+        "defaultTitle": "Detalle de Factura",
+        "issuedAt": "Emitida el {date}",
+        "unknownBranch": "Sucursal no identificada",
+        "loadingDocument": "Cargando información del documento...",
+        "actions": {
+          "print": "Imprimir",
+          "export": "Exportar PDF"
+        },
+        "errors": {
+          "title": "Error de Sistema",
+          "notFound": "No se encontraron datos para esta factura.",
+          "serverError": "Error al conectar con el servidor.",
+          "retry": "Reintentar Carga"
+        },
+        "loading": {
+          "title": "Sincronizando factura",
+          "subtitle": "Obteniendo datos financieros..."
+        }
+      },
+      "itemsTable": {
+        "description": "Descripción",
+        "quantity": "Cantidad",
+        "unitPrice": "Precio Unit.",
+        "tax": "Impuesto",
+        "total": "Total",
+        "types": {
+          "membership": "Membresía",
+          "package": "Paquete",
+          "unknown": "Ítem Desconocido",
+          "service": "Servicio"
+        },
+        "defaultNames": {
+          "membership": "Membresía",
+          "package": "Paquete de Clases",
+          "service": "Servicio"
+        }
+      },
+      "paymentsTable": {
+        "date": "Fecha",
+        "method": "Método",
+        "amount": "Monto",
+        "status": "Estado",
+        "baseAmount": "Base: ${amount} USD",
+        "exchangeRateTooltip": "Tasa: 1 USD = {rate} {currency}",
+        "approveAction": "Aprobar pago",
+        "viewReceipt": "Ver comprobante",
+        "actionsLabel": "Acciones de pago",
+        "actions": {
+          "approve": "Aprobar pago",
+          "reject": "Rechazar / Fallido",
+          "refund": "Reembolsar pago",
+          "resetToPending": "Volver a Pendiente"
+        },
+        "statuses": {
+          "Completed": "Completado",
+          "Pending": "Pendiente",
+          "Failed": "Fallido",
+          "Refunded": "Reembolsado"
+        }
+      },
+      "methodCell": {
+        "loading": "Cargando...",
+        "notAvailable": "N/A"
+      },
+      "quickView": {
+        "loading": "Cargando factura...",
+        "accessibleTitle": "Factura",
+        "accessibleDescription": "Vista detallada de los cobros y pagos de la factura.",
+        "badgeLabel": "Resumen Financiero",
+        "conceptsTitle": "Conceptos Adquiridos",
+        "defaultItemName": "Servicio / Membresía",
+        "quantity": "Cant",
+        "totalAmountLabel": "Monto de Factura",
+        "subtotal": "Subtotal",
+        "taxes": "Impuestos",
+        "totalPaidLabel": "Total Recibido",
+        "fullManagementBtn": "GESTIÓN COMPLETA",
+        "readOnlyMode": "Modo Lectura",
+        "printTitle": "Imprimir",
+        "status": {
+          "paid": "Pagado",
+          "unpaid": "Pendiente",
+          "pending": "Pendiente",
+          "canceled": "Cancelado"
+        }
+      }
+    }
+  },
+  "settings": {
+    "Policies": {
+      "title": "Políticas Comerciales",
+      "subtitle": "Administra las reglas de negocio, facturación y acceso global del sistema.",
+      "loading": "Cargando reglas comerciales...",
+      "saving": "Guardando cambios...",
+      "empty": "No hay reglas comerciales configuradas actualmente.",
+      "updateSuccessTitle": "¡Política actualizada!",
+      "updateSuccessDescription": "El valor de la política se ha guardado correctamente.",
+      "updateErrorTitle": "Error al actualizar",
+      "updateErrorDescription": "No se pudo guardar la política. Intenta de nuevo.",
+      "readOnly": "Solo Lectura",
+      "fullAccess": "Acceso Total",
+      "actions": {
+        "refresh": "Actualizar políticas"
+      },
+      "categories": {
+        "invoice": {
+          "title": "Facturación",
+          "description": "Reglas de vencimiento, pagos y límites financieros."
+        },
+        "class": {
+          "title": "Clases",
+          "description": "Condiciones de cancelación y acceso a clases."
+        },
+        "access": {
+          "title": "Acceso",
+          "description": "Ventanas de entrada y control de horarios."
+        },
+        "membership": {
+          "title": "Membresías",
+          "description": "Períodos de gracia y estado de suscripciones."
+        },
+        "discount": {
+          "title": "Descuentos",
+          "description": "Límites máximos de descuentos aplicables."
+        }
+      },
+      "card": {
+        "actions": {
+          "save": "Guardar"
+        },
+        "status": {
+          "saved": "Guardado ✓"
+        },
+        "footer": {
+          "label": "Configuración de la política"
+        },
+        "units": {
+          "days": "DÍAS",
+          "hours": "HRS",
+          "minutes": "MIN"
+        }
+      }
+    }
+  },
+  "auth": {
+    "activate": {
+      "title": "CONFIRMA TU CONTRASEÑA",
+      "description": "Ingrese su nueva contraseña para activar su cuenta.",
+      "password_label": "Contraseña",
+      "password_placeholder": "Ingrese su contraseña",
+      "confirm_password_label": "Confirmar Contraseña",
+      "confirm_password_placeholder": "Confirme su contraseña",
+      "button_confirm": "Confirmar",
+      "button_loading": "Procesando...",
+      "success_message": "¡Cuenta activada exitosamente!",
+      "footer_text": "Sistema de Dashboard",
+      "login_link": "Iniciar Sesión",
+      "remember_password": "¿Recuerdas tu contraseña?",
+      "errors": {
+        "invalid_token": "Token inválido o expirado.",
+        "check_password": "La contraseña no cumple con los requisitos.",
+        "confirm_required": "Debe confirmar la contraseña",
+        "passwords_dont_match": "Las contraseñas no coinciden",
+        "password_requirements": "La contraseña debe incluir mayúsculas, números y caracteres especiales.",
+        "server_error": "Error al activar la cuenta.",
+        "password_min": "Mínimo 8 caracteres.",
+        "password_uppercase": "Falta una mayúscula.",
+        "password_lowercase": "Falta una minúscula.",
+        "password_number": "Falta un número.",
+        "password_special": "Falta un carácter especial."
+      }
+    }
+  },
+  "user": {
+    "UserSelectionCard": {
+      "roles": {
+        "client": "Cliente",
+        "instructor": "Instructor",
+        "admin": "Administrador",
+        "superadmin": "Súper Administrador",
+        "super_admin": "Súper Administrador",
+        "branch_admin": "Admin de Sede",
+        "staff": "Personal",
+        "accountant": "Contador",
+        "data_analyst": "Analista de Datos",
+        "recepcionist": "Recepcionista",
+        "ventas": "Ventas"
+      },
+      "actions": {
+        "enroll": "Inscribir",
+        "focus": "Enfocar",
+        "waiting": "Espere"
+      },
+      "labels": {
+        "found": "Alumno encontrado:"
+      }
+    },
+    "audit": {
+      "title": "Logs de Auditoría",
+      "subtitle": "Inspección de peticiones, métodos y rutas del sistema.",
+      "filters": {
+        "search": "Buscar",
+        "searchPlaceholder": "Ej: POST o /v1/user...",
+        "sort": "Orden",
+        "sortDesc": "Descendente",
+        "sortAsc": "Ascendente",
+        "limit": "Resultados",
+        "limitRows": "{count} filas",
+        "limitRowsSuffix": "filas"
+      },
+      "status": {
+        "results": "Resultados de actividad",
+        "loading": "Cargando registros..."
+      },
+      "table": {
+        "created_at": "Fecha",
+        "event": "Evento",
+        "method": "Método",
+        "path": "Ruta",
+        "resource": "Recurso",
+        "ip_address": "IP",
+        "status": "Estado",
+        "payload": "Cuerpo",
+        "origin": "Origen",
+        "viewDetails": "Ver detalles"
+      },
+      "methods": {
+        "get": "GET",
+        "post": "POST",
+        "put": "PUT",
+        "delete": "DELETE",
+        "patch": "PATCH"
+      },
+      "details": {
+        "title": "Análisis de Operación",
+        "traceId": "ID de Seguimiento",
+        "author": "Autor de la acción",
+        "systemProcess": "PROCESO_SISTEMA",
+        "viewSessions": "Ver Sesiones",
+        "userSection": "Actor de la Acción",
+        "close": "Cerrar Detalle",
+        "payload": {
+          "label": "Datos Enviados (Payload)",
+          "empty": "Sin datos en el cuerpo",
+          "copied": "Log copiado al portapapeles"
+        },
+        "metadata": {
+          "endpoint": "Ruta del Recurso",
+          "dateTime": "Fecha y Hora",
+          "ipAddress": "Dirección IP"
+        },
+        "client": {
+          "userAgent": "User Agent del Cliente",
+          "unknown": "Desconocido"
+        }
+      },
+      "sessions": {
+        "title": "Acciones de Seguridad",
+        "description": "Revocar todas las sesiones cerrará el acceso en todos los dispositivos activos.",
+        "btnRevokeAll": "Revocar Todo",
+        "statusActive": "Activa",
+        "expires": "Expira",
+        "empty": "No hay sesiones activas adicionales.",
+        "confirmRevokeAll": "¿Estás seguro de que deseas cerrar todas las sesiones? Esta acción no se puede deshacer.",
+        "confirmRevokeOne": "¿Cerrar esta sesión específica?",
+        "revokeSuccess": "Sesión(es) revocada(s) con éxito",
+        "errorRevoke": "Hubo un problema al intentar cerrar la sesión"
+      }
+    },
+    "management": {
+      "title": "USUARIOS",
+      "add_button": "Agregar Usuario",
+      "edit_title": "MODIFICAR USUARIO",
+      "edit_subtitle": "Editar información del usuario: {name} {lastname}",
+      "create_title": "CREAR NUEVO USUARIO",
+      "create_subtitle": "Complete la información del nuevo usuario",
+      "view_title": "DETALLES DE USUARIO",
+      "view_subtitle": "Información completa del usuario: {name} {lastname}",
+      "personal_info": "Información Personal",
+      "user_id": "ID Usuario",
+      "sessions_info": "Información de sesiones",
+      "export_button": "Exportar Lista",
+      "exporting": "Exportando...",
+      "export_filename": "lista_personal",
+      "stats": {
+        "active_sessions": "Sesiones Activas",
+        "total_logins": "Total inicio de sesión",
+        "daily_average": "Promedio Diario"
+      },
+      "table": {
+        "columns": {
+          "name": "Nombre",
+          "email": "Email",
+          "role": "Rol",
+          "status": "Estado",
+          "status_active": "Activo",
+          "status_inactive": "Inactivo"
+        },
+        "filters": {
+          "search_placeholder": "Buscar por nombre, apellido o email...",
+          "role_placeholder": "Filtrar por Rol",
+          "all_roles": "Todos los Roles"
+        },
+        "actions": {
+          "view": "Ver Detalles",
+          "edit": "Modificar",
+          "delete": "Eliminar",
+          "export": "Exportar CSV",
+          "export_toast": "Función de exportación en desarrollo"
+        },
+        "delete_dialog": {
+          "title": "¿Estás seguro?",
+          "description": "Esta acción eliminará al usuario permanentemente.",
+          "confirm": "Eliminar",
+          "cancel": "Cancelar"
+        }
+      },
+      "form": {
+        "name": "Nombre*",
+        "lastname": "Apellido*",
+        "email": "Correo Electrónico*",
+        "email_placeholder": "correo@ejemplo.com",
+        "phone": "Número de teléfono*",
+        "document": "Documento de identidad*",
+        "birth_date": "Fecha de Nacimiento*",
+        "gender": "Género*",
+        "role": "Rol del Usuario*",
+        "genders": {
+          "male": "Masculino",
+          "female": "Femenino",
+          "other": "Prefiero no especificarlo"
+        },
+        "next_steps": {
+          "title": "Próximos Pasos",
+          "email_sent": "Se enviará un email de verificación a {email}",
+          "verify": "El usuario debe verificar su email para activar la cuenta",
+          "password": "Después podrá establecer su contraseña inicial",
+          "pending": "El estado será \"Pendiente\" hasta completar la verificación"
+        }
+      },
+      "sessions_modal": {
+        "title": "Sesiones Activas de {name} {lastname}",
+        "empty": "No hay sesiones activas registradas.",
+        "security_label": "Acciones de Seguridad",
+        "count": "{count} sesiones activas",
+        "ip_address": "Dirección IP",
+        "security_description": "Revocar todas las sesiones cerrará el acceso en todos los dispositivos activos.",
+        "started": "Iniciada",
+        "expires": "Expira",
+        "status": {
+          "active": "Activa",
+          "blocked": "Bloqueada"
+        }
+      },
+      "quick_actions": {
+        "title": "Acciones Rápidas",
+        "view_activity": "Ver Registros de Actividades",
+        "view_sessions": "Ver Sesiones",
+        "edit_user": "Editar Usuario"
+      },
+      "actions": {
+        "cancel": "Cancelar",
+        "save": "Guardar Cambios",
+        "create": "Crear Usuario"
+      },
+      "notifications": {
+        "creating": "Creando...",
+        "saving": "Guardando...",
+        "create_success": "Usuario creado exitosamente. Se ha enviado un correo de verificación.",
+        "update_success": "Usuario actualizado correctamente",
+        "delete_loading": "Eliminando usuario...",
+        "delete_success": "Usuario eliminado correctamente.",
+        "refresh_loading": "Actualizando lista de usuarios...",
+        "refresh_success": "Lista actualizada",
+        "error_loading": "Cargando información del usuario...",
+        "error_load_title": "Error de carga",
+        "error_list_load": "No se pudo cargar la lista de usuarios",
+        "error_unauthorized": "No estás autenticado",
+        "error_create": "No se pudo crear el usuario",
+        "error_update": "No se pudo actualizar el usuario",
+        "error_delete": "No se pudo eliminar el usuario",
+        "error_not_found": "No se encontró el usuario solicitado",
+        "sessions_revoked": "Todas las sesiones han sido revocadas exitosamente",
+        "sessions_revoked_error": "Error al revocar las sesiones"
+      },
+      "activities_modal": {
+        "title": "Registro de actividades",
+        "description": "Historial de acciones realizadas por el usuario en el sistema",
+        "placeholder": {
+          "title": "Funcionalidad en desarrollo",
+          "description": "El registro de actividades estará disponible próximamente"
+        },
+        "actions": {
+          "export": "Exportar registro"
+        }
+      },
+      "sessions_actions": {
+        "revoke_all": "Revocar Todo",
+        "revoking": "Revocando..."
+      }
+    }
+  },
+  "marketing": {
+    "banners": {
+      "title": "Banners",
+      "list": {
+        "title": "Banners",
+        "empty": "No se encontraron banners.",
+        "createButton": "Nuevo Banner",
+        "table": {
+          "id": "ID",
+          "name": "Nombre",
+          "image": "Imagen",
+          "link": "Enlace",
+          "status": "Estado",
+          "startDate": "Fecha inicio",
+          "endDate": "Fecha fin",
+          "actions": "Acciones"
+        }
+      },
+      "form": {
+        "createTitle": "Crear Banner",
+        "editTitle": "Editar Banner",
+        "nameLabel": "Nombre",
+        "imageLabel": "Imagen",
+        "linkLabel": "Enlace",
+        "openInNewTab": "Abrir en nueva pestaña",
+        "activeLabel": "Activo",
+        "startDateLabel": "Fecha inicio",
+        "endDateLabel": "Fecha fin",
+        "saveButton": "Guardar",
+        "cancelButton": "Cancelar",
+        "deleteButton": "Eliminar",
+        "deleteConfirm": "¿Estás seguro de eliminar este banner? Esta acción no se puede deshacer.",
+        "savedSuccess": "Banner guardado correctamente",
+        "deletedSuccess": "Banner eliminado correctamente",
+        "validation": {
+          "nameRequired": "El nombre es obligatorio",
+          "imageRequired": "La imagen es obligatoria",
+          "linkInvalid": "URL inválida"
+        }
+      },
+      "loading": "Cargando banners..."
+    },
+    "promotions": {
+      "title": "Promociones",
+      "list": {
+        "title": "Promociones",
+        "empty": "No se encontraron promociones.",
+        "createButton": "Nueva Promoción",
+        "table": {
+          "id": "ID",
+          "code": "Código",
+          "name": "Nombre",
+          "discount": "Descuento",
+          "startDate": "Fecha inicio",
+          "endDate": "Fecha fin",
+          "status": "Estado",
+          "actions": "Acciones"
+        }
+      },
+      "form": {
+        "createTitle": "Crear Promoción",
+        "editTitle": "Editar Promoción",
+        "codeLabel": "Código",
+        "nameLabel": "Nombre",
+        "descriptionLabel": "Descripción",
+        "discountLabel": "Descuento",
+        "discountType": "Tipo de descuento",
+        "percentage": "Porcentaje",
+        "amount": "Monto",
+        "startDateLabel": "Fecha inicio",
+        "endDateLabel": "Fecha fin",
+        "activeLabel": "Activo",
+        "saveButton": "Guardar",
+        "cancelButton": "Cancelar",
+        "deleteButton": "Eliminar",
+        "deleteConfirm": "¿Estás seguro de eliminar esta promoción? Esta acción no se puede deshacer.",
+        "savedSuccess": "Promoción guardada correctamente",
+        "deletedSuccess": "Promoción eliminada correctamente",
+        "validation": {
+          "codeRequired": "El código es obligatorio",
+          "nameRequired": "El nombre es obligatorio",
+          "discountRequired": "El descuento es obligatorio"
+        }
+      },
+      "loading": "Cargando promociones..."
+    }
+  },
+  "calendar": {
+    "no_branch_title": "No se seleccionó ninguna sede",
+    "no_branch_description": "Por favor, selecciona una sede para visualizar la programación de clases.",
+    "toolbar": {
+      "week": "Semana",
+      "month": "Mes",
+      "today": "Hoy",
+      "branch": "Sede",
+      "loading": "Cargando...",
+      "createClass": "Crear Clase",
+      "syncing": "Sincronizando...",
+      "search_placeholder": "Enfocar agenda de alumno..."
+    },
+    "display": {
+      "default_title": "Clase",
+      "no_instructor": "Sin instructor"
+    },
+    "resources": {
+      "loading": "Cargando recursos...",
+      "error": "Error al cargar los recursos del calendario",
+      "no_branch": "Sin sede seleccionada"
+    },
+    "create_sheet": {
+      "title": "Programar Clase",
+      "description": "Define los detalles de la nueva sesión, instructor y aforo.",
+      "syncing": "Sincronizando recursos...",
+      "cancel": "Cancelar",
+      "confirm": "Crear Clase",
+      "submitting": "Guardando...",
+      "success": "Clase programada exitosamente",
+      "restricted_title": "Acceso Restringido",
+      "restricted_description": "No tienes una sucursal activa asignada. Contacta a tu administrador para gestionar clases.",
+      "close": "Cerrar",
+      "errors": {
+        "missing_data": "Faltan datos obligatorios o sesión expirada",
+        "check_fields": "Por favor, revisa los campos con errores",
+        "server_error": "Hubo un error al procesar la solicitud",
+        "branch_closed": "La sede seleccionada se encuentra cerrada en la fecha elegida. Por favor, verifica el horario de la sucursal."
+      }
+    },
+    "edit_popover": {
+      "title": "Editar Sesión",
+      "details_title": "Detalles de la Sesión",
+      "loading": "Cargando información...",
+      "saving": "Guardando...",
+      "save_changes": "Guardar Cambios",
+      "cancel": "Cancelar",
+      "close": "Cerrar",
+      "delete_button": "Eliminar Clase",
+      "success_update": "Clase actualizada correctamente",
+      "error_save": "Error al guardar los cambios",
+      "readonly_notice": "Solo puedes gestionar asistencia. La configuración es de solo lectura.",
+      "attendance": {
+        "button_title": "Gestionar Alumnos",
+        "button_description": "Pasar asistencia o añadir reservas"
+      },
+      "delete_confirm": {
+        "title": "¿Eliminar esta clase?",
+        "description": "Esta acción no se puede deshacer y cancelará todas las reservas existentes.",
+        "action": "Eliminar permanentemente"
+      },
+      "cancelled_notice": "Clase cancelada. Motivo: {reason}"
+    },
+    "attendance_sheet": {
+      "title": "Control de Asistencia",
+      "desc_admin": "Gestiona el aforo y registra inscripciones manuales.",
+      "desc_instructor": "Visualiza la lista de alumnos y confirma su asistencia.",
+      "section_inscribe": "Inscripción de Cliente",
+      "search_placeholder": "Buscar por email exacto...",
+      "search_button": "BUSCAR",
+      "instructor_mode": "Modo Instructor: Tienes acceso para marcar asistencia de los alumnos presentes.",
+      "list_title": "Alumnos en Clase",
+      "loading_list": "Actualizando lista...",
+      "error_server": "Error al conectar con el servidor"
+    },
+    "attendance_manager": {
+      "title": "Asistencia de Clase",
+      "actions": {
+        "cancel": "Cancelar Reserva"
+      },
+      "table": {
+        "delete_dialog": {
+          "title": "¿Confirmar cancelación?",
+          "description": "Esta acción eliminará la reserva del cliente y liberará el cupo en la clase. Esta acción no se puede deshacer.",
+          "confirm": "Sí, cancelar reserva",
+          "cancel": "No, mantener"
+        }
+      },
+      "columns": {
+        "student": "Alumno",
+        "check_in": "Check-in",
+        "status": "Estado",
+        "booking_date": "Fecha de Reserva",
+        "service": "Servicio"
+      },
+      "status": {
+        "confirmed": "Confirmado",
+        "attended": "Asistió",
+        "missed": "Faltó",
+        "cancelled": "Cancelado"
+      },
+      "tabs": {
+        "bookings": "Reservas Activas",
+        "attendance": "Historial / Asistencia"
+      },
+      "labels": {
+        "total_students": "Total Alumnos: {count}",
+        "processed": "Procesado",
+        "active_booking": "Reserva Activa",
+        "cancel_tooltip": "Cancelar reserva",
+        "view_only": "Solo lectura",
+        "no_bookings": "No hay reservas activas para esta clase",
+        "loading_list": "Cargando participantes...",
+        "check_in": "Marcar asistencia",
+        "status": "Estado",
+        "client": "Cliente",
+        "no_reservations": "No hay reservas para esta clase"
+      },
+      "info_panel": {
+        "admin_title": "Panel de Gestión Administrativa",
+        "admin_desc": "Puedes cancelar reservas y realizar inscripciones manuales. El check-in se registra automáticamente en la sucursal.",
+        "instructor_title": "Panel de Asistencia de Instructor",
+        "instructor_desc": "La lista se sincroniza con el control de acceso. Los instructores no pueden modificar reservas activas."
+      }
+    },
+    "form": {
+      "sections": {
+        "general": "Información General",
+        "schedule": "Cronograma",
+        "capacity": "Capacidad y Recurrencia",
+        "notes": "Notas"
+      },
+      "fields": {
+        "visible": "Visible",
+        "branch": "Sucursal",
+        "service": "Disciplina",
+        "instructor": "Instructor",
+        "date": "Fecha",
+        "start_time": "Hora Inicio",
+        "end_time": "Hora Fin",
+        "max_capacity": "Aforo Máximo",
+        "recurrence": "Recurrencia",
+        "recurrence_until": "Repetir hasta"
+      },
+      "placeholders": {
+        "branch": "Seleccionar sucursal",
+        "service": "Seleccionar disciplina",
+        "instructor": "Asignar instructor",
+        "date": "Elegir fecha",
+        "capacity": "Cantidad de cupos",
+        "notes": "Añade notas aquí...",
+        "until": "Elegir fecha final"
+      },
+      "recurrence_options": {
+        "none": "No repetir",
+        "daily": "Diaria",
+        "weekly": "Semanal"
+      },
+      "suffix": {
+        "slots": "cupos"
+      },
+      "errors": {
+        "branch_required": "La sucursal es obligatoria",
+        "service_required": "La disciplina es obligatoria",
+        "instructor_required": "El instructor es obligatorio",
+        "date_required": "La fecha es obligatoria",
+        "start_time_required": "La hora de inicio es obligatoria",
+        "end_time_required": "La hora de fin es obligatoria",
+        "capacity_min": "El aforo debe ser al menos 1",
+        "end_time_after": "La hora de finalización debe ser posterior a la de inicio",
+        "recurrence_until_after": "La fecha de repetición debe ser posterior a la de la clase",
+        "recurrence_until_required": "Debes elegir una fecha de fin para la repetición"
+      }
+    }
+  },
+  "booking": {
+    "errors": {
+      "payment_required": "El alumno no tiene un pago activo o créditos suficientes.",
+      "forbidden": "No tienes permisos para realizar esta acción.",
+      "unauthorized": "Tu sesión ha expirado, por favor vuelve a entrar.",
+      "not_found": "La reserva no fue encontrada.",
+      "past_class": "No puedes inscribir en una clase que ya pasó.",
+      "full": "La clase ya no tiene cupos disponibles.",
+      "already_booked": "Este cliente ya está inscrito en esta clase.",
+      "insufficient_credits": "El cliente no tiene créditos suficientes.",
+      "expired": "La membresía del cliente ha expirado.",
+      "unexpected": "Ocurrió un error inesperado en el sistema.",
+      "restricted_time": "No puedes cancelar dentro del periodo restringido"
+    },
+    "success": {
+      "booked": "Reserva realizada con éxito",
+      "cancelled": "Reserva cancelada correctamente"
+    }
+  },
+  "ProtectedRoute": {
+    "noBranchTitle": "Sede no configurada",
+    "noBranchDescription": "Tu cuenta de <role>{role}</role> está activa, pero no tienes una sede válida asignada para operar.",
+    "retry": "Reintentar",
+    "logout": "Cerrar Sesión"
+  },
+  "SettingsPage": {
+    "title": "Configuración",
+    "description": "Administra la configuración de tu cuenta y preferencias.",
+    "loading": "Cargando perfil...",
+    "tabs": {
+      "profile": "Perfil",
+      "activity": "Actividad",
+      "security": "Seguridad"
+    },
+    "sections": {
+      "profile": {
+        "title": "Perfil",
+        "description": "Información pública de tu cuenta."
+      },
+      "activity": {
+        "title": "Bandeja de Actividad",
+        "description": "Historial de tus clases y recordatorios."
+      },
+      "security": {
+        "title": "Seguridad",
+        "description": "Protege tu acceso al gimnasio."
+      }
+    },
+    "passwordExpired": "Tu contraseña expiró según la política de seguridad. Por favor cámbiala para continuar."
+  },
+  "Notifications": {
+    "Center": {
+      "title": "Notificaciones",
+      "unread": "Tienes {count} sin leer",
+      "markAll": "Marcar todo",
+      "empty": "No hay notificaciones pendientes",
+      "loadMore": "Cargar más anteriores",
+      "loading": "Cargando...",
+      "viewAll": "Ver centro de notificaciones"
+    },
+    "ActivityNotifications": {
+      "title": "Actividad Reciente",
+      "markAllRead": "Marcar todo leído",
+      "emptyTitle": "Bandeja vacía",
+      "emptyDescription": "No hay actividades ni notificaciones registradas.",
+      "loadingMore": "Cargando actividades...",
+      "loadMore": "Cargar actividades anteriores",
+      "footerNote": "Las actividades se conservan por 30 días automáticamente.",
+      "systemName": "VitalFit"
+    }
+  },
+  "Auth": {
+    "sessionWarning": {
+      "title": "Tu sesión está por expirar",
+      "description": "Has estado inactivo demasiado tiempo. Por seguridad, cerraremos tu sesión automáticamente en:",
+      "button": "Mantener sesión activa"
+    }
+  },
+  "instructor_clients": {
+    "title": "Mis clientes",
+    "description": "Gestionando la base de datos de tus clientes asignados.",
+    "export_button": "Exportar CSV",
+    "exporting": "Exportando...",
+    "table": {
+      "columns": {
+        "client": "Cliente",
+        "contact": "Contacto",
+        "bookings": "Reservas"
+      },
+      "bookings_unit": "Clases",
+      "view_details": "Ver detalles",
+      "loading": "Cargando alumnos..."
+    }
+  },
+  "account": {
+    "profile": {
+      "manageInfo": "Gestiona tu información personal.",
+      "staff": "Staff",
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "email": "Correo Electrónico",
+      "emailWarning": "Cambiar el correo podría requerir verificarlo nuevamente.",
+      "identityDocument": "Cédula / Identidad",
+      "phone": "Teléfono",
+      "gender": "Género",
+      "genderPlaceholder": "Seleccionar...",
+      "genderMale": "Masculino",
+      "genderFemale": "Femenino",
+      "genderOther": "Otro",
+      "birthDate": "Fecha de Nacimiento",
+      "cancel": "Cancelar",
+      "saving": "Guardando...",
+      "saveChanges": "Guardar Cambios",
+      "notifications": {
+        "imageTooHeavy": "La imagen es muy pesada (Máx 2MB).",
+        "noUserId": "Error: ID de usuario no encontrado",
+        "noSession": "No hay sesión activa",
+        "uploadError": "Error al subir imagen, se guardarán solo los textos.",
+        "updateSuccess": "Perfil actualizado correctamente",
+        "updateError": "Error al actualizar perfil",
+        "discarded": "Cambios descartados"
+      }
+    }
+  },
+  "advanced": {
+    "cancelClass": {
+      "button": "Cancelar clase",
+      "title": "Cancelar clase",
+      "description": "Las reservas confirmadas se cancelarán, se reembolsarán los créditos consumidos y se notificará a los clientes.",
+      "placeholder": "Motivo de la cancelación (obligatorio)",
+      "close": "Cerrar",
+      "saving": "Cancelando...",
+      "confirm": "Confirmar cancelación",
+      "success": "Clase cancelada. Reservas afectadas: {count}",
+      "error": "No se pudo cancelar la clase"
+    },
+    "adjustments": {
+      "title": "Descuentos post-venta",
+      "percentage": "Porcentaje",
+      "fixed": "Monto fijo",
+      "reasonPlaceholder": "Motivo del descuento (obligatorio)",
+      "saving": "Aplicando...",
+      "apply": "Aplicar descuento",
+      "policyHint": "El descuento acumulado no puede superar el máximo definido en las políticas comerciales.",
+      "date": "Fecha",
+      "discount": "Descuento",
+      "previous": "Total anterior",
+      "new": "Nuevo total",
+      "reason": "Motivo",
+      "by": "Aplicado por",
+      "success": "Descuento aplicado",
+      "error": "No se pudo aplicar el descuento"
+    },
+    "clientCrm": {
+      "scoreTitle": "Scoring del cliente",
+      "noScore": "Sin datos de scoring",
+      "segments": {
+        "VIP": "VIP",
+        "Regular": "Regular",
+        "New": "Nuevo",
+        "AtRisk": "En riesgo"
+      },
+      "frequency": "Frecuencia: {points} pts ({visits} visitas en 90 días)",
+      "punctuality": "Puntualidad de pagos: {points} pts ({onTime}/{total} facturas a tiempo)",
+      "referrals": "Referidos: no disponible (programa de referidos no implementado)",
+      "tagsTitle": "Etiquetas para campañas",
+      "noTags": "Sin etiquetas",
+      "remove": "Quitar",
+      "selectTag": "Seleccionar etiqueta",
+      "assign": "Asignar",
+      "newTagPlaceholder": "Nueva etiqueta",
+      "create": "Crear",
+      "error": "No se pudo actualizar las etiquetas"
+    },
+    "security": {
+      "forbidden": "Solo el Super Admin puede gestionar la seguridad.",
+      "saved": "Configuración guardada",
+      "error": "No se pudo guardar",
+      "title": "Seguridad y contraseñas",
+      "subtitle": "Políticas de contraseña y autenticación de dos factores para el personal administrativo",
+      "saving": "Guardando...",
+      "save": "Guardar",
+      "passwordPolicy": "Política de contraseñas",
+      "minLength": "Longitud mínima",
+      "require_uppercase": "Requerir mayúsculas",
+      "require_lowercase": "Requerir minúsculas",
+      "require_number": "Requerir números",
+      "require_special": "Requerir caracteres especiales",
+      "expirationDays": "Expiración (días)",
+      "expirationHint": "0 = la contraseña no expira",
+      "twoFactor": "Autenticación de dos factores (2FA)",
+      "twoFactorRequired": "2FA obligatorio en el dashboard",
+      "twoFactorHint": "Al iniciar sesión en el panel administrativo se enviará un código de 6 dígitos al correo del usuario (válido 10 minutos, un solo uso).",
+      "lastUpdate": "Última actualización: {date}"
+    },
+    "feedback": {
+      "title": "Quejas y sugerencias",
+      "subtitle": "Seguimiento de la atención al cliente y mensajes del formulario de contacto",
+      "tabs": {
+        "feedback": "Quejas y sugerencias",
+        "contact": "Formulario de contacto"
+      },
+      "allStatuses": "Todos los estados",
+      "status": {
+        "open": "Abierta",
+        "in_progress": "En proceso",
+        "resolved": "Resuelta",
+        "closed": "Cerrada"
+      },
+      "allTypes": "Todos los tipos",
+      "type": {
+        "complaint": "Queja",
+        "suggestion": "Sugerencia",
+        "compliment": "Felicitación"
+      },
+      "new": "Registrar",
+      "date": "Fecha",
+      "client": "Cliente",
+      "typeLabel": "Tipo",
+      "subject": "Asunto",
+      "branch": "Sucursal",
+      "statusLabel": "Estado",
+      "empty": "No hay registros",
+      "manage": "Gestionar",
+      "prev": "Anterior",
+      "next": "Siguiente",
+      "error": "Ocurrió un error",
+      "created": "Registro creado",
+      "searchClient": "Buscar cliente por nombre o documento",
+      "search": "Buscar",
+      "selectClient": "Seleccionar cliente",
+      "description": "Descripción",
+      "cancel": "Cancelar",
+      "save": "Guardar",
+      "updated": "Registro actualizado",
+      "resolutionNotes": "Notas de resolución",
+      "notesRequired": "Las notas son obligatorias para resolver o cerrar",
+      "contactStatus": {
+        "new": "Nuevo",
+        "read": "Leído",
+        "answered": "Respondido"
+      },
+      "emptyContact": "No hay mensajes",
+      "markRead": "Marcar leído",
+      "markAnswered": "Marcar respondido"
+    },
+    "insights": {
+      "error": "Ocurrió un error",
+      "detected": "Detección ejecutada: {count} nuevas alertas",
+      "title": "Analítica avanzada",
+      "subtitle": "Conversión web, NPS, RevPAS, benchmarking entre sedes, riesgo de abandono y alertas de anomalías",
+      "conversion": "Tasa de conversión web",
+      "conversionHint": "{purchases} compras de {visitors} visitantes",
+      "signupRate": "Tasa de registro",
+      "signupHint": "{signups} registros",
+      "nps": "NPS",
+      "npsHint": "{responses} respuestas · {promoters} promotores · {detractors} detractores",
+      "revpas": "RevPAS",
+      "revpasHint": "{revenue} / {spaces} espacios disponibles",
+      "alerts": "Alertas de anomalías en KPIs",
+      "detect": "Detectar ahora",
+      "noAlerts": "Sin alertas abiertas",
+      "severity": {
+        "low": "Baja",
+        "medium": "Media",
+        "high": "Alta"
+      },
+      "acknowledge": "Marcar como revisada",
+      "segments": "Segmentos de clientes",
+      "segment": {
+        "VIP": "VIP",
+        "Regular": "Regular",
+        "New": "Nuevos",
+        "AtRisk": "En riesgo"
+      },
+      "benchmark": "Benchmarking entre sedes",
+      "benchmarkHint": "Entre paréntesis: índice vs. promedio de la red (100 = promedio). En verde: mejor práctica de la métrica.",
+      "branch": "Sucursal",
+      "metric": {
+        "revenue": "Ingresos",
+        "new_clients": "Nuevos clientes",
+        "active_members": "Miembros activos",
+        "check_ins": "Check-ins",
+        "occupancy_rate": "Ocupación %",
+        "nps": "NPS"
+      },
+      "score": "Índice",
+      "revpasByService": "RevPAS por servicio",
+      "service": "Servicio",
+      "occupancy": "Ocupación",
+      "churn": "Clientes en riesgo de abandono",
+      "churnHint": "Score predictivo según ausencia, caída de asistencia y vencimiento próximo de membresía.",
+      "client": "Cliente",
+      "risk": "Riesgo",
+      "factors": "Factores",
+      "noChurn": "No hay clientes en riesgo",
+      "npsComments": "Comentarios recientes de NPS"
+    },
+    "automation": {
+      "defaultTemplate": "Plantilla por defecto",
+      "type": {
+        "financial": "Financiero",
+        "sales": "Ventas",
+        "clients": "Clientes",
+        "benchmark": "Benchmarking"
+      },
+      "title": "Automatización de reportes",
+      "subtitle": "Exportaciones con plantilla corporativa, envíos programados, enlaces temporales e integración BI",
+      "tabs": {
+        "download": "Exportar",
+        "schedules": "Envíos programados",
+        "links": "Enlaces temporales",
+        "templates": "Plantillas",
+        "api": "API para BI"
+      },
+      "error": "Ocurrió un error",
+      "downloadTitle": "Exportar reporte",
+      "reportType": "Reporte",
+      "format": "Formato",
+      "template": "Plantilla",
+      "period": "Período",
+      "generating": "Generando...",
+      "download": "Descargar",
+      "scheduleCreated": "Envío programado creado",
+      "newSchedule": "Nuevo envío programado",
+      "name": "Nombre",
+      "frequency": "Frecuencia",
+      "frequencies": {
+        "daily": "Diario",
+        "weekly": "Semanal",
+        "monthly": "Mensual"
+      },
+      "recipients": "Destinatarios (separados por coma)",
+      "createSchedule": "Programar",
+      "lastSent": "Último envío",
+      "never": "Nunca",
+      "saved": "Guardado",
+      "sent": "Reporte enviado",
+      "sendNow": "Enviar ahora",
+      "deleted": "Eliminado",
+      "newLink": "Compartir reporte por URL temporal",
+      "expiresInHours": "Vigencia (horas)",
+      "createLink": "Generar enlace",
+      "copied": "Copiado al portapapeles",
+      "copy": "Copiar",
+      "linkOnce": "Guarda el enlace ahora: por seguridad no se puede volver a mostrar.",
+      "expires": "Vence",
+      "accesses": "{count} descargas",
+      "revoke": "Revocar",
+      "cannotDeleteDefault": "No se puede eliminar la plantilla",
+      "editTemplate": "Editar plantilla",
+      "newTemplate": "Nueva plantilla",
+      "color": "Color corporativo",
+      "header": "Encabezado",
+      "footer": "Pie de página",
+      "orientation": "Orientación PDF",
+      "landscape": "Horizontal",
+      "portrait": "Vertical",
+      "isDefault": "Usar como plantilla por defecto",
+      "save": "Guardar",
+      "cancel": "Cancelar",
+      "default": "Por defecto",
+      "edit": "Editar",
+      "newKey": "Nueva API key para herramientas BI",
+      "apiHint": "Envía la clave en el header X-API-Key a /v1/bi/kpis, /v1/bi/sales, /v1/bi/financial, /v1/bi/benchmark, /v1/bi/revpas, /v1/bi/nps o /v1/bi/conversion.",
+      "expiresAt": "Vence (opcional)",
+      "createKey": "Crear API key",
+      "keyOnce": "Copia la clave ahora: no se volverá a mostrar.",
+      "lastUsed": "Último uso",
+      "revoked": "Revocada"
+    }
+  }
+}

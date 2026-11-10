@@ -1,0 +1,3727 @@
+{
+  "banners": {
+    "stats": {
+      "total": "Total",
+      "active": "Active",
+      "unit": "banners"
+    },
+    "list": {
+      "title": "Banners",
+      "subtitle": "Manage advertising banners"
+    },
+    "actions": {
+      "add": "Add Banner",
+      "remove": "Remove",
+      "edit": "Edit",
+      "cancel": "Cancel",
+      "creating": "Creating...",
+      "save": "Save",
+      "saving": "Saving...",
+      "change": "Change",
+      "view": "View",
+      "modify": "Modify",
+      "delete": "Delete"
+    },
+    "errors": {
+      "imgUploadFailed": "Could not upload image",
+      "imgUploadUnknown": "Unknown error uploading image",
+      "nameRequired": "Name is required",
+      "urlRequired": "URL is required",
+      "notAuthenticated": "Not authenticated",
+      "fixForm": "Please fix form errors",
+      "noImage": "Image is required",
+      "createUnknown": "Unknown error creating banner",
+      "updateUnknown": "Unknown error updating banner",
+      "uploadDefault": "Error uploading banner. Using default image.",
+      "cropProcessing": "Error processing image crop.",
+      "load": "Error loading banners"
+    },
+    "create": {
+      "title": "Create Banner",
+      "subtitle": "Add a new banner"
+    },
+    "edit": {
+      "title": "Edit Banner"
+    },
+    "labels": {
+      "name": "Name",
+      "linkUrl": "Link URL",
+      "status": "Active Status",
+      "uploadUrl": "Banner Image"
+    },
+    "placeholders": {
+      "name": "Banner name",
+      "linkUrl": "https://example.com"
+    },
+    "upload": {
+      "loading": "Loading...",
+      "uploading": "Uploading...",
+      "callToAction": "Upload Image",
+      "format": "PNG, JPG up to 5MB"
+    },
+    "notifications": {
+      "created": "Banner created successfully",
+      "updated": "Banner updated successfully",
+      "errorTitle": "Error",
+      "successTitle": "Success",
+      "activateSuccess": "Banner activated successfully",
+      "deactivateSuccess": "Banner deactivated successfully",
+      "updateStatusError": "Error updating banner status",
+      "deleteSuccess": "Banner deleted successfully",
+      "deleteError": "Error deleting banner"
+    },
+    "crop": {
+      "title": "Crop Image",
+      "zoom": "Zoom",
+      "rotation": "Rotation",
+      "rotateLeft": "Rotate Left",
+      "rotateRight": "Rotate Right",
+      "adjustText": "Adjust crop area",
+      "zoomValue": "Zoom: {value}x",
+      "rotationValue": "Rotation: {value}Â°",
+      "apply": "Apply Crop",
+      "edit": "Edit Crop"
+    },
+    "loadingData": "Loading data...",
+    "notFound": "Banner not found",
+    "table": {
+      "headers": {
+        "image": "Image",
+        "name": "Name",
+        "link": "Link",
+        "status": "Status"
+      },
+      "searchPlaceholder": "Search",
+      "download": "Download",
+      "downloading": "Downloading...",
+      "loading": "Loading banners...",
+      "actions": {
+        "view": "View",
+        "modify": "Modify",
+        "delete": "Delete"
+      },
+      "deleteDialog": {
+        "title": "Confirm Deletion",
+        "description": "Are you sure you want to delete this banner? This action cannot be undone.",
+        "action": "Delete",
+        "cancel": "Cancel"
+      }
+    }
+  },
+  "LoginPage": {
+    "title": "Administrative Access",
+    "subtitle": "Authorized personnel only. Please enter your credentials.",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "admin@vitalfit.com",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "forgotPasswordLink": "Forgot your password?",
+    "accessButton": "Access Dashboard",
+    "errorCredentials": "Invalid credentials. Please verify them.",
+    "errorUnexpected": "An unexpected error occurred. Please try again.",
+    "errorGeneric": "Login failed.",
+    "twoFactor": {
+      "title": "Two-step verification",
+      "description": "We sent a 6-digit code to {email}. Enter it to continue.",
+      "codeLabel": "Verification code",
+      "verifyButton": "Verify and sign in",
+      "back": "Back",
+      "resend": "Resend code",
+      "resent": "Code resent",
+      "invalidCode": "Invalid or expired code. Please try again.",
+      "expired": "Verification expired. Please sign in again."
+    }
+  },
+  "ForgotPasswordPage": {
+    "title": "RECOVER PASSWORD",
+    "instruction": "Enter the email associated with the account to recover your password",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "Enter your email",
+    "submitButtonProcessing": "Processing...",
+    "submitButtonDefault": "Send Code",
+    "footerText": "Remember your password?",
+    "footerLink": "Log In",
+    "notificationTitle": "Email Registered",
+    "notificationDescription": "If your email matches a registered account, you will receive a verification code.",
+    "emailInvalid": "Invalid email"
+  },
+  "ConfirmEmailPage": {
+    "title": "CONFIRM YOUR EMAIL",
+    "instruction": "Enter the code sent to your email to confirm it",
+    "errorTitle": "Code Error",
+    "submitButtonProcessing": "Verifying...",
+    "submitButtonDefault": "Verify Email",
+    "resendButton": "Resend Code",
+    "successTitleValid": "Email confirmed",
+    "successTitleRegister": "Registration successful",
+    "successDescValid": "Email confirmed successfully",
+    "successDescRegister": "You have registered successfully!",
+    "resendSuccessTitle": "Confirmation Code Resent",
+    "resendSuccessDesc": "A new code has been sent to your email address",
+    "loadingFallback": "Loading...",
+    "codeLengthError": "Code must be 6 characters"
+  },
+  "ChangePasswordPage": {
+    "title": "CHANGE YOUR PASSWORD",
+    "instruction": "Enter your new password.",
+    "newPasswordLabel": "New Password",
+    "newPasswordPlaceholder": "New password",
+    "confirmPasswordLabel": "Confirm Password",
+    "confirmPasswordPlaceholder": "Confirm password",
+    "submitButtonProcessing": "Processing...",
+    "submitButtonDefault": "Continue",
+    "footerText": "Remember your password?",
+    "footerLink": "Log In",
+    "successDescription": "Password reset successfully!",
+    "connectionErrorTitle": "Connection Error",
+    "connectionErrorDescription": "Could not connect to the server. Please try again later.",
+    "serverErrorTitle": "Error Resetting Password",
+    "tokenError": "Error retrieving confirmation code. Please request password reset again.",
+    "genericError": "Error changing password. Please try again.",
+    "passwordRequired": "Password is required",
+    "passwordMinLength": "Password must be at least 8 characters",
+    "passwordUppercase": "Password must contain at least one uppercase letter",
+    "passwordLowercase": "Password must contain at least one lowercase letter",
+    "passwordNumber": "Password must contain at least one number",
+    "confirmPasswordRequired": "Confirm password is required",
+    "passwordsMustMatch": "Passwords do not match"
+  },
+  "DashboardHome": {
+    "loading": "Loading panel...",
+    "welcomeTitle": "Welcome, {firstName}",
+    "roleInfo": "Your current role is: {roleLabel}",
+    "financialPanelTitle": "Financial Panel",
+    "viewReportsButton": "View financial reports",
+    "unassignedRoleMessage": "You do not have a control panel assigned to your role. Please contact the Administrator."
+  },
+  "Menu": {
+    "General": "General",
+    "Administracion": "Administration",
+    "Operacion": "Operations",
+    "Finanzas": "Finance",
+    "Marketing": "Marketing",
+    "Configuracion": "Configuration",
+    "Instructor": "Instructor",
+    "Analytics": "Analytics",
+    "Recepcion": "Reception",
+    "Dashboard": "Dashboard",
+    "Sucursales": "Branches",
+    "UsuariosRoles": "Users & Roles",
+    "UsuariosSistema": "System Users",
+    "RolesPermisos": "Roles & Permissions",
+    "AuditoriaAccesos": "Access Audit",
+    "CatalogoSistema": "System Catalog",
+    "TiposMembresia": "Membership Types",
+    "Servicios": "Services",
+    "Instructores": "Instructors",
+    "InventarioEquipamiento": "Equipment Inventory",
+    "Promociones": "Promotions & Discounts",
+    "ClientesSocios": "Clients & Members",
+    "RegistroConsulta": "Registration & Inquiry",
+    "SegmentacionScoring": "Segmentation & Scoring",
+    "QuejasSugerencias": "Complaints & Suggestions",
+    "CalendarioAsistencia": "Calendar & Attendance",
+    "CalendarioClases": "Class Calendar",
+    "GestionReservas": "Booking Management",
+    "TrackingAsistencia": "Attendance Tracking",
+    "FacturacionElectronica": "E-Invoicing",
+    "MembresiasControl": "Memberships & Control",
+    "GestionMembresias": "Membership Management",
+    "AlertasVencimiento": "Expiration Alerts",
+    "ReportesFinancieros": "Financial Reports",
+    "GestionBanners": "Banner Management",
+    "MerchandisingCrosssell": "Merchandising (Cross-sell)",
+    "AjustesSistema": "System Settings",
+    "DocumentosFiscales": "Tax Documents",
+    "MetodosPagoGlobal": "Global Payment Methods",
+    "CausalesCancelacion": "Cancellation Reasons",
+    "PoliticasContrasena": "Password Policies",
+    "DashboardOperativo": "Operations Dashboard",
+    "ConfiguracionLocal": "Local Configuration",
+    "InformacionHorarios": "Info & Schedules",
+    "CapacidadAforo": "Capacity & Occupancy",
+    "AgendaCalendario": "Schedule & Calendar",
+    "ReservasActivas": "Active Bookings",
+    "RegistroAsistencia": "Attendance Logging",
+    "RegistroPagos": "Payment Logging",
+    "MembresiasVencer": "Memberships to Expire",
+    "ReporteVentasLocal": "Local Sales Report",
+    "MiCalendario": "My Calendar",
+    "MisReportes": "My Reports",
+    "ReportesDetallados": "Detailed Reports",
+    "TendenciasCohortes": "Trends & Cohorts",
+    "ReporteClientes": "Customer Report",
+    "ReporteFinanciero": "Financial Report",
+    "CheckinCheckout": "Check-in/Check-out",
+    "ReporteVentas": "Sales Report",
+    "CombosPaquetes": "Combos/Packages",
+    "GestionMarketing": "Maketing Management",
+    "branches_label": "{name}'s Branches",
+    "select_branch": "Select Branch",
+    "available_branches": "Available branches",
+    "no_branches": "No branches assigned",
+    "system_footer": "Vitalfit System",
+    "PoliticasComerciales": "Commercial Policies",
+    "MisClientes": "My clients",
+    "AnaliticaAvanzada": "Advanced Analytics",
+    "AutomatizacionReportes": "Report Automation"
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, es {Spanish} en {English} other {{locale}}}"
+  },
+  "Navbar": {
+    "notifications": "Notifications",
+    "appearance": "Appearance",
+    "toggleMenu": "Toggle menu",
+    "details": "Details #{id}",
+    "searchPlaceholder": "Search VitalFit...",
+    "searchMobile": "Search...",
+    "noResults": "No results found."
+  },
+  "UserNav": {
+    "account": "Account",
+    "billing": "Billing",
+    "notifications": "Notifications",
+    "logout": "Log out",
+    "language": "Language"
+  },
+  "analytics": {
+    "common": {
+      "no_data": "No data available for the selected period",
+      "loading": "Loading data...",
+      "error": "An error occurred while loading the information"
+    },
+    "finance": {
+      "formats": {
+        "csv": "CSV (Plain text)",
+        "excel": "Excel (.xlsx)",
+        "pdf": "PDF (Document)"
+      },
+      "title": "Detailed Finance Report",
+      "subtitle": "Analysis of cash flow, solvency, and financial projections",
+      "export": "Export CSV",
+      "exporting": "Exporting...",
+      "export_filename": "financial_report",
+      "export_sales": "Export Sales",
+      "errors": {
+        "select_dates": "Please select a date range first"
+      },
+      "stats": {
+        "weekly_revenue": "Weekly Revenue",
+        "mrr": "MRR (Monthly Recurring Revenue)",
+        "accounts_receivable": "Accounts Receivable",
+        "active_branches": "Active Branches",
+        "average_ticket": "Average Ticket",
+        "clv": "Average Customer Lifetime Value (CLV)"
+      },
+      "financial_summary": {
+        "title": "Cash Summary",
+        "description": "Gross income by category",
+        "total_net": "Net Total"
+      },
+      "filters": {
+        "all_branches": "All branches",
+        "loading": "Loading...",
+        "start_date": "Start date",
+        "end_date": "End date",
+        "clear": "Clear fields",
+        "placeholder_range": "Select range",
+        "ranges": {
+          "this_month": "This month",
+          "last_month": "Last month",
+          "last_3_months": "Last 3 months",
+          "custom": "Custom"
+        }
+      },
+      "charts": {
+        "cash_flow": {
+          "title": "Projected Cash Flow",
+          "description": "Revenue realized per month (Current year)",
+          "series_label": "Revenue"
+        },
+        "monthly_revenue": {
+          "title": "Revenue Evolution",
+          "description": "Monthly total billing comparison",
+          "series_label": "Billing"
+        }
+      },
+      "billing_matrix": {
+        "title": "Billing Matrix",
+        "description": "Comparative breakdown of concepts for each active branch",
+        "no_data": "There is no billing data for the selected period.",
+        "column_concept": "Concept",
+        "column_total": "Total Concept",
+        "footer_totals": "TOTALS BY BRANCH",
+        "error": "Error loading financial matrix"
+      }
+    },
+    "Sales": {
+      "formats": {
+        "csv": "CSV (Plain text)",
+        "excel": "Excel (.xlsx)",
+        "pdf": "PDF (Document)"
+      },
+      "title": "Sales Report",
+      "subtitle": "Commercial performance, payment methods, and branch productivity",
+      "export": "Export CSV",
+      "exporting": "Exporting...",
+      "export_filename": "sales_report",
+      "stats": {
+        "total_sales": "Total Sales Lifetime",
+        "average_ticket": "Average Ticket KPI (MoM)",
+        "total_transactions": "Transaction Volume Stats",
+        "global_sales": "Global Sales Performance",
+        "comparison": "vs. previous month",
+        "monthly_sales": "Monthly Sales"
+      },
+      "filters": {
+        "all_branches": "All branches",
+        "required_title": "Selection Required",
+        "required_description": "Please select a date range to view sales distribution.",
+        "ranges": {
+          "this_month": "This month",
+          "last_month": "Last month",
+          "last_3_months": "Last 3 months",
+          "custom": "Custom"
+        }
+      },
+      "charts": {
+        "by_hour": {
+          "title": "Sales by Hour",
+          "description": "Peak commercial activity throughout the day",
+          "series_label": "Volume"
+        },
+        "top_branches": {
+          "title": "Franchise Performance",
+          "description": "Top {count} branches by sales volume",
+          "sales_label": "Total sales",
+          "empty_state": "No branch data available"
+        },
+        "payment_method": {
+          "title": "Payment Methods",
+          "description": "Collection distribution by channel",
+          "amount": "Amount",
+          "footer_total": "Total Collection: {amount}",
+          "footer_text": "{count} payment methods detected",
+          "filters_required_title": "Filters Required",
+          "filters_required_description": "Select a date range to view payment methods."
+        },
+        "category_sales": {
+          "title": "Sales by Service",
+          "description": "Distribution by product and service categories",
+          "footer_total": "Total services: {total}",
+          "value_label": "Sales"
+        },
+        "sales_trend": {
+          "title": "Sales Trend",
+          "description": "Revenue generated over the last 7 days",
+          "series_label": "Sales"
+        },
+        "demography": {
+          "age": "Age",
+          "gender": "Gender",
+          "values": {
+            "male": "Male",
+            "female": "Female",
+            "prefer-not-to-say": "Prefer not to say",
+            "other": "Other"
+          },
+          "ui": {
+            "title_age": "Sales by Age",
+            "title_gender": "Sales by Gender",
+            "description": "Demographic income distribution",
+            "loading": "Loading data...",
+            "no_data": "No data available",
+            "tooltip_sales": "Sales"
+          }
+        }
+      }
+    },
+    "clients": {
+      "formats": {
+        "csv": "CSV (Plain text)",
+        "excel": "Excel (.xlsx)",
+        "pdf": "PDF (Document)"
+      },
+      "header": {
+        "title": "Client Report",
+        "subtitle": "Detailed analysis of loyalty, retention, and staff",
+        "export": "Exportar CSV",
+        "exporting": "Exportando...",
+        "export_filename": "clients_report"
+      },
+      "stats": {
+        "total_clients": "Total clients",
+        "active_members": "Active Branch Members",
+        "new_clients": "New clients",
+        "retention_rate": "Retention rate",
+        "churn_rate": "Monthly Churn Rate"
+      },
+      "filters": {
+        "all_branches": "All branches",
+        "ranges": {
+          "this_month": "This month",
+          "last_month": "Last month",
+          "last_3_months": "Last 3 months",
+          "custom": "Custom"
+        }
+      },
+      "cohort": {
+        "title": "Cohort Retention",
+        "description": "Monthly tracking of new client behavior.",
+        "table": {
+          "month": "Cohort",
+          "size": "Base",
+          "retention_month": "Month {n}"
+        },
+        "messages": {
+          "error": "Error loading retention data",
+          "no_data": "Not enough data to generate analysis"
+        }
+      },
+      "services": {
+        "title": "Most Used Services",
+        "description": "Usage frequency by class type or service",
+        "label_usage": "Usage count"
+      },
+      "instructors": {
+        "title": "Top 5 Instructors",
+        "description": "By total attendance in the period",
+        "label_usage": "attendances",
+        "messages": {
+          "select_dates": "Select a date range to view the ranking",
+          "no_data": "No instructor data found"
+        }
+      },
+      "growth": {
+        "title": "New vs Recurring",
+        "description": "Monthly comparison of acquisition and loyalty",
+        "label_new": "New",
+        "label_recurring": "Recurring"
+      },
+      "rfm": {
+        "title": "Customer Segmentation",
+        "description": "Analysis based on Recency, Frequency, and Monetary Value (RFM)",
+        "noDataTitle": "Insufficient data",
+        "noDataDescription": "Purchase history and attendance records are required to generate RFM segmentation.",
+        "footer": "Sampling based on {count} active customers. Segments are updated automatically."
+      }
+    },
+    "branch": {
+      "Occupancy": {
+        "stats": {
+          "current_occupancy": "Current Occupancy",
+          "checkins_today": "Check-ins Today",
+          "real_time": "Real-time",
+          "average_occupancy": "Average Occupancy"
+        },
+        "heatmap": {
+          "title": "Activity Heatmap",
+          "description": "Peak footfall times at the branch",
+          "days": [
+            "M",
+            "T",
+            "W",
+            "T",
+            "F",
+            "S",
+            "S"
+          ],
+          "legend_low": "Low traffic",
+          "legend_high": "High traffic",
+          "tooltip": "Occupancy: {val}%"
+        },
+        "class_analytics": {
+          "title": "Occupancy by Discipline",
+          "description": "Average fill percentage by class type",
+          "series_label": "Occupancy Percentage"
+        }
+      },
+      "ClassCapacity": {
+        "title": "Real-Time Capacity",
+        "description": "Session attendance monitoring",
+        "placeholder_loading": "Loading classes...",
+        "placeholder_select": "Select today's class",
+        "empty_state": "Select a class to view capacity",
+        "ratio_label": "Entry Ratio",
+        "occupied": "{percentage}% Occupied",
+        "free_slots": "{count, plural, =0 {No spots available} =1 {# spot available} other {# spots available}}",
+        "max_capacity": "Maximum capacity allowed: <bold>{max} people</bold>",
+        "status": {
+          "available": "Available",
+          "almost_full": "Almost full",
+          "sold_out": "Sold out"
+        }
+      },
+      "RecentCheckIns": {
+        "title": "Recent Check-ins",
+        "description": "{count, plural, =0 {No entries recorded today} =1 {1 entry recorded today} other {# entries recorded today}}",
+        "empty_state": "No recent check-ins"
+      },
+      "UpcomingClasses": {
+        "title": "Today's Classes",
+        "description": "{count, plural, =0 {No sessions scheduled} =1 {1 session scheduled} other {# sessions scheduled}}",
+        "empty_state": "No more classes for today",
+        "capacity": "Cap. {max}",
+        "status": {
+          "ongoing": "Ongoing",
+          "starting_soon": "Starting soon",
+          "scheduled": "Scheduled"
+        }
+      }
+    }
+  },
+  "dashboards": {
+    "no_dashboard": "You do not have a dashboard assigned to your role.",
+    "SuperAdminDashboard": {
+      "header": {
+        "title": "Dashboard",
+        "subtitle": "Welcome to your franchise network's executive summary.",
+        "download_report": "Download Report"
+      }
+    },
+    "InstructorDashboard": {
+      "header": {
+        "morning": "Good morning!",
+        "afternoon": "Good afternoon!",
+        "night": "Good evening!",
+        "active_branch": "Current branch:",
+        "no_branch": "No branch assigned"
+      },
+      "stats": {
+        "next_class": "Next Class",
+        "students_today_count": "Students Today",
+        "students_today_desc": "Total confirmed for today",
+        "attendance_rate": "Attendance Rate",
+        "attendance_desc": "Check-in effectiveness",
+        "monthly_classes": "Monthly Classes",
+        "meta": "Target"
+      },
+      "classes_list": {
+        "title": "My classes today",
+        "description": "Class management at",
+        "empty": "No sessions scheduled for today.",
+        "starts": "Start time",
+        "loading": "Loading...",
+        "ends": "End",
+        "capacity": "Capacity",
+        "start_button": "Start class"
+      },
+      "messages": {
+        "updating": "Updating dashboard...",
+        "updated": "Data updated",
+        "error_loading": "Error loading reports"
+      }
+    },
+    "ReceptionDashboard": {
+      "title": "Reception: {branch}",
+      "welcome": "Good morning, {name}!",
+      "status_ready": "Access control and capacity monitoring ready to operate.",
+      "global": "Global",
+      "tabs": {
+        "control_panel": "Control Panel",
+        "history": "Daily History"
+      },
+      "manualCheckInModal": {
+        "title": "Manual Check-In",
+        "console": "Reception Console",
+        "description": "Verify the member's identity before allowing entry.",
+        "search": {
+          "label": "Member Identification (Email)",
+          "placeholder": "member@vitalfit.com",
+          "button": "Search Member"
+        },
+        "policies": {
+          "title": "Access Policies",
+          "timeRuleDescription": "Entry is only permitted **15 minutes before** the class starts.",
+          "verificationAdvice": "Validate the member's identity with their ID and digitalized photo."
+        },
+        "results": {
+          "title": "Identity Validation",
+          "verified": "Identity Verified",
+          "waiting": "Awaiting Identification",
+          "waitingDescription": "Enter the member's email to validate membership status.",
+          "footerNote": "Attendance synchronized in real-time"
+        },
+        "actions": {
+          "confirm": "Register Check-In",
+          "loading": "Processing..."
+        }
+      }
+    },
+    "BranchDashboard": {
+      "title": "Dashboard: {branch}",
+      "welcome": "Hello, {name}!",
+      "subtitle": "Here is the summary of what is happening at your branch today.",
+      "global": "Global"
+    },
+    "DataAnalystDashboard": {
+      "title": "Data Analysis: {branch}",
+      "welcome": "Welcome, {name}!",
+      "status_ready": "Explore trends and performance metrics.",
+      "global": "Global Network"
+    },
+    "AccountantDashboard": {
+      "title": "Accounting Management: {branch}",
+      "welcome": "Hello, {name}",
+      "subtitle": "review the financial status and payment reconciliation.",
+      "global": "Global Consolidated"
+    }
+  },
+  "catalog": {
+    "services": {
+      "title": "SERVICES",
+      "add_button": "Add Service",
+      "id_prefix": "Service ID",
+      "export": "Export CSV",
+      "exporting": "Exporting...",
+      "export_filename": "services_report",
+      "stats": {
+        "total": "Total",
+        "actives": "Active",
+        "featured": "Featured",
+        "unit": "SERVICES"
+      },
+      "table": {
+        "placeholder": "Filter by name",
+        "allCategories": "All categories",
+        "download": "Download",
+        "downloading": "Downloading...",
+        "noCategory": "No category",
+        "columns": {
+          "name": "Name",
+          "category": "Category",
+          "duration": "Duration",
+          "featured": "Featured"
+        },
+        "actions": {
+          "view": "View",
+          "edit": "Edit",
+          "delete": "Delete"
+        },
+        "deleteDialog": {
+          "title": "Confirm Deletion",
+          "description": "Are you sure you want to delete this service? This action cannot be undone.",
+          "confirm": "Delete",
+          "cancel": "Cancel"
+        }
+      },
+      "notifications": {
+        "missingImages": "Missing images",
+        "missingImagesDesc": "The service requires at least one image.",
+        "uploadingImages": "Uploading images...",
+        "processError": "Error processing service",
+        "tryAgain": "Try again later",
+        "imageTooHeavy": "Image is too heavy (Max 5MB)",
+        "loadError": "Error loading services",
+        "deleteSuccess": "Service deleted successfully",
+        "deleteError": "Error deleting service",
+        "errorTitle": "Error",
+        "successTitle": "Success"
+      },
+      "CreateService": {
+        "title": "CREATE NEW SERVICE",
+        "title_edit": "EDIT SERVICE",
+        "subtitle": "Complete the information",
+        "subtitle_edit": "Modify necessary fields",
+        "loadingData": "Loading catalog information...",
+        "tabs": {
+          "general": "General Information",
+          "images": "Images and Banner"
+        },
+        "fields": {
+          "name": "Service Name",
+          "namePlaceholder": "E.g.: Personalized Training",
+          "category": "Category",
+          "categoryPlaceholder": "Select category",
+          "description": "Detailed description",
+          "descriptionPlaceholder": "Write a description here...",
+          "duration": "Duration (Minutes)",
+          "priority": "Priority",
+          "featured": "Featured",
+          "banner": "Promotional Banner",
+          "bannerPlaceholder": "Select banner",
+          "imagesTitle": "Image Gallery",
+          "imagesHelper": "The first selected image will be set as primary."
+        },
+        "buttons": {
+          "cancel": "Cancel",
+          "create": "Save Service",
+          "uploading": "Uploading photos...",
+          "saving": "Saving changes..."
+        },
+        "ImageUploader": {
+          "dropzone": "Drag and drop photos for the service or browse",
+          "dropToReorder": "Drop to reorder images",
+          "movingImage": "Moving image #{index}",
+          "dragging": "Dragging...",
+          "primary": "Primary",
+          "descriptionPlaceholder": "Add a description for this image",
+          "status": {
+            "pending": "Pending",
+            "cropped": "Cropped",
+            "uploading": "Uploading...",
+            "uploaded": "âœ“ Uploaded",
+            "error": "Error"
+          },
+          "actions": {
+            "view": "View image",
+            "crop": "Crop image",
+            "revert": "Revert crop",
+            "remove": "Remove image",
+            "setPrimary": "Set as primary"
+          },
+          "previewModal": {
+            "title": "Image Preview",
+            "helper": "Click outside or press ESC to close",
+            "close": "Close"
+          },
+          "cropModal": {
+            "title": "Crop Image",
+            "helper": "Drag to adjust crop â€¢ Use mouse wheel to zoom",
+            "zoom": "Zoom",
+            "rotation": "Rotation",
+            "rotateLeft": "Rotate Left",
+            "rotateRight": "Rotate Right",
+            "cancel": "Cancel",
+            "apply": "Apply crop"
+          }
+        }
+      }
+    },
+    "payment_methods": {
+      "title": "Payment Methods",
+      "add_button": "New Method",
+      "export": "Export CSV",
+      "exporting": "Exporting...",
+      "export_filename": "payment_methods",
+      "stats": {
+        "total": "Total Methods",
+        "cash": "Cash",
+        "gateway": "Gateways",
+        "digital": "Transfers/Zelle",
+        "unit": "methods"
+      },
+      "table": {
+        "columns": {
+          "name": "Name",
+          "type": "Type",
+          "status": "Status",
+          "actions": "Actions"
+        },
+        "types": {
+          "cash": "Cash",
+          "card": "Card",
+          "transfer": "Transfer / Mobile Payment",
+          "other": "Zelle / Others"
+        },
+        "status": {
+          "active": "Active",
+          "inactive": "Inactive"
+        },
+        "actions": {
+          "view": "View detail",
+          "edit": "Edit",
+          "delete": "Delete"
+        },
+        "filter_placeholder": "Search by name...",
+        "all_types": "All types",
+        "update_button": "Update",
+        "delete_dialog": {
+          "title": "Are you absolutely sure?",
+          "description": "This action cannot be undone. The following payment method will be permanently deleted: {name}",
+          "action_delete": "Yes, delete"
+        }
+      },
+      "new": {
+        "title": "Create Payment Method",
+        "create_button": "Create Method",
+        "creating": "Saving..."
+      },
+      "edit": {
+        "title": "Edit Payment Method",
+        "save_button": "Save Changes",
+        "saving": "Updating...",
+        "cancel_button": "Cancel"
+      },
+      "view": {
+        "title": "Method Details",
+        "loading": "Loading information..."
+      },
+      "form": {
+        "labels": {
+          "name": "Internal Name",
+          "display_name": "Public Name (Client)",
+          "type": "Method Type",
+          "processing": "Processing",
+          "visibility": "Visibility",
+          "surcharge_fixed": "Fixed Surcharge (Amount)",
+          "surcharge_percentage": "Percentage Surcharge (%)",
+          "description": "Customer Instructions"
+        },
+        "placeholders": {
+          "name_example": "E.g.: Mobile Payment Bank A",
+          "display_name": "Name visible to customer",
+          "type": "Select type",
+          "description": "E.g.: Please send receipt via WhatsApp after finishing transaction..."
+        },
+        "sections": {
+          "config_details": "Configuration Details"
+        },
+        "config": {
+          "phone": "Phone",
+          "bank_id": "Bank ID (Code)",
+          "tax_id": "Tax ID / RIF",
+          "bank_name": "Bank Name",
+          "account_number": "Account Number",
+          "email": "Email (Zelle)"
+        },
+        "messages": {
+          "no_config_required": "No additional data required for this method.",
+          "back": "Back"
+        },
+        "actions": {
+          "back": "Back",
+          "cancel": "Cancel",
+          "edit": "Edit"
+        }
+      },
+      "notifications": {
+        "create_success_title": "Method created!",
+        "create_success_description": "The method '{name}' has been successfully registered.",
+        "update_success_title": "Changes saved",
+        "update_success_description": "The method '{name}' has been updated.",
+        "delete_success": "Payment method deleted successfully.",
+        "delete_error": "Could not delete payment method.",
+        "error_title": "Error",
+        "load_error": "Could not load information.",
+        "validation_error_title": "Validation Error",
+        "conflict_error_title": "Duplicate Name",
+        "conflict_error_description": "A method with this name already exists."
+      },
+      "errors": {
+        "invalid_name_format": "Name must include 'Mobile Payment', 'Zelle' or 'Bank Transfer'"
+      },
+      "validations": {
+        "name_required": "Name is required",
+        "name_max": "Name cannot exceed 100 characters",
+        "name_format": "Name can only contain letters, numbers, and hyphens",
+        "type_required": "Method type is required",
+        "processing_type_required": "Processing type is required",
+        "description_max": "Description cannot exceed 500 characters"
+      }
+    },
+    "equipment": {
+      "title": "EQUIPMENT",
+      "addButton": "Add Equipment",
+      "export": "Export CSV",
+      "exporting": "Exporting...",
+      "export_filename": "equipment_catalog",
+      "loading": "Loading inventory...",
+      "create": {
+        "title": "ADD EQUIPMENT",
+        "subtitle": "Complete the information to register the new equipment",
+        "button": "Save Equipment",
+        "loading": "Saving...",
+        "success": "Equipment registered successfully!",
+        "error_create": "Could not create equipment. Please try again."
+      },
+      "details": {
+        "title": "EQUIPMENT DETAILS",
+        "subtitle": "Detailed information for: {name}",
+        "loading": "Loading equipment...",
+        "not_found": "Equipment not found",
+        "back": "Back",
+        "edit": "Edit"
+      },
+      "categories": {
+        "Cardio": "Cardio",
+        "Strength": "Strength",
+        "FreeWeight": "Free Weight",
+        "Functional": "Functional",
+        "Accessory": "Accessory"
+      },
+      "table": {
+        "filter_placeholder": "Filter by name",
+        "category_placeholder": "Category",
+        "all_categories": "All Categories",
+        "download": "Download",
+        "columns": {
+          "name": "Equipment",
+          "category": "Category",
+          "model": "Model",
+          "brand": "Brand"
+        },
+        "actions": {
+          "delete": "Delete",
+          "view": "View details",
+          "edit": "Edit"
+        },
+        "delete_dialog": {
+          "title": "Confirm Deletion",
+          "description": "Are you sure you want to delete this equipment? This action cannot be undone.",
+          "confirm": "Delete",
+          "cancel": "Cancel"
+        }
+      },
+      "notifications": {
+        "delete_success": "Equipment deleted successfully",
+        "delete_error": "Error deleting equipment."
+      },
+      "form": {
+        "labels": {
+          "name": "Equipment Name*",
+          "category": "Category*",
+          "brand": "Brand",
+          "model": "Model",
+          "description": "Description",
+          "serial_number": "Serial Number",
+          "purchase_date": "Purchase Date",
+          "status": "Status"
+        },
+        "placeholders": {
+          "name": "E.g.: Treadmill X1",
+          "category": "Select a category",
+          "brand": "E.g.: LifeFitness",
+          "model": "E.g.: Series 500",
+          "description": "Describe the equipment condition or specs..."
+        },
+        "errors": {
+          "name_required": "Equipment name is required",
+          "description_required": "Description is required",
+          "model_required": "Model is required",
+          "brand_required": "Brand is required"
+        }
+      },
+      "edit": {
+        "title": "EDIT EQUIPMENT",
+        "subtitle": "Modify details for equipment: {name}",
+        "loading_data": "Loading equipment data...",
+        "save": "Save changes",
+        "saving": "Saving...",
+        "cancel": "Cancel",
+        "messages": {
+          "success": "Equipment updated successfully!",
+          "error_fetch": "Could not load equipment.",
+          "error_update": "Error updating equipment"
+        }
+      }
+    },
+    "memberships": {
+      "title": "MEMBERSHIPS",
+      "add_button": "Add a membership",
+      "loading": "Loading Memberships...",
+      "export": "Export CSV",
+      "exporting": "Exporting...",
+      "export_filename": "memberships_list",
+      "table": {
+        "placeholder": "Search membership by name",
+        "download": "Download",
+        "columns": {
+          "name": "Name",
+          "description": "Description",
+          "duration": "Duration (days)",
+          "price": "Price",
+          "status": "Status"
+        },
+        "status": {
+          "active": "Active",
+          "inactive": "Inactive"
+        },
+        "actions": {
+          "view": "View Details",
+          "edit": "Edit",
+          "delete": "Delete"
+        },
+        "delete_dialog": {
+          "title": "Confirm Deletion",
+          "description": "Are you sure you want to delete membership \"{name}\"? This action cannot be undone.",
+          "confirm": "Delete",
+          "cancel": "Cancel"
+        }
+      },
+      "form": {
+        "labels": {
+          "name": "Name*",
+          "description": "Description*",
+          "duration_days": "Duration (Days)*",
+          "price": "Price ($)*",
+          "status": "Status"
+        },
+        "placeholders": {
+          "name": "E.g.: Premium Membership",
+          "description": "E.g.: Unlimited access to all facilities",
+          "duration_days": "E.g.: 30",
+          "price": "E.g.: 99.99"
+        }
+      },
+      "create": {
+        "title": "CREATE MEMBERSHIP",
+        "subtitle": "Add membership information",
+        "button_create": "Create",
+        "button_saving": "Saving...",
+        "success": "Membership created successfully!",
+        "error_connection": "Connection error",
+        "error_connection_description": "Could not connect to the server. Try again later.",
+        "error_create": "Error creating membership",
+        "error_auth": "Authentication token not found."
+      },
+      "edit": {
+        "title": "EDIT MEMBERSHIP",
+        "subtitle": "Modify membership information for {name}",
+        "button_cancel": "Cancel",
+        "button_save": "Save Changes",
+        "button_saving": "Saving...",
+        "success": "Membership updated successfully!",
+        "error_connection": "Connection error",
+        "error_connection_description": "Could not connect to the server. Try again later.",
+        "error_update": "Error updating membership",
+        "error_load": "Could not load membership information.",
+        "error_auth": "Authentication token not found."
+      },
+      "view": {
+        "title": "MEMBERSHIP DETAILS",
+        "button_edit": "Edit",
+        "loading": "Loading Membership...",
+        "error_load": "Could not load membership information.",
+        "error_auth": "Session expired or unauthorized. Please try logging in again.",
+        "not_found": "Membership not found or unavailable."
+      },
+      "notifications": {
+        "delete_success": "Membership deleted successfully",
+        "delete_error": "Error deleting membership. Try again.",
+        "delete_auth_error": "You are not authenticated to perform this action."
+      },
+      "validations": {
+        "name_required": "Name is required",
+        "name_max": "Name cannot exceed 100 characters",
+        "description_required": "Description is required",
+        "description_max": "Description cannot exceed 500 characters",
+        "duration_int": "Duration must be an integer",
+        "duration_min": "Duration cannot be zero (0) or negative",
+        "duration_max": "Maximum duration is 3650 days (10 years)",
+        "price_min": "Price cannot be zero (0) or negative",
+        "price_max": "Maximum price is 999,999.99",
+        "validation_error": "Unexpected validation error"
+      }
+    },
+    "packages": {
+      "title": "SERVICE PACKAGES",
+      "add_button": "Add a package",
+      "loading": "Loading packages...",
+      "error_loading": "Error loading packages",
+      "export": "Export CSV",
+      "exporting": "Exporting...",
+      "export_filename": "packages_list",
+      "table": {
+        "placeholder": "Search package by name",
+        "download": "Download",
+        "downloading": "Downloading...",
+        "columns": {
+          "name": "Name",
+          "description": "Description",
+          "duration": "Duration (days)",
+          "price": "Price",
+          "status": "Status"
+        },
+        "status": {
+          "active": "Active",
+          "inactive": "Inactive"
+        },
+        "actions": {
+          "view": "View Details",
+          "edit": "Edit",
+          "delete": "Delete"
+        },
+        "delete_dialog": {
+          "title": "Confirm Deletion",
+          "description": "Are you sure you want to delete package \"{name}\"? This action cannot be undone.",
+          "confirm": "Delete",
+          "cancel": "Cancel"
+        }
+      },
+      "form": {
+        "labels": {
+          "name": "Package Name",
+          "price": "Price",
+          "description": "Description",
+          "start_at": "Start Date",
+          "end_at": "End Date",
+          "services_included": "Included Services",
+          "sessions_count": "Sessions",
+          "status": "Status",
+          "remove": "Remove",
+          "add_service": "Add Service"
+        },
+        "errors": {
+          "name_required": "Package name is required",
+          "description_required": "Description is required",
+          "price_min": "Price must be greater than 0",
+          "start_date_required": "Start date is required",
+          "end_date_required": "End date is required",
+          "at_least_one_service": "You must add at least one service to the package",
+          "sessions_min": "Sessions must be at least 1",
+          "invalid_date_range": "End date must be after the start date"
+        },
+        "placeholders": {
+          "select_service": "-- Select a service --"
+        },
+        "buttons": {
+          "cancel": "Cancel",
+          "save": "Save Package"
+        },
+        "messages": {
+          "validation_error": "Please fill in the required fields correctly"
+        }
+      },
+      "create": {
+        "title": "Create Package",
+        "subtitle": "Define services and pricing for the new package",
+        "loading_services": "Loading available services...",
+        "loading_create": "Creating package...",
+        "button_create": "Create Package",
+        "button_creating": "Saving...",
+        "success": "Package created successfully",
+        "error_create": "Error while creating package"
+      },
+      "edit": {
+        "title": "EDIT PACKAGE",
+        "subtitle": "Modify details for package: {name}",
+        "button_save": "Save changes",
+        "button_cancel": "Cancel",
+        "button_saving": "Saving...",
+        "success": "Package updated successfully!",
+        "error_update": "Error updating package",
+        "error_load": "Could not load package."
+      },
+      "view": {
+        "title": "PACKAGE DETAILS",
+        "button_edit": "Edit",
+        "loading": "Loading Packages...",
+        "error_load": "Could not load package information."
+      },
+      "notifications": {
+        "delete_success": "Package deleted successfully",
+        "delete_error": "Error deleting package. Please try again.",
+        "auth_error": "You are not authenticated to perform this action.",
+        "invalid_id": "Invalid package ID",
+        "services_load_error": "Could not load services.",
+        "success_title": "Success",
+        "error_title": "Error"
+      }
+    },
+    "cancellationReason": {
+      "title": "CANCELLATION REASONS",
+      "addButton": "Add Reason",
+      "loading": "Loading reasons...",
+      "error": "An error occurred while loading data.",
+      "retry": "Retry",
+      "CausesTable": {
+        "searchPlaceholder": "Filter by description...",
+        "download": "Download",
+        "columns": {
+          "description": "Description",
+          "status": "Status",
+          "descriptionPlaceholder": "E.g.: Relocation, financial reasons..."
+        },
+        "status": {
+          "active": "Active",
+          "inactive": "Inactive"
+        },
+        "createModeHelp": "* New cancellation reasons are created as active by default.",
+        "descriptionHelp": "Clearly describe the reason why the customer is canceling their subscription.",
+        "actions": {
+          "view": "View",
+          "edit": "Edit",
+          "delete": "Delete",
+          "save": "Save",
+          "cancel": "Cancel"
+        },
+        "deleteModal": {
+          "title": "Confirm Deletion",
+          "description": "Are you sure you want to delete this reason? This action cannot be undone.",
+          "confirm": "Delete",
+          "cancel": "Cancel",
+          "success": "Reason deleted successfully",
+          "error": "Could not delete reason"
+        }
+      }
+    },
+    "Promotions": {
+      "title": "PROMOTIONS AND DISCOUNTS",
+      "add_button": "Add Promotion",
+      "error_loading": "Error loading promotions",
+      "stats": {
+        "total": "Total",
+        "active": "Active",
+        "inactive": "Inactive",
+        "unit": "Promos"
+      },
+      "table": {
+        "columns": {
+          "promotion": "Promotion",
+          "benefit": "Benefit",
+          "validity": "Validity",
+          "status": "Status"
+        },
+        "status": {
+          "active": "Active",
+          "inactive": "Inactive",
+          "expired": "Expired"
+        },
+        "filters": {
+          "search_placeholder": "Search by name or code...",
+          "clear": "Clear"
+        },
+        "export": "Export",
+        "delete_dialog": {
+          "title": "Delete promotion?",
+          "description": "This action cannot be undone. Promotion \"{name}\" will be permanently deleted.",
+          "confirm": "Delete",
+          "cancel": "Cancel"
+        }
+      },
+      "actions": {
+        "view": "View details",
+        "edit": "Edit",
+        "delete": "Delete",
+        "delete_loading": "Deleting promotion...",
+        "delete_success": "Promotion deleted successfully",
+        "delete_error": "Error deleting"
+      },
+      "form": {
+        "labels": {
+          "name": "Promotion Name",
+          "code": "Code (Coupon)",
+          "type": "Discount Type",
+          "value": "Discount Value",
+          "start_date": "Start Date",
+          "end_date": "End Date",
+          "is_active": "Active and visible promotion"
+        },
+        "placeholders": {
+          "name": "E.g.: Fitness Summer",
+          "code": "SUMMER2025",
+          "type": "Select type",
+          "percentage": "Percentage (%)",
+          "fixed": "Fixed Amount ($)"
+        }
+      },
+      "create": {
+        "title": "NEW PROMOTION",
+        "subtitle": "Configure coupon details for your members.",
+        "button_cancel": "Cancel",
+        "button_submit": "Create Promotion",
+        "button_loading": "Saving...",
+        "success_title": "Promotion created!",
+        "success_description": "The code {code} has been successfully registered.",
+        "error_title": "Save Error",
+        "error_default": "There was a problem with the submitted data."
+      },
+      "edit": {
+        "title": "EDIT PROMOTION",
+        "subtitle": "Modify selected promotion parameters to update its benefits.",
+        "loading": "Loading promotion data...",
+        "error_fetch": "Could not load promotion",
+        "not_found": "Promotion not found",
+        "success_update": "Promotion updated successfully",
+        "error_update": "Error updating",
+        "button_cancel": "Cancel",
+        "button_submit": "Update Promotion",
+        "button_loading": "Saving changes...",
+        "error_update_description": "No changes detected to save."
+      },
+      "details": {
+        "title": "PROMOTION DETAILS",
+        "subtitle": "Detailed information about the coupon, validity, and configured benefits.",
+        "not_found": "Promotion not found",
+        "loading": "Loading details...",
+        "error_fetch": "Could not load promotion information",
+        "button_back": "Back",
+        "button_edit": "Edit",
+        "button_list": "Back to list"
+      }
+    },
+    "instructor": {
+      "title": "Instructors",
+      "add_button": "Add Instructor",
+      "export": "Export CSV",
+      "exporting": "Exporting...",
+      "export_filename": "instructors_list",
+      "stats": {
+        "total": "Total Instructors",
+        "active": "Active",
+        "blocked": "Blocked"
+      },
+      "table": {
+        "search_placeholder": "Search by name, last name, or email...",
+        "download_csv": "Download CSV",
+        "columns": {
+          "name": "Name",
+          "email": "Email",
+          "document": "Document",
+          "phone": "Phone"
+        },
+        "actions": {
+          "view": "View Details",
+          "edit": "Modify",
+          "delete": "Delete"
+        },
+        "messages": {
+          "deleting": "Deleting instructor...",
+          "deleted_success": "Instructor deleted",
+          "delete_error": "Error deleting record",
+          "export_start": "Export started..."
+        },
+        "delete_dialog": {
+          "title": "Are you sure?",
+          "description": "Instructor {name} will be permanently deleted.",
+          "action": "Delete"
+        }
+      },
+      "create": {
+        "title": "Create Instructor",
+        "subtitle": "Fill in the information for the new instructor"
+      },
+      "detail": {
+        "title": "Instructor Details",
+        "edit_button": "Modify",
+        "loading": "Loading instructor information...",
+        "errors": {
+          "fetch_error": "Could not load instructor information.",
+          "not_found": "Instructor not found."
+        }
+      },
+      "edit": {
+        "title": "Edit Instructor",
+        "subtitle": "Modify data for Instructor: {name}",
+        "cancel": "Cancel",
+        "save": "Save changes",
+        "saving": "Saving...",
+        "loading": "Loading Instructor...",
+        "messages": {
+          "success": "Instructor updated successfully!",
+          "error_fetch": "Could not load instructor.",
+          "error_update": "Error updating instructor",
+          "conflict_error": "An instructor is already registered with these credentials."
+        }
+      },
+      "form": {
+        "loading": "Loading Instructor...",
+        "edit_title": "Edit Instructor",
+        "edit_subtitle": "Modifying data for",
+        "labels": {
+          "first_name": "First Name*",
+          "last_name": "Last Name*",
+          "identity_document": "Identity Document*",
+          "specialties": "Specialty",
+          "biography": "Biography",
+          "email": "Email Address*",
+          "phone": "Phone Number*",
+          "birth_date": "Birth Date*",
+          "gender": "Gender*"
+        },
+        "placeholders": {
+          "first_name": "First Name",
+          "last_name": "Last Name",
+          "identity_document": "ID Number",
+          "email": "email@example.com",
+          "select_specialty": "-- Select --"
+        },
+        "gender_options": {
+          "male": "Male",
+          "female": "Female",
+          "other": "Prefer not to say"
+        },
+        "errors": {
+          "check_fields": "Please check the form fields",
+          "auth_required": "You are not authenticated. Please log in again.",
+          "conflict": "An instructor with these credentials already exists.",
+          "server_error": "Unknown error while creating instructor",
+          "first_name_required": "First name is required",
+          "first_name_max": "First name cannot exceed 50 characters",
+          "first_name_invalid": "First name can only contain letters and spaces",
+          "last_name_required": "Last name is required",
+          "last_name_max": "Last name cannot exceed 50 characters",
+          "last_name_invalid": "Last name can only contain letters and spaces",
+          "email_required": "Email is required",
+          "email_invalid": "Invalid email format",
+          "email_max": "Email cannot exceed 100 characters",
+          "document_required": "Identity document is required",
+          "document_max": "Document cannot exceed 20 characters",
+          "phone_required": "Phone number is required",
+          "phone_max": "Phone number cannot exceed 20 characters",
+          "birth_date_required": "Birth date is required",
+          "birth_date_age": "Instructor must be at least 18 years old",
+          "birth_date_future": "Birth date cannot be in the future",
+          "gender_required": "Gender is required",
+          "gender_invalid": "Invalid gender selection",
+          "biography_max": "Biography cannot exceed 500 characters",
+          "url_invalid": "The photo URL must be valid"
+        },
+        "create": {
+          "title": "Create Instructor",
+          "subtitle": "Complete the information for the new instructor",
+          "success": "Instructor created successfully!",
+          "success_update": "Instructor updated successfully!",
+          "loading": "Creating..."
+        },
+        "buttons": {
+          "create": "Create",
+          "cancel": "Cancel",
+          "creating": "Saving...",
+          "save_changes": "Save Changes"
+        },
+        "messages": {
+          "validation_error": "Please check the errors in the form",
+          "success": "Instructor created successfully",
+          "generic_error": "An unexpected error has occurred",
+          "conflict_error": "Email or ID is already registered",
+          "auth_error": "Session expired, please log in again"
+        }
+      }
+    },
+    "fiscal_documents": {
+      "title": "FISCAL DOCUMENTS",
+      "subtitle": "List of fiscal documents catalog",
+      "add_button": "Add Document",
+      "create": {
+        "title": "NEW FISCAL DOCUMENT"
+      },
+      "edit": {
+        "title": "EDIT FISCAL DOCUMENT"
+      },
+      "view": {
+        "title": "DOCUMENT DETAILS"
+      },
+      "table": {
+        "search_placeholder": "Search document...",
+        "download": "Download",
+        "downloading": "Generating download...",
+        "columns": {
+          "name": "Document Name",
+          "prefix": "Prefix or Series",
+          "created_at": "Creation Date"
+        },
+        "actions": {
+          "view": "View",
+          "edit": "Edit",
+          "delete": "Delete"
+        },
+        "delete_dialog": {
+          "title": "Confirm Deletion",
+          "description": "Are you sure you want to delete the document \"{name}\"? This action cannot be undone.",
+          "confirm": "Delete",
+          "cancel": "Cancel"
+        },
+        "notifications": {
+          "deleting": "Deleting document...",
+          "delete_success": "Document deleted successfully",
+          "delete_error": "Error deleting the document"
+        }
+      },
+      "form": {
+        "description_helper": "Enter basic data for fiscal series identification.",
+        "labels": {
+          "name": "Document Name*",
+          "prefix": "Prefix or Series*"
+        },
+        "placeholders": {
+          "name": "E.g.: Sales Invoice",
+          "prefix": "E.g.: S001"
+        },
+        "buttons": {
+          "save": "Save",
+          "saving": "Processing...",
+          "cancel": "Cancel"
+        },
+        "notifications": {
+          "create_success": "Document created successfully",
+          "update_success": "Document updated successfully",
+          "error": "An error occurred while processing the request"
+        }
+      },
+      "errors": {
+        "name_min": "Name must be at least 3 characters long",
+        "name_max": "Name is too long",
+        "prefix_required": "Prefix is required",
+        "prefix_max": "Prefix must not exceed 10 characters",
+        "prefix_invalid": "Only letters, numbers, and hyphens are allowed"
+      }
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "retry": "Retry",
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "status": "Status",
+    "actions": "Actions",
+    "Validations": {
+      "required": "This field is required",
+      "minChars": "Must be at least {min} characters",
+      "maxChars": "Cannot exceed {max} characters",
+      "invalidFormat": "Invalid characters",
+      "invalidUuid": "Invalid selection",
+      "positiveNumber": "Must be a positive number",
+      "invalidSelection": "Invalid selection"
+    },
+    "notifications": {
+      "export_success": "Report generated successfully",
+      "export_error": "There was a problem generating the report"
+    },
+    "ui": {
+      "view_mode": "View Mode"
+    }
+  },
+  "roles": {
+    "title": "ROLES & PERMISSIONS",
+    "add_button": "Add a role",
+    "table": {
+      "filter_placeholder": "Filter by name",
+      "download": "Download",
+      "columns": {
+        "name": "Name",
+        "description": "Description",
+        "permissions": "Permissions"
+      },
+      "permissions_count": "{count} {count, plural, one {permission} other {permissions}}",
+      "loading": "Loading roles...",
+      "actions": {
+        "view": "View Details",
+        "edit": "Edit",
+        "delete": "Delete"
+      },
+      "delete_dialog": {
+        "title": "Delete role",
+        "description": "Are you sure you want to delete this role? This action cannot be undone.",
+        "action_delete": "Delete",
+        "action_deleting": "Deleting..."
+      }
+    },
+    "form": {
+      "fields": {
+        "name": "Name*",
+        "name_placeholder": "Role name",
+        "description": "Description*",
+        "description_placeholder": "Role description and its permissions",
+        "permissions": "Permissions*",
+        "loading_permissions": "Loading permissions...",
+        "no_permissions": "No permissions available",
+        "permissions_selected": "{selected} of {total} permissions selected"
+      },
+      "errors": {
+        "no_token": "No authentication token available",
+        "load_permissions_failed": "Could not load permissions",
+        "server_error": "Error loading permissions from the server"
+      },
+      "validations": {
+        "name_required": "The role name is required",
+        "name_max": "The name cannot have more than 50 characters",
+        "description_required": "The description is required",
+        "description_max": "The description cannot have more than 200 characters",
+        "permissions_min": "At least one permission must be selected",
+        "permissions_max": "No more than 20 permissions can be selected"
+      }
+    },
+    "create": {
+      "title": "CREATE NEW ROLE",
+      "subtitle": "Complete the information for the new role",
+      "button": "Create Role",
+      "loading": "Creating...",
+      "success": "Role created successfully!",
+      "error": "Error creating role",
+      "auth_error": "You are not authenticated. Please log in again.",
+      "conflict_error": "A role with this name already exists. Please check the entered data.",
+      "cancel": "Cancel"
+    },
+    "edit": {
+      "title": "EDIT ROLE",
+      "subtitle": "Modify the information and permissions for the role: {name}",
+      "button": "Save",
+      "loading": "Saving...",
+      "success": "Role updated successfully!",
+      "error": "Error updating role",
+      "load_error": "Could not load role information.",
+      "cancel": "Cancel"
+    },
+    "common": {
+      "cancel": "Cancel",
+      "delete_success": "The role has been successfully deleted",
+      "delete_id_error": "Cannot delete: Invalid role ID",
+      "unknown_error": "Unknown error deleting the role"
+    },
+    "view": {
+      "title": "View Role",
+      "subtitle": "Complete information of the role and its permissions: {name}",
+      "button_edit": "Modify",
+      "back_button": "Back to list",
+      "error_not_found": "The requested role was not found"
+    }
+  },
+  "clients": {
+    "title": "CLIENTS",
+    "description": "View, filter, and manage access for users registered on the platform.",
+    "add_button": "New Client",
+    "export_button": "Export List",
+    "exporting": "Exporting...",
+    "export_filename": "clients_list",
+    "create": {
+      "title": "Register New Client",
+      "subtitle": "Fill in the details to register a new member in the system.",
+      "cancel_button": "Cancel",
+      "create_button": "Create Client",
+      "creating": "Creating...",
+      "success": "Client created successfully",
+      "error": "An error occurred while creating the client",
+      "validation_error": "Please fix the following errors: {errors}",
+      "auth_error": "Authentication error. Please log in again.",
+      "invalid_data": "The provided data is invalid.",
+      "email_in_use": "This email address is already registered."
+    },
+    "balances": {
+      "walletTitle": "Service Wallet",
+      "searchPlaceholder": "Search service or package...",
+      "syncing": "Syncing wallet...",
+      "noResults": "No balances match your search",
+      "emptyWallet": "Client has no active service packages",
+      "updateButton": "Update balances",
+      "backButton": "Back to Client Profile",
+      "walletSubtitle": "Credit management and service usage",
+      "status": {
+        "available": "Balance Available",
+        "critical": "Critical Balance!",
+        "empty": "No Balance",
+        "lastUpdate": "Upd:",
+        "credits": "Credits",
+        "duration": "Duration",
+        "fitnessService": "Fitness Service",
+        "defaultServiceName": "Special Package"
+      }
+    },
+    "stats": {
+      "total": "TOTAL",
+      "active": "ACTIVE",
+      "inactive": "INACTIVE/BLOCKED",
+      "unit": "CLIENTS"
+    },
+    "table": {
+      "filter_placeholder": "Filter by first or last name",
+      "filter_role": "Filter by Role",
+      "all_roles": "All Roles",
+      "all_categories": "All Categories",
+      "category": "Category",
+      "categories": {
+        "vip": "VIP",
+        "premium": "Premium",
+        "regular": "Regular",
+        "new": "New"
+      },
+      "download": "Download",
+      "loading": "Loading Clients...",
+      "columns": {
+        "name": "Client",
+        "email": "Email Address",
+        "role": "Role",
+        "status": "Account Status",
+        "validation": "Verification"
+      },
+      "status": {
+        "active": "Active",
+        "blocked": "Inactive",
+        "verified": "Verified",
+        "pending": "Pending"
+      },
+      "actions": {
+        "view": "View Details",
+        "edit": "Modify",
+        "delete": "Delete"
+      },
+      "delete_dialog": {
+        "title": "Confirm Deletion",
+        "description": "Are you sure you want to delete this client? This action cannot be undone.",
+        "action_delete": "Delete",
+        "action_cancel": "Cancel",
+        "action_deleting": "Deleting..."
+      }
+    },
+    "form": {
+      "sections": {
+        "basic": "Basic Information",
+        "identity": "Identification & Contact"
+      },
+      "labels": {
+        "profile_picture": "Profile Picture",
+        "optional": "(Optional)",
+        "first_name": "First Name",
+        "last_name": "Last Name",
+        "email": "Email Address",
+        "birth_date": "Date of Birth",
+        "gender": "Gender",
+        "identity_document": "Identity Document",
+        "phone": "Mobile Phone"
+      },
+      "gender": {
+        "female": "Female",
+        "male": "Male",
+        "prefer-not-to-say": "Prefer not to say"
+      },
+      "placeholders": {
+        "first_name": "e.g. John Albert",
+        "last_name": "e.g. Doe Smith",
+        "select_date": "Select date",
+        "month": "Month",
+        "year": "Year"
+      },
+      "validations": {
+        "first_name_required": "First name is required",
+        "last_name_required": "Last name is required",
+        "email_required": "Email address is required",
+        "email_invalid": "Invalid email address",
+        "identity_document_required": "Identity document is required",
+        "birth_date_required": "Date of birth is required",
+        "birth_date_future": "Date of birth cannot be in the future",
+        "gender_required": "Gender is required",
+        "min_2": "Minimum 2 characters",
+        "min_10": "Minimum 10 digits",
+        "invalid_url": "Invalid URL"
+      },
+      "notifications": {
+        "invalid_image": "The file is not a valid image",
+        "image_success": "Photo uploaded successfully",
+        "image_error": "Error uploading the image"
+      }
+    },
+    "view": {
+      "title": "CLIENT DETAILS",
+      "subtitle": "View and manage information for {name}",
+      "editing_title": "EDITING PROFILE",
+      "editing_subtitle": "Modify client's personal and contact information.",
+      "loading": "Loading...",
+      "loading_subtitle": "Fetching data from server",
+      "loading_message": "We are preparing the information",
+      "validation": {
+        "min_2": "Minimum 2 characters",
+        "min_10": "Minimum 10 digits",
+        "invalid_email": "Invalid email address",
+        "invalid_id": "Invalid document",
+        "invalid_url": "Invalid image URL",
+        "required": "This field is required"
+      },
+      "form_actions": {
+        "save": "Save Changes",
+        "cancel": "Cancel"
+      },
+      "tabs": {
+        "general": "General",
+        "balances": "Service Wallet",
+        "medical": "Medical File"
+      },
+      "sections": {
+        "actions": "Management Actions",
+        "membership": "Membership Information"
+      },
+      "fields": {
+        "first_name": "First Name",
+        "last_name": "Last Name",
+        "email": "Email Address",
+        "phone": "Phone Number",
+        "identity": "Identity Document",
+        "birth_date": "Date of Birth",
+        "gender": "Gender",
+        "image_hint": "Click on the photo to change it",
+        "image_url": "Image URL",
+        "role": "User Role",
+        "status": "System Status",
+        "default_role": "Client",
+        "category": "Category",
+        "membership_status": "Membership Status",
+        "validation_status": "Profile Status",
+        "user_id": "User ID"
+      },
+      "status": {
+        "active": "Active",
+        "expired": "Expired",
+        "pending": "Pending",
+        "canceled": "Canceled",
+        "validated": "Validated / Active",
+        "blocked": "Not Validated / Blocked",
+        "active_member": "Active Member",
+        "inactive": "No Membership",
+        "verified": "Email Verified"
+      },
+      "block_dialog": {
+        "title": "Block Client",
+        "description": "Are you sure you want to block",
+        "label": "Block justification",
+        "placeholder": "Type the reason (e.g., Unpaid fees, inappropriate behavior...)",
+        "error_required": "You must provide a reason for the block",
+        "confirm": "Block User",
+        "cancel": "Cancel"
+      },
+      "actions": {
+        "edit": "Edit Profile",
+        "membership_history": "Membership History",
+        "attendance_history": "Attendance Record",
+        "service_usage": "Service Usage",
+        "complaints": "Complaints & Claims",
+        "rfm": "Customer Analysis (RFM)",
+        "no_permissions": "You do not have any allowed actions for this profile.",
+        "block": "Block Client",
+        "view_wallet": "View Wallet",
+        "unblock": "Desbloquear Cliente",
+        "delete": "Eliminar Cliente"
+      },
+      "gender_options": {
+        "male": "Male",
+        "female": "Female",
+        "other": "Other",
+        "prefer-not-to-say": "Prefer not to say"
+      },
+      "errors": {
+        "not_found": "Client not found",
+        "connection": "Connection error",
+        "description": "We couldn't fetch the profile information. Please check your connection or try again.",
+        "retry": "Retry loading"
+      },
+      "notifications": {
+        "update_success": "Client updated successfully",
+        "update_error": "Error updating information",
+        "invalid_image": "Please select a valid image",
+        "image_success": "Image uploaded successfully",
+        "image_error": "Error uploading image",
+        "block_success": "Client successfully blocked",
+        "block_error": "Could not block client",
+        "unblock_success": "Client unblocked successfully.",
+        "unblock_error": "Failed to unblock the client. Please try again."
+      }
+    },
+    "medical": {
+      "title": "Digital Medical File",
+      "loading": "Syncing Medical File...",
+      "no_data": "No data recorded",
+      "actions": {
+        "update": "Update File",
+        "create": "Create File"
+      },
+      "form_actions": {
+        "cancel": "Discard",
+        "save": "Save Medical File"
+      },
+      "sections": {
+        "alerts": "Critical Alerts",
+        "profile": "Athlete Clinical Profile"
+      },
+      "fields": {
+        "allergies": "Critical Allergies",
+        "warnings": "Training Warnings",
+        "blood_type": "Blood Type",
+        "emergency_contact": "Emergency Contact",
+        "conditions": "Medical Conditions",
+        "medications": "Current Medication"
+      },
+      "placeholders": {
+        "blood_type": "Ex: O+, A-",
+        "emergency_contact": "Name - Phone",
+        "allergies": "Describe food or drug allergies...",
+        "conditions": "Diabetes, Hypertension, etc.",
+        "medications": "Indicate dosage and frequency...",
+        "warnings": "Ex: Avoid jumps, knee issues..."
+      },
+      "notifications": {
+        "create_success": "Medical file created successfully",
+        "update_success": "Medical file updated successfully",
+        "save_error": "Error saving medical information"
+      }
+    },
+    "payments": {
+      "title": "PAYMENT HISTORY",
+      "subtitle": "View and manage all invoices and transactions for this client.",
+      "back": "Back",
+      "table": {
+        "reference": "Reference",
+        "date": "Date",
+        "amount": "Amount",
+        "status": "Status",
+        "search_placeholder": "Search by reference...",
+        "actions": {
+          "view": "View details"
+        }
+      },
+      "status": {
+        "paid": "Paid",
+        "unpaid": "Unpaid",
+        "pending": "Pending",
+        "error": "Error"
+      }
+    },
+    "notifications": {
+      "update_success": "Client updated successfully",
+      "update_error": "Error updating information",
+      "create_success": "Client created successfully",
+      "create_error": "Error creating client",
+      "delete_success": "Client deleted successfully",
+      "delete_error": "Error deleting client",
+      "image_success": "Image uploaded successfully",
+      "image_error": "Error uploading image",
+      "email_in_use": "Email address already in use",
+      "session_expired": "Session expired. Please log in again"
+    },
+    "AttendanceHistory": {
+      "title": "Attendance History",
+      "subtitle": "View and filter client access logs and class attendance.",
+      "back": "Back",
+      "filters": {
+        "from": "From",
+        "until": "Until",
+        "placeholder": "Select date",
+        "clear": "Clear"
+      },
+      "states": {
+        "loading": "Updating data...",
+        "errorTitle": "Connection Error",
+        "errorSubtitle": "We could not fetch the history at this time.",
+        "retry": "Retry"
+      },
+      "AttendanceTable": {
+        "columns": {
+          "classService": "Class / Service",
+          "classTime": "Class Time",
+          "checkIn": "Check-in",
+          "status": "Status"
+        },
+        "placeholders": {
+          "facilityUse": "Facility Use",
+          "generalService": "General Service",
+          "notApplicable": "N/A"
+        },
+        "status": {
+          "Attended": "Attended",
+          "NoShow": "No Show",
+          "Late": "Late"
+        }
+      }
+    },
+    "ServiceUsage": {
+      "title": "Service Usage",
+      "subtitle": "Analysis of services consumed by the client across all branches.",
+      "back": "Back",
+      "total_records": "Total records",
+      "filters": {
+        "from": "From",
+        "until": "Until",
+        "placeholder": "Select date",
+        "clear": "Clear Filters"
+      },
+      "states": {
+        "loading": "Updating data...",
+        "errorTitle": "Loading Error",
+        "errorSubtitle": "We couldn't retrieve the usage history. Please try again.",
+        "retry": "Retry"
+      },
+      "Table": {
+        "columns": {
+          "service": "Service",
+          "branch": "Branch",
+          "date": "Date & Time",
+          "status": "Status"
+        },
+        "placeholders": {
+          "unknownBranch": "Main Branch"
+        },
+        "status": {
+          "Attended": "Attended",
+          "NoShow": "No Show",
+          "Late": "Late"
+        }
+      }
+    }
+  },
+  "branches": {
+    "title": "BRANCHES",
+    "add_button": "Create Branch",
+    "stats": {
+      "total": "Total",
+      "active": "Active",
+      "inactive": "Inactive",
+      "maintenance": "Maintenance",
+      "unit": "BRANCHES"
+    },
+    "table": {
+      "placeholder": "Search by name or RIF",
+      "filter_status": "Status",
+      "clear_filters": "Clear filters",
+      "download": "Download CSV",
+      "columns": {
+        "name": "Name",
+        "tax_id": "taxId",
+        "manager": "Manager",
+        "country": "Country",
+        "status": "Status"
+      },
+      "status": {
+        "active": "Active",
+        "inactive": "Inactive",
+        "maintenance": "Under maintenance",
+        "unknown": "Unknown"
+      },
+      "actions": {
+        "view": "View",
+        "edit": "Modify",
+        "delete": "Delete"
+      },
+      "delete_dialog": {
+        "title": "Confirm Deletion",
+        "description": "Are you sure you want to delete this branch? This action cannot be undone.",
+        "confirm": "Delete",
+        "cancel": "Cancel",
+        "success": "Branch deleted: {name}",
+        "error": "Error deleting the branch. Please try again.",
+        "success_title": "Successfully deleted",
+        "error_title": "Error"
+      },
+      "employee": "Employee",
+      "email": "Email Address",
+      "role": "Role",
+      "phone": "Phone",
+      "id": "System ID",
+      "status_pending": "Pending"
+    },
+    "create": {
+      "title": "CREATE NEW BRANCH",
+      "subtitle": "Complete the following steps to create a new branch",
+      "steps": {
+        "basic": {
+          "name": "Basic Information",
+          "description": "Data"
+        },
+        "location": {
+          "name": "Location",
+          "description": "Address"
+        },
+        "admin": {
+          "name": "Administration",
+          "description": "Management"
+        },
+        "confirm": {
+          "name": "Confirmation",
+          "description": "Review"
+        }
+      },
+      "form": {
+        "basic_info": {
+          "title": "Basic Branch Information",
+          "subtitle": "Start by entering the fundamental data of the new branch.",
+          "name": "Legal Name *",
+          "name_placeholder": "E.g.: FitnessPlaza",
+          "tax_id": "Tax ID *",
+          "tax_id_placeholder": "J-402456696-3",
+          "phone": "Phone",
+          "phone_placeholder": "Phone",
+          "status": "Branch Status *",
+          "status_placeholder": "Active",
+          "next_steps": {
+            "title": "Next steps",
+            "description": "In the following steps we will configure the location, contact, schedules and employees of the new branch."
+          }
+        },
+        "location": {
+          "title": "Location and Contact",
+          "subtitle": "Select the exact location on the map or enter coordinates",
+          "address": "Full Address*",
+          "address_placeholder": "Enter address manually or select on map",
+          "state": "State",
+          "country": "Country",
+          "gps_coords": "GPS Coordinates",
+          "latitude": "Latitude",
+          "longitude": "Longitude"
+        },
+        "admin": {
+          "title": "Management",
+          "subtitle": "Assign the responsible manager, define the capacity and configure the operating hours for each day of the week",
+          "manager": "Responsible Manager *",
+          "manager_placeholder": "Select a Manager",
+          "capacity": "Member Capacity *",
+          "capacity_placeholder": "Example: 400",
+          "table": {
+            "day": "Day",
+            "opening": "Opening",
+            "closing": "Closing",
+            "closed": "Closed"
+          },
+          "days": {
+            "monday": "Monday",
+            "tuesday": "Tuesday",
+            "wednesday": "Wednesday",
+            "thursday": "Thursday",
+            "friday": "Friday",
+            "saturday": "Saturday",
+            "sunday": "Sunday"
+          }
+        },
+        "confirm": {
+          "title": "Commercial Policies",
+          "subtitle": "Select the corresponding commercial policies for the branch",
+          "checkbox_label": "Select by checking the policies",
+          "footer_hint": "These policies will be visible to the members of this branch",
+          "next_steps": {
+            "title": "Ready to create",
+            "description": "Review the information before confirming. Once the branch is created, you can modify these data from the branch management."
+          },
+          "policies": {
+            "p1": "Totally free registration for a limited time.",
+            "p2": "Flexible membership with a minimum cancellation period of only 1 month.",
+            "p3": "Access to on-site personal trainer at no additional cost at each schedule.",
+            "p4": "Specialized classes for adults +50 years old.",
+            "p5": "'Bring a friend' benefit: 15 days of free access for a companion.",
+            "p6": "Diversity of group classes included: Dance, Boxing, Yoga and more.",
+            "p7": "Exclusive/free parking for members.",
+            "p8": "Commitment to safety: Secure and monitored facilities for a worry-free experience."
+          }
+        },
+        "buttons": {
+          "back": "Back",
+          "next": "Next",
+          "create": "Create Branch",
+          "save": "Save changes",
+          "saving": "Saving..."
+        }
+      }
+    },
+    "details": {
+      "title": "Branch Details",
+      "edit_title": "Modify Branch",
+      "info_of": "Information of {name}",
+      "loading": "Loading branch...",
+      "not_found": "Branch not found.",
+      "error_loading": "Could not load branch information.",
+      "header": {
+        "config": "Branch Settings",
+        "view": "Branch Details"
+      },
+      "tabs": {
+        "basic": "Basic Info",
+        "payment": "Payments",
+        "services": "Services",
+        "instructors": "Instructors",
+        "equipment": "Equipment",
+        "staff": "Administrative Staff"
+      },
+      "basic": {
+        "title": "Basic information",
+        "subtitle": "Legal and general data of the branch",
+        "name": "Legal name",
+        "tax_id": "Tax ID",
+        "phone": "Phone",
+        "capacity": "Maximum capacity",
+        "status": "Branch status",
+        "status_placeholder": "Select a status",
+        "hint": "This data must correspond with the legal documentation of the branch.",
+        "location_title": "Location",
+        "location_subtitle": "Visualizing the location of the branch",
+        "map_title": "Map position",
+        "schedule_title": "Operating hours",
+        "success_update": "Branch updated successfully",
+        "error_update": "Error updating branch"
+      },
+      "payment_methods": {
+        "title": "Accepted payment methods",
+        "subtitle": "Select the payment methods that will be available in this branch.",
+        "placeholder": "Select a method...",
+        "add": "Add",
+        "empty": "No payment methods selected.",
+        "type": "Type: {type}",
+        "remove": "Remove",
+        "success_load": "Branch payment methods loaded successfully",
+        "error_load": "Could not load payment methods",
+        "error_branch_load": "Could not load branch payment methods",
+        "success_add": "Payment method \"{name}\" added",
+        "success_remove": "Payment method removed successfully",
+        "error_remove": "Could not remove payment method",
+        "saving": "Saving payment methods...",
+        "success_save": "Payment methods saved successfully",
+        "error_save": "Could not save payment methods",
+        "add_card_title": "Link New Method",
+        "selector_placeholder": "Select a payment method...",
+        "no_methods_available": "No methods available",
+        "btn_add": "Add to queue",
+        "btn_sync": "Sync Changes",
+        "btn_saving": "Saving...",
+        "btn_discard": "Discard",
+        "badge_pending": "PENDING CHANGES",
+        "total_label": "Enabled Methods {count}",
+        "loading": "Loading methods...",
+        "dialog_remove_title": "Remove payment method?",
+        "dialog_remove_description": "This action will be applied to the server once you sync the changes.",
+        "dialog_remove_action": "Remove",
+        "toast_error_load": "Error loading payment methods",
+        "toast_added_local": "Method added to local queue",
+        "toast_removed_local": "Method removed from queue",
+        "toast_marked_for_deletion": "Method marked for deletion (pending sync)",
+        "toast_sync_success": "Sync successful",
+        "toast_sync_error": "Error saving changes",
+        "toast_discarded": "Local changes discarded"
+      },
+      "equipment": {
+        "btn_discard": "Discard",
+        "badge_pending": "PENDING CHANGES",
+        "inventory_subtitle": "Manage machines and tools available at this location.",
+        "add_card_title": "Register New Equipment",
+        "dialog_remove_title": "Remove equipment from inventory?",
+        "dialog_remove_description": "The selected item will be marked for removal. This change will be permanently applied upon synchronization.",
+        "dialog_remove_action": "Remove Equipment",
+        "toast_removed_local": "Equipment removed from queue",
+        "toast_marked_for_deletion": "Equipment marked for removal (pending sync)",
+        "error_loading_catalog": "Error loading equipment catalog",
+        "error_loading_inventory": "Error loading inventory",
+        "select_before_adding": "You must select an equipment before adding it",
+        "error_adding": "Error adding equipment: {errors}",
+        "success_added_pending": "Equipment \"{name}\" added to pending inventory",
+        "success_removed_pending": "Equipment \"{name}\" removed from pending inventory",
+        "success_removed": "Equipment \"{name}\" removed from inventory",
+        "error_invalid_token": "Invalid token",
+        "success_save": "Changes saved successfully",
+        "error_save": "Error saving changes",
+        "error_invalid_update": "Invalid equipment for update",
+        "error_update": "Error updating equipment: {errors}",
+        "success_update": "Equipment \"{name}\" updated successfully",
+        "error_updating": "Error updating equipment",
+        "export": "Export Inventory",
+        "exporting": "Exporting...",
+        "export_filename": "branch_inventory",
+        "table": {
+          "name": "Name",
+          "serial": "Serial",
+          "status": "Status",
+          "acquisition": "Acquisition",
+          "last_maintenance": "Last Maintenance"
+        },
+        "actions": {
+          "view": "View equipment",
+          "edit": "Edit equipment",
+          "delete": "Delete equipment"
+        },
+        "add": {
+          "title": "Add new equipment",
+          "search_label": "Search equipment",
+          "search_placeholder": "E.g.: Monster Power Rack",
+          "select_placeholder": "Select an equipment (E.g.: Monster Power Rack)",
+          "serial_label": "Serial number",
+          "serial_placeholder": "E.g.: SN-ROG-123",
+          "notes_label": "Notes",
+          "notes_placeholder": "E.g.: Equipment ready to use",
+          "button": "Add",
+          "model_label": "Model"
+        },
+        "inventory_title": "Branch inventory",
+        "empty": "No equipment assigned to this branch.",
+        "modal": {
+          "edit": "Edit equipment",
+          "view": "View equipment",
+          "loading": "Loading...",
+          "last_maintenance": "Last maintenance",
+          "notes": "Notes",
+          "status": "Status",
+          "status_placeholder": "Select status",
+          "save": "Save"
+        }
+      },
+      "instructors": {
+        "error_loading": "Could not load instructors",
+        "already_assigned": "Instructor is already assigned",
+        "success_added_pending": "Instructor added (pending save)",
+        "success_removed_local": "Instructor removed locally",
+        "success_removed": "Instructor removed successfully",
+        "error_removing": "Could not remove instructor",
+        "no_changes": "No changes to save",
+        "success_save": "Changes saved successfully",
+        "error_save": "Could not save changes",
+        "add_label": "Add instructor",
+        "select_placeholder": "Select an instructor",
+        "add_button": "Add",
+        "loading": "Loading instructors...",
+        "empty": "No instructors assigned.",
+        "remove": "Remove",
+        "info_scroll": "There are many instructors, use the scroll to see more.",
+        "title": "Instructor Management",
+        "subtitle": "Manage the instructors assigned to this location.",
+        "add_card_title": "Link New Instructor",
+        "selector_placeholder": "Search instructor in catalog...",
+        "btn_add": "Add to list",
+        "btn_sync": "Sync Changes",
+        "btn_saving": "Saving...",
+        "btn_discard": "Discard",
+        "badge_pending": "PENDING CHANGES",
+        "total_label": "Assigned Instructors {count}",
+        "show_label": "Show",
+        "dialog_remove_title": "Unlink instructor?",
+        "dialog_remove_description": "The instructor will be removed from this location. This change will be permanently applied upon synchronization.",
+        "dialog_remove_action": "Unlink",
+        "toast_error_load": "Error loading branch instructors",
+        "toast_already_exists": "This instructor is already on the list",
+        "toast_added_local": "Instructor added to local queue",
+        "toast_removed_local": "Instructor removed from list",
+        "toast_marked_for_deletion": "Instructor marked for unlinking",
+        "toast_sync_success": "Instructors updated successfully",
+        "toast_sync_error": "Error saving changes",
+        "toast_discarded": "Local changes discarded"
+      },
+      "services": {
+        "dialog_remove_title": "Unlink service from location?",
+        "dialog_remove_description": "The selected service will be removed from this location. This change will be permanently applied upon synchronization.",
+        "dialog_remove_action": "Unlink",
+        "btn_sync": "Sync Changes",
+        "btn_discard": "Discard",
+        "badge_pending": "PENDING CHANGES",
+        "toast_added_local": "Service added to local queue",
+        "toast_removed_local": "Service removed from queue",
+        "toast_marked_for_deletion": "Service marked for unlinking (pending sync)",
+        "toast_discarded": "Local changes discarded",
+        "save_success": "Services synced successfully",
+        "save_error": "Error syncing services",
+        "success_load_catalog": "Branch services loaded successfully",
+        "error_load_catalog": "Could not load available services",
+        "error_load_branch": "Could not load branch services",
+        "success_added": "Service \"{name}\" added",
+        "success_removed": "Service \"{name}\" removed",
+        "error_removing": "Could not remove service",
+        "no_new_services": "No new services to save",
+        "success_save": "Services saved successfully",
+        "error_save": "Error saving services",
+        "success_update": "Service \"{name}\" updated",
+        "error_update": "Error updating service",
+        "title": "Branch services",
+        "subtitle": "Manage available services and their prices.",
+        "export": "Export Services",
+        "exporting": "Exporting...",
+        "export_filename": "branch_services_pricing",
+        "add": {
+          "title": "Add new service",
+          "select_placeholder": "Select a service",
+          "capacity": "Capacity",
+          "member_price": "Member price",
+          "non_member_price": "Non-member price",
+          "visible": "Visible",
+          "button": "Add"
+        },
+        "assigned_title": "Assigned services",
+        "loading": "Loading services...",
+        "empty": "No services assigned.",
+        "description": "Capacity: {capacity} | Members: ${memberPrice} | Non-members: ${nonMemberPrice} | Visible: {visible}",
+        "yes": "Yes",
+        "no": "No",
+        "modal": {
+          "view": "View service",
+          "edit": "Edit service",
+          "loading": "Loading...",
+          "capacity": "Maximum capacity",
+          "member_price": "Member price",
+          "non_member_price": "Non-member price",
+          "visible": "Visible",
+          "save": "Save"
+        }
+      },
+      "staff": {
+        "title": "Staff Management",
+        "subtitle": "Manage administrative and accounting staff for this location.",
+        "add_card_title": "Link New Staff",
+        "search_label": "Direct Search",
+        "search_placeholder": "Name or email...",
+        "role_filter_label": "Filter by Role",
+        "role_all": "Any specialty",
+        "roles_loading": "Loading roles...",
+        "profile_label": "Selected Profile",
+        "profile_placeholder": "Choose a profile from the list",
+        "catalog_loading": "Syncing profiles...",
+        "btn_add_queue": "Add to queue",
+        "btn_sync": "Sync Changes",
+        "btn_saving": "Saving...",
+        "btn_discard": "Discard",
+        "badge_pending": "PENDING CHANGES",
+        "total_staff_label": "Location Staff {count}",
+        "dialog_remove_title": "Remove staff from location?",
+        "dialog_remove_description": "This action will be applied to the server once you synchronize the changes.",
+        "dialog_remove_action": "Remove",
+        "toast_added_local": "Employee added to local queue",
+        "toast_removed_local": "Employee removed from queue",
+        "toast_pending_sync": "Change pending synchronization",
+        "toast_marked_for_deletion": "Staff marked for deletion",
+        "toast_sync_success": "Synchronization successful",
+        "toast_sync_error": "Error syncing changes",
+        "toast_discarded": "Local changes discarded"
+      }
+    },
+    "notifications": {
+      "success_title": "Branch Created!",
+      "success_description": "The new branch has been successfully registered in the system.",
+      "action_text": "Understood",
+      "error_required": "Please complete the required fields: Name, Tax ID, Country and State."
+    },
+    "validations": {
+      "name_required": "Legal Name is required.",
+      "tax_id_required": "Tax ID is required.",
+      "status_required": "Branch status is required.",
+      "address_required": "Full Address is required.",
+      "location_required": "You must select the location on the map.",
+      "country_required": "Country is required.",
+      "state_required": "State is required.",
+      "manager_required": "You must assign a Responsible Manager.",
+      "capacity_required": "Capacity must be a valid number (> 0).",
+      "opening_required": "Opening time is required",
+      "closing_required": "Closing time is required",
+      "payment_method_required": "You must select at least one payment method"
+    },
+    "pagination": {
+      "show": "Showing {start} - {end} of {total}"
+    }
+  },
+  "finance": {
+    "MembershipManagement": {
+      "title": "MEMBERSHIP MANAGEMENT",
+      "noResults": "No results found for the applied filters.",
+      "searchPlaceholder": "Search client or membership...",
+      "statusPlaceholder": "Status",
+      "clearFilters": "Clear filters",
+      "exportCsv": "Export CSV",
+      "viewDetails": "View details",
+      "table": {
+        "client": "Client",
+        "plan": "Plan",
+        "price": "Price",
+        "start": "Start Date",
+        "expiry": "Expiry Date",
+        "status": "Status"
+      },
+      "statuses": {
+        "all": "All statuses",
+        "active": "Active",
+        "expired": "Expired",
+        "cancelled": "Cancelled"
+      },
+      "detail": {
+        "title": "MEMBERSHIP DETAILS",
+        "loading": "Fetching details...",
+        "notFound": "Information not found.",
+        "actions": {
+          "cancel": "Cancel Membership",
+          "activate": "Activate Membership",
+          "refresh": "Update"
+        },
+        "error": {
+          "title": "Connection error",
+          "retry": "Retry"
+        }
+      },
+      "form": {
+        "header": {
+          "instruction": "Verify and manage record parameters"
+        },
+        "statusLabels": {
+          "active": "Active",
+          "expired": "Expired",
+          "cancelled": "Cancelled"
+        },
+        "clientInfo": {
+          "sectionTitle": "Client Information",
+          "fullName": "Full Name",
+          "email": "Email",
+          "systemId": "System User ID"
+        },
+        "subscription": {
+          "sectionTitle": "Subscription Details",
+          "membershipType": "Acquired Membership",
+          "price": "Payment Amount",
+          "duration": "Duration (Days)",
+          "invoiceId": "Invoice ID",
+          "description": "Plan Description",
+          "defaultDescription": "This plan allows access according to current terms."
+        },
+        "timeline": {
+          "sectionTitle": "Timeline",
+          "startDate": "Start Date",
+          "endDate": "End Date"
+        },
+        "audit": {
+          "sectionTitle": "Cancellation Audit",
+          "reason": "Cancellation Reason",
+          "notes": "Admin Notes",
+          "defaultReason": "Administrative Withdrawal",
+          "noNotes": "No additional observations."
+        }
+      },
+      "cancelDialog": {
+        "title": "Cancel Membership",
+        "description": "State the reason for cancellation. This will change the status to \"Cancelled\".",
+        "reasonLabel": "Cancellation Reason",
+        "reasonPlaceholder": "Select a reason",
+        "noReasons": "No reasons available",
+        "notesLabel": "Additional Notes",
+        "notesPlaceholder": "Optional details...",
+        "cancelButton": "Cancel",
+        "confirmButton": "Confirm Cancellation",
+        "processing": "Processing..."
+      },
+      "messages": {
+        "errorFetching": "Error fetching membership list.",
+        "errorDetail": "Error loading membership details.",
+        "notFound": "No data found for this membership.",
+        "successUpdate": "Membership successfully updated.",
+        "errorUpdate": "Could not update the membership.",
+        "missingParams": "Missing authentication token or record ID.",
+        "requestInProgress": "An update is already in progress. Please wait."
+      }
+    },
+    "Billing": {
+      "title": "Invoices & Payments",
+      "subtitle": "Manage your invoices and payment methods here.",
+      "managing": "Managing: {branchName}",
+      "newInvoiceTitle": "New Invoice",
+      "searchPlaceholder": "Search by client or invoice number...",
+      "branchPlaceholder": "Branch",
+      "allBranches": "All branches",
+      "statusPlaceholder": "Status",
+      "status": {
+        "all": "All statuses",
+        "paid": "Paid",
+        "unpaid": "Unpaid",
+        "overdue": "Overdue",
+        "void": "Void",
+        "partial": "Partial"
+      },
+      "table": {
+        "invoiceNumber": "Invoice No.",
+        "client": "Client",
+        "date": "Date",
+        "total": "Total ({currency})",
+        "status": "Status",
+        "actions": {
+          "view": "View details"
+        }
+      },
+      "newInvoice": {
+        "title": "New Sale",
+        "subtitle": "Simplified payment management for staff.",
+        "messages": {
+          "selectUserError": "A valid user must be selected first",
+          "success": "Sale completed in {currency}",
+          "partialError": "Invoice created, but payment failed",
+          "error": "Error generating invoice"
+        }
+      },
+      "form": {
+        "branch": "Branch",
+        "service": "Branch Service",
+        "memberPrice": "Member Rate",
+        "selectBranch": "Select branch",
+        "client": "Client",
+        "emailPlaceholder": "Client email...",
+        "waitingClient": "Waiting for client",
+        "concepts": "Line Items",
+        "addItem": "ADD ITEM",
+        "membership": "Membership",
+        "package": "Package",
+        "selectProduct": "Select product...",
+        "currency": "Currency",
+        "paymentMethod": "Payment Method",
+        "choose": "Choose...",
+        "exchangeRate": "Exchange Rate: 1 USD = {rate} {currency}",
+        "subtotal": "Subtotal",
+        "taxes": "Taxes",
+        "totalCharge": "Total Charge (USD)",
+        "equivalentTo": "Equivalent to",
+        "cancel": "Cancel",
+        "finishSale": "Finish Sale"
+      },
+      "addPayment": {
+        "trigger": "Register Payment",
+        "title": "Close Invoice",
+        "invoiceId": "Invoice ID: {id}",
+        "currencyLabel": "Payment Currency",
+        "totalUSD": "Total USD",
+        "exchangeRate": "Rate: {rate}",
+        "toReceive": "Amount in {currency}",
+        "methodLabel": "Method",
+        "choose": "Choose...",
+        "bankReference": "Bank Reference",
+        "referencePlaceholder": "Confirmation No.",
+        "cancel": "Cancel",
+        "confirm": "Confirm Payment",
+        "messages": {
+          "selectMethodError": "Please select a payment method",
+          "success": "Payment successfully recorded",
+          "error": "Error processing payment"
+        }
+      },
+      "detail": {
+        "conceptsTitle": "Item Details",
+        "conceptsSubtitle": "Breakdown of purchased products and services",
+        "itemsCount": "{count, plural, =1 {# item} other {# items}}",
+        "paymentsTitle": "Payment History",
+        "paymentsSubtitle": "Complete record of payments and transactions",
+        "statusLabel": "Billing Status",
+        "status": {
+          "paid": "RECONCILED",
+          "pending": "PENDING"
+        },
+        "summary": {
+          "subtotal": "Subtotal",
+          "taxes": "Taxes",
+          "currentDebt": "Current Debt",
+          "fullyPaid": "INVOICE FULLY PAID"
+        },
+        "alerts": {
+          "failed": "PREVIOUS PAYMENT FAILED. MANUAL COLLECTION REQUIRED.",
+          "pending": "THERE IS A PAYMENT UNDER VERIFICATION."
+        },
+        "accountInfo": {
+          "title": "Account Information",
+          "loading": "Loading...",
+          "idLabel": "ID",
+          "branchLabel": "Issuing Branch",
+          "principal": "Main",
+          "uuidLabel": "Invoice UUID",
+          "uuidInfo": "INFO",
+          "uuidTooltip": "Unique system identifier",
+          "phoneLabel": "Phone",
+          "birthLabel": "Birthday"
+        }
+      },
+      "detailPage": {
+        "title": "Invoice {number}",
+        "defaultTitle": "Invoice Detail",
+        "issuedAt": "Issued on {date}",
+        "unknownBranch": "Unidentified branch",
+        "loadingDocument": "Loading document information...",
+        "actions": {
+          "print": "Print",
+          "export": "Export PDF"
+        },
+        "errors": {
+          "title": "System Error",
+          "notFound": "No data found for this invoice.",
+          "serverError": "Error connecting to server.",
+          "retry": "Retry Loading"
+        },
+        "loading": {
+          "title": "Syncing invoice",
+          "subtitle": "Retrieving financial data..."
+        }
+      },
+      "itemsTable": {
+        "description": "Description",
+        "quantity": "Qty",
+        "unitPrice": "Unit Price",
+        "tax": "Tax",
+        "total": "Total",
+        "types": {
+          "membership": "Membership",
+          "package": "Package",
+          "service": "Service",
+          "unknown": "Unknown Item"
+        },
+        "defaultNames": {
+          "membership": "Membership",
+          "package": "Package",
+          "service": "Service"
+        }
+      },
+      "paymentsTable": {
+        "date": "Date",
+        "method": "Method",
+        "amount": "Amount",
+        "status": "Status",
+        "baseAmount": "Base: ${amount} USD",
+        "exchangeRateTooltip": "Rate: 1 USD = {rate} {currency}",
+        "approveAction": "Approve payment",
+        "viewReceipt": "View receipt",
+        "actionsLabel": "Payment Actions",
+        "actions": {
+          "approve": "Approve Payment",
+          "reject": "Mark as Failed",
+          "refund": "Refund Payment",
+          "resetToPending": "Reset to Pending"
+        },
+        "statuses": {
+          "Completed": "Completed",
+          "Pending": "Pending",
+          "Failed": "Failed",
+          "Refunded": "Refunded"
+        }
+      },
+      "methodCell": {
+        "loading": "Loading...",
+        "notAvailable": "N/A"
+      },
+      "quickView": {
+        "loading": "Loading invoice...",
+        "accessibleTitle": "Invoice",
+        "accessibleDescription": "Detailed view of invoice charges and payments.",
+        "badgeLabel": "Financial Summary",
+        "conceptsTitle": "Acquired Concepts",
+        "defaultItemName": "Service / Membership",
+        "quantity": "Qty",
+        "totalAmountLabel": "Invoice Amount",
+        "subtotal": "Subtotal",
+        "taxes": "Taxes",
+        "totalPaidLabel": "Total Received",
+        "fullManagementBtn": "FULL MANAGEMENT",
+        "readOnlyMode": "Read-Only Mode",
+        "printTitle": "Print",
+        "status": {
+          "paid": "Paid",
+          "unpaid": "Unpaid",
+          "pending": "Pending",
+          "canceled": "Canceled"
+        }
+      }
+    }
+  },
+  "settings": {
+    "Policies": {
+      "title": "Commercial Policies",
+      "subtitle": "Manage business rules, billing, and global access parameters.",
+      "loading": "Loading commercial rules...",
+      "saving": "Saving changes...",
+      "empty": "There are currently no commercial rules configured.",
+      "updateSuccessTitle": "Policy Updated!",
+      "updateSuccessDescription": "The policy value was successfully saved.",
+      "updateErrorTitle": "Update Failed",
+      "updateErrorDescription": "The policy could not be saved. Please try again.",
+      "readOnly": "Read Only",
+      "fullAccess": "Full Access",
+      "actions": {
+        "refresh": "Refresh Policies"
+      },
+      "categories": {
+        "invoice": {
+          "title": "Billing",
+          "description": "Due dates, payments, and financial limits rules."
+        },
+        "class": {
+          "title": "Classes",
+          "description": "Class cancellation and access conditions."
+        },
+        "access": {
+          "title": "Access",
+          "description": "Entry windows and schedule controls."
+        },
+        "membership": {
+          "title": "Memberships",
+          "description": "Grace periods and subscription status."
+        },
+        "discount": {
+          "title": "Discounts",
+          "description": "Maximum discount limits applicable."
+        }
+      },
+      "card": {
+        "actions": {
+          "save": "Save"
+        },
+        "status": {
+          "saved": "Saved âœ“"
+        },
+        "footer": {
+          "label": "Policy Configuration"
+        },
+        "units": {
+          "days": "DAYS",
+          "hours": "HRS",
+          "minutes": "MIN"
+        }
+      }
+    }
+  },
+  "auth": {
+    "activate": {
+      "title": "CONFIRM YOUR PASSWORD",
+      "description": "Please enter your new password to activate your account.",
+      "password_label": "Password",
+      "password_placeholder": "Enter your password",
+      "confirm_password_label": "Confirm Password",
+      "confirm_password_placeholder": "Confirm your password",
+      "button_confirm": "Confirm",
+      "button_loading": "Processing...",
+      "success_message": "Account activated successfully!",
+      "footer_text": "Dashboard System",
+      "login_link": "Login",
+      "remember_password": "Do you remember your password?",
+      "errors": {
+        "invalid_token": "Invalid or expired token.",
+        "check_password": "The password does not meet the requirements.",
+        "confirm_required": "You must confirm your password",
+        "passwords_dont_match": "Passwords do not match",
+        "password_requirements": "Password must include uppercase, numbers, and special characters.",
+        "server_error": "Error activating the account.",
+        "password_min": "Minimum 8 characters.",
+        "password_uppercase": "Uppercase letter missing.",
+        "password_lowercase": "Lowercase letter missing.",
+        "password_number": "Number missing.",
+        "password_special": "Special character missing."
+      }
+    }
+  },
+  "user": {
+    "UserSelectionCard": {
+      "roles": {
+        "client": "Client",
+        "instructor": "Instructor",
+        "admin": "Administrator",
+        "superadmin": "Super Administrator",
+        "super_admin": "Super Administrator",
+        "branch_admin": "Branch Admin",
+        "staff": "Staff",
+        "accountant": "Accountant",
+        "data_analyst": "Data Analyst",
+        "recepcionist": "Receptionist",
+        "ventas": "Sales"
+      },
+      "actions": {
+        "enroll": "Enroll",
+        "focus": "Focus",
+        "waiting": "Wait"
+      },
+      "labels": {
+        "found": "Student found:"
+      }
+    },
+    "audit": {
+      "title": "Audit Logs",
+      "subtitle": "Inspection of system requests, methods, and routes.",
+      "filters": {
+        "search": "Search",
+        "searchPlaceholder": "E.g.: POST or /v1/user...",
+        "sort": "Sort",
+        "sortDesc": "Descending",
+        "sortAsc": "Ascending",
+        "limit": "Results",
+        "limitRows": "{count} rows",
+        "limitRowsSuffix": "rows"
+      },
+      "status": {
+        "results": "Activity results",
+        "loading": "Loading records..."
+      },
+      "table": {
+        "created_at": "Date",
+        "event": "Event",
+        "method": "Method",
+        "path": "Path",
+        "resource": "Resource",
+        "ip_address": "IP",
+        "status": "Status",
+        "payload": "Payload",
+        "origin": "Origin",
+        "viewDetails": "View details"
+      },
+      "methods": {
+        "get": "GET",
+        "post": "POST",
+        "put": "PUT",
+        "delete": "DELETE",
+        "patch": "PATCH"
+      },
+      "details": {
+        "title": "Operation Analysis",
+        "traceId": "Trace ID",
+        "author": "Action Author",
+        "userSection": "Action Actor",
+        "viewSessions": "Security Sessions",
+        "close": "Close Detail",
+        "payload": {
+          "label": "Request Body",
+          "empty": "// No data sent in this operation",
+          "copied": "Log copied to clipboard"
+        },
+        "metadata": {
+          "endpoint": "Endpoint / Path",
+          "dateTime": "Date & Time",
+          "ipAddress": "IP Address"
+        },
+        "client": {
+          "userAgent": "Client User Agent",
+          "unknown": "Unknown"
+        }
+      },
+      "sessions": {
+        "title": "Security Actions",
+        "description": "Revoking all sessions will terminate access across all active devices.",
+        "btnRevokeAll": "Revoke All",
+        "statusActive": "Active",
+        "expires": "Expires",
+        "empty": "No additional active sessions found.",
+        "confirmRevokeAll": "Are you sure you want to close all sessions? This action cannot be undone.",
+        "confirmRevokeOne": "Close this specific session?",
+        "revokeSuccess": "Session(s) successfully revoked",
+        "errorRevoke": "There was a problem trying to close the session"
+      }
+    },
+    "management": {
+      "title": "USERS",
+      "add_button": "Add User",
+      "edit_title": "MODIFY USER",
+      "edit_subtitle": "Edit user information: {name} {lastname}",
+      "create_title": "CREATE NEW USER",
+      "create_subtitle": "Fill in the information for the new user",
+      "view_title": "USER DETAILS",
+      "view_subtitle": "Complete user information: {name} {lastname}",
+      "personal_info": "Personal Information",
+      "user_id": "User ID",
+      "sessions_info": "Session Information",
+      "export_button": "Export List",
+      "exporting": "Exporting...",
+      "export_filename": "staff_list",
+      "stats": {
+        "active_sessions": "Active Sessions",
+        "total_logins": "Total Logins",
+        "daily_average": "Daily Average"
+      },
+      "table": {
+        "columns": {
+          "name": "Name",
+          "email": "Email",
+          "role": "Role",
+          "status": "Status",
+          "status_active": "Active",
+          "status_inactive": "Inactive"
+        },
+        "filters": {
+          "search_placeholder": "Search by name, last name or email...",
+          "role_placeholder": "Filter by Role",
+          "all_roles": "All Roles"
+        },
+        "actions": {
+          "view": "View Details",
+          "edit": "Modify",
+          "delete": "Delete",
+          "export": "Export CSV",
+          "export_toast": "Export function is under development"
+        },
+        "delete_dialog": {
+          "title": "Are you sure?",
+          "description": "This action will permanently delete the user.",
+          "confirm": "Delete",
+          "cancel": "Cancel"
+        }
+      },
+      "form": {
+        "name": "First Name*",
+        "lastname": "Last Name*",
+        "email": "Email Address*",
+        "email_placeholder": "email@example.com",
+        "phone": "Phone Number*",
+        "document": "Identity Document*",
+        "birth_date": "Birth Date*",
+        "gender": "Gender*",
+        "role": "User Role*",
+        "genders": {
+          "male": "Male",
+          "female": "Female",
+          "other": "I prefer not to specify"
+        },
+        "next_steps": {
+          "title": "Next Steps",
+          "email_sent": "A verification email will be sent to {email}",
+          "verify": "The user must verify their email to activate the account",
+          "password": "Then they can set their initial password",
+          "pending": "The status will be \"Pending\" until verification is complete"
+        }
+      },
+      "sessions_modal": {
+        "title": "Active Sessions for {name} {lastname}",
+        "empty": "No active sessions recorded.",
+        "security_label": "Security Actions",
+        "count": "{count} active sessions",
+        "ip_address": "IP Address",
+        "security_description": "Revoke all sessions to log out the user from all devices.",
+        "started": "Started",
+        "expires": "Expires",
+        "status": {
+          "active": "Active",
+          "blocked": "Blocked"
+        }
+      },
+      "quick_actions": {
+        "title": "Quick Actions",
+        "view_activity": "View Activity Logs",
+        "view_sessions": "View Sessions",
+        "edit_user": "Edit User"
+      },
+      "actions": {
+        "cancel": "Cancel",
+        "save": "Save Changes",
+        "create": "Create User"
+      },
+      "notifications": {
+        "creating": "Creating...",
+        "saving": "Saving...",
+        "create_success": "User created successfully. A verification email has been sent.",
+        "update_success": "User updated successfully",
+        "delete_loading": "Deleting user...",
+        "delete_success": "User deleted successfully.",
+        "refresh_loading": "Updating user list...",
+        "refresh_success": "List updated",
+        "error_loading": "loading information...",
+        "error_load_title": "Loading Error",
+        "error_list_load": "Could not load user list",
+        "error_unauthorized": "You are not authenticated",
+        "error_create": "Could not create user",
+        "error_update": "Could not update user",
+        "error_delete": "Could not delete user",
+        "error_not_found": "Requested user not found",
+        "sessions_revoked": "All sessions have been successfully revoked",
+        "sessions_revoked_error": "Error revoking sessions"
+      },
+      "activities_modal": {
+        "title": "Activity Log",
+        "description": "History of actions performed by the user in the system",
+        "placeholder": {
+          "title": "Functionality under development",
+          "description": "The activity log will be available soon"
+        },
+        "actions": {
+          "export": "Export CSV"
+        }
+      },
+      "sessions_actions": {
+        "revoke_all": "Revoke All",
+        "revoking": "Revoking..."
+      }
+    }
+  },
+  "marketing": {
+    "banners": {
+      "title": "Banners",
+      "list": {
+        "title": "Banners",
+        "empty": "No banners found.",
+        "createButton": "New Banner",
+        "table": {
+          "id": "ID",
+          "name": "Name",
+          "image": "Image",
+          "link": "Link",
+          "status": "Status",
+          "startDate": "Start Date",
+          "endDate": "End Date",
+          "actions": "Actions"
+        }
+      },
+      "form": {
+        "createTitle": "Create Banner",
+        "editTitle": "Edit Banner",
+        "nameLabel": "Name",
+        "imageLabel": "Image",
+        "linkLabel": "Link",
+        "openInNewTab": "Open in new tab",
+        "activeLabel": "Active",
+        "startDateLabel": "Start date",
+        "endDateLabel": "End date",
+        "saveButton": "Save",
+        "cancelButton": "Cancel",
+        "deleteButton": "Delete",
+        "deleteConfirm": "Are you sure you want to delete this banner? This action cannot be undone.",
+        "savedSuccess": "Banner saved successfully",
+        "deletedSuccess": "Banner deleted successfully",
+        "validation": {
+          "nameRequired": "Name is required",
+          "imageRequired": "Image is required",
+          "linkInvalid": "Invalid URL"
+        }
+      },
+      "loading": "Loading banners..."
+    },
+    "promotions": {
+      "title": "Promotions",
+      "list": {
+        "title": "Promotions",
+        "empty": "No promotions found.",
+        "createButton": "New Promotion",
+        "table": {
+          "id": "ID",
+          "code": "Code",
+          "name": "Name",
+          "discount": "Discount",
+          "startDate": "Start Date",
+          "endDate": "End Date",
+          "status": "Status",
+          "actions": "Actions"
+        }
+      },
+      "form": {
+        "createTitle": "Create Promotion",
+        "editTitle": "Edit Promotion",
+        "codeLabel": "Code",
+        "nameLabel": "Name",
+        "descriptionLabel": "Description",
+        "discountLabel": "Discount",
+        "discountType": "Discount type",
+        "percentage": "Percentage",
+        "amount": "Amount",
+        "startDateLabel": "Start date",
+        "endDateLabel": "End date",
+        "activeLabel": "Active",
+        "saveButton": "Save",
+        "cancelButton": "Cancel",
+        "deleteButton": "Delete",
+        "deleteConfirm": "Are you sure you want to delete this promotion? This action cannot be undone.",
+        "savedSuccess": "Promotion saved successfully",
+        "deletedSuccess": "Promotion deleted successfully",
+        "validation": {
+          "codeRequired": "Code is required",
+          "nameRequired": "Name is required",
+          "discountRequired": "Discount is required"
+        }
+      },
+      "loading": "Loading promotions..."
+    }
+  },
+  "calendar": {
+    "no_branch_title": "No branch selected",
+    "no_branch_description": "Please select a branch to view the class schedule.",
+    "resources": {
+      "loading": "Cargando recursos...",
+      "error": "Error al cargar los recursos del calendario",
+      "no_branch": "Sin sede seleccionada"
+    },
+    "toolbar": {
+      "week": "Week",
+      "month": "Month",
+      "today": "Today",
+      "branch": "Branch",
+      "loading": "Loading...",
+      "createClass": "Create Class",
+      "syncing": "Syncing...",
+      "search_placeholder": "Focus student schedule..."
+    },
+    "display": {
+      "default_title": "Class",
+      "no_instructor": "No instructor"
+    },
+    "create_sheet": {
+      "title": "Schedule Class",
+      "description": "Define the details for the new session, instructor, and capacity.",
+      "syncing": "Syncing resources...",
+      "cancel": "Cancel",
+      "confirm": "Create Class",
+      "submitting": "Saving...",
+      "success": "Class successfully scheduled",
+      "restricted_title": "Restricted Access",
+      "restricted_description": "You do not have an active branch assigned. Contact your administrator to manage classes.",
+      "close": "Close",
+      "errors": {
+        "missing_data": "Missing required data or session expired",
+        "check_fields": "Please check the fields with errors",
+        "server_error": "There was an error processing the request",
+        "branch_closed": "The selected branch is closed on the chosen date. Please check the branch schedule."
+      }
+    },
+    "edit_popover": {
+      "title": "Edit Session",
+      "details_title": "Session Details",
+      "loading": "Loading information...",
+      "saving": "Saving...",
+      "save_changes": "Save Changes",
+      "cancel": "Cancel",
+      "close": "Close",
+      "delete_button": "Delete Class",
+      "success_update": "Class updated successfully",
+      "error_save": "Error saving changes",
+      "readonly_notice": "You can only manage attendance. Configuration is read-only.",
+      "attendance": {
+        "button_title": "Manage Students",
+        "button_description": "Take attendance or add bookings"
+      },
+      "delete_confirm": {
+        "title": "Delete this class?",
+        "description": "This action cannot be undone and will cancel all existing bookings.",
+        "action": "Permanently delete"
+      },
+      "cancelled_notice": "Class cancelled. Reason: {reason}"
+    },
+    "attendance_sheet": {
+      "title": "Attendance Control",
+      "desc_admin": "Manage capacity and register manual enrollments.",
+      "desc_instructor": "View the student list and confirm their attendance.",
+      "section_inscribe": "Client Enrollment",
+      "search_placeholder": "Search by exact email...",
+      "search_button": "SEARCH",
+      "instructor_mode": "Instructor Mode: You have access to mark attendance for students present.",
+      "list_title": "Students in Class",
+      "loading_list": "Updating list...",
+      "error_server": "Error connecting to server"
+    },
+    "attendance_manager": {
+      "columns": {
+        "student": "Student",
+        "check_in": "Check-in",
+        "status": "Status",
+        "booking_date": "Booking Date",
+        "service": "Service"
+      },
+      "table": {
+        "delete_dialog": {
+          "title": "Confirm cancellation?",
+          "description": "This action will remove the client's reservation and free up the spot in the class. This action cannot be undone.",
+          "confirm": "Yes, cancel reservation",
+          "cancel": "No, keep it"
+        }
+      },
+      "status": {
+        "confirmed": "Confirmed",
+        "attended": "Attended",
+        "missed": "Missed",
+        "cancelled": "Cancelled"
+      },
+      "actions": {
+        "cancel": "Cancel Reservation"
+      },
+      "tabs": {
+        "bookings": "Active Bookings",
+        "attendance": "History / Attendance"
+      },
+      "labels": {
+        "total_students": "Total Students: {count}",
+        "processed": "Processed",
+        "active_booking": "Active Booking",
+        "cancel_tooltip": "Cancel booking",
+        "view_only": "Read-only access",
+        "check_in": "Check-in",
+        "status": "Status",
+        "client": "Client",
+        "no_reservations": "No reservations found for this class"
+      },
+      "info_panel": {
+        "admin_title": "Administrative Management Panel",
+        "admin_desc": "You can cancel bookings and make manual enrollments. Check-in is registered automatically at the branch.",
+        "instructor_title": "Instructor Attendance Panel",
+        "instructor_desc": "The list is synced with access control. Instructors cannot modify active bookings."
+      }
+    },
+    "form": {
+      "sections": {
+        "general": "General Information",
+        "schedule": "Schedule",
+        "capacity": "Capacity & Recurrence",
+        "notes": "Notes"
+      },
+      "fields": {
+        "visible": "Visible",
+        "branch": "Branch",
+        "service": "Discipline",
+        "instructor": "Instructor",
+        "date": "Date",
+        "start_time": "Start Time",
+        "end_time": "End Time",
+        "max_capacity": "Max Capacity",
+        "recurrence": "Recurrence",
+        "recurrence_until": "Repeat until"
+      },
+      "placeholders": {
+        "branch": "Select branch",
+        "service": "Select discipline",
+        "instructor": "Assign instructor",
+        "date": "Pick a date",
+        "capacity": "Number of slots",
+        "notes": "Add notes here...",
+        "until": "Pick end date"
+      },
+      "recurrence_options": {
+        "none": "Do not repeat",
+        "daily": "Daily",
+        "weekly": "Weekly"
+      },
+      "suffix": {
+        "slots": "slots"
+      },
+      "errors": {
+        "branch_required": "Branch is required",
+        "service_required": "Discipline is required",
+        "instructor_required": "Instructor is required",
+        "date_required": "Date is required",
+        "start_time_required": "Start time is required",
+        "end_time_required": "End time is required",
+        "capacity_min": "Capacity must be at least 1",
+        "end_time_after": "End time must be after start time",
+        "recurrence_until_after": "Repeat date must be after class date",
+        "recurrence_until_required": "You must choose an end date for the recurrence"
+      }
+    }
+  },
+  "ProtectedRoute": {
+    "noBranchTitle": "Branch not configured",
+    "noBranchDescription": "Your <role>{role}</role> account is active, but you do not have a valid branch assigned to operate.",
+    "retry": "Retry",
+    "logout": "Log Out"
+  },
+  "booking": {
+    "errors": {
+      "payment_required": "Active payment or valid membership is required.",
+      "forbidden": "You do not have permission to perform this action.",
+      "unauthorized": "Session expired, please log in again.",
+      "not_found": "Booking not found.",
+      "past_class": "You cannot enroll in a past class.",
+      "full": "Class is full.",
+      "already_booked": "Customer is already enrolled.",
+      "insufficient_credits": "Insufficient credits.",
+      "expired": "Membership has expired.",
+      "unexpected": "An unexpected error occurred.",
+      "restricted_window": "Cannot cancel: the class starts soon (restricted window).",
+      "restricted_time": "You cannot cancel this booking within the restricted time window."
+    },
+    "success": {
+      "booked": "Booking successful",
+      "cancelled": "Cancelled successfully"
+    }
+  },
+  "SettingsPage": {
+    "title": "Settings",
+    "description": "Manage your account settings and preferences.",
+    "loading": "Loading profile...",
+    "tabs": {
+      "profile": "Profile",
+      "activity": "Activity",
+      "security": "Security"
+    },
+    "sections": {
+      "profile": {
+        "title": "Profile",
+        "description": "Your account's public information."
+      },
+      "activity": {
+        "title": "Activity Feed",
+        "description": "History of your classes and reminders."
+      },
+      "security": {
+        "title": "Security",
+        "description": "Protect your access to the gym."
+      }
+    },
+    "passwordExpired": "Your password has expired according to the security policy. Please change it to continue."
+  },
+  "Notifications": {
+    "Center": {
+      "title": "Notifications",
+      "unread": "You have {count} unread",
+      "markAll": "Mark all",
+      "empty": "No pending notifications",
+      "loadMore": "Load previous",
+      "loading": "Loading...",
+      "viewAll": "View notification center"
+    },
+    "ActivityNotifications": {
+      "title": "Recent Activity",
+      "markAllRead": "Mark all as read",
+      "emptyTitle": "Empty Inbox",
+      "emptyDescription": "No activities or notifications found.",
+      "loadingMore": "Loading activities...",
+      "loadMore": "Load previous activities",
+      "footerNote": "Activities are automatically kept for 30 days.",
+      "systemName": "VitalFit"
+    }
+  },
+  "Auth": {
+    "sessionWarning": {
+      "title": "Your session is about to expire",
+      "description": "You have been inactive for too long. For your security, we will automatically log you out in:",
+      "button": "Stay logged in"
+    }
+  },
+  "instructor_clients": {
+    "title": "My clients",
+    "description": "Managing the database of your assigned clients.",
+    "export_button": "Export CSV",
+    "exporting": "Exporting...",
+    "table": {
+      "columns": {
+        "client": "Client",
+        "contact": "Contact",
+        "bookings": "Bookings"
+      },
+      "bookings_unit": "Classes",
+      "view_details": "View details",
+      "loading": "Loading students..."
+    }
+  },
+  "account": {
+    "profile": {
+      "manageInfo": "Manage your personal information.",
+      "staff": "Staff",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "emailWarning": "Changing your email might require re-verification.",
+      "identityDocument": "ID / Identity Document",
+      "phone": "Phone Number",
+      "gender": "Gender",
+      "genderPlaceholder": "Select...",
+      "genderMale": "Male",
+      "genderFemale": "Female",
+      "genderOther": "Other",
+      "birthDate": "Birth Date",
+      "cancel": "Cancel",
+      "saving": "Saving...",
+      "saveChanges": "Save Changes",
+      "notifications": {
+        "imageTooHeavy": "Image is too heavy (Max 2MB).",
+        "noUserId": "Error: User ID not found",
+        "noSession": "No active session",
+        "uploadError": "Error uploading image, only text will be saved.",
+        "updateSuccess": "Profile updated successfully",
+        "updateError": "Error updating profile",
+        "discarded": "Changes discarded"
+      }
+    }
+  },
+  "advanced": {
+    "cancelClass": {
+      "button": "Cancel class",
+      "title": "Cancel class",
+      "description": "Confirmed bookings will be cancelled, consumed credits refunded and clients notified.",
+      "placeholder": "Cancellation reason (required)",
+      "close": "Close",
+      "saving": "Cancelling...",
+      "confirm": "Confirm cancellation",
+      "success": "Class cancelled. Affected bookings: {count}",
+      "error": "Could not cancel the class"
+    },
+    "adjustments": {
+      "title": "Post-sale discounts",
+      "percentage": "Percentage",
+      "fixed": "Fixed amount",
+      "reasonPlaceholder": "Discount reason (required)",
+      "saving": "Applying...",
+      "apply": "Apply discount",
+      "policyHint": "The accumulated discount cannot exceed the maximum defined in the commercial policies.",
+      "date": "Date",
+      "discount": "Discount",
+      "previous": "Previous total",
+      "new": "New total",
+      "reason": "Reason",
+      "by": "Applied by",
+      "success": "Discount applied",
+      "error": "Could not apply the discount"
+    },
+    "clientCrm": {
+      "scoreTitle": "Client score",
+      "noScore": "No scoring data",
+      "segments": {
+        "VIP": "VIP",
+        "Regular": "Regular",
+        "New": "New",
+        "AtRisk": "At risk"
+      },
+      "frequency": "Frequency: {points} pts ({visits} visits in 90 days)",
+      "punctuality": "Payment punctuality: {points} pts ({onTime}/{total} invoices on time)",
+      "referrals": "Referrals: not available (referral program not implemented)",
+      "tagsTitle": "Campaign tags",
+      "noTags": "No tags",
+      "remove": "Remove",
+      "selectTag": "Select tag",
+      "assign": "Assign",
+      "newTagPlaceholder": "New tag",
+      "create": "Create",
+      "error": "Could not update tags"
+    },
+    "security": {
+      "forbidden": "Only the Super Admin can manage security.",
+      "saved": "Settings saved",
+      "error": "Could not save",
+      "title": "Security & passwords",
+      "subtitle": "Password policy and two-factor authentication for administrative staff",
+      "saving": "Saving...",
+      "save": "Save",
+      "passwordPolicy": "Password policy",
+      "minLength": "Minimum length",
+      "require_uppercase": "Require uppercase",
+      "require_lowercase": "Require lowercase",
+      "require_number": "Require numbers",
+      "require_special": "Require special characters",
+      "expirationDays": "Expiration (days)",
+      "expirationHint": "0 = passwords never expire",
+      "twoFactor": "Two-factor authentication (2FA)",
+      "twoFactorRequired": "Mandatory 2FA on the dashboard",
+      "twoFactorHint": "Dashboard sign-ins will send a 6-digit code to the user's email (valid 10 minutes, single use).",
+      "lastUpdate": "Last update: {date}"
+    },
+    "feedback": {
+      "title": "Complaints & suggestions",
+      "subtitle": "Customer care follow-up and contact form messages",
+      "tabs": {
+        "feedback": "Complaints & suggestions",
+        "contact": "Contact form"
+      },
+      "allStatuses": "All statuses",
+      "status": {
+        "open": "Open",
+        "in_progress": "In progress",
+        "resolved": "Resolved",
+        "closed": "Closed"
+      },
+      "allTypes": "All types",
+      "type": {
+        "complaint": "Complaint",
+        "suggestion": "Suggestion",
+        "compliment": "Compliment"
+      },
+      "new": "Register",
+      "date": "Date",
+      "client": "Client",
+      "typeLabel": "Type",
+      "subject": "Subject",
+      "branch": "Branch",
+      "statusLabel": "Status",
+      "empty": "No records",
+      "manage": "Manage",
+      "prev": "Previous",
+      "next": "Next",
+      "error": "Something went wrong",
+      "created": "Record created",
+      "searchClient": "Search client by name or document",
+      "search": "Search",
+      "selectClient": "Select client",
+      "description": "Description",
+      "cancel": "Cancel",
+      "save": "Save",
+      "updated": "Record updated",
+      "resolutionNotes": "Resolution notes",
+      "notesRequired": "Notes are required to resolve or close",
+      "contactStatus": {
+        "new": "New",
+        "read": "Read",
+        "answered": "Answered"
+      },
+      "emptyContact": "No messages",
+      "markRead": "Mark as read",
+      "markAnswered": "Mark as answered"
+    },
+    "insights": {
+      "error": "Something went wrong",
+      "detected": "Detection finished: {count} new alerts",
+      "title": "Advanced analytics",
+      "subtitle": "Web conversion, NPS, RevPAS, branch benchmarking, churn risk and anomaly alerts",
+      "conversion": "Web conversion rate",
+      "conversionHint": "{purchases} purchases out of {visitors} visitors",
+      "signupRate": "Sign-up rate",
+      "signupHint": "{signups} sign-ups",
+      "nps": "NPS",
+      "npsHint": "{responses} answers · {promoters} promoters · {detractors} detractors",
+      "revpas": "RevPAS",
+      "revpasHint": "{revenue} / {spaces} available spaces",
+      "alerts": "KPI anomaly alerts",
+      "detect": "Detect now",
+      "noAlerts": "No open alerts",
+      "severity": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High"
+      },
+      "acknowledge": "Mark as reviewed",
+      "segments": "Client segments",
+      "segment": {
+        "VIP": "VIP",
+        "Regular": "Regular",
+        "New": "New",
+        "AtRisk": "At risk"
+      },
+      "benchmark": "Branch benchmarking",
+      "benchmarkHint": "In brackets: index vs. network average (100 = average). Green: best practice for the metric.",
+      "branch": "Branch",
+      "metric": {
+        "revenue": "Revenue",
+        "new_clients": "New clients",
+        "active_members": "Active members",
+        "check_ins": "Check-ins",
+        "occupancy_rate": "Occupancy %",
+        "nps": "NPS"
+      },
+      "score": "Index",
+      "revpasByService": "RevPAS by service",
+      "service": "Service",
+      "occupancy": "Occupancy",
+      "churn": "Clients at risk of churn",
+      "churnHint": "Predictive score based on absence, attendance drop and upcoming membership expiration.",
+      "client": "Client",
+      "risk": "Risk",
+      "factors": "Factors",
+      "noChurn": "No clients at risk",
+      "npsComments": "Recent NPS comments"
+    },
+    "automation": {
+      "defaultTemplate": "Default template",
+      "type": {
+        "financial": "Financial",
+        "sales": "Sales",
+        "clients": "Clients",
+        "benchmark": "Benchmarking"
+      },
+      "title": "Report automation",
+      "subtitle": "Branded exports, scheduled emails, temporary links and BI integration",
+      "tabs": {
+        "download": "Export",
+        "schedules": "Scheduled emails",
+        "links": "Temporary links",
+        "templates": "Templates",
+        "api": "BI API"
+      },
+      "error": "Something went wrong",
+      "downloadTitle": "Export report",
+      "reportType": "Report",
+      "format": "Format",
+      "template": "Template",
+      "period": "Period",
+      "generating": "Generating...",
+      "download": "Download",
+      "scheduleCreated": "Schedule created",
+      "newSchedule": "New scheduled email",
+      "name": "Name",
+      "frequency": "Frequency",
+      "frequencies": {
+        "daily": "Daily",
+        "weekly": "Weekly",
+        "monthly": "Monthly"
+      },
+      "recipients": "Recipients (comma separated)",
+      "createSchedule": "Schedule",
+      "lastSent": "Last sent",
+      "never": "Never",
+      "saved": "Saved",
+      "sent": "Report sent",
+      "sendNow": "Send now",
+      "deleted": "Deleted",
+      "newLink": "Share a report through a temporary URL",
+      "expiresInHours": "Validity (hours)",
+      "createLink": "Generate link",
+      "copied": "Copied to clipboard",
+      "copy": "Copy",
+      "linkOnce": "Save the link now: for security reasons it cannot be shown again.",
+      "expires": "Expires",
+      "accesses": "{count} downloads",
+      "revoke": "Revoke",
+      "cannotDeleteDefault": "The template cannot be deleted",
+      "editTemplate": "Edit template",
+      "newTemplate": "New template",
+      "color": "Brand color",
+      "header": "Header",
+      "footer": "Footer",
+      "orientation": "PDF orientation",
+      "landscape": "Landscape",
+      "portrait": "Portrait",
+      "isDefault": "Use as default template",
+      "save": "Save",
+      "cancel": "Cancel",
+      "default": "Default",
+      "edit": "Edit",
+      "newKey": "New API key for BI tools",
+      "apiHint": "Send the key in the X-API-Key header to /v1/bi/kpis, /v1/bi/sales, /v1/bi/financial, /v1/bi/benchmark, /v1/bi/revpas, /v1/bi/nps or /v1/bi/conversion.",
+      "expiresAt": "Expires (optional)",
+      "createKey": "Create API key",
+      "keyOnce": "Copy the key now: it will not be shown again.",
+      "lastUsed": "Last used",
+      "revoked": "Revoked"
+    }
+  }
+}

@@ -1,0 +1,405 @@
+@import "tailwindcss";
+/*---break---
+*/
+@custom-variant dark (&:is(.dark *));
+/*---break--- 
+@plugin "tailwindcss-animate";
+@import "tw-animate-css";
+@custom-variant dark (&:is(.dark *));
+*/
+
+body {
+  font-family: var(--font-body), sans-serif;
+}
+
+:root {
+  /* --- Geometría --- */
+  --radius: 0.6rem;
+
+  /* --- Fondos y Capas (Layering) --- */
+  /* Un fondo sutilmente gris para que las cards blancas resalten */
+  --background: oklch(0.97 0.001 286); 
+  --foreground: oklch(0.18 0.012 286);
+
+  /* Cards en blanco puro para máxima legibilidad */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.012 286);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.012 286);
+
+  /* --- Colores de Marca (Naranja/Ámbar) --- */
+  /* Ajustado para ser vibrante pero legible */
+  --primary: oklch(0.705 0.213 47.6);
+  --primary-foreground: oklch(0.99 0.01 47.6);
+
+  /* --- Colores de Interfaz --- */
+  /* Gris azulado muy sutil para elementos secundarios */
+  --secondary: oklch(0.96 0.005 286);
+  --secondary-foreground: oklch(0.25 0.01 286);
+
+  --muted: oklch(0.96 0.005 286);
+  --muted-foreground: oklch(0.52 0.015 286);
+
+  --accent: oklch(0.96 0.005 286);
+  --accent-foreground: oklch(0.25 0.01 286);
+
+  /* --- Estados --- */
+  --destructive: oklch(0.62 0.21 28);
+  --destructive-foreground: oklch(0.98 0.01 28);
+
+  --border: oklch(0.91 0.005 286);
+  --input: oklch(0.91 0.005 286);
+  --ring: oklch(0.705 0.213 47.6);
+
+  /* --- Sidebar (Estilo Moderno) --- */
+  /* Un tono casi blanco, pero distinto al fondo general */
+  --sidebar: oklch(0.99 0.001 286);
+  --sidebar-foreground: oklch(0.25 0.01 286);
+  --sidebar-primary: oklch(0.705 0.213 47.6);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.95 0.005 286);
+  --sidebar-accent-foreground: oklch(0.2 0.01 286);
+  --sidebar-border: oklch(0.93 0.005 286);
+  --sidebar-ring: oklch(0.705 0.213 47.6);
+
+  /* --- Tipografía --- */
+  --font-body: "Montserrat", sans-serif;
+  --font-heading: "Montserrat", sans-serif;
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-sans: var(--font-body);
+  --font-heading: var(--font-heading);
+}
+
+/* */
+
+
+/* 
+
+.dark {
+
+  --background: oklch(0.145 0 0);
+
+  --foreground: oklch(0.985 0 0);
+
+  --card: oklch(0.205 0 0);
+
+  --card-foreground: oklch(0.985 0 0);
+
+  --popover: oklch(0.205 0 0);
+
+  --popover-foreground: oklch(0.985 0 0);
+
+  --primary: oklch(0.922 0 0);
+
+  --primary-foreground: oklch(0.205 0 0);
+
+  --secondary: oklch(0.269 0 0);
+
+  --secondary-foreground: oklch(0.985 0 0);
+
+  --muted: oklch(0.269 0 0);
+
+  --muted-foreground: oklch(0.708 0 0);
+
+  --accent: oklch(0.269 0 0);
+
+  --accent-foreground: oklch(0.985 0 0);
+
+  --destructive: oklch(0.704 0.191 22.216);
+
+  --border: oklch(1 0 0 / 10%);
+
+  --input: oklch(1 0 0 / 15%);
+
+  --ring: oklch(0.556 0 0);
+
+  --chart-1: oklch(0.488 0.243 264.376);
+
+  --chart-2: oklch(0.696 0.17 162.48);
+
+  --chart-3: oklch(0.769 0.188 70.08);
+
+  --chart-4: oklch(0.627 0.265 303.9);
+
+  --chart-5: oklch(0.645 0.246 16.439);
+
+  --sidebar: oklch(0.205 0 0);
+
+  --sidebar-foreground: oklch(0.985 0 0);
+
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+
+  --sidebar-accent: oklch(0.269 0 0);
+
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+
+  --sidebar-border: oklch(1 0 0 / 10%);
+
+  --sidebar-ring: oklch(0.556 0 0);
+}
+*/
+/* --- Base para Tailwind --- */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer components {
+  .admin-theme {
+
+    h1, h2, h3 {
+      font-family: var(--font-body), sans-serif;
+      color: var(--foreground);
+      @apply uppercase antialiased;
+    }
+
+    h1 {
+      @apply text-3xl md:text-4xl font-black italic tracking-tighter mb-6 leading-tight;
+      letter-spacing: -0.04em;
+    }
+
+    h2 {
+      @apply text-xl md:text-2xl font-black tracking-tight mt-12 mb-6 pb-3
+             border-b border-border flex items-center gap-3 relative;
+
+      &::before {
+        content: "";
+        @apply h-6 w-1 bg-primary rounded-sm;
+        transform: skewX(-12deg);
+      }
+    }
+
+    h3 {
+      @apply text-base md:text-lg font-extrabold tracking-tight mb-2;
+    }
+
+    h4 {
+      font-family: var(--font-body), sans-serif;
+      @apply text-[10px] font-black uppercase tracking-[0.25em] mb-2 text-primary;
+      opacity: 0.85;
+    }
+
+    /* ---------------- BODY TEXT ---------------- */
+
+    p {
+      font-family: var(--font-body), sans-serif;
+      @apply text-sm font-medium leading-relaxed text-muted-foreground;
+    }
+
+    span {
+      font-family: var(--font-body), sans-serif;
+      @apply text-sm;
+    }
+
+    label {
+      font-family: var(--font-body), sans-serif;
+      @apply text-xs font-bold uppercase tracking-wide text-muted-foreground;
+    }
+
+    /* ---------------- FORM ELEMENTS ---------------- */
+
+    input {
+      font-family: var(--font-body), sans-serif;
+      @apply not-italic;
+    }
+
+    button {
+      font-family: var(--font-body), sans-serif;
+      @apply not-italic;
+    }
+
+    td {
+      font-family: var(--font-body), sans-serif;
+      @apply text-sm;
+    }
+
+    /* ---------------- METRICS ---------------- */
+
+    .metric-value {
+      font-family: var(--font-body), sans-serif;
+      @apply text-4xl md:text-5xl font-black italic tracking-tighter text-foreground;
+    }
+
+    .metric-label {
+      @apply text-[10px] uppercase tracking-widest text-muted-foreground font-bold;
+    }
+
+    /* ---------------- UTILITIES ---------------- */
+
+    .section-muted {
+      @apply text-xs uppercase tracking-widest text-muted-foreground font-bold;
+    }
+
+    .divider {
+      @apply h-px w-full bg-border my-6;
+    }
+  }
+}
+
+
+@layer utilities {
+  table {
+    @apply w-full text-sm border-collapse;
+  }
+  th {
+    @apply h-10 px-4 text-left align-middle font-medium text-muted-foreground bg-muted/30 border-b border-border;
+  }
+  td {
+    @apply p-4 align-middle border-b border-border text-foreground;
+  }
+}
+
+.dark {
+  --sidebar: hsl(240 5.9% 10%);
+  --sidebar-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-primary: hsl(224.3 76.3% 48%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(240 3.7% 15.9%);
+  --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-border: hsl(240 3.7% 15.9%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.fc-toolbar-chunk {
+  @apply flex items-center gap-2;
+}
+
+
+.fc .fc-toolbar-chunk:last-child .fc-button-group::before {
+  content: "Calendar";
+  padding-right: 2rem;
+  font-weight: theme("fontWeight.semibold");
+  color: theme("colors.orange.400");
+}
+
+/* Toolbar title */
+.fc .fc-toolbar-title {
+  @apply font-semibold text-orange-400;
+}
+
+.fc .fc-button.fc-yearSelector-button:hover {
+  @apply text-orange-400 bg-transparent;
+}
+/* .fc .fc-toolbar-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+} */
+
+.fc-today-button{
+  @apply bg-orange-300 rounded-md;
+}
+
+/* Botones */
+.fc .fc-button {
+  @apply bg-transparent border-0 rounded-none text-gray-800 px-3 py-1 font-medium transition-colors;
+}
+
+.fc .fc-button:hover {
+  @apply bg-transparent text-orange-400;
+}
+
+.fc .fc-button:focus {
+  @apply bg-transparent border-0;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active, .fc .fc-button-primary:not(:disabled):active{
+  @apply bg-transparent border-0 border-b-2 rounded-none border-orange-400 text-orange-400;
+}
+
+.fc .fc-button-primary:disabled {
+  @apply bg-orange-400 rounded-md;
+}
+
+.fc-prev-button,.fc-next-button {
+  @apply bg-orange-100 rounded-md;
+}
+
+.fc-timeGridWeek-button, .fc-button .fc-button-primary{
+  @apply border-0;
+}
+
+.fc-col-header-cell,.fc-col-header {
+  @apply bg-[#F9F9F9] rounded-md;
+}
+
+.fc-view-harness, .fc-view-harness-active,.fc-dayGridMonth-view, .fc-view, .fc-daygrid{
+  @apply border-0;
+}
+
+.fc-scrollgrid,  .fc-scrollgrid-liquid{
+  @apply bg-white rounded-lg shadow-sm;
+}
+
+/* Número de día */
+.fc .fc-daygrid-day-number {
+  @apply text-sm text-gray-500 font-normal text-left;
+}
+
+/* Celdas de hora (vista semanal) */
+.fc-timegrid-slot-label {
+  @apply text-xs text-gray-400;
+}
+
+/* General */
+.fc {
+  font-family: "Inter", sans-serif;
+  --fc-small-font-size: 13px;
+}
+
+.fc-dayGridMonth-button{
+  @apply bg-orange-300 rounded-md;
+}
+
+

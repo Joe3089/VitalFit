@@ -1,0 +1,82 @@
+{
+  "banners": {
+    "stats": {
+      "total": "Total",
+      "active": "Active",
+      "unit": "BANNERS"
+    },
+    "list": {
+      "title": "GLOBAL BANNERS MANAGEMENT",
+      "subtitle": "Manage, order and activate site banners"
+    },
+    "create": {
+      "title": "CREATE BANNER",
+      "subtitle": "Fill in the information to manage a banner"
+    },
+    "edit": {
+      "title": "Edit Banner"
+    },
+    "labels": {
+      "name": "Name",
+      "linkUrl": "Image URL",
+      "status": "Status (Active/Inactive)",
+      "uploadUrl": "Upload Image URL"
+    },
+    "placeholders": {
+      "name": "Main Summer Banner",
+      "linkUrl": "http://example.com"
+    },
+    "upload": {
+      "loading": "Loading...",
+      "uploading": "Uploading...",
+      "callToAction": "Click to upload your image",
+      "format": "Allowed formats: PNG, JPG, JPEG up to 10MB"
+    },
+    "crop": {
+      "title": "Crop Image",
+      "zoom": "Zoom",
+      "rotation": "Rotation",
+      "rotateLeft": "Rotate left",
+      "rotateRight": "Rotate right",
+      "adjustText": "Adjust the image for the banner",
+      "zoomLabel": "Zoom",
+      "rotationLabel": "Rotation",
+      "apply": "Apply Crop",
+      "edit": "Edit Crop",
+      "zoomValue": "Zoom: {value}x",
+      "rotationValue": "Rotation: {value}°"
+    },
+    "errors": {
+      "nameRequired": "Name is required",
+      "urlRequired": "Site URL is required",
+      "notAuthenticated": "You are not authenticated. Please sign in again.",
+      "fixForm": "Please fix the errors in the form.",
+      "noImage": "Please upload an image for the banner.",
+      "imgUploadFailed": "Could not upload the image",
+      "imgUploadUnknown": "Unknown error uploading image",
+      "createUnknown": "Unknown error creating the banner",
+      "updateUnknown": "Unknown error updating the banner",
+      "uploadDefault": "Error uploading the banner. A default image will be used.",
+      "cropProcessing": "Error processing the image crop"
+    },
+    "actions": {
+      "add": "Add",
+      "cancel": "Cancel",
+      "save": "Save",
+      "creating": "Creating banner...",
+      "saving": "Saving...",
+      "remove": "Remove",
+      "edit": "Edit",
+      "change": "Change",
+      "changeLabel": "Change Image",
+      "editCrop": "Edit Crop"
+    },
+    "notifications": {
+      "created": "Banner created successfully!",
+      "updated": "Banner updated successfully!",
+      "errorTitle": "Banner error"
+    },
+    "loadingData": "Loading data...",
+    "notFound": "Banner not found"
+  }
+}

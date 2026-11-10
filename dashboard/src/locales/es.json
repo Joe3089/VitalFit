@@ -1,0 +1,82 @@
+{
+  "banners": {
+    "stats": {
+      "total": "Total",
+      "active": "Activos",
+      "unit": "BANNERS"
+    },
+    "list": {
+      "title": "GESTIÓN GLOBAL DE BANNERS",
+      "subtitle": "Administra, ordena y activa los banners del sitio"
+    },
+    "create": {
+      "title": "CREAR BANNER",
+      "subtitle": "Completa la información para gestionar un banner"
+    },
+    "edit": {
+      "title": "Editar Banner"
+    },
+    "labels": {
+      "name": "Nombre",
+      "linkUrl": "URL imagen",
+      "status": "Estado (Activo/Inactivo)",
+      "uploadUrl": "URL Carga de Imagen"
+    },
+    "placeholders": {
+      "name": "Banner principal Verano",
+      "linkUrl": "http://ejemploURL.com"
+    },
+    "upload": {
+      "loading": "Cargando...",
+      "uploading": "Subiendo...",
+      "callToAction": "Haz clic para subir tu imagen",
+      "format": "Formato permitido: PNG, JPG, JPEG hasta 10MB"
+    },
+    "crop": {
+      "title": "Recortar Imagen",
+      "zoom": "Zoom",
+      "rotation": "Rotación",
+      "rotateLeft": "Rotar izquierda",
+      "rotateRight": "Rotar derecha",
+      "adjustText": "Ajusta la imagen para el banner",
+      "zoomLabel": "Zoom",
+      "rotationLabel": "Rotación",
+      "apply": "Aplicar Recorte",
+      "edit": "Editar Recorte",
+      "zoomValue": "Zoom: {value}x",
+      "rotationValue": "Rotación: {value}°"
+    },
+    "errors": {
+      "nameRequired": "El nombre es obligatorio",
+      "urlRequired": "La URL del sitio es obligatoria",
+      "notAuthenticated": "No estás autenticado. Por favor, inicia sesión nuevamente.",
+      "fixForm": "Por favor, corrige los errores en el formulario.",
+      "noImage": "Por favor, sube una imagen para el banner.",
+      "imgUploadFailed": "No se pudo subir la imagen",
+      "imgUploadUnknown": "Error desconocido al subir imagen",
+      "createUnknown": "Error desconocido al crear el banner",
+      "updateUnknown": "Error desconocido al actualizar el banner",
+      "uploadDefault": "Error al subir el banner. Se usará una imagen por defecto.",
+      "cropProcessing": "Error al procesar el recorte de la imagen"
+    },
+    "actions": {
+      "add": "Agregar",
+      "cancel": "Cancelar",
+      "save": "Guardar",
+      "creating": "Creando banner...",
+      "saving": "Guardando...",
+      "remove": "Quitar",
+      "edit": "Editar",
+      "change": "Cambiar",
+      "changeLabel": "Cambiar imagen",
+      "editCrop": "Editar Recorte"
+    },
+    "notifications": {
+      "created": "¡Banner creado exitosamente!",
+      "updated": "¡Banner actualizado exitosamente!",
+      "errorTitle": "Error con el banner"
+    },
+    "loadingData": "Cargando datos...",
+    "notFound": "Banner no encontrado"
+  }
+}
