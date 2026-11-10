@@ -1,0 +1,38 @@
+[
+  {
+    "image_url": "https://images.pexels.com/photos/3076516/pexels-photo-3076516.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "is_active": true,
+    "link_url": "/promotions/summer-plan",
+    "name": "Summer Plan 50% OFF!"
+  },
+  {
+    "image_url": "https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "is_active": true,
+    "link_url": "/classes/yoga",
+    "name": "New Yoga Classes"
+  },
+  {
+    "image_url": "https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "is_active": true,
+    "link_url": "/app/download",
+    "name": "Download the New App"
+  },
+  {
+    "image_url": "https://images.pexels.com/photos/1552249/pexels-photo-1552249.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "is_active": true,
+    "link_url": "/referrals",
+    "name": "Refer a Friend and Win"
+  },
+  {
+    "image_url": "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "is_active": true,
+    "link_url": "/services/nutrition",
+    "name": "Free Nutritional Consultation"
+  },
+  {
+    "image_url": "https://images.pexels.com/photos/3471423/pexels-photo-3471423.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "is_active": false,
+    "link_url": "/promotions/expired/new-year",
+    "name": "New Year Promo (Expired)"
+  }
+]

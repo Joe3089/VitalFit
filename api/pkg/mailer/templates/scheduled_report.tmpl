@@ -1,0 +1,89 @@
+{{define "subject"}} Reporte programado VITAL FIT: {{.ReportName}} {{end}}
+
+{{define "body"}}
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Restablecimiento de Contraseña Vital Fit</title>
+    <style>
+      /* Estilos en línea básicos para compatibilidad */
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333333;
+        -webkit-font-smoothing: antialiased;
+        background-color: #f6f6f6;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: block;
+        max-width: 600px;
+        margin: 0 auto !important;
+        padding: 10px;
+      }
+      .content {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 6px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+      .logo {
+        text-align: center;
+        padding-bottom: 20px;
+      }
+      .logo img {
+        max-width: 150px;
+        height: auto;
+      }
+      /* Estilo del código OTP */
+      .code-box {
+        text-align: center;
+        width: 100%;
+        margin: 20px 0;
+        padding: 15px 0;
+        background-color: #f58a24; /* Color de fondo */
+        border-radius: 5px;
+      }
+      .code-box h1 {
+        color: #ffffff;
+        font-size: 32px;
+        margin: 0;
+        letter-spacing: 5px; /* Para que el código destaque */
+      }
+      .footer {
+        color: #999999;
+        font-size: 12px;
+        text-align: center;
+        padding-top: 20px;
+      }
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <h1 style="color: #f58a24; font-size: 30px; margin: 0;">VITALFIT</h1>
+        <p style="color: #666666; font-size: 14px; margin: 5px 0 0;">Reportes automáticos</p>
+      </div>
+
+      <div class="content">
+        <p>Hola,</p>
+        <p>Tu reporte programado <strong>{{.ReportName}}</strong> ({{.ReportType}}, {{.Format}}) correspondiente al período <strong>{{.Period}}</strong> ya está disponible.</p>
+
+        <div class="code-box">
+          <a href="{{.DownloadURL}}" style="color: #ffffff; font-size: 20px; font-weight: bold; text-decoration: none;">Descargar reporte</a>
+        </div>
+
+        <p style="font-size: 13px; color: #666666;">El enlace es temporal y vence el {{.ExpiresAt}}.</p>
+        <p>El equipo VITAL FIT</p>
+      </div>
+
+      <div class="footer">
+        Recibes este correo porque estás en la lista de destinatarios de un reporte programado.
+      </div>
+    </div>
+  </body>
+</html>
+{{end}}

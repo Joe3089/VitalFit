@@ -1,0 +1,23 @@
+[
+  {
+    "description": "Acceso ilimitado al área de pesas, cardio y zona funcional durante 30 días. Incluye una evaluación física básica de bienvenida.",
+    "duration_days": 30,
+    "is_active": true,
+    "name": "Mensual Básico",
+    "price": 35.00
+  },
+  {
+    "description": "Compromiso de 3 meses con acceso total a todas las clases grupales y área de pesas. Incluye descuento en servicios de spa y nutrición.",
+    "duration_days": 90,
+    "is_active": true,
+    "name": "Trimestral Fit",
+    "price": 90.00
+  },
+  {
+    "description": "Membresía anual todo incluido: acceso multi-sucursal internacional, invitados gratis los fines de semana, toalla diaria y congelamiento de plan por viajes.",
+    "duration_days": 365,
+    "is_active": true,
+    "name": "Anual Black VIP",
+    "price": 320.00
+  }
+]

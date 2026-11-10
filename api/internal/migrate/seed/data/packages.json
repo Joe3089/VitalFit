@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Pack Multidisciplinario",
+    "description": "Acceso a una combinación de diferentes disciplinas para mantener tu rutina variada y dinámica. Ideal para probar nuevos retos y salir de la zona de confort.",
+    "price": 75.00,
+    "startAt": "2025-01-01T00:00:00Z",
+    "endAt": "2030-12-31T23:59:59Z"
+  },
+  {
+    "name": "Pack Inicio Rápido",
+    "description": "La combinación perfecta de servicios esenciales para comenzar tu transformación física hoy mismo con la guía adecuada.",
+    "price": 55.00,
+    "startAt": "2025-06-01T00:00:00Z",
+    "endAt": "2030-12-31T23:59:59Z"
+  },
+  {
+    "name": "Pack Recuperación y Relax",
+    "description": "Servicios enfocados en la salud muscular y el bienestar general, perfectos para complementar tus días de descanso activo.",
+    "price": 110.00,
+    "startAt": "2025-01-01T00:00:00Z",
+    "endAt": "2030-12-31T23:59:59Z"
+  },
+  {
+    "name": "Pack Intensivo Pro",
+    "description": "Una selección de entrenamientos de alta exigencia diseñados para atletas que buscan llevar su rendimiento al siguiente nivel.",
+    "price": 140.00,
+    "startAt": "2025-10-01T00:00:00Z",
+    "endAt": "2026-12-31T23:59:59Z"
+  },
+  {
+    "name": "Pack Salud Integral",
+    "description": "Un enfoque holístico que combina ejercicio y servicios de salud para garantizar un estilo de vida equilibrado y sostenible a largo plazo.",
+    "price": 95.00,
+    "startAt": "2025-01-01T00:00:00Z",
+    "endAt": "2030-12-31T23:59:59Z"
+  }
+]

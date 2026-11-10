@@ -1,0 +1,442 @@
+[
+  {
+    "category_name": "Functional Training",
+    "description": "Acceso libre a la sala de pesas, máquinas de cardio y zona funcional para que entrenes a tu propio ritmo.",
+    "duration": 120,
+    "is_featured": true,
+    "name": "Open Gym",
+    "priority": 1,
+    "service_images": [
+      {
+        "alt_text": "Sala de gimnasio moderna con pesas y maquinas",
+        "display_order": 1,
+        "image_url": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop",
+        "is_primary": true
+      },
+      {
+        "alt_text": "Zona de mancuernas y bancos de peso libre",
+        "display_order": 2,
+        "image_url": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1470&auto=format&fit=crop",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "category_name": "Personal Training",
+    "description": "Sesión privada 1 a 1 con un entrenador certificado para alcanzar objetivos específicos.",
+    "duration": 60,
+    "is_featured": true,
+    "name": "Entrenamiento Personalizado 1:1",
+    "priority": 2,
+    "service_images": [
+      {
+        "alt_text": "Entrenador personal ayudando a cliente",
+        "display_order": 1,
+        "image_url": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1470&auto=format&fit=crop",
+        "is_primary": true
+      },
+      {
+        "alt_text": "Cliente recibiendo instrucciones técnicas",
+        "display_order": 2,
+        "image_url": "https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=1469&auto=format&fit=crop",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "category_name": "HIIT & Circuit Training",
+    "description": "Entrenamiento de intervalos de alta intensidad diseñado para quemar grasa y mejorar la resistencia.",
+    "duration": 45,
+    "is_featured": true,
+    "name": "HIIT Burn",
+    "priority": 5,
+    "service_images": [
+      {
+        "alt_text": "Grupo haciendo ejercicios de alta intensidad",
+        "display_order": 1,
+        "image_url": "https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?q=80&w=1425&auto=format&fit=crop",
+        "is_primary": true
+      },
+      {
+        "alt_text": "Mujer saltando la cuerda en gimnasio",
+        "display_order": 2,
+        "image_url": "https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=1470&auto=format&fit=crop",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "category_name": "CrossFit / Performance Training",
+    "description": "Clase del día (WOD) enfocada en movimientos funcionales variados ejecutados a alta intensidad.",
+    "duration": 60,
+    "is_featured": false,
+    "name": "WOD Performance",
+    "priority": 10,
+    "service_images": [
+      {
+        "alt_text": "Atleta levantando pesas en box de crossfit",
+        "display_order": 1,
+        "image_url": "https://images.unsplash.com/photo-1517963879466-e1b54ebd6694?q=80&w=1469&auto=format&fit=crop",
+        "is_primary": true
+      },
+      {
+        "alt_text": "Anillas de gimnasia y estructura de rack",
+        "display_order": 2,
+        "image_url": "https://images.unsplash.com/photo-1521805103420-df7038fb4722?q=80&w=1470&auto=format&fit=crop",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "category_name": "Yoga",
+    "description": "Clase de Vinyasa Flow para mejorar la flexibilidad, el equilibrio y la conexión mente-cuerpo.",
+    "duration": 60,
+    "is_featured": false,
+    "name": "Sunrise Yoga",
+    "priority": 20,
+    "service_images": [
+      {
+        "alt_text": "Persona haciendo pose de yoga al amanecer",
+        "display_order": 1,
+        "image_url": "https://images.unsplash.com/photo-1544367563-12123d8965cd?q=80&w=1470&auto=format&fit=crop",
+        "is_primary": true
+      },
+      {
+        "alt_text": "Grupo en clase de yoga sobre mats",
+        "display_order": 2,
+        "image_url": "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=1470&auto=format&fit=crop",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "category_name": "Pilates (Reformer & Mat)",
+    "description": "Fortalecimiento del core y corrección postural utilizando máquinas Reformer.",
+    "duration": 50,
+    "is_featured": true,
+    "name": "Reformer Pilates",
+    "priority": 15,
+    "service_images": [
+      {
+        "alt_text": "Mujer ejercitandose en maquina de pilates reformer",
+        "display_order": 1,
+        "image_url": "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1470&auto=format&fit=crop",
+        "is_primary": true
+      },
+      {
+        "alt_text": "Detalle de los resortes de la maquina reformer",
+        "display_order": 2,
+        "image_url": "https://images.unsplash.com/photo-1522845015757-50bce044e5da?q=80&w=1470&auto=format&fit=crop",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "category_name": "Indoor Cycling (Spinning)",
+    "description": "Entrenamiento cardiovascular intenso sobre bicicleta estática al ritmo de la música.",
+    "duration": 45,
+    "is_featured": false,
+    "name": "Spin City",
+    "priority": 8,
+    "service_images": [
+      {
+        "alt_text": "Clase de spinning con luces de neon",
+        "display_order": 1,
+        "image_url": "https://images.unsplash.com/photo-1591118671404-34305f24231b?q=80&w=1470&auto=format&fit=crop",
+        "is_primary": true
+      },
+      {
+        "alt_text": "Filas de bicicletas estáticas en estudio",
+        "display_order": 2,
+        "image_url": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "category_name": "Boxing & Kickboxing",
+    "description": "Técnica de boxeo, trabajo de saco y manoplas para liberar estrés y tonificar.",
+    "duration": 60,
+    "is_featured": false,
+    "name": "Boxing Fundamentals",
+    "priority": 12,
+    "service_images": [
+      {
+        "alt_text": "Guantes de boxeo golpeando saco",
+        "display_order": 1,
+        "image_url": "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?q=80&w=1374&auto=format&fit=crop",
+        "is_primary": true
+      },
+      {
+        "alt_text": "Boxeador vendandose las manos",
+        "display_order": 2,
+        "image_url": "https://images.unsplash.com/photo-1595078475328-1ab05d0a6a0e?q=80&w=1400&auto=format&fit=crop",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "category_name": "Dance Fitness (Zumba, Cardio Dance)",
+    "description": "Diviértete bailando mientras quemas calorías con ritmos latinos y mundiales.",
+    "duration": 60,
+    "is_featured": false,
+    "name": "Zumba Party",
+    "priority": 25,
+    "service_images": [
+      {
+        "alt_text": "Grupo de personas bailando zumba",
+        "display_order": 1,
+        "image_url": "https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?q=80&w=1470&auto=format&fit=crop",
+        "is_primary": true
+      },
+      {
+        "alt_text": "Instructor de baile liderando la clase",
+        "display_order": 2,
+        "image_url": "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=1470&auto=format&fit=crop",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "category_name": "Spa Services (Sauna, Massage)",
+    "description": "Masaje de tejido profundo para recuperación muscular post-entrenamiento.",
+    "duration": 60,
+    "is_featured": false,
+    "name": "Masaje Deportivo",
+    "priority": 50,
+    "service_images": [
+      {
+        "alt_text": "Terapeuta dando masaje en espalda",
+        "display_order": 1,
+        "image_url": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1470&auto=format&fit=crop",
+        "is_primary": true
+      },
+      {
+        "alt_text": "Piedras calientes y toallas de spa",
+        "display_order": 2,
+        "image_url": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1470&auto=format&fit=crop",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "category_name": "Nutrition & Dietetics",
+    "description": "Consulta inicial para evaluar hábitos alimenticios y crear un plan nutricional.",
+    "duration": 45,
+    "is_featured": false,
+    "name": "Consulta Nutricional",
+    "priority": 30,
+    "service_images": [
+      {
+        "alt_text": "Plato de comida saludable y balanceada",
+        "display_order": 1,
+        "image_url": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1453&auto=format&fit=crop",
+        "is_primary": true
+      },
+      {
+        "alt_text": "Nutricionista mostrando plan de dieta en tablet",
+        "display_order": 2,
+        "image_url": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=1470&auto=format&fit=crop",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "category_name": "Aquatics (Swimming Lessons, AquaFit)",
+    "description": "Clases de natación para adultos enfocadas en mejorar la técnica y respiración.",
+    "duration": 60,
+    "is_featured": false,
+    "name": "Natación Adultos",
+    "priority": 40,
+    "service_images": [
+      {
+        "alt_text": "Piscina olimpica interior",
+        "display_order": 1,
+        "image_url": "https://images.unsplash.com/photo-1530549387789-4c1017266635?q=80&w=1470&auto=format&fit=crop",
+        "is_primary": true
+      },
+      {
+        "alt_text": "Nadador rompiendo la superficie del agua",
+        "display_order": 2,
+        "image_url": "https://images.unsplash.com/photo-1519315901367-f34ff9154487?q=80&w=1470&auto=format&fit=crop",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "category_name": "Kids & Youth Programs",
+    "description": "Iniciación deportiva y juegos activos para niños de 6 a 12 años.",
+    "duration": 60,
+    "is_featured": false,
+    "name": "Kids Active",
+    "priority": 45,
+    "service_images": [
+      {
+        "alt_text": "Niños corriendo y jugando deportes",
+        "display_order": 1,
+        "image_url": "https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=1472&auto=format&fit=crop",
+        "is_primary": true
+      },
+      {
+        "alt_text": "Grupo infantil haciendo estiramientos",
+        "display_order": 2,
+        "image_url": "https://images.unsplash.com/photo-1502086223501-68119136a60b?q=80&w=1470&auto=format&fit=crop",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "category_name": "Fitness Assessments",
+    "description": "Análisis completo de composición corporal (InBody) y evaluación física.",
+    "duration": 30,
+    "is_featured": false,
+    "name": "Evaluación Física Completa",
+    "priority": 3,
+    "service_images": [
+      {
+        "alt_text": "Doctor o entrenador midiendo brazo de atleta",
+        "display_order": 1,
+        "image_url": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1470&auto=format&fit=crop",
+        "is_primary": true
+      },
+      {
+        "alt_text": "Bascula digital y equipo medico deportivo",
+        "display_order": 2,
+        "image_url": "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?q=80&w=1471&auto=format&fit=crop",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "category_name": "Specialty Workshops (e.g., Weightlifting)",
+    "description": "Taller técnico enfocado en movimientos olímpicos: Snatch y Clean & Jerk.",
+    "duration": 90,
+    "is_featured": false,
+    "name": "Taller de Halterofilia",
+    "priority": 60,
+    "service_images": [
+      {
+        "alt_text": "Barra olimpica con discos en el suelo",
+        "display_order": 1,
+        "image_url": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1470&auto=format&fit=crop",
+        "is_primary": true
+      },
+      {
+        "alt_text": "Levantador aplicando magnesio en las manos",
+        "display_order": 2,
+        "image_url": "https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=1469&auto=format&fit=crop",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "category_name": "Martial Arts (BJJ, Karate, MMA)",
+    "description": "Aprende defensa personal y disciplina con nuestras clases de Brazilian Jiu-Jitsu enfocadas en técnica de suelo.",
+    "duration": 90,
+    "is_featured": false,
+    "name": "Brazilian Jiu-Jitsu (BJJ)",
+    "priority": 18,
+    "service_images": [
+      {
+        "alt_text": "Dos personas practicando grappling en el tatami",
+        "display_order": 1,
+        "image_url": "https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=1469&auto=format&fit=crop",
+        "is_primary": true
+      },
+      {
+        "alt_text": "Detalle de cinturones y kimonos de artes marciales",
+        "display_order": 2,
+        "image_url": "https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=1472&auto=format&fit=crop",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "category_name": "Wellness & Recovery",
+    "description": "Sesión de recuperación muscular mediante inmersión en agua helada y botas de compresión neumática.",
+    "duration": 30,
+    "is_featured": true,
+    "name": "Crioterapia y Recuperación",
+    "priority": 11,
+    "service_images": [
+      {
+        "alt_text": "Persona sumergiendose en bañera de hielo",
+        "display_order": 1,
+        "image_url": "https://images.unsplash.com/photo-1629897148810-84c483250fb1?q=80&w=1470&auto=format&fit=crop",
+        "is_primary": true
+      },
+      {
+        "alt_text": "Zona de relax con botas de compresion",
+        "display_order": 2,
+        "image_url": "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=1470&auto=format&fit=crop",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "category_name": "Small Group Training (SGT)",
+    "description": "Entrenamiento semiprivado (máx 6 personas) enfocado en glúteos y zona abdominal con atención personalizada.",
+    "duration": 50,
+    "is_featured": false,
+    "name": "Booty & Core Blast",
+    "priority": 22,
+    "service_images": [
+      {
+        "alt_text": "Grupo pequeño de mujeres entrenando con bandas elasticas",
+        "display_order": 1,
+        "image_url": "https://images.unsplash.com/photo-1571731956672-f2b94d7dd0cb?q=80&w=1472&auto=format&fit=crop",
+        "is_primary": true
+      },
+      {
+        "alt_text": "Entrenador corrigiendo postura en grupo pequeño",
+        "display_order": 2,
+        "image_url": "https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=1469&auto=format&fit=crop",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "category_name": "Mindfulness & Meditation",
+    "description": "Clase guiada de respiración (Breathwork) y meditación para reducir el estrés y mejorar el enfoque mental.",
+    "duration": 45,
+    "is_featured": false,
+    "name": "Mindful Breathwork",
+    "priority": 65,
+    "service_images": [
+      {
+        "alt_text": "Persona en posición de loto meditando en ambiente tranquilo",
+        "display_order": 1,
+        "image_url": "https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?q=80&w=1472&auto=format&fit=crop",
+        "is_primary": true
+      },
+      {
+        "alt_text": "Cuencos tibetanos y velas aromáticas",
+        "display_order": 2,
+        "image_url": "https://images.unsplash.com/photo-1602192509153-03e23cc73a15?q=80&w=1470&auto=format&fit=crop",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "category_name": "Physiotherapy & Rehabilitation",
+    "description": "Sesión de fisioterapia manual y ejercicios correctivos para la rehabilitación de lesiones deportivas.",
+    "duration": 60,
+    "is_featured": false,
+    "name": "Readaptación Deportiva",
+    "priority": 14,
+    "service_images": [
+      {
+        "alt_text": "Fisioterapeuta tratando el hombro de un paciente",
+        "display_order": 1,
+        "image_url": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1480&auto=format&fit=crop",
+        "is_primary": true
+      },
+      {
+        "alt_text": "Paciente realizando ejercicios de estabilidad con balón",
+        "display_order": 2,
+        "image_url": "https://images.unsplash.com/photo-1579126038374-6064e9370f0f?q=80&w=1431&auto=format&fit=crop",
+        "is_primary": false
+      }
+    ]
+  }
+]

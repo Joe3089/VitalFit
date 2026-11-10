@@ -1,0 +1,206 @@
+[
+  {
+    "name": "Barbell Bench Press",
+    "description": "Lying on a flat bench, lower the barbell to your chest with control and press it up explosively. The king of pushing exercises.",
+    "muscle_group": "Chest",
+    "video_url": "https://www.youtube.com/results?search_query=bench+press+technique"
+  },
+  {
+    "name": "Incline Dumbbell Press",
+    "description": "On a bench inclined at 30-45 degrees, press dumbbells upwards. Focuses on the upper portion of the pectorals.",
+    "muscle_group": "Chest",
+    "video_url": "https://www.youtube.com/results?search_query=incline+dumbbell+press"
+  },
+  {
+    "name": "Cable Flyes",
+    "description": "Standing tall, pull the cables from a high position to the center of your chest. Maintains constant tension on the pecs.",
+    "muscle_group": "Chest",
+    "video_url": "https://www.youtube.com/results?search_query=cable+flys"
+  },
+  {
+    "name": "Pushups",
+    "description": "Classic bodyweight exercise. Keep your body straight like a plank and lower until your chest almost touches the floor.",
+    "muscle_group": "Chest",
+    "video_url": "https://www.youtube.com/results?search_query=perfect+pushup"
+  },
+  {
+    "name": "Dips",
+    "description": "Suspend your body on parallel bars and lower by bending your elbows. Lean torso forward to target the chest.",
+    "muscle_group": "Chest",
+    "video_url": "https://www.youtube.com/results?search_query=chest+dips"
+  },
+  {
+    "name": "Pullups",
+    "description": "Hang from a bar with an overhand grip and pull yourself up until your chin passes the bar. Fundamental for back width.",
+    "muscle_group": "Back",
+    "video_url": "https://www.youtube.com/results?search_query=pullup+form"
+  },
+  {
+    "name": "Barbell Bent Over Row",
+    "description": "Hinging at the hips with a flat back, pull the barbell towards your abdomen. Builds back density and thickness.",
+    "muscle_group": "Back",
+    "video_url": "https://www.youtube.com/results?search_query=barbell+row"
+  },
+  {
+    "name": "Lat Pulldown",
+    "description": "Seated at a machine, pull the bar down towards your upper chest. Excellent alternative to pullups.",
+    "muscle_group": "Back",
+    "video_url": "https://www.youtube.com/results?search_query=lat+pulldown"
+  },
+  {
+    "name": "Seated Cable Row",
+    "description": "Seated with legs slightly bent, pull the attachment towards your abdomen, squeezing your shoulder blades together.",
+    "muscle_group": "Back",
+    "video_url": "https://www.youtube.com/results?search_query=seated+cable+row"
+  },
+  {
+    "name": "Straight Arm Pulldown",
+    "description": "Standing with straight arms, push the bar from eye level down to your hips. Isolates the lats without using biceps.",
+    "muscle_group": "Back",
+    "video_url": "https://www.youtube.com/results?search_query=straight+arm+pulldown"
+  },
+  {
+    "name": "Barbell Squat",
+    "description": "The king of leg exercises. Barbell on traps, lower your hips breaking parallel with your knees.",
+    "muscle_group": "Legs",
+    "video_url": "https://www.youtube.com/results?search_query=squat+technique"
+  },
+  {
+    "name": "Leg Press",
+    "description": "Push the platform away with your feet. Allows moving heavy weight without loading the lower back.",
+    "muscle_group": "Legs",
+    "video_url": "https://www.youtube.com/results?search_query=leg+press"
+  },
+  {
+    "name": "Walking Lunges",
+    "description": "Step forward and lower your back knee towards the ground. Targets quads, glutes, and balance.",
+    "muscle_group": "Legs",
+    "video_url": "https://www.youtube.com/results?search_query=walking+lunges"
+  },
+  {
+    "name": "Romanian Deadlift (RDL)",
+    "description": "With legs slightly bent, lower the barbell keeping it close to your shins by pushing hips back. Focuses on hamstrings.",
+    "muscle_group": "Legs",
+    "video_url": "https://www.youtube.com/results?search_query=romanian+deadlift"
+  },
+  {
+    "name": "Leg Extension",
+    "description": "Seated in the machine, extend your legs until knees are locked. Pure quadriceps isolation.",
+    "muscle_group": "Legs",
+    "video_url": "https://www.youtube.com/results?search_query=leg+extension"
+  },
+  {
+    "name": "Lying Leg Curl",
+    "description": "Lying face down, curl your heels towards your glutes. Isolates the hamstrings.",
+    "muscle_group": "Legs",
+    "video_url": "https://www.youtube.com/results?search_query=lying+leg+curl"
+  },
+  {
+    "name": "Standing Calf Raise",
+    "description": "Standing or in a machine, raise your heels by extending your ankles. Essential for calf development.",
+    "muscle_group": "Legs",
+    "video_url": "https://www.youtube.com/results?search_query=standing+calf+raise"
+  },
+  {
+    "name": "Overhead Press (OHP)",
+    "description": "Standing tall, press the barbell from your chest to fully overhead. Massive shoulder builder.",
+    "muscle_group": "Shoulders",
+    "video_url": "https://www.youtube.com/results?search_query=overhead+press"
+  },
+  {
+    "name": "Lateral Raises",
+    "description": "With dumbbells, raise arms out to the sides until shoulder height. Creates shoulder width (side delts).",
+    "muscle_group": "Shoulders",
+    "video_url": "https://www.youtube.com/results?search_query=lateral+raises"
+  },
+  {
+    "name": "Reverse Flyes",
+    "description": "Bent over, raise dumbbells out to the sides. Targets the rear deltoids for 3D shoulders.",
+    "muscle_group": "Shoulders",
+    "video_url": "https://www.youtube.com/results?search_query=reverse+flyes"
+  },
+  {
+    "name": "Face Pulls",
+    "description": "Using a rope on a high pulley, pull towards your forehead separating your hands. Crucial for shoulder health.",
+    "muscle_group": "Shoulders",
+    "video_url": "https://www.youtube.com/results?search_query=face+pulls"
+  },
+  {
+    "name": "Barbell Bicep Curl",
+    "description": "Standing, curl the barbell towards your chest while keeping elbows tucked. The gold standard for biceps.",
+    "muscle_group": "Arms",
+    "video_url": "https://www.youtube.com/results?search_query=barbell+bicep+curl"
+  },
+  {
+    "name": "Hammer Curl",
+    "description": "With dumbbells in a neutral grip (palms facing each other), curl up. Targets the brachialis and forearms.",
+    "muscle_group": "Arms",
+    "video_url": "https://www.youtube.com/results?search_query=hammer+curl"
+  },
+  {
+    "name": "Tricep Pushdown",
+    "description": "Standing at a cable machine, push the bar or rope down until elbows are fully extended.",
+    "muscle_group": "Arms",
+    "video_url": "https://www.youtube.com/results?search_query=tricep+pushdown"
+  },
+  {
+    "name": "Skullcrushers",
+    "description": "Lying on a bench, lower the EZ bar towards your forehead by bending elbows, then extend back up.",
+    "muscle_group": "Arms",
+    "video_url": "https://www.youtube.com/results?search_query=skullcrushers"
+  },
+  {
+    "name": "Bench Dips",
+    "description": "Hands on a bench behind you, feet on another bench or floor. Lower hips by bending elbows. Targets triceps.",
+    "muscle_group": "Arms",
+    "video_url": "https://www.youtube.com/results?search_query=bench+dips"
+  },
+  {
+    "name": "Plank",
+    "description": "Hold an isometric position supported by forearms and toes. Strengthens the entire core and abs.",
+    "muscle_group": "Core",
+    "video_url": "https://www.youtube.com/results?search_query=plank+form"
+  },
+  {
+    "name": "Crunches",
+    "description": "Lying on your back, flex your torso trying to bring ribs towards hips. Basic ab isolation.",
+    "muscle_group": "Core",
+    "video_url": "https://www.youtube.com/results?search_query=crunch+exercise"
+  },
+  {
+    "name": "Hanging Leg Raise",
+    "description": "Hanging from a bar, lift your legs until they form a 90-degree angle or touch the bar.",
+    "muscle_group": "Core",
+    "video_url": "https://www.youtube.com/results?search_query=hanging+leg+raise"
+  },
+  {
+    "name": "Burpees",
+    "description": "Full body movement: pushup followed by a jump squat. Burns calories rapidly.",
+    "muscle_group": "Cardio",
+    "video_url": "https://www.youtube.com/results?search_query=burpees"
+  },
+  {
+    "name": "Jump Rope",
+    "description": "Continuous jumping over a rope. Excellent for cardiovascular endurance and coordination.",
+    "muscle_group": "Cardio",
+    "video_url": "https://www.youtube.com/results?search_query=jump+rope"
+  },
+  {
+    "name": "Mountain Climbers",
+    "description": "From a plank position, drive knees to chest alternately at high speed.",
+    "muscle_group": "Cardio",
+    "video_url": "https://www.youtube.com/results?search_query=mountain+climbers"
+  },
+  {
+    "name": "Kettlebell Swing",
+    "description": "Hinge movement swinging a kettlebell using hip power. Targets posterior chain and cardio.",
+    "muscle_group": "FullBody",
+    "video_url": "https://www.youtube.com/results?search_query=kettlebell+swing"
+  },
+  {
+    "name": "Thrusters",
+    "description": "A combination of a front squat and an overhead press in one fluid motion.",
+    "muscle_group": "FullBody",
+    "video_url": "https://www.youtube.com/results?search_query=thrusters"
+  }
+]

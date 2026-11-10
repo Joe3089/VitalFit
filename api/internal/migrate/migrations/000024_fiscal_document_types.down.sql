@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS fiscal_document_types;

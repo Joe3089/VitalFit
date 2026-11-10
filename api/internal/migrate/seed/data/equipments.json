@@ -1,0 +1,357 @@
+[
+  
+  {
+    "brand": "Life Fitness",
+    "category": "Cardio",
+    "description": "Professional treadmill with motorized incline and integrated training programs.",
+    "model": "Integrity Series",
+    "name": "Integrity Treadmill"
+  },
+  {
+    "brand": "Precor",
+    "category": "Cardio",
+    "description": "Smooth motion CrossRamp® elliptical that adjusts incline and works the entire body.",
+    "model": "EFX 835",
+    "name": "Elliptical EFX 835"
+  },
+  {
+    "brand": "Schwinn",
+    "category": "Cardio",
+    "description": "Indoor cycling bike with silent magnetic resistance and Bluetooth connectivity.",
+    "model": "IC4",
+    "name": "IC4 Indoor Bike"
+  },
+  {
+    "brand": "Concept2",
+    "category": "Cardio",
+    "description": "Industry-standard rowing machine, known for its durability and PM5 performance monitor.",
+    "model": "Model D",
+    "name": "Concept2 Model D Rower"
+  },
+  {
+    "brand": "StairMaster",
+    "category": "Cardio",
+    "description": "High-intensity stair climber with revolving steps for a demanding cardiovascular workout.",
+    "model": "Gauntlet 8",
+    "name": "Gauntlet Stair Climber"
+  },
+  {
+    "brand": "Technogym",
+    "category": "Cardio",
+    "description": "Recumbent stationary bike with an ergonomic backrest and Unity touchscreen.",
+    "model": "Excite Live Recline",
+    "name": "Excite Recumbent Bike"
+  },
+  {
+    "brand": "Assault Fitness",
+    "category": "Cardio",
+    "description": "High-intensity interval training air bike that uses fan resistance.",
+    "model": "AirBike Elite",
+    "name": "Assault AirBike Elite"
+  },
+  {
+    "brand": "NordicTrack",
+    "category": "Cardio",
+    "description": "Treadmill with -6% decline to 40% incline for simulating hill training.",
+    "model": "Commercial X32i",
+    "name": "Incline Trainer X32i"
+  },
+  {
+    "brand": "Keiser",
+    "category": "Cardio",
+    "description": "Magnetic resistance indoor cycle with an advanced performance computer.",
+    "model": "M3i",
+    "name": "Keiser M3i Indoor Bike"
+  },
+  {
+    "brand": "Precor",
+    "category": "Cardio",
+    "description": "Adaptive Motion Trainer (AMT) that combines climbing, walking, and running.",
+    "model": "AMT 885",
+    "name": "Adaptive Motion Trainer"
+  },
+  
+  {
+    "brand": "Hammer Strength",
+    "category": "Strength",
+    "description": "Plate-loaded machine for targeting pectoral muscles with iso-lateral movement.",
+    "model": "Iso-Lateral Bench Press",
+    "name": "Plate-Loaded Chest Press"
+  },
+  {
+    "brand": "Cybex",
+    "category": "Strength",
+    "description": "Seated leg press machine with an adjustable seat and wide footplate.",
+    "model": "Eagle NX Leg Press",
+    "name": "Eagle NX Leg Press"
+  },
+  {
+    "brand": "Technogym",
+    "category": "Strength",
+    "description": "Selectorized machine for back workouts, focusing on the latissimus dorsi.",
+    "model": "Selection 900",
+    "name": "Lat Pulldown Machine"
+  },
+  {
+    "brand": "Life Fitness",
+    "category": "Strength",
+    "description": "Selectorized machine for isolating quadriceps muscles.",
+    "model": "Optima Series",
+    "name": "Leg Extension Machine"
+  },
+  {
+    "brand": "Precor",
+    "category": "Strength",
+    "description": "Selectorized seated leg curl machine for hamstring development.",
+    "model": "Discovery Series",
+    "name": "Seated Leg Curl"
+  },
+  {
+    "brand": "Hammer Strength",
+    "category": "Strength",
+    "description": "Plate-loaded machine for shoulder workouts with a converging path of motion.",
+    "model": "Iso-Lateral Shoulder Press",
+    "name": "Plate-Loaded Shoulder Press"
+  },
+  {
+    "brand": "Nautilus",
+    "category": "Strength",
+    "description": "Machine for targeting chest (pec fly) and upper back (rear deltoid).",
+    "model": "Impact Series",
+    "name": "Pec Fly / Rear Delt Machine"
+  },
+  {
+    "brand": "Life Fitness",
+    "category": "Strength",
+    "description": "Machine providing weight assistance for pull-ups and dips.",
+    "model": "Insignia Series",
+    "name": "Assisted Pull-Up / Dip"
+  },
+  {
+    "brand": "Technogym",
+    "category": "Strength",
+    "description": "Selectorized machine for abdominal crunches with ergonomic support.",
+    "model": "Selection 900",
+    "name": "Abdominal Crunch Machine"
+  },
+  {
+    "brand": "Cybex",
+    "category": "Strength",
+    "description": "Selectorized machine for bicep curls with a pivoting handle.",
+    "model": "VR3 Arm Curl",
+    "name": "Bicep Curl Machine"
+  },
+  
+  {
+    "brand": "Rogue",
+    "category": "FreeWeight",
+    "description": "Set of rubber hex dumbbells from 5 lbs to 50 lbs.",
+    "model": "Rubber Hex",
+    "name": "Dumbbell Set (5-50 lbs)"
+  },
+  {
+    "brand": "Rogue",
+    "category": "FreeWeight",
+    "description": "Set of rubber hex dumbbells from 55 lbs to 100 lbs.",
+    "model": "Rubber Hex",
+    "name": "Dumbbell Set (55-100 lbs)"
+  },
+  {
+    "brand": "Eleiko",
+    "category": "FreeWeight",
+    "description": "IWF certified Olympic training barbell, 20kg, for weightlifting.",
+    "model": "IWF Training Bar",
+    "name": "Olympic Barbell - 20kg"
+  },
+  {
+    "brand": "Rogue",
+    "category": "FreeWeight",
+    "description": "Set of bumper plates made from durable, high-density virgin rubber.",
+    "model": "HG 2.0",
+    "name": "Bumper Plate Set (45s, 25s, 10s)"
+  },
+  {
+    "brand": "REP Fitness",
+    "category": "FreeWeight",
+    "description": "Heavy-duty adjustable bench with multiple incline and decline positions.",
+    "model": "AB-5200",
+    "name": "Adjustable Bench"
+  },
+  {
+    "brand": "Rogue",
+    "category": "FreeWeight",
+    "description": "Solid, stable flat bench for dumbbell and barbell exercises.",
+    "model": "Utility Bench 2.0",
+    "name": "Flat Bench"
+  },
+  {
+    "brand": "Rogue",
+    "category": "FreeWeight",
+    "description": "Set of e-coat cast iron kettlebells, from 9 lbs to 88 lbs (4-40kg).",
+    "model": "E-Coat",
+    "name": "Kettlebell Set (Full)"
+  },
+  {
+    "brand": "Hammer Strength",
+    "category": "FreeWeight",
+    "description": "Olympic incline bench press station with fixed uprights.",
+    "model": "Olympic Incline",
+    "name": "Olympic Incline Bench"
+  },
+  {
+    "brand": "York",
+    "category": "FreeWeight",
+    "description": "Chrome EZ curl bar for bicep and tricep exercises.",
+    "model": "Chrome EZ Curl",
+    "name": "EZ Curl Bar"
+  },
+  {
+    "brand": "Iron Grip",
+    "category": "FreeWeight",
+    "description": "Set of 12-sided urethane-coated dumbbells, 5-75 lbs.",
+    "model": "Urethane",
+    "name": "Urethane Dumbbell Set (5-75 lbs)"
+  },
+  
+  {
+    "brand": "Life Fitness",
+    "category": "Functional",
+    "description": "Dual adjustable pulley system for a wide variety of functional exercises.",
+    "model": "Signature Cable Motion",
+    "name": "Cable Crossover Station"
+  },
+  {
+    "brand": "Rogue",
+    "category": "Functional",
+    "description": "Heavy-duty 6-post power rack for squatting, benching, and pull-ups.",
+    "model": "RM-6 Monster Rack",
+    "name": "Monster Power Rack"
+  },
+  {
+    "brand": "Precor",
+    "category": "Functional",
+    "description": "Guided barbell machine for safe and stable lifting.",
+    "model": "Icarian Smith Machine",
+    "name": "Smith Machine"
+  },
+  {
+    "brand": "TRX",
+    "category": "Functional",
+    "description": "Professional-grade bodyweight suspension training system.",
+    "model": "Pro4 System",
+    "name": "TRX Suspension Trainer"
+  },
+  {
+    "brand": "Rogue",
+    "category": "Functional",
+    "description": "Set of 3-in-1 foam plyometric boxes for jump training (20\", 24\", 30\").",
+    "model": "Foam Games Box",
+    "name": "Foam Plyo Box Set"
+  },
+  {
+    "brand": "Dynamax",
+    "category": "Functional",
+    "description": "Set of soft-shell medicine balls for partner and wall exercises (10-20 lbs).",
+    "model": "Standard",
+    "name": "Medicine Ball Set"
+  },
+  {
+    "brand": "Rogue",
+    "category": "Functional",
+    "description": "Set of durable, no-bounce slam balls for high-impact throwing (10-50 lbs).",
+    "model": "Echo Slam Balls",
+    "name": "Slam Ball Set"
+  },
+  {
+    "brand": "Again Faster",
+    "category": "Functional",
+    "description": "Heavy-duty conditioning rope for high-intensity workouts.",
+    "model": "50ft x 1.5in",
+    "name": "Battle Rope"
+  },
+  {
+    "brand": "Rogue",
+    "category": "Functional",
+    "description": "Glute Ham Developer machine for posterior chain exercises.",
+    "model": "Abram GHD 2.0",
+    "name": "Glute Ham Developer (GHD)"
+  },
+  {
+    "brand": "Concept2",
+    "category": "Functional",
+    "description": "Ski ergometer that simulates Nordic skiing, for cardio and strength.",
+    "model": "SkiErg",
+    "name": "SkiErg"
+  },
+  
+  {
+    "brand": "Theraband",
+    "category": "Accessory",
+    "description": "Set of professional non-latex resistance bands (light, medium, heavy).",
+    "model": "Non-Latex",
+    "name": "Resistance Band Set"
+  },
+  {
+    "brand": "TriggerPoint",
+    "category": "Accessory",
+    "description": "Hollow core foam roller with a gridded surface for deep tissue massage.",
+    "model": "GRID 1.0",
+    "name": "GRID Foam Roller"
+  },
+  {
+    "brand": "Manduka",
+    "category": "Accessory",
+    "description": "High-density, durable yoga mat for practice and stretching.",
+    "model": "PRO Mat",
+    "name": "Yoga Mat"
+  },
+  {
+    "brand": "Rogue",
+    "category": "Accessory",
+    "description": "Adjustable aluminum speed rope for double-unders.",
+    "model": "SR-2S Speed Rope",
+    "name": "Speed Rope"
+  },
+  {
+    "brand": "SKLZ",
+    "category": "Accessory",
+    "description": "Dual-wheel ab roller for dynamic core strength training.",
+    "model": "Core Wheels",
+    "name": "Ab Roller Wheels"
+  },
+  {
+    "brand": "Harbinger",
+    "category": "Accessory",
+    "description": "Padded leather weightlifting belt for back support.",
+    "model": "4-Inch Padded Leather",
+    "name": "Lifting Belt"
+  },
+  {
+    "brand": "Rogue",
+    "category": "Accessory",
+    "description": "Nylon dip belt with chain for adding weight to dips and pull-ups.",
+    "model": "Nylon Dip Belt",
+    "name": "Dip Belt"
+  },
+  {
+    "brand": "Lock-Jaw",
+    "category": "Accessory",
+    "description": "Pair of quick-release barbell collars for Olympic bars.",
+    "model": "Pro 2",
+    "name": "Barbell Collars (Pair)"
+  },
+  {
+    "brand": "Theraband",
+    "category": "Accessory",
+    "description": "Professional-grade stability ball for core exercises and balance.",
+    "model": "Pro Series 65cm",
+    "name": "Stability Ball"
+  },
+  {
+    "brand": "Rogue",
+    "category": "Accessory",
+    "description": "Set of fractional plates for micro-loading (0.25lb, 0.50lb, 0.75lb, 1.0lb).",
+    "model": "Fractional Plates",
+    "name": "Micro Plate Set"
+  }
+]

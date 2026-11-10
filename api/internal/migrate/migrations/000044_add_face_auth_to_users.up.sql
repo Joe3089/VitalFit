@@ -1,0 +1,4 @@
+ALTER TABLE users ADD COLUMN IF NOT EXISTS face_id VARCHAR(255);
+ALTER TABLE users ADD CONSTRAINT unique_face_id UNIQUE (face_id);
+ALTER TABLE users ADD COLUMN IF NOT EXISTS face_auth_enabled BOOLEAN DEFAULT FALSE;
+CREATE INDEX IF NOT EXISTS idx_users_face_id ON users(face_id);

@@ -1,0 +1,144 @@
+{{define "subject"}}⚠️ Tu plan {{.MembershipName}} está por vencer{{end}}
+
+{{define "body"}}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviso de Vencimiento</title>
+    <style>
+        /* Estilos Base VitalFit */
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333333;
+            background-color: #f6f6f6;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            display: block;
+            max-width: 600px;
+            margin: 0 auto !important;
+            padding: 20px;
+        }
+        .content {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 6px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Header / Logo */
+        .logo {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eeeeee;
+            margin-bottom: 20px;
+        }
+        .logo h1 {
+            color: #f58a24; /* Naranja VitalFit */
+            font-size: 30px;
+            margin: 0;
+            text-transform: uppercase;
+        }
+        .logo p {
+            color: #666666;
+            font-size: 14px;
+            margin: 5px 0 0;
+        }
+
+        /* Alerta de Vencimiento */
+        .alert-box {
+            background-color: #fff8f0; /* Fondo naranja muy claro */
+            border-left: 4px solid #f58a24;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .alert-title {
+            color: #f58a24;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        /* Botón de Acción */
+        .btn-container {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 5px;
+            background-color: #f58a24;
+            color: #ffffff !important;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            border: 1px solid #f58a24;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #e07e1f;
+        }
+
+        /* Detalles Extra */
+        .details {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .footer {
+            color: #999999;
+            font-size: 12px;
+            text-align: center;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="logo">
+                <h1>VitalFit</h1>
+                <p>Tu gimnasio, tu ritmo</p>
+            </div>
+
+            <p>Hola <strong>{{.UserName}}</strong>,</p>
+            
+            <p>Esperamos que estés teniendo una excelente semana de entrenamientos. Te escribimos para recordarte algo importante sobre tu cuenta.</p>
+
+            <div class="alert-box">
+                <span class="alert-title">⚠️ Tu plan está por expirar</span>
+                <p style="margin: 5px 0 0 0;">
+                    Tu suscripción <strong>{{.MembershipName}}</strong> vencerá en exactamente <strong>{{.DaysRemaining}} días</strong>.
+                </p>
+            </div>
+
+            <p>¡No pierdas tu racha! Renueva ahora para asegurar tu acceso sin interrupciones y seguir superando tus límites.</p>
+
+            <div class="btn-container">
+                <a href="{{.RenewalURL}}" class="btn">Renovar Membresía Ahora</a>
+            </div>
+
+            <div class="details">
+                <p>Si ya realizaste el pago en las últimas horas, por favor ignora este mensaje.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            Este es un aviso automático de VitalFit. <br>
+            Si necesitas ayuda, contacta a soporte.
+        </div>
+    </div>
+</body>
+</html>
+{{end}}

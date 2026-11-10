@@ -1,0 +1,114 @@
+{{define "subject"}}Confirmación de Pago para tu Factura: {{.InvoiceNumber}}{{end}}
+
+{{define "body"}}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recibo de Pago</title>
+    <style>
+        body { font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #333333; background-color: #f6f6f6; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+        .container { display: block; max-width: 600px; margin: 0 auto !important; padding: 20px; }
+        .content { background: #ffffff; padding: 30px; border-radius: 6px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); }
+        .logo { text-align: center; padding-bottom: 20px; border-bottom: 2px solid #eeeeee; margin-bottom: 20px; }
+        .logo h1 { color: #f58a24; font-size: 30px; margin: 0; text-transform: uppercase; }
+        .logo p { color: #666666; font-size: 14px; margin: 5px 0 0; }
+        .invoice-details { margin-bottom: 30px; }
+        .invoice-info-box { background-color: #fff8f0; border-left: 4px solid #f58a24; padding: 10px 15px; margin-top: 15px; font-size: 14px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 14px; }
+        th { background-color: #f58a24; color: #ffffff; padding: 12px; text-align: left; font-weight: bold; border-radius: 3px 3px 0 0; }
+        td { border-bottom: 1px solid #eeeeee; padding: 12px; text-align: left; color: #555555; }
+        th:nth-child(3), td:nth-child(3), th:nth-child(4), td:nth-child(4) { text-align: right; }
+        .totals-container { margin-top: 30px; display: flex; }
+        .totals-table { width: 50%; margin-left: auto; }
+        .totals-table td { padding: 8px; border-bottom: 1px solid #eee; }
+        .total-row td { font-weight: bold; font-size: 16px; color: #f58a24; border-top: 2px solid #f58a24; border-bottom: none; }
+        .footer { color: #999999; font-size: 12px; text-align: center; padding-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="logo">
+                <h1>VitalFit</h1>
+                <p>Recibo de Pago</p>
+            </div>
+
+            <div class="invoice-details">
+                <p>Hola <strong>{{.ClientFullName}}</strong>,</p>
+                <p>¡Hemos recibido tu pago! Tu factura ha sido marcada como pagada. Gracias por tu compra.</p>
+                
+                <div class="invoice-info-box">
+                    <p style="margin: 5px 0;"><strong>Número de Factura:</strong> {{.InvoiceNumber}}</p>
+                    <p style="margin: 5px 0;"><strong>Fecha de Emisión:</strong> {{.IssueDate}}</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 40px; color: #333;">Detalle de la Compra</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Descripción</th>
+                        <th style="text-align: center;">Cant.</th>
+                        <th>Precio Unit.</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{range .Items}}
+                    <tr>
+                        <td>{{.Name}}</td>
+                        <td style="text-align: center;">{{.Quantity}}</td>
+                        <td>{{.UnitPrice}}</td>
+                        <td>{{.TotalLine}}</td>
+                    </tr>
+                    {{end}}
+                </tbody>
+            </table>
+
+            <h3 style="margin-top: 40px; color: #333;">Pagos Realizados</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha del Pago</th>
+                        <th>Método</th>
+                        <th style="text-align: right;">Monto Pagado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{range .Payments}}
+                    <tr>
+                        <td>{{.Date}}</td>
+                        <td>{{.Method}}</td>
+                        <td style="text-align: right;">{{.Amount}}</td>
+                    </tr>
+                    {{end}}
+                </tbody>
+            </table>
+
+            <div class="totals-container">
+                <table class="totals-table">
+                    <tr>
+                        <td><strong>Subtotal:</strong></td>
+                        <td style="text-align: right;">{{.SubTotal}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Impuestos:</strong></td>
+                        <td style="text-align: right;">{{.Tax}}</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td>Total Pagado:</td>
+                        <td style="text-align: right;">{{.Total}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="footer">
+            Este correo fue generado automáticamente por el sistema VitalFit.
+        </div>
+    </div>
+</body>
+</html>
+{{end}}

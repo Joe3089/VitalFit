@@ -1,0 +1,100 @@
+name: CI/CD Pipeline for DEV Environment
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  build-and-push:
+    name: Build and Push to ECR
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: 1. Checkout code
+        uses: actions/checkout@v4
+
+      - name: 2. Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME_FOR_PUSH }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: 3. Log in to Amazon ECR
+        uses: aws-actions/amazon-ecr-login@v2
+        id: login-ecr
+
+      - name: 4. Build, Tag, and Push Image
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY_NAME }}
+          IMAGE_TAG: dev
+        run: |
+          docker build --target production -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+
+  deploy:
+    name: Deploy to EC2
+    needs: build-and-push
+    runs-on: self-hosted 
+
+    steps:
+      - name: 1. Checkout code
+        uses: actions/checkout@v4
+
+      - name: 2. Log in to Amazon ECR
+        run: |
+          aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.ECR_REPOSITORY_URI }}
+
+      - name: 3. Create .env file for Docker Compose
+        run: |
+          echo "ECR_REPOSITORY_URI=\"${{ secrets.ECR_REPOSITORY_URI }}\"" > .env
+          echo "DB_ADDR=\"${{ secrets.DB_ADDR }}\"" >> .env
+          echo "ADDR=\"${{ secrets.ADDR }}\"" >> .env
+          echo "EXTERNAL_LINK=\"${{ secrets.EXTERNAL_LINK }}\"" >> .env
+          echo "DB_MAX_OPEN_CONNS=\"${{ secrets.DB_MAX_OPEN_CONNS }}\"" >> .env
+          echo "DB_MAX_IDLE_CONNS=\"${{ secrets.DB_MAX_IDLE_CONNS }}\"" >> .env
+          echo "DB_MAX_IDLE_TIME=\"${{ secrets.DB_MAX_IDLE_TIME }}\"" >> .env
+          echo "ENV=\"${{ secrets.ENV }}\"" >> .env
+          echo "WHITE_LIST=\"${{ secrets.WHITE_LIST }}\"" >> .env
+          echo "RESEND_API_KEY=\"${{ secrets.RESEND_API_KEY }}\"" >> .env
+          echo "FROM_RESEND_EMAIL=\"${{ secrets.FROM_RESEND_EMAIL }}\"" >> .env
+          echo "JWT_SECRET=\"${{ secrets.JWT_SECRET }}\"" >> .env
+          echo "JWT_ISS=\"${{ secrets.JWT_ISS }}\"" >> .env
+          echo "JWT_AUD=\"${{ secrets.JWT_AUD }}\"" >> .env
+          echo "CLERK_JWKS_URL=\"${{ secrets.CLERK_JWKS_URL }}\"" >> .env
+          echo "ADMIN_EMAIL=\"${{ secrets.ADMIN_EMAIL }}\"" >> .env
+          echo "ADMIN_PASSWORD=\"${{ secrets.ADMIN_PASSWORD }}\"" >> .env
+          echo "FRONT_URL=\"${{ secrets.FRONT_URL }}\"" >> .env
+          echo "REDIS_ADDR=\"${{ secrets.REDIS_ADDR }}\"" >> .env
+          echo "REDIS_PW=\"${{ secrets.REDIS_PW }}\"" >> .env
+          echo "REDIS_USERNAME=\"${{ secrets.REDIS_USERNAME }}\"" >> .env
+          echo "REDIS_ENABLED=\"${{ secrets.REDIS_ENABLED }}\"" >> .env
+          echo "OPEN_EXCHANGE_APP_ID=\"${{ secrets.OPEN_EXCHANGE_APP_ID }}\"" >> .env
+          echo "FIREBASE_CREDENTIALS_BASE64=\"${{ secrets.FIREBASE_CREDENTIALS_BASE64 }}\"" >> .env
+          echo "FRONT_URL_E=\"${{ secrets.FRONT_URL_E }}\"" >> .env
+          echo "AWS_REGIONR=\"${{ secrets.AWS_REGIONR }}\"" >> .env
+          echo "AWS_ACCESS_KEY_ID=\"${{ secrets.AWS_ACCESS_KEY_ID }}\"" >> .env
+          echo "AWS_SECRET_ACCESS_KEY=\"${{ secrets.AWS_SECRET_ACCESS_KEY }}\"" >> .env
+          echo "OPENAI_API_KEY=\"${{ secrets.OPENAI_API_KEY }}\"" >> .env
+          echo "STRIPE_SECRET_KEY=\"${{ secrets.STRIPE_SECRET_KEY }}\"" >> .env
+          echo "STRIPE_WEBHOOK_SECRET=\"${{ secrets.STRIPE_WEBHOOK_SECRET }}\"" >> .env
+
+      - name: 4. Pull the new image
+        run: |
+          docker compose -f ${{ github.workspace }}/docker-compose.dev.yml pull api-dev
+
+      - name: 5. Run Migrations
+        run: |
+          source .env
+          docker compose -f ${{ github.workspace }}/docker-compose.dev.yml run --rm api-dev ./migrate -path ./migrations -database "$DB_ADDR" up
+      
+      - name: 6. Restart the container
+        run: |
+          docker compose -f ${{ github.workspace }}/docker-compose.dev.yml up -d --remove-orphans api-dev
+
+      - name: 7. Clean up old images
+        run: docker image prune -f

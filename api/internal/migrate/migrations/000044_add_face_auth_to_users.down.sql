@@ -1,0 +1,4 @@
+DROP INDEX IF EXISTS idx_users_face_id;
+ALTER TABLE users DROP COLUMN IF EXISTS face_auth_enabled;
+ALTER TABLE users DROP CONSTRAINT IF EXISTS unique_face_id;
+ALTER TABLE users DROP COLUMN IF EXISTS face_id;

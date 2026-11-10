@@ -1,0 +1,52 @@
+[
+  {
+    "policy_key": "INVOICE_OVERDUE_TIME_DAYS",
+    "display_name": "Invoice Overdue Time",
+    "description": "Days allowed before considering an invoice as overdue.",
+    "value": "3",
+    "data_type": "INTEGER",
+    "min_limit": 0,
+    "max_limit": 365,
+    "is_active": true
+  },
+  {
+    "policy_key": "CLASS_CANCEL_MIN_HOURS",
+    "display_name": "Class Cancellation Notice",
+    "description": "Minimum hours of notice required to cancel a class without penalty.",
+    "value": "2",
+    "data_type": "INTEGER",
+    "min_limit": 0,
+    "max_limit": 24,
+    "is_active": true
+  },
+  {
+    "policy_key": "ACCESS_WINDOW_BEFORE_CLASS",
+    "display_name": "Pre-Class Access Window",
+    "description": "Minutes before the start of the class allowed to enter the facilities.",
+    "value": "15",
+    "data_type": "INTEGER",
+    "min_limit": 0,
+    "max_limit": 60,
+    "is_active": true
+  },
+  {
+    "policy_key": "MEMBERSHIP_GRACE_PERIOD_DAYS",
+    "display_name": "Membership Grace Period",
+    "description": "Days of access allowed after membership expiration before blocking access.",
+    "value": "2",
+    "data_type": "INTEGER",
+    "min_limit": 0,
+    "max_limit": 30,
+    "is_active": true
+  },
+  {
+    "policy_key": "GLOBAL_MAX_DISCOUNT",
+    "display_name": "Global Max Discount",
+    "description": "Maximum percentage discount that can be manually applied to a sale.",
+    "value": "20.00",
+    "data_type": "PERCENTAGE",
+    "min_limit": 0.00,
+    "max_limit": 100.00,
+    "is_active": true
+  }
+]

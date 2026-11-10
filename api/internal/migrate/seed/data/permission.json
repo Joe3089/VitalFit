@@ -1,0 +1,394 @@
+[
+  {
+    "name": "roles:create",
+    "description": "Allows creating new custom user roles"
+  },
+  {
+    "name": "roles:list",
+    "description": "Allows listing all user roles in the system"
+  },
+  {
+    "name": "roles:update",
+    "description": "Allows modifying the name or description of a role"
+  },
+  {
+    "name": "roles:delete",
+    "description": "Allows deleting a custom user role"
+  },
+  {
+    "name": "roles:assign_permissions",
+    "description": "Allows assigning and revoking permissions from a role"
+  },
+  {
+    "name": "permissions:list",
+    "description": "Allows listing all available permissions in the system"
+  },
+  {
+    "name": "branches:create",
+    "description": "Allows creating new branches or franchises"
+  },
+  {
+    "name": "branches:list",
+    "description": "Allows listing all branches in the system"
+  },
+  {
+    "name": "branches:get",
+    "description": "Allows viewing detailed information for a branch"
+  },
+  {
+    "name": "branches:update",
+    "description": "Allows modifying a branch's information"
+  },
+  {
+    "name": "branches:delete",
+    "description": "Allows deleting a branch from the system"
+  },
+  {
+    "name": "users:create",
+    "description": "Allows creating new user accounts (staff, admins)"
+  },
+  {
+    "name": "users:list",
+    "description": "Allows listing system user accounts and clients"
+  },
+  {
+    "name": "users:get",
+    "description": "Allows viewing a user's detailed profile"
+  },
+  {
+    "name": "users:update",
+    "description": "Allows modifying a user's information"
+  },
+  {
+    "name": "users:delete",
+    "description": "Allows deleting a user account"
+  },
+  {
+    "name": "users:assign_role",
+    "description": "Allows assigning or changing a user's role"
+  },
+  {
+    "name": "memberships:create",
+    "description": "Allows creating new membership plans (types)"
+  },
+  {
+    "name": "memberships:list",
+    "description": "Allows listing all membership plans"
+  },
+  {
+    "name": "memberships:get",
+    "description": "Allows viewing details of a membership plan"
+  },
+  {
+    "name": "memberships:update",
+    "description": "Allows modifying a membership plan"
+  },
+  {
+    "name": "memberships:delete",
+    "description": "Allows deleting a membership plan"
+  },
+  {
+    "name": "members:list",
+    "description": "Allows listing members and their active subscriptions"
+  },
+  {
+    "name": "members:get",
+    "description": "Allows viewing specific member subscription details"
+  },
+  {
+    "name": "members:update",
+    "description": "Allows updating member subscription details"
+  },
+  {
+    "name": "packages:create",
+    "description": "Allows creating new packages/combos"
+  },
+  {
+    "name": "packages:list",
+    "description": "Allows listing all packages/combos"
+  },
+  {
+    "name": "packages:get",
+    "description": "Allows viewing details of a package"
+  },
+  {
+    "name": "packages:update",
+    "description": "Allows modifying a package"
+  },
+  {
+    "name": "packages:delete",
+    "description": "Allows deleting a package"
+  },
+  {
+    "name": "instructors:create",
+    "description": "Allows creating/registering new instructors"
+  },
+  {
+    "name": "instructors:list",
+    "description": "Allows listing all instructors"
+  },
+  {
+    "name": "instructors:get",
+    "description": "Allows viewing details of an instructor"
+  },
+  {
+    "name": "instructors:update",
+    "description": "Allows modifying instructor details or specialties"
+  },
+  {
+    "name": "instructors:delete",
+    "description": "Allows deleting or removing an instructor"
+  },
+  {
+    "name": "services:create",
+    "description": "Allows creating new services/products in the catalog"
+  },
+  {
+    "name": "services:list",
+    "description": "Allows listing all services and categories"
+  },
+  {
+    "name": "services:get",
+    "description": "Allows viewing details of a service"
+  },
+  {
+    "name": "services:update",
+    "description": "Allows modifying a service"
+  },
+  {
+    "name": "services:delete",
+    "description": "Allows deleting a service"
+  },
+  {
+    "name": "schedule:create",
+    "description": "Allows creating new classes or schedule entries"
+  },
+  {
+    "name": "schedule:list",
+    "description": "Allows listing classes and schedules"
+  },
+  {
+    "name": "schedule:get",
+    "description": "Allows viewing details of a specific class"
+  },
+  {
+    "name": "schedule:update",
+    "description": "Allows modifying class details"
+  },
+  {
+    "name": "schedule:delete",
+    "description": "Allows canceling or deleting a class"
+  },
+  {
+    "name": "schedule:view_attendance",
+    "description": "Allows viewing class attendance history"
+  },
+  {
+    "name": "billing:list",
+    "description": "Allows listing rates, payment methods, and fiscal types"
+  },
+  {
+    "name": "billing:create",
+    "description": "Allows creating payment methods and fiscal document types"
+  },
+  {
+    "name": "billing:get",
+    "description": "Allows viewing details of billing configurations"
+  },
+  {
+    "name": "billing:update",
+    "description": "Allows updating payment methods and fiscal types"
+  },
+  {
+    "name": "billing:delete",
+    "description": "Allows deleting payment methods and fiscal types"
+  },
+  {
+    "name": "billing:process_payment",
+    "description": "Allows updating the status of a payment"
+  },
+  {
+    "name": "billing:create_invoice",
+    "description": "Allows creating new invoices manually"
+  },
+  {
+    "name": "marketing:create",
+    "description": "Allows creating new banners or marketing campaigns"
+  },
+  {
+    "name": "marketing:list",
+    "description": "Allows listing all banners or marketing campaigns"
+  },
+  {
+    "name": "marketing:get",
+    "description": "Allows viewing details of a specific banner"
+  },
+  {
+    "name": "marketing:update",
+    "description": "Allows modifying a banner or marketing campaign"
+  },
+  {
+    "name": "marketing:delete",
+    "description": "Allows deleting a banner or marketing campaign"
+  },
+  {
+    "name": "equipments:create",
+    "description": "Allows registering new equipment"
+  },
+  {
+    "name": "equipments:list",
+    "description": "Allows listing all equipment"
+  },
+  {
+    "name": "equipments:get",
+    "description": "Allows viewing details for a piece of equipment"
+  },
+  {
+    "name": "equipments:update",
+    "description": "Allows modifying equipment information"
+  },
+  {
+    "name": "equipments:delete",
+    "description": "Allows deleting equipment"
+  },
+  {
+    "name": "checkins:create",
+    "description": "Allows registering a member's check-in"
+  },
+  {
+    "name": "checkins:list",
+    "description": "Allows viewing the check-in history"
+  },
+  {
+    "name": "reports:view_financial",
+    "description": "Allows viewing financial and income reports"
+  },
+  {
+    "name": "reports:view_attendance",
+    "description": "Allows viewing attendance and usage reports"
+  },
+  {
+    "name": "reports:view_sales",
+    "description": "Allows viewing sales reports"
+  },
+  {
+    "name": "cancellation-reasons:create",
+    "description": "Allows creating new cancellation reasons"
+  },
+  {
+    "name": "cancellation-reasons:list",
+    "description": "Allows listing all cancellation reasons"
+  },
+  {
+    "name": "cancellation-reasons:update",
+    "description": "Allows modifying a cancellation reason"
+  },
+  {
+    "name": "cancellation-reasons:delete",
+    "description": "Allows deleting a cancellation reason"
+  },
+  {
+    "name": "access:check_in",
+    "description": "Allows authorizing member access via check-in"
+  },
+  {
+    "name": "booking:list",
+    "description": "Allows listing all bookings for a class"
+  },
+  {
+    "name": "booking:create",
+    "description": "Allows creating bookings for clients"
+  },
+  {
+    "name": "booking:cancel",
+    "description": "Allows canceling bookings"
+  },
+  {
+    "name": "booking:schedule:list",
+    "description": "Allows listing client schedules"
+  },
+  {
+    "name": "branch_management",
+    "description": "Allows management of branch operations"
+  },
+  {
+    "name": "access:view_client_history",
+    "description": "Allows viewing client attendance history and service usage"
+  },
+  {
+    "name": "medical_info:create",
+    "description": "Allows creating medical information for clients"
+  },
+  {
+    "name": "medical_info:read",
+    "description": "Allows viewing medical information for clients"
+  },
+  {
+    "name": "medical_info:update",
+    "description": "Allows updating medical information for clients"
+  },
+  {
+    "name": "view",
+    "description": "Allows viewing specific branch information"
+  },
+  {
+    "name": "routines:create",
+    "description": "Allows creating new routines and exercises"
+  },
+  {
+    "name": "routines:list",
+    "description": "Allows listing routines"
+  },
+  {
+    "name": "routines:get",
+    "description": "Allows viewing routine details"
+  },
+  {
+    "name": "routines:update",
+    "description": "Allows updating routines"
+  },
+  {
+    "name": "routines:delete",
+    "description": "Allows deleting routines"
+  },
+  {
+    "name": "routines:assign",
+    "description": "Allows assigning routines to clients"
+  },
+  {
+    "name": "routines:read",
+    "description": "Allows reading routines and exercises"
+  },
+  {
+    "name": "crm:feedback_manage",
+    "description": "Allows registering and managing client complaints and suggestions"
+  },
+  {
+    "name": "crm:tags_manage",
+    "description": "Allows creating client tags and assigning them to clients"
+  },
+  {
+    "name": "crm:contact_view",
+    "description": "Allows reading messages sent from the public contact form"
+  },
+  {
+    "name": "insights:view",
+    "description": "Allows viewing advanced analytics (conversion, NPS, RevPAS, benchmarking, churn, alerts)"
+  },
+  {
+    "name": "insights:manage",
+    "description": "Allows managing scheduled reports, shared links, templates and BI API keys"
+  },
+  {
+    "name": "security:manage",
+    "description": "Allows configuring password policies and two-factor authentication"
+  },
+  {
+    "name": "billing:adjust",
+    "description": "Allows applying post-sale discounts to invoices"
+  },
+  {
+    "name": "schedule:cancel",
+    "description": "Allows cancelling a scheduled class with a reason"
+  }
+]

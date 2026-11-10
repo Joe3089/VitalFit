@@ -1,0 +1,100 @@
+{{define "subject"}} ¡Bienvenido/a al equipo VITAL FIT! {{end}} 
+{{define "body"}}
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Activación de Cuenta Vital Fit</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333333;
+        -webkit-font-smoothing: antialiased;
+        background-color: #f6f6f6;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: block;
+        max-width: 600px;
+        margin: 0 auto !important;
+        padding: 10px;
+      }
+      .content {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 6px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+      .logo {
+        text-align: center;
+        padding-bottom: 20px;
+      }
+      /* Estilo del botón (color naranja: #F58A24) */
+      .btn {
+        text-align: center;
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+      .btn a {
+        display: inline-block;
+        padding: 12px 25px;
+        border-radius: 5px;
+        background-color: #f58a24;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+        border: 1px solid #f58a24;
+      }
+      .footer {
+        color: #999999;
+        font-size: 12px;
+        text-align: center;
+        padding-top: 20px;
+      }
+      .link-fallback {
+          color: #777777;
+          font-size: 11px;
+          word-break: break-all; 
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <h1 style="color: #f58a24; font-size: 30px; margin: 0;">VITALFIT</h1>
+        <p style="color: #666666; font-size: 14px; margin: 5px 0 0;">Activa tu vida, supera tus límites</p>
+      </div>
+
+      <div class="content">
+        <p>Hola **{{.Username}}**, </p>
+
+        <p>¡Has sido invitado/a a unirte al equipo de **VITAL FIT**!</p>
+
+        <p>Para unirte y acceder a la plataforma, solo falta un paso: **activar tu cuenta y crear tu contraseña personal**.</p>
+        
+        <div class="btn">
+          <a href="{{.ActivationLink}}" target="_blank">Activar mi Cuenta y Crear Contraseña</a>
+        </div>
+        <p>Este enlace de activación expirará por seguridad. Si tienes algún problema, por favor contacta a tu administrador.</p>
+        <p>¡Te esperamos!</p>
+        <p>El equipo VITAL FIT</p>
+
+        <hr style="border: 0; border-top: 1px solid #eeeeee; margin: 20px 0;">
+
+        <p style="font-size: 12px; color: #999999;">Si el botón no funciona, copia y pega el siguiente enlace en tu navegador:</p>
+        <p class="link-fallback">{{.ActivationLink}}</p>
+
+      </div>
+      
+      <div class="footer">
+        Este correo fue enviado automáticamente. Por favor, no lo respondas.
+      </div>
+    </div>
+  </body>
+</html>
+{{end}}

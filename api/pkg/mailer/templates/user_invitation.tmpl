@@ -1,0 +1,95 @@
+{{define "subject"}} ¡Activa tu cuenta VITAL FIT! {{end}}
+
+{{define "body"}}
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Activación de Cuenta Vital Fit</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333333;
+        -webkit-font-smoothing: antialiased;
+        background-color: #f6f6f6;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: block;
+        max-width: 600px;
+        margin: 0 auto !important;
+        padding: 10px;
+      }
+      .content {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 6px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+      .logo {
+        text-align: center;
+        padding-bottom: 20px;
+      }
+      .logo img {
+        max-width: 150px;
+        height: auto;
+      }
+      /* Estilo del botón (color naranja del logo: #F58A24) */
+      .btn {
+        text-align: center;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      .btn a {
+        display: inline-block;
+        padding: 10px 25px;
+        border-radius: 5px;
+        background-color: #f58a24;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+        border: 1px solid #f58a24;
+      }
+      .footer {
+        color: #999999;
+        font-size: 12px;
+        text-align: center;
+        padding-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <h1 style="color: #f58a24; font-size: 30px; margin: 0;">VITALFIT</h1>
+        <p style="color: #666666; font-size: 14px; margin: 5px 0 0;">Activa tu vida, supera tus límites</p>
+      </div>
+
+      <div class="content">
+        <p>Hola **{{.Username}}**, </p>
+
+        <p>¡Gracias por unirte a la familia **VITAL FIT**! Estamos emocionados de ayudarte a activar tu vida y superar tus límites.</p>
+
+        <p>Para comenzar tu viaje fitness, solo falta un paso: **confirmar tu dirección de correo electrónico**.</p>
+        
+        <div class="btn">
+          <h1>{{.CODE}}</h1>
+        </div>
+
+
+        <p>¡Te esperamos!</p>
+        <p>El equipo VITAL FIT</p>
+      </div>
+      
+      <div class="footer">
+        Este correo fue enviado automáticamente. Por favor, no lo respondas.
+      </div>
+    </div>
+  </body>
+</html>
+{{end}}

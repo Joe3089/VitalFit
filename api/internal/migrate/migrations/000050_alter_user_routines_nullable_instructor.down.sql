@@ -1,0 +1,1 @@
+ALTER TABLE user_routines ALTER COLUMN instructor_id SET NOT NULL;

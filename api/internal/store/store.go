@@ -1,0 +1,126 @@
+package store
+
+import (
+	accessdomain "github.com/vitalfit/api/internal/modules/access/domain"
+	accessrepository "github.com/vitalfit/api/internal/modules/access/repository"
+	auditdomain "github.com/vitalfit/api/internal/modules/audit/domain"
+	auditrepository "github.com/vitalfit/api/internal/modules/audit/repository"
+	authdomain "github.com/vitalfit/api/internal/modules/auth/domain"
+	authrepository "github.com/vitalfit/api/internal/modules/auth/repository"
+	billingdomain "github.com/vitalfit/api/internal/modules/billing/domain"
+	billingrepository "github.com/vitalfit/api/internal/modules/billing/repository"
+	bookingdomain "github.com/vitalfit/api/internal/modules/booking/domain"
+	bookingrepository "github.com/vitalfit/api/internal/modules/booking/repository"
+	branchdomain "github.com/vitalfit/api/internal/modules/branches/domain"
+	branchrepository "github.com/vitalfit/api/internal/modules/branches/repository"
+	clientsdomain "github.com/vitalfit/api/internal/modules/clients/domain"
+	clientsrepository "github.com/vitalfit/api/internal/modules/clients/repository"
+	combosdomain "github.com/vitalfit/api/internal/modules/combos/domain"
+	combosrepository "github.com/vitalfit/api/internal/modules/combos/repository"
+	crmdomain "github.com/vitalfit/api/internal/modules/crm/domain"
+	crmrepository "github.com/vitalfit/api/internal/modules/crm/repository"
+	faceauthdomain "github.com/vitalfit/api/internal/modules/faceauth/domain"
+	faceauthrepository "github.com/vitalfit/api/internal/modules/faceauth/repository"
+	insightsdomain "github.com/vitalfit/api/internal/modules/insights/domain"
+	insightsrepository "github.com/vitalfit/api/internal/modules/insights/repository"
+	instructordomain "github.com/vitalfit/api/internal/modules/instructor/domain"
+	instructorrepository "github.com/vitalfit/api/internal/modules/instructor/repository"
+	inventorydomain "github.com/vitalfit/api/internal/modules/inventory/domain"
+	inventoryrepository "github.com/vitalfit/api/internal/modules/inventory/repository"
+	llmdomain "github.com/vitalfit/api/internal/modules/llm/domain"
+	llmrepository "github.com/vitalfit/api/internal/modules/llm/repository"
+	marketingdomain "github.com/vitalfit/api/internal/modules/marketing/domain"
+	marketingrepository "github.com/vitalfit/api/internal/modules/marketing/repository"
+	membershipsdomain "github.com/vitalfit/api/internal/modules/memberships/domain"
+	membershipsrepository "github.com/vitalfit/api/internal/modules/memberships/repository"
+	notidomain "github.com/vitalfit/api/internal/modules/notifications/domain"
+	notirepository "github.com/vitalfit/api/internal/modules/notifications/repository"
+	policiesdomain "github.com/vitalfit/api/internal/modules/policies/domain"
+	policiesrepository "github.com/vitalfit/api/internal/modules/policies/repository"
+	productsdomain "github.com/vitalfit/api/internal/modules/products/domain"
+	productsrepository "github.com/vitalfit/api/internal/modules/products/repository"
+	reportdomain "github.com/vitalfit/api/internal/modules/reports/domain"
+	reportrepository "github.com/vitalfit/api/internal/modules/reports/repository"
+	routinedomain "github.com/vitalfit/api/internal/modules/routines/domain"
+	routinerepository "github.com/vitalfit/api/internal/modules/routines/repository"
+	scheduledomain "github.com/vitalfit/api/internal/modules/schedule/domain"
+	schedulerepository "github.com/vitalfit/api/internal/modules/schedule/repository"
+	staffdomain "github.com/vitalfit/api/internal/modules/staff/domain"
+	staffrepository "github.com/vitalfit/api/internal/modules/staff/repository"
+	wishlistdomain "github.com/vitalfit/api/internal/modules/wishlist/domain"
+	wishlistrepository "github.com/vitalfit/api/internal/modules/wishlist/repository"
+
+	"gorm.io/gorm"
+)
+
+type Storage struct {
+	Users              authdomain.UserRepository
+	Roles              authdomain.RolesRepository
+	Branches           branchdomain.BranchesRepository
+	Locations          branchdomain.LocationRepository
+	PaymentMethods     billingdomain.PaymentMethodsRepository
+	Equipment          inventorydomain.EquipmentRepository
+	BranchInventory    inventorydomain.BranchInventoryRepository
+	Instructor         instructordomain.InstructorRepository
+	Products           productsdomain.ProductsRepository
+	Marketing          marketingdomain.MarketingRepository
+	Membership         membershipsdomain.MembershipsRepository
+	Billing            billingdomain.BillingRepository
+	Schedule           scheduledomain.ScheduleRepository
+	Combos             combosdomain.CombosRepository
+	FiscalDocuments    billingdomain.FiscalDocumentRepository
+	Booking            bookingdomain.BookingRepository
+	Access             accessdomain.AccessRepository
+	Reports            reportdomain.ReportRepository
+	Staff              staffdomain.StaffRepository
+	Policies           policiesdomain.PoliciesRepository
+	Wishlist           wishlistdomain.WishlistRepository
+	Audit              auditdomain.AuditRepository
+	Session            authdomain.SessionRepository
+	Client             clientsdomain.ClientRepository
+	Notification       notidomain.NotificationRepository
+	FaceAuth           faceauthdomain.FaceAuthRepository
+	Routine            routinedomain.RoutineRepository
+	LLM                llmdomain.LLMRepository
+	CRM                crmdomain.CRMRepository
+	Security           authdomain.SecurityRepository
+	InvoiceAdjustments billingdomain.InvoiceAdjustmentRepository
+	Insights           insightsdomain.InsightsRepository
+}
+
+func NewStorage(db *gorm.DB) Storage {
+	return Storage{
+		Users:              authrepository.NewUserStore(db),
+		Roles:              authrepository.NewRoleStore(db),
+		Branches:           branchrepository.NewBranchesStore(db),
+		Locations:          branchrepository.NewLocationsStore(db),
+		PaymentMethods:     billingrepository.NewPaymentMethodsStore(db),
+		Equipment:          inventoryrepository.NewEquipmentStore(db),
+		BranchInventory:    inventoryrepository.NewBranchInventoryStore(db),
+		Instructor:         instructorrepository.NewInstructorStore(db),
+		Products:           productsrepository.NewProductsStore(db),
+		Marketing:          marketingrepository.NewMarketingStore(db),
+		Membership:         membershipsrepository.NewMembershipStore(db),
+		Billing:            billingrepository.NewBillingStore(db),
+		Schedule:           schedulerepository.NewScheduleStore(db),
+		Combos:             combosrepository.NewCombosStore(db),
+		FiscalDocuments:    billingrepository.NewFiscalDocumentStore(db),
+		Booking:            bookingrepository.NewBookingStore(db),
+		Access:             accessrepository.NewAccessStore(db),
+		Reports:            reportrepository.NewReportStore(db),
+		Staff:              staffrepository.NewStaffStore(db),
+		Policies:           policiesrepository.NewPoliciesStore(db),
+		Wishlist:           wishlistrepository.NewWishlistStore(db),
+		Audit:              auditrepository.NewAuditStore(db),
+		Session:            authrepository.NewSessionStore(db),
+		Client:             clientsrepository.NewClientStore(db),
+		Notification:       notirepository.NewNotificationStore(db),
+		FaceAuth:           faceauthrepository.NewFaceAuthStore(db),
+		Routine:            routinerepository.NewRoutineStore(db),
+		LLM:                llmrepository.NewLLMStore(db),
+		CRM:                crmrepository.NewCRMStore(db),
+		Security:           authrepository.NewSecurityStore(db),
+		InvoiceAdjustments: billingrepository.NewAdjustmentStore(db),
+		Insights:           insightsrepository.NewInsightsStore(db),
+	}
+}

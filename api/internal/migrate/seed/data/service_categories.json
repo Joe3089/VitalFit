@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Personal Training"
+  },
+  {
+    "name": "Functional Training"
+  },
+  {
+    "name": "HIIT & Circuit Training"
+  },
+  {
+    "name": "CrossFit / Performance Training"
+  },
+  {
+    "name": "Yoga"
+  },
+  {
+    "name": "Pilates (Reformer & Mat)"
+  },
+  {
+    "name": "Indoor Cycling (Spinning)"
+  },
+  {
+    "name": "Dance Fitness (Zumba, Cardio Dance)"
+  },
+  { 
+    "name": "Boxing & Kickboxing"
+  },
+  {
+    "name": "Martial Arts (BJJ, Karate, MMA)"
+  },
+  {
+    "name": "Wellness & Recovery"
+  },
+  {
+    "name": "Spa Services (Sauna, Massage)"
+  },
+  {
+    "name": "Physiotherapy & Rehabilitation"
+  },
+  {
+    "name": "Nutrition & Dietetics"
+  },
+  {
+    "name": "Fitness Assessments"
+  },
+  {
+    "name": "Aquatics (Swimming Lessons, AquaFit)"
+  },
+  {
+    "name": "Kids & Youth Programs"
+  },
+  {
+    "name": "Small Group Training (SGT)"
+  },
+  {
+    "name": "Mindfulness & Meditation"
+  },
+  {
+    "name": "Specialty Workshops (e.g., Weightlifting)"
+  }
+]

@@ -1,0 +1,162 @@
+{{define "subject"}}⚠️ Acción Requerida: {{.Count}} Clientes en Riesgo hoy{{end}}
+
+{{define "body"}}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerta de Riesgo - VitalFit</title>
+    <style>
+        /* --- ESTILOS BASE VITALFIT --- */
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333333;
+            background-color: #f6f6f6;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            display: block;
+            max-width: 600px;
+            margin: 0 auto !important;
+            padding: 20px;
+        }
+        .content {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 6px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* HEADER */
+        .logo {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eeeeee;
+            margin-bottom: 20px;
+        }
+        .logo h1 {
+            color: #f58a24; /* Naranja VitalFit */
+            font-size: 30px;
+            margin: 0;
+            text-transform: uppercase;
+        }
+        .logo p {
+            color: #666666;
+            font-size: 14px;
+            margin: 5px 0 0;
+        }
+
+        /* SUMMARY BOX */
+        .info-box {
+            background-color: #fff8f0; 
+            border-left: 4px solid #f58a24;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 14px;
+            border-radius: 4px;
+        }
+
+        /* TABLA DE CLIENTES */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        th {
+            background-color: #f58a24;
+            color: #ffffff;
+            padding: 10px;
+            text-align: left;
+            font-weight: bold;
+            border-radius: 3px 3px 0 0;
+            font-size: 13px;
+        }
+        td {
+            border-bottom: 1px solid #eeeeee;
+            padding: 12px 8px;
+            vertical-align: middle; /* Centrado vertical */
+            color: #555555;
+        }
+
+        /* BADGES */
+        .risk-tag {
+            background-color: #ffebee;
+            color: #c62828;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        
+        .footer {
+            color: #999999;
+            font-size: 12px;
+            text-align: center;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="logo">
+                <h1>VitalFit</h1>
+                <p>Reporte de Retención de Clientes</p>
+            </div>
+
+            <p>Hola <strong>{{.ManagerName}}</strong>,</p>
+            
+            <p>El sistema ha detectado actividad inusual en algunos de tus clientes. Es momento de actuar para evitar que abandonen el gimnasio.</p>
+
+            <div class="info-box">
+                <p style="margin: 0; font-weight: bold; color: #f58a24;">
+                    ⚠️ Total Detectados: {{.Count}} Clientes
+                </p>
+                <p style="margin: 5px 0 0 0; color: #666;">
+                    Fecha del reporte: {{.Date}}
+                </p>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th width="60%">Cliente / Contacto</th>
+                        <th width="40%">Motivo del Riesgo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{range .Users}}
+                    <tr>
+                        <td>
+                            <strong style="color: #333; font-size: 15px;">{{.Name}}</strong><br>
+                            
+                            <span style="font-size: 12px; color: #888;">✉️ {{.Email}}</span><br>
+                            <span style="font-size: 12px; color: #888;">📞 {{.Phone}}</span>
+                        </td>
+                        <td>
+                            <span class="risk-tag">{{index .Factors 0}}</span>
+                        </td>
+                    </tr>
+                    {{end}}
+                </tbody>
+            </table>
+
+            <p style="margin-top: 30px; font-size: 13px; color: #777;">
+                <strong>Tip de experto:</strong> Un seguimiento rápido aumenta un 60% la probabilidad de que el cliente regrese esta semana.
+            </p>
+        </div>
+
+        <div class="footer">
+            Este reporte fue generado automáticamente por el algoritmo de predicción de VitalFit.
+        </div>
+    </div>
+</body>
+</html>
+{{end}}

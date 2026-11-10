@@ -1,0 +1,2 @@
+ALTER TABLE user_routines ADD COLUMN IF NOT EXISTS completion_count INT DEFAULT 0;
+ALTER TABLE user_routines ADD COLUMN IF NOT EXISTS last_completed_at TIMESTAMP WITH TIME ZONE;
