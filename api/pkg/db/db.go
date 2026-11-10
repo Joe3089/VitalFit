@@ -4,6 +4,7 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
+	"net/url"
 	"time"
 
 	"gorm.io/driver/postgres"
@@ -16,8 +17,26 @@ var (
 	QueryTimeoutDuration = time.Second * 5
 )
 
+// SanitizeDSN removes connection parameters the Postgres drivers in use do
+// not understand. Neon adds channel_binding=require to its connection
+// strings, which both lib/pq and pgx forward to the server as a runtime
+// parameter and make the connection fail.
+func SanitizeDSN(addr string) string {
+	u, err := url.Parse(addr)
+	if err != nil || u.Scheme == "" {
+		return addr
+	}
+	q := u.Query()
+	if !q.Has("channel_binding") {
+		return addr
+	}
+	q.Del("channel_binding")
+	u.RawQuery = q.Encode()
+	return u.String()
+}
+
 func NewPGDB(addr string, maxOpenConnsm int, maxIdleConns int, maxIdleTime string) (*sql.DB, error) {
-	db, err := sql.Open("postgres", addr)
+	db, err := sql.Open("postgres", SanitizeDSN(addr))
 	if err != nil {
 		return nil, err
 	}
@@ -42,7 +61,7 @@ func NewPGDB(addr string, maxOpenConnsm int, maxIdleConns int, maxIdleTime strin
 
 func New(addr string, maxOpenConns int, maxIdleConns int, maxIdleTime string) (*gorm.DB, error) {
 
-	db, err := gorm.Open(postgres.Open(addr), &gorm.Config{
+	db, err := gorm.Open(postgres.Open(SanitizeDSN(addr)), &gorm.Config{
 		Logger: ormlogger.Default.LogMode(ormlogger.Info),
 		NamingStrategy: schema.NamingStrategy{
 			SingularTable: true,

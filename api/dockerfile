@@ -1,12 +1,12 @@
-FROM golang:1.25.0-alpine AS development
+FROM golang:1.25-alpine AS development
 
 
 RUN apk add --no-cache git make
-RUN go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@latest
+RUN go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@v4.18.3
 
-RUN go install github.com/air-verse/air@latest
+RUN go install github.com/air-verse/air@v1.61.7
 
-RUN go install github.com/swaggo/swag/cmd/swag@latest
+RUN go install github.com/swaggo/swag/cmd/swag@v1.16.6
 
 WORKDIR /app
 
@@ -19,7 +19,7 @@ COPY . .
 EXPOSE 8080
 
 #builder stage
-FROM golang:1.25.0-alpine AS builder
+FROM golang:1.25-alpine AS builder
 
 RUN apk add --no-cache ca-certificates git
 
@@ -30,12 +30,12 @@ RUN go mod download
 
 COPY . .
 
-RUN go install github.com/swaggo/swag/cmd/swag@latest
+RUN go install github.com/swaggo/swag/cmd/swag@v1.16.6
 RUN swag init -g ./api/main.go -d cmd,internal && swag fmt
 
 RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o /app/main ./cmd/api
 
-RUN go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@latest
+RUN go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@v4.18.3
 
 #production stage
 FROM alpine:latest AS production
@@ -53,6 +53,8 @@ COPY ./internal/migrate/migrations ./migrations
 
 COPY --from=builder /app/docs ./docs
 
+COPY ./scripts/start.sh ./start.sh
+
 EXPOSE 8080
 
-CMD ["./main"]
+CMD ["sh", "./start.sh"]

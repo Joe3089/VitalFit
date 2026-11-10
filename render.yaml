@@ -12,8 +12,9 @@ services:
     buildFilter:
       paths:
         - api/**
-    # Apply pending migrations on every deploy, then start the server.
-    dockerCommand: sh -c './migrate -path ./migrations -database "$DB_ADDR" up && ./main'
+    # Applies pending migrations on every deploy, then starts the server
+    # (see api/scripts/start.sh).
+    dockerCommand: sh ./start.sh
     healthCheckPath: /v1/health
     autoDeploy: true
     envVars:
