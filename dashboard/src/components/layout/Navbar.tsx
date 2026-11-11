@@ -2,25 +2,18 @@
 
 import React from "react";
 import { useTranslations } from "next-intl";
-import { 
-  Menu, 
-  Sun,
-} from "lucide-react";
+import { Menu } from "lucide-react";
 
 import { useSidebar } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { useAuth } from "@/context/AuthContext";
 import { NotificationCenter } from "./NotificationCenter";
 import { CommandMenu } from "./CommandMenu"; 
 import { UserRole } from "@/lib/roles";
 import LocaleSwitcher from "./localeSwitcher/LocaleSwitcher";
+import { ThemeToggle } from "./ThemeToggle";
 
 const Navbar: React.FC = () => {
   const t = useTranslations("Navbar");
@@ -55,15 +48,7 @@ const Navbar: React.FC = () => {
             
             <NotificationCenter jwt={token} />
 
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button variant="ghost" size="icon" className="h-9 w-9">
-                  <Sun className="h-5 w-5 text-muted-foreground" />
-                  <span className="sr-only">{t("appearance")}</span>
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent side="bottom">{t("appearance")}</TooltipContent>
-            </Tooltip>
+            <ThemeToggle />
 
             <Separator orientation="vertical" className="mx-2 h-6 hidden sm:block" />
 

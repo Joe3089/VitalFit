@@ -3085,6 +3085,25 @@
       "sessions_actions": {
         "revoke_all": "Revocar Todo",
         "revoking": "Revocando..."
+      },
+      "validation": {
+        "name_required": "El nombre es obligatorio.",
+        "lastname_required": "El apellido es obligatorio.",
+        "email_required": "El correo electrónico es obligatorio.",
+        "phone_required": "El número de teléfono es obligatorio.",
+        "phone_invalid": "El número de teléfono está incompleto. Incluye el código de área (ej. 414 1234567).",
+        "document_required": "El documento de identidad es obligatorio.",
+        "date_required": "La fecha de nacimiento es obligatoria.",
+        "role_required": "Selecciona el rol del usuario."
+      },
+      "invitation": {
+        "title": "Usuario creado",
+        "subtitle": "No se pudo enviar el correo de activación a {email}.",
+        "email_not_sent": "Usuario creado, pero el correo de activación no se pudo enviar.",
+        "instructions": "Comparte este enlace con el usuario (por WhatsApp u otro medio). Al abrirlo podrá definir su contraseña y activar su cuenta. El enlace es personal: no lo publiques.",
+        "copy": "Copiar enlace",
+        "copied": "Enlace copiado",
+        "back": "Volver a usuarios"
       }
     }
   },

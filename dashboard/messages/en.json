@@ -3089,6 +3089,25 @@
       "sessions_actions": {
         "revoke_all": "Revoke All",
         "revoking": "Revoking..."
+      },
+      "validation": {
+        "name_required": "First name is required.",
+        "lastname_required": "Last name is required.",
+        "email_required": "Email is required.",
+        "phone_required": "Phone number is required.",
+        "phone_invalid": "The phone number is incomplete. Include the area code.",
+        "document_required": "Identity document is required.",
+        "date_required": "Date of birth is required.",
+        "role_required": "Select the user's role."
+      },
+      "invitation": {
+        "title": "User created",
+        "subtitle": "The activation email to {email} could not be sent.",
+        "email_not_sent": "User created, but the activation email could not be sent.",
+        "instructions": "Share this link with the user (WhatsApp or another channel). Opening it lets them set a password and activate the account. The link is personal: do not publish it.",
+        "copy": "Copy link",
+        "copied": "Link copied",
+        "back": "Back to users"
       }
     }
   },

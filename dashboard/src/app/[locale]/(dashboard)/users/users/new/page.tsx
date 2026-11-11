@@ -36,6 +36,8 @@ export default function CreateUserPage() {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [success, setSuccess] = useState<string | null>(null);
+    // Set when the activation email could not be delivered: the admin shares the link manually.
+    const [manualActivationUrl, setManualActivationUrl] = useState<string | null>(null);
 
     const handleChange = (field: keyof Users, value: string) => {
         setFormData((prev) => ({ ...prev, [field]: value }));
@@ -69,28 +71,23 @@ export default function CreateUserPage() {
         setError(null);
         setSuccess(null);
 
-        if (!formData.name.trim()) {
-            setError(t("notifications.error_create"));
+        // Field-level checks so the API never answers with a raw validation error.
+        const required: [string, string][] = [
+            [formData.name.trim(), "name"],
+            [formData.lastname.trim(), "lastname"],
+            [formData.email.trim(), "email"],
+            [formData.phone.replace(/\D/g, ""), "phone"],
+            [formData.document.trim(), "document"],
+            [formData.date, "date"],
+            [formData.rol, "role"],
+        ];
+        const missing = required.find(([value]) => !value);
+        if (missing) {
+            toast.error(t(`validation.${missing[1]}_required`));
             return;
         }
-
-        if (!formData.lastname.trim()) {
-            setError(t("notifications.error_create"));
-            return;
-        }
-
-        if (!formData.email.trim()) {
-            setError(t("notifications.error_create"));
-            return;
-        }
-
-        if (!formData.document.trim()) {
-            setError(t("notifications.error_create"));
-            return;
-        }
-
-        if (!formData.date) {
-            setError(t("notifications.error_create"));
+        if (formData.phone.replace(/\D/g, "").length < 10) {
+            toast.error(t("validation.phone_invalid"));
             return;
         }
 
@@ -123,6 +120,12 @@ export default function CreateUserPage() {
 
             const response = await api.auth.signUpStaff(signUpData, token);
 
+            if (response && response.email_sent === false && response.activation_url) {
+                setManualActivationUrl(response.activation_url);
+                toast.warning(t("invitation.email_not_sent"));
+                return;
+            }
+
             toast.success(t("notifications.create_success"));
 
 
@@ -140,6 +143,32 @@ export default function CreateUserPage() {
             setIsLoading(false);
         }
     };
+
+    if (manualActivationUrl) {
+        return (
+            <div className="flex-1 space-y-6 p-8 pt-6 bg-white rounded-xl shadow">
+                <PageHeader title={t("invitation.title")} subtitle={t("invitation.subtitle", { email: formData.email })} />
+                <div className="rounded-lg border border-amber-300 bg-amber-50 p-4 space-y-3">
+                    <p className="text-sm text-amber-900">{t("invitation.instructions")}</p>
+                    <div className="flex flex-col gap-2 sm:flex-row">
+                        <code className="flex-1 break-all rounded bg-white p-2 text-xs">{manualActivationUrl}</code>
+                        <Button
+                            type="button"
+                            onClick={() => {
+                                navigator.clipboard.writeText(manualActivationUrl);
+                                toast.success(t("invitation.copied"));
+                            }}
+                        >
+                            {t("invitation.copy")}
+                        </Button>
+                    </div>
+                </div>
+                <Button type="button" variant="secondary" onClick={() => router.replace("/users/users")}>
+                    {t("invitation.back")}
+                </Button>
+            </div>
+        );
+    }
 
     return (
         <div className="flex-1 space-y-6 p-8 pt-6 bg-white rounded-xl shadow">

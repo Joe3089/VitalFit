@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "../styles/globals.css";
 import { AuthProvider } from "@/context/AuthContext";
 import ToasterProvider from "@/components/ToasterProvider";
+import { themeInitScript } from "@/lib/theme";
 
 import { Montserrat, Bebas_Neue } from "next/font/google";
 
@@ -29,7 +30,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className="admin-theme min-h-screen bg-background"> 
+    <html className="admin-theme min-h-screen bg-background" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body>
         <AuthProvider>
           {children} 

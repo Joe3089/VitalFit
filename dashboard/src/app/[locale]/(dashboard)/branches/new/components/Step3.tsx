@@ -26,7 +26,10 @@ type StepProps = {
   allBranchAdmins?: User[];
 };
 
+import { DEFAULT_DAY_HOURS } from "../defaultHours";
+
 const horasApertura = [
+  "5:00 AM",
   "6:00 AM",
   "7:00 AM",
   "8:00 AM",
@@ -70,11 +73,7 @@ export default function Step3({
 
   const handleHorarioChange = (dia: string, campo: string, valor: any) => {
     const horarios = formData.horarios || {};
-    const horarioDia = horarios[dia] || {
-      apertura: "6:00 AM",
-      cierre: "10:00 PM",
-      cerrado: false,
-    };
+    const horarioDia = horarios[dia] || { ...DEFAULT_DAY_HOURS };
 
     handleCustomChange("horarios", {
       ...horarios,
@@ -87,13 +86,7 @@ export default function Step3({
 
   const getHorarioDia = (dia: string) => {
     const horarios = formData.horarios || {};
-    return (
-      horarios[dia] || {
-        apertura: "6:00 AM",
-        cierre: "10:00 PM",
-        cerrado: false,
-      }
-    );
+    return horarios[dia] || DEFAULT_DAY_HOURS;
   };
 
   return (

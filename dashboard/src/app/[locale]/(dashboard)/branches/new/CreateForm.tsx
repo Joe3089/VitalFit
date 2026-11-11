@@ -29,6 +29,7 @@ interface BranchFromProps {
 }
 
 import { useTranslations } from "next-intl";
+import { DEFAULT_DAY_HOURS, defaultWeekHours } from "./defaultHours";
 
 export default function CreateForm({
   allCountries,
@@ -59,7 +60,7 @@ export default function CreateForm({
     manager_id: "",
     capacity: 0,
     capacidadMiembros: "",
-    horarios: {},
+    horarios: defaultWeekHours(),
     operatingHours: {},
   });
 
@@ -206,11 +207,7 @@ export default function CreateForm({
     ];
 
     const operating_hours = daysOrder.map((dayKey) => {
-      const h = horariosRecord[dayKey] || {
-        apertura: "00:00",
-        cierre: "00:00",
-        cerrado: true,
-      };
+      const h = horariosRecord[dayKey] || DEFAULT_DAY_HOURS;
       const isClosed = !!h.cerrado;
       return {
         day_of_week: dayMap[dayKey],
