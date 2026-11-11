@@ -56,6 +56,26 @@ export const useInvoiceConfirmation = ({
 
       const filePath = `receipts/${invoiceId}/${Date.now()}-${cleanName}`;
 
+      if (!supabase) {
+        // Fallback storage: ImgBB (images only)
+        if (!file.type.startsWith("image/")) {
+          throw new Error("Only images can be uploaded without Supabase");
+        }
+        const body = new FormData();
+        body.append("image", file);
+        const res = await fetch(
+          `https://api.imgbb.com/1/upload?key=${process.env.NEXT_PUBLIC_IMGBB}`,
+          { method: "POST", body },
+        );
+        const json = await res.json();
+        if (!res.ok || !json?.data?.url) {
+          throw new Error("ImgBB upload failed");
+        }
+        setFormData((prev) => ({ ...prev, filePath: json.data.url }));
+        toast.success(t("uploadSuccess"));
+        return;
+      }
+
       const { data: uploadData, error: uploadError } = await supabase.storage
         .from("vitalfit_file")
         .upload(filePath, file, {
